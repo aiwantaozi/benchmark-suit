@@ -1,0 +1,45 @@
+# config_no_baseline.yaml
+model: "Qwen/Qwen3-8B"
+run_baseline: false  # Skip baseline
+
+# Engine test configurations with extra parameters
+runs:
+  - name: "vllm-flashinfer"
+    engine: "vllm"
+    conda_env: "vllm"
+    envs:
+      VLLM_ATTENTION_BACKEND: "FLASHINFER"
+    args: "--max-num-seqs 1024 --max-num-batched-tokens 16384 --max-model-len 32768"
+    test_cases:
+      - sharegpt
+      - random_32k
+
+  - name: "vllm-xformers"
+    engine: "vllm"
+    conda_env: "vllm"
+    envs:
+      VLLM_ATTENTION_BACKEND: "XFORMERS"
+    args: "--max-num-seqs 512 --max-num-batched-tokens 8192 --gpu-memory-utilization 0.9"
+    test_cases:
+      - sharegpt
+
+  - name: "sglang-cuda-graph"
+    engine: "sglang"
+    conda_env: "sglang"
+    args: "--cuda-graph-max-bs 512 --tokenizer-cache-size 1000"
+    test_cases:
+      - sharegpt
+
+  - name: "sglang-high-mem"
+    engine: "sglang"
+    conda_env: "sglang"
+    args: "--mem-fraction-static 0.95 --cuda-graph-max-bs 256"
+    test_cases:
+      - sharegpt
+
+  - name: "trtllm-optimized"
+    engine: "trtllm"
+    conda_env: "trtllm"
+    args: "--max-batch-size 128 --max-input-len 4096 --max-output-len 1024"
+    test_cases:
+      - sharegpt

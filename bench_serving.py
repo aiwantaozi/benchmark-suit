@@ -49,6 +49,50 @@ class TestCase:
     seed: int = 42
     result_filename: Optional[str] = None
 
+def get_default_test_case_templates() -> Dict[str, Dict]:
+    return {
+        "sharegpt": {
+            "type": "sharegpt",
+            "num_prompts": 1000,
+            "dataset_path": "ShareGPT_V3_unfiltered_cleaned_split.json"
+        },
+        "random_32k": {
+            "type": "random",
+            "input_len": 32000,
+            "output_len": 100,
+            "num_prompts": 100,
+            "seed": 42
+        },
+        "random_4k": {
+            "type": "random",
+            "input_len": 4000,
+            "output_len": 200,
+            "num_prompts": 500,
+            "seed": 42
+        },
+        "random_2k": {
+            "type": "random",
+            "input_len": 2000,
+            "output_len": 100,
+            "num_prompts": 500,
+            "seed": 42
+        },
+        "random_128": {
+            "type": "random",
+            "input_len": 128,
+            "output_len": 4,
+            "num_prompts": 1000,
+            "seed": 42
+        },
+        "random_2k_output": {
+            "type": "random",
+            "input_len": 1000,
+            "output_len": 2000,
+            "num_prompts": 100,
+            "seed": 42
+        }
+    }
+
 @dataclass
 class EngineConfig:
     """Configuration for an engine test run"""
@@ -320,9 +364,12 @@ def create_engine_configs_from_config(config: Dict) -> List[EngineConfig]:
     engine_configs = []
     
     # Create test case templates dictionary
-    test_case_templates = {}
-    for name, tc_config in config.get('test_cases', {}).items():
-        test_case_templates[name] = create_test_case_from_dict(name, tc_config)
+    test_case_templates = get_default_test_cases()
+    
+    if 'test_cases' in config:
+        test_case_templates = {}
+        for name, tc_config in config['test_cases'].items():
+            test_case_templates[name] = create_test_case_from_dict(name, tc_config)
     
     # Create baseline vLLM configuration if enabled
     if config.get('run_baseline', True):
