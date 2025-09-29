@@ -22,10 +22,17 @@ else
     echo "⚙️ Initializing Conda..."
     eval "$($HOME/miniconda3/bin/conda shell.bash hook)"
     conda init bash
+
+    # Accept Anaconda Terms of Service (needed for non-interactive scripts)
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main || true
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r || true
 fi
 
 # Ensure conda is available in this shell
 eval "$(conda shell.bash hook)"
+
+# Ensure dependencies
+sudo apt-get update && apt-get -y install libopenmpi-dev numactl
 
 # ===== 2. Create and configure environments =====
 create_env_if_not_exists () {
@@ -46,13 +53,13 @@ create_env_if_not_exists () {
 }
 
 # vllm env
-create_env_if_not_exists "vllm" "3.10" "vllm flashinfer-python"
+create_env_if_not_exists "vllm" "3.12" "vllm flashinfer-python"
 
 # sglang env
-create_env_if_not_exists "sglang" "3.10" "sglang[all]"
+create_env_if_not_exists "sglang" "3.12" "sglang[all]"
 
 # trtllm env
-create_env_if_not_exists "trtllm" "3.10" "tensorrt_llm"
+create_env_if_not_exists "trtllm" "3.12" "tensorrt_llm"
 
 echo "🎉 All environments are ready!"
 echo "👉 Use: conda activate vllm | sglang | trtllm"
