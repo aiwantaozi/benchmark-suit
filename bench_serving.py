@@ -13,6 +13,7 @@ import signal
 import logging
 import subprocess
 import threading
+import copy
 from pathlib import Path
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, asdict
@@ -195,7 +196,7 @@ class EngineManager:
         cmd += f" --result-filename {result_filename}"
         
         logger.info(f"Running benchmark: {test_case.name}")
-        result = self.run_command(cmd)
+        result = self.run_command(cmd, "vllm")
         
         return result
     
@@ -236,7 +237,12 @@ class EngineManager:
             
             # Execute all test cases for this engine
             for test_case in config.test_cases:
-                result_filename = test_case.result_filename or f"{config.name}_{test_case.name}_{int(time.time())}.json"
+                # Generate result filename if not provided
+                if test_case.result_filename:
+                    result_filename = test_case.result_filename
+                else:
+                    result_filename = f"{config.name.replace('-', '_')}_{test_case.name}.json"
+                
                 result_path = self.output_dir / result_filename
                 
                 self.run_benchmark(test_case, str(result_path))
@@ -284,11 +290,11 @@ def load_config(config_file: str) -> Dict[str, Any]:
         config = yaml.safe_load(f)
     return config
 
-def create_test_case_from_config(tc_config: Dict) -> TestCase:
-    """Create a TestCase object from configuration data"""
+def create_test_case_from_dict(name: str, tc_config: Dict) -> TestCase:
+    """Create a TestCase object from configuration dictionary"""
     if tc_config['type'] == 'sharegpt':
         test_case = TestCase(
-            name=tc_config['name'],
+            name=name,
             type=TestCaseType.SHAREGPT,
             dataset_path=tc_config.get('dataset_path'),
             num_prompts=tc_config.get('num_prompts', 1000),
@@ -296,7 +302,7 @@ def create_test_case_from_config(tc_config: Dict) -> TestCase:
         )
     elif tc_config['type'] == 'random':
         test_case = TestCase(
-            name=tc_config['name'],
+            name=name,
             type=TestCaseType.RANDOM,
             random_input_len=tc_config['input_len'],
             random_output_len=tc_config['output_len'],
@@ -313,17 +319,20 @@ def create_engine_configs_from_config(config: Dict) -> List[EngineConfig]:
     """Create EngineConfig objects from configuration data"""
     engine_configs = []
     
+    # Create test case templates dictionary
+    test_case_templates = {}
+    for name, tc_config in config.get('test_cases', {}).items():
+        test_case_templates[name] = create_test_case_from_dict(name, tc_config)
+    
     # Create baseline vLLM configuration if enabled
     if config.get('run_baseline', True):
         baseline_test_cases = []
         
-        # Use test cases from configuration or create default ones
-        if 'test_cases' in config:
-            for tc_config in config['test_cases']:
-                baseline_test_cases.append(create_test_case_from_config(tc_config))
-        else:
-            # Fallback to default test cases if none specified
-            baseline_test_cases = create_default_test_cases()
+        # Use all test cases for baseline
+        for name, test_case in test_case_templates.items():
+            # Create a copy to avoid modifying the template
+            baseline_test_case = copy.deepcopy(test_case)
+            baseline_test_cases.append(baseline_test_case)
         
         baseline_config = EngineConfig(
             name="vllm-baseline",
@@ -337,8 +346,15 @@ def create_engine_configs_from_config(config: Dict) -> List[EngineConfig]:
     # Process custom run configurations
     for run_config in config.get('runs', []):
         test_cases = []
-        for tc_config in run_config.get('test_cases', []):
-            test_cases.append(create_test_case_from_config(tc_config))
+        
+        # Get test cases by name from templates
+        for test_case_name in run_config.get('test_cases', []):
+            if test_case_name in test_case_templates:
+                # Create a copy of the template test case
+                test_case = copy.deepcopy(test_case_templates[test_case_name])
+                test_cases.append(test_case)
+            else:
+                logger.warning(f"Test case '{test_case_name}' not found in templates, skipping")
         
         engine_config = EngineConfig(
             name=run_config['name'],
@@ -353,63 +369,12 @@ def create_engine_configs_from_config(config: Dict) -> List[EngineConfig]:
     
     return engine_configs
 
-def create_default_test_cases() -> List[TestCase]:
-    """Create default set of benchmark test cases"""
-    return [
-        TestCase(
-            name="sharegpt",
-            type=TestCaseType.SHAREGPT,
-            num_prompts=1000,
-            result_filename="baseline-sharegpt.json"
-        ),
-        TestCase(
-            name="random_32k_input",
-            type=TestCaseType.RANDOM,
-            random_input_len=32000,
-            random_output_len=100,
-            num_prompts=100,
-            result_filename="baseline-32K.json"
-        ),
-        TestCase(
-            name="random_4k_input",
-            type=TestCaseType.RANDOM,
-            random_input_len=4000,
-            random_output_len=200,
-            num_prompts=500,
-            result_filename="baseline-4K.json"
-        ),
-        TestCase(
-            name="random_2k_input",
-            type=TestCaseType.RANDOM,
-            random_input_len=2000,
-            random_output_len=100,
-            num_prompts=500,
-            result_filename="baseline-2K.json"
-        ),
-        TestCase(
-            name="random_128_input",
-            type=TestCaseType.RANDOM,
-            random_input_len=128,
-            random_output_len=4,
-            num_prompts=1000,
-            result_filename="baseline-128.json"
-        ),
-        TestCase(
-            name="random_2k_output",
-            type=TestCaseType.RANDOM,
-            random_input_len=1000,
-            random_output_len=2000,
-            num_prompts=100,
-            result_filename="baseline-2K-output.json"
-        )
-    ]
-
 def main():
     """Main entry point for the benchmark tool"""
     import argparse
     
     parser = argparse.ArgumentParser(description="LLM Inference Engine Automated Performance Testing")
-    parser.add_argument("--config", "-c", default="default_config.yaml", help="Path to configuration YAML file")
+    parser.add_argument("--config", "-c", default="config.yaml", help="Path to configuration YAML file")
     parser.add_argument("--model", "-m", help="Model path (overrides config model)")
     parser.add_argument("--output-dir", "-o", default="benchmark_results", help="Output directory for results")
     parser.add_argument("--verbose", "-v", action="store_true", help="Enable verbose logging")
