@@ -223,7 +223,8 @@ class EngineManager:
         
         try:
             # Set environment variables
-            self.setup_environment(config.envs)
+            if config.envs:
+                self.setup_environment(config.envs)
             
             # Start inference server based on engine type
             if config.engine == EngineType.VLLM:
@@ -283,43 +284,47 @@ def load_config(config_file: str) -> Dict[str, Any]:
         config = yaml.safe_load(f)
     return config
 
-def create_test_cases_from_config(test_configs: List[Dict]) -> List[TestCase]:
-    """Create TestCase objects from configuration data"""
-    test_cases = []
+def create_test_case_from_config(tc_config: Dict) -> TestCase:
+    """Create a TestCase object from configuration data"""
+    if tc_config['type'] == 'sharegpt':
+        test_case = TestCase(
+            name=tc_config['name'],
+            type=TestCaseType.SHAREGPT,
+            dataset_path=tc_config.get('dataset_path'),
+            num_prompts=tc_config.get('num_prompts', 1000),
+            result_filename=tc_config.get('result_filename')
+        )
+    elif tc_config['type'] == 'random':
+        test_case = TestCase(
+            name=tc_config['name'],
+            type=TestCaseType.RANDOM,
+            random_input_len=tc_config['input_len'],
+            random_output_len=tc_config['output_len'],
+            num_prompts=tc_config.get('num_prompts', 100),
+            seed=tc_config.get('seed', 42),
+            result_filename=tc_config.get('result_filename')
+        )
+    else:
+        raise ValueError(f"Unknown test case type: {tc_config['type']}")
     
-    for tc_config in test_configs:
-        if tc_config['type'] == 'sharegpt':
-            test_case = TestCase(
-                name=tc_config['name'],
-                type=TestCaseType.SHAREGPT,
-                dataset_path=tc_config.get('dataset_path'),
-                num_prompts=tc_config.get('num_prompts', 1000),
-                result_filename=tc_config.get('result_filename')
-            )
-        elif tc_config['type'] == 'random':
-            test_case = TestCase(
-                name=tc_config['name'],
-                type=TestCaseType.RANDOM,
-                random_input_len=tc_config['input_len'],
-                random_output_len=tc_config['output_len'],
-                num_prompts=tc_config.get('num_prompts', 100),
-                seed=tc_config.get('seed', 42),
-                result_filename=tc_config.get('result_filename')
-            )
-        else:
-            raise ValueError(f"Unknown test case type: {tc_config['type']}")
-        
-        test_cases.append(test_case)
-    
-    return test_cases
+    return test_case
 
 def create_engine_configs_from_config(config: Dict) -> List[EngineConfig]:
     """Create EngineConfig objects from configuration data"""
     engine_configs = []
     
-    # Baseline test (vLLM)
+    # Create baseline vLLM configuration if enabled
     if config.get('run_baseline', True):
-        baseline_test_cases = create_default_test_cases()
+        baseline_test_cases = []
+        
+        # Use test cases from configuration or create default ones
+        if 'test_cases' in config:
+            for tc_config in config['test_cases']:
+                baseline_test_cases.append(create_test_case_from_config(tc_config))
+        else:
+            # Fallback to default test cases if none specified
+            baseline_test_cases = create_default_test_cases()
+        
         baseline_config = EngineConfig(
             name="vllm-baseline",
             engine=EngineType.VLLM,
@@ -329,9 +334,11 @@ def create_engine_configs_from_config(config: Dict) -> List[EngineConfig]:
         )
         engine_configs.append(baseline_config)
     
-    # Custom run configurations
+    # Process custom run configurations
     for run_config in config.get('runs', []):
-        test_cases = create_test_cases_from_config(run_config.get('test_cases', []))
+        test_cases = []
+        for tc_config in run_config.get('test_cases', []):
+            test_cases.append(create_test_case_from_config(tc_config))
         
         engine_config = EngineConfig(
             name=run_config['name'],
@@ -356,7 +363,7 @@ def create_default_test_cases() -> List[TestCase]:
             result_filename="baseline-sharegpt.json"
         ),
         TestCase(
-            name="random_32k",
+            name="random_32k_input",
             type=TestCaseType.RANDOM,
             random_input_len=32000,
             random_output_len=100,
@@ -364,7 +371,7 @@ def create_default_test_cases() -> List[TestCase]:
             result_filename="baseline-32K.json"
         ),
         TestCase(
-            name="random_4k",
+            name="random_4k_input",
             type=TestCaseType.RANDOM,
             random_input_len=4000,
             random_output_len=200,
@@ -372,7 +379,7 @@ def create_default_test_cases() -> List[TestCase]:
             result_filename="baseline-4K.json"
         ),
         TestCase(
-            name="random_2k",
+            name="random_2k_input",
             type=TestCaseType.RANDOM,
             random_input_len=2000,
             random_output_len=100,
@@ -380,7 +387,7 @@ def create_default_test_cases() -> List[TestCase]:
             result_filename="baseline-2K.json"
         ),
         TestCase(
-            name="random_128",
+            name="random_128_input",
             type=TestCaseType.RANDOM,
             random_input_len=128,
             random_output_len=4,
@@ -402,7 +409,7 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description="LLM Inference Engine Automated Performance Testing")
-    parser.add_argument("--config", "-c", required=True, help="Path to configuration YAML file")
+    parser.add_argument("--config", "-c", default="default_config.yaml", help="Path to configuration YAML file")
     parser.add_argument("--model", "-m", help="Model path (overrides config model)")
     parser.add_argument("--output-dir", "-o", default="benchmark_results", help="Output directory for results")
     parser.add_argument("--verbose", "-v", action="store_true", help="Enable verbose logging")
