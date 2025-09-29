@@ -1,0 +1,128 @@
+# Default configuration for LLM inference engine benchmarking
+# Runs vLLM baseline with all test cases and SGLang/TRT-LLM with ShareGPT
+
+model: "Qwen/Qwen3-8B"
+run_baseline: true
+baseline_args: "--max-model-len 32768"
+
+# Test case definitions
+test_cases:
+  # ShareGPT test case
+  - name: "sharegpt"
+    type: "sharegpt"
+    num_prompts: 1000
+    dataset_path: "ShareGPT_V3_unfiltered_cleaned_split.json"
+    result_filename: "baseline-sharegpt.json"
+
+  # Random input/output length test cases
+  - name: "random_32k_input"
+    type: "random"
+    input_len: 32000
+    output_len: 100
+    num_prompts: 100
+    seed: 42
+    result_filename: "baseline-32K.json"
+
+  - name: "random_4k_input"
+    type: "random"
+    input_len: 4000
+    output_len: 200
+    num_prompts: 500
+    seed: 42
+    result_filename: "baseline-4K.json"
+
+  - name: "random_2k_input"
+    type: "random"
+    input_len: 2000
+    output_len: 100
+    num_prompts: 500
+    seed: 42
+    result_filename: "baseline-2K.json"
+
+  - name: "random_128_input"
+    type: "random"
+    input_len: 128
+    output_len: 4
+    num_prompts: 1000
+    seed: 42
+    result_filename: "baseline-128.json"
+
+  - name: "random_2k_output"
+    type: "random"
+    input_len: 1000
+    output_len: 2000
+    num_prompts: 100
+    seed: 42
+    result_filename: "baseline-2K-output.json"
+
+# Engine test configurations
+runs:
+  # vLLM baseline - uses all test cases defined above
+  - name: "vllm-baseline"
+    engine: "vllm"
+    conda_env: "vllm"
+    port: 8000
+    test_cases:
+      - name: "sharegpt"
+        type: "sharegpt"
+        num_prompts: 1000
+        result_filename: "vllm_baseline_sharegpt.json"
+
+      - name: "random_32k_input"
+        type: "random"
+        input_len: 32000
+        output_len: 100
+        num_prompts: 100
+        result_filename: "vllm_baseline_32K.json"
+
+      - name: "random_4k_input"
+        type: "random"
+        input_len: 4000
+        output_len: 200
+        num_prompts: 500
+        result_filename: "vllm_baseline_4K.json"
+
+      - name: "random_2k_input"
+        type: "random"
+        input_len: 2000
+        output_len: 100
+        num_prompts: 500
+        result_filename: "vllm_baseline_2K.json"
+
+      - name: "random_128_input"
+        type: "random"
+        input_len: 128
+        output_len: 4
+        num_prompts: 1000
+        result_filename: "vllm_baseline_128.json"
+
+      - name: "random_2k_output"
+        type: "random"
+        input_len: 1000
+        output_len: 2000
+        num_prompts: 100
+        result_filename: "vllm_baseline_2K_output.json"
+
+  # SGLang default configuration - ShareGPT only
+  - name: "sglang-default"
+    engine: "sglang"
+    conda_env: "sglang"
+    port: 8000
+    args: ""
+    test_cases:
+      - name: "sharegpt"
+        type: "sharegpt"
+        num_prompts: 1000
+        result_filename: "sglang_default_sharegpt.json"
+
+  # TRT-LLM default configuration - ShareGPT only
+  - name: "trtllm-default"
+    engine: "trtllm"
+    conda_env: "trtllm"
+    port: 8000
+    args: ""
+    test_cases:
+      - name: "sharegpt"
+        type: "sharegpt"
+        num_prompts: 1000
+        result_filename: "trtllm_default_sharegpt.json"
