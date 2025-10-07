@@ -1,7 +1,7 @@
 #!/bin/bash
 # Robust script to install Miniconda (if not installed) and set up conda environments
 # Environments:
-#   1. vllm -> installs vllm + flashinfer-python
+#   1. vllm -> installs vllm + flashinfer-python + hf_transfer
 #   2. sglang -> installs sglang[all]
 #   3. trtllm -> installs tensorrt_llm
 
@@ -53,7 +53,7 @@ create_env_if_not_exists () {
 }
 
 # vllm env
-create_env_if_not_exists "vllm" "3.12" "vllm flashinfer-python"
+create_env_if_not_exists "vllm" "3.12" "vllm flashinfer-python hf_transfer"
 
 # sglang env
 create_env_if_not_exists "sglang" "3.12" "sglang[all]"
