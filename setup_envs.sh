@@ -53,7 +53,7 @@ create_env_if_not_exists () {
 }
 
 # vllm env
-create_env_if_not_exists "vllm" "3.12" "vllm flashinfer-python hf_transfer"
+create_env_if_not_exists "vllm" "3.12" "vllm[bench] flashinfer-python hf_transfer"
 
 # sglang env
 create_env_if_not_exists "sglang" "3.12" "sglang[all]"
