@@ -48,6 +48,10 @@ create_env_if_not_exists () {
         conda activate $ENV_NAME
         echo "📦 Installing packages: $PKGS"
         pip install $PKGS
+
+        echo "🧩 Ensuring modern libstdc++ runtime..."
+        conda install -c conda-forge -y libstdcxx-ng>=12
+
         conda deactivate
     fi
 }
