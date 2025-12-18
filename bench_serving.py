@@ -97,6 +97,7 @@ def get_default_test_case_templates() -> Dict[str, Dict]:
     
 @dataclass
 class HealthCheck:
+    init_delay: int = 60
     timeout: int = 30
     interval: float = 1.0
 
@@ -142,7 +143,7 @@ class EngineManager:
     def run_command(self, command: str, conda_env: Optional[str] = None, wait: bool = True):
         """Execute shell command with optional conda environment"""
         if conda_env:
-            command = f"conda run -n {conda_env} {command}"
+            command = f"conda run --no-capture-output -n {conda_env} {command}"
         
         logger.info(f"Running command: {command}")
         
@@ -155,25 +156,36 @@ class EngineManager:
             return result
         else:
             # For non-blocking server startup commands
-            process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            command_list = command.split()
+            process = subprocess.Popen(
+                command_list,
+                preexec_fn=os.setsid, # create new process group
+                stdout=sys.stdout, 
+                stderr=sys.stderr)
             self.current_process = process
             return process
         
     def monitor_service_startup(self, config: EngineConfig, process):
         # Start monitoring thread to check service readiness
-        monitor_thread = threading.Thread(target=self._monitor_service_startup, args=(config, process))
-        monitor_thread.daemon = True
-        monitor_thread.start()
+        try:
+            self._monitor_service_startup(config, process)
+        except Exception as e:
+            raise RuntimeError(f"Service startup monitoring failed: {e}")
     
     def _monitor_service_startup(self, config: EngineConfig, process):
         """Monitor service startup process and check when it's ready"""
+        if config.health_check.init_delay > 0:
+            logger.info(f"Waiting for initial delay of {config.health_check.init_delay} seconds")
+            time.sleep(config.health_check.init_delay)
+        
+        logger.info("Checking service readiness...")
         start_time = time.time()
         while time.time() - start_time < config.health_check.timeout:
             if process.poll() is not None:
                 # Process has terminated
                 stdout, stderr = process.communicate()
                 logger.error(f"Service failed to start: {stderr}")
-                return
+                raise RuntimeError("Service process terminated unexpectedly")
             
             # Check if port is ready (simple implementation)
             try:
@@ -185,23 +197,20 @@ class EngineManager:
             
             time.sleep(config.health_check.interval)
         
-        logger.warning("Service startup monitoring timeout")
+        raise TimeoutError(f"Service did not become ready within {config.health_check.timeout} seconds")
+            
     
     def start_vllm(self, config: EngineConfig):
         """Start vLLM inference server"""
         cmd = f"vllm serve {self.model_path} {config.args} --port {config.port}"
         self.run_command(cmd, config.conda_env, wait=False)
         self.monitor_service_startup(config, self.current_process)
-        
-        time.sleep(10)  # Wait for service to initialize
     
     def start_sglang(self, config: EngineConfig):
         """Start SGLang inference server"""
         cmd = f"python -m sglang.launch_server --model-path {self.model_path} --host 0.0.0.0 --port {config.port} {config.args}"
         self.run_command(cmd, config.conda_env, wait=False)
         self.monitor_service_startup(config, self.current_process)
-        
-        time.sleep(15)  # SGLang may need longer startup time
     
     def start_trtllm(self, config: EngineConfig):
         """Start TRT-LLM inference server"""
@@ -209,38 +218,38 @@ class EngineManager:
         self.run_command(cmd, config.conda_env, wait=False)
         self.monitor_service_startup(config, self.current_process)
         
-        time.sleep(20)  # TRT-LLM typically needs longer startup time
-        
     def is_api_ready(
         self, config: EngineConfig
     ) -> bool:
         """
         Access the health endpoint of and check if it is servable.
         """
-        
             
-        health_check_path = "/v1/models"
+        health_check_path = "v1/models"
         try:
             health_check_url = f"http://localhost:{config.port}/{health_check_path}"
             response = requests.get(health_check_url, timeout=1)
             if response.status_code == 200:
                 return True
         except Exception as e:
-            logger.error(f"Health check failed: {e}")
+            raise e
         return False
 
     def stop_current_service(self):
         """Stop currently running inference service"""
         if self.current_process:
             try:
+                logger.info("Stopping current service...")
                 # Send SIGTERM signal
-                self.current_process.terminate()
+                pgid = os.getpgid(self.current_process.pid)
+                os.killpg(pgid, signal.SIGTERM)
+                
                 try:
                     # Wait for process to terminate
                     self.current_process.wait(timeout=10)
                 except subprocess.TimeoutExpired:
                     # Force kill if timeout
-                    self.current_process.kill()
+                    os.killpg(pgid, signal.SIGKILL)
                     self.current_process.wait()
                 
                 logger.info("Successfully stopped current service")
@@ -251,10 +260,10 @@ class EngineManager:
     
     def run_benchmark(self, test_case: TestCase, result_filename: str):
         """Execute performance benchmark for given test case"""
-        base_cmd = f"vllm bench serve --model {self.model_path} --backend openai-chat --endpoint http://localhost:8000/v1/chat/completions"
+        base_cmd = f"vllm bench serve --model {self.model_path} --backend openai-chat --endpoint /v1/chat/completions"
         
         if test_case.type == TestCaseType.SHAREGPT:
-            if not test_case.dataset_path:
+            if not test_case.dataset_path or not os.path.exists(test_case.dataset_path):
                 # Automatically download dataset if not present
                 dataset_path = self.download_sharegpt_dataset()
                 test_case.dataset_path = dataset_path
@@ -267,7 +276,7 @@ class EngineManager:
         if test_case.args:
             cmd = f"{cmd} {args}"
         
-        cmd += f" --result-filename {result_filename}"
+        cmd += f" --result-filename {result_filename} --save-result"
         
         logger.info(f"Running benchmark: {test_case.name}")
         result = self.run_command(cmd, "vllm")
@@ -292,7 +301,7 @@ class EngineManager:
             return data
         return {}
     
-    def run_engine_test(self, config: EngineConfig):
+    def run_engine_test(self, config: EngineConfig, output_dir: str):
         """Execute complete test suite for specified engine configuration"""
         logger.info(f"Starting test for {config.name}")
         
@@ -302,12 +311,16 @@ class EngineManager:
                 self.setup_environment(config.envs)
             
             # Start inference server based on engine type
-            if config.engine == EngineType.VLLM:
-                self.start_vllm(config)
-            elif config.engine == EngineType.SGLANG:
-                self.start_sglang(config)
-            elif config.engine == EngineType.TRTLLM:
-                self.start_trtllm(config)
+            log_file_path = f"{output_dir}/{config.name}.log"
+            
+            with open(log_file_path, "w", buffering=1, encoding="utf-8") as log_file:
+                with RedirectStdoutStderr(log_file):
+                    if config.engine == EngineType.VLLM:
+                        self.start_vllm(config)
+                    elif config.engine == EngineType.SGLANG:
+                        self.start_sglang(config)
+                    elif config.engine == EngineType.TRTLLM:
+                        self.start_trtllm(config)
                 
             # # Wait until service is ready
             # self.wait_until_ready_in_process(config)
@@ -397,9 +410,10 @@ def create_engine_configs_from_config(config: Dict, run_names: Optional[List[str
     engine_configs = []
     
     # default health check
+    default_init_delay = config.get('health_check', {}).get('init_delay', 60)
     default_health_check_timeout = config.get('health_check', {}).get('timeout', 30)
     default_health_check_interval = config.get('health_check', {}).get('interval', 1.0)
-    default_health_check = HealthCheck(timeout=default_health_check_timeout, interval=default_health_check_interval)
+    default_health_check = HealthCheck(timeout=default_health_check_timeout, interval=default_health_check_interval, init_delay=default_init_delay)
     
     # Create test case templates dictionary
     test_case_templates = get_default_test_case_templates()
@@ -445,10 +459,11 @@ def create_engine_configs_from_config(config: Dict, run_names: Optional[List[str
                 test_cases.append(test_case)
             else:
                 logger.warning(f"Test case '{test_case_name}' not found in templates, skipping")
-                
-        default_health_check_timeout = config.get('health_check', {}).get('timeout', None)
-        default_health_check_interval = config.get('health_check', {}).get('interval', None)
-        health_check = HealthCheck(timeout=default_health_check_timeout, interval=default_health_check_interval) if default_health_check_timeout and default_health_check_interval else default_health_check
+        
+        health_check_init_delay = run_config.get('health_check', {}).get('init_delay', None) 
+        health_check_timeout = run_config.get('health_check', {}).get('timeout', None)
+        health_check_interval = run_config.get('health_check', {}).get('interval', None)
+        health_check = HealthCheck(timeout=health_check_timeout, interval=health_check_interval, init_delay=health_check_init_delay) if health_check_timeout and health_check_interval and health_check_init_delay else default_health_check
         
         engine_config = EngineConfig(
             name=run_config['name'],
@@ -482,6 +497,7 @@ def main():
     
     # Load configuration
     config = load_config(args.config)
+    output_dir = args.output_dir or config.get('output_dir', 'benchmark_results')
     model_path = args.model or config['model']
     
     # Create engine manager
@@ -493,7 +509,7 @@ def main():
     # Execute all benchmark tests
     for engine_config in engine_configs:
         try:
-            manager.run_engine_test(engine_config)
+            manager.run_engine_test(engine_config, output_dir)
             logger.info(f"Successfully completed test: {engine_config.name}")
         except Exception as e:
             logger.error(f"Failed to run test {engine_config.name}: {e}")
@@ -502,6 +518,20 @@ def main():
     # Generate final report
     report_file = manager.generate_report()
     logger.info(f"All tests completed. Report: {report_file}")
+
+class RedirectStdoutStderr:
+    def __init__(self, target):
+        self.target = target
+
+    def __enter__(self):
+        self.original_stdout = sys.stdout
+        self.original_stderr = sys.stderr
+        sys.stdout = self.target
+        sys.stderr = self.target
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        sys.stdout = self.original_stdout
+        sys.stderr = self.original_stderr
 
 if __name__ == "__main__":
     main()

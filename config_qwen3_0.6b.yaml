@@ -1,6 +1,10 @@
 model: "Qwen/Qwen3-0.6B"
 run_baseline: false
-baseline_args: "--max-model-len 32768"
+baseline_args: "--gpu-memory-utilization 0.5"
+health_check:
+  init_delay: 20
+  timeout: 360
+  interval: 5
 
 # Define benchmark cases
 test_cases:
@@ -21,15 +25,22 @@ runs:
   - name: "vllm-baseline"
     engine: "vllm"
     conda_env: "vllm"
-    args: ""
+    args: "--gpu-memory-utilization 0.5"
     # result_filename defaults to {run_name}_{test_case_name}.json
     test_cases:
       - sharegpt
+
+  - name: "sglang-baseline"
+    engine: "sglang"
+    conda_env: "sglang"
+    args: "--mem-fraction-static 0.5"
+    test_cases:
+      - sharegpt
+
   - name: "vllm-4k"
     engine: "vllm"
     conda_env: "vllm"
-    args: ""
-    # result_filename defaults to {run_name}_{test_case_name}.json
+    args: "--gpu-memory-utilization 0.5"
     test_cases:
       - random_4k
 
