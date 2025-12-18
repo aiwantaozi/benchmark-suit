@@ -1,0 +1,35 @@
+model: "Qwen/Qwen3-0.6B"
+run_baseline: false
+baseline_args: "--max-model-len 32768"
+
+# Define benchmark cases
+test_cases:
+  sharegpt:
+    type: sharegpt
+    num_prompts: 1000
+    dataset_path: "ShareGPT_V3_unfiltered_cleaned_split.json"
+
+  random_4k:
+    type: random
+    input_len: 4000
+    output_len: 200
+    num_prompts: 500
+    seed: 42
+
+# Engine test configurations
+runs:
+  - name: "vllm-baseline"
+    engine: "vllm"
+    conda_env: "vllm"
+    args: ""
+    # result_filename defaults to {run_name}_{test_case_name}.json
+    test_cases:
+      - sharegpt
+  - name: "vllm-4k"
+    engine: "vllm"
+    conda_env: "vllm"
+    args: ""
+    # result_filename defaults to {run_name}_{test_case_name}.json
+    test_cases:
+      - random_4k
+

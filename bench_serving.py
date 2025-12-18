@@ -6,6 +6,7 @@ Supports performance comparison of vLLM, SGLang, TRT-LLM and other engines
 
 import os
 import sys
+import requests
 import yaml
 import time
 import json
@@ -48,6 +49,7 @@ class TestCase:
     num_prompts: int = 100
     seed: int = 42
     result_filename: Optional[str] = None
+    args: Optional[str] = None
 
 def get_default_test_case_templates() -> Dict[str, Dict]:
     return {
@@ -92,6 +94,11 @@ def get_default_test_case_templates() -> Dict[str, Dict]:
             "seed": 42
         }
     }
+    
+@dataclass
+class HealthCheck:
+    timeout: int = 30
+    interval: float = 1.0
 
 @dataclass
 class EngineConfig:
@@ -103,6 +110,7 @@ class EngineConfig:
     args: str = ""
     port: int = 8000
     conda_env: Optional[str] = None
+    health_check: Optional[HealthCheck] = None
 
 @dataclass
 class BenchmarkResult:
@@ -149,18 +157,18 @@ class EngineManager:
             # For non-blocking server startup commands
             process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             self.current_process = process
-            
-            # Start monitoring thread to check service readiness
-            monitor_thread = threading.Thread(target=self._monitor_service_startup, args=(process,))
-            monitor_thread.daemon = True
-            monitor_thread.start()
-            
             return process
+        
+    def monitor_service_startup(self, config: EngineConfig, process):
+        # Start monitoring thread to check service readiness
+        monitor_thread = threading.Thread(target=self._monitor_service_startup, args=(config, process))
+        monitor_thread.daemon = True
+        monitor_thread.start()
     
-    def _monitor_service_startup(self, process, max_wait=60):
+    def _monitor_service_startup(self, config: EngineConfig, process):
         """Monitor service startup process and check when it's ready"""
         start_time = time.time()
-        while time.time() - start_time < max_wait:
+        while time.time() - start_time < config.health_check.timeout:
             if process.poll() is not None:
                 # Process has terminated
                 stdout, stderr = process.communicate()
@@ -169,18 +177,13 @@ class EngineManager:
             
             # Check if port is ready (simple implementation)
             try:
-                import socket
-                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                s.settimeout(1)
-                result = s.connect_ex(('localhost', 8000))
-                s.close()
-                if result == 0:
-                    logger.info("Service is ready on port 8000")
+                if self.is_api_ready(config):
+                    logger.info("Service is ready")
                     return
             except:
                 pass
             
-            time.sleep(2)
+            time.sleep(config.health_check.interval)
         
         logger.warning("Service startup monitoring timeout")
     
@@ -188,20 +191,44 @@ class EngineManager:
         """Start vLLM inference server"""
         cmd = f"vllm serve {self.model_path} {config.args} --port {config.port}"
         self.run_command(cmd, config.conda_env, wait=False)
+        self.monitor_service_startup(config, self.current_process)
+        
         time.sleep(10)  # Wait for service to initialize
     
     def start_sglang(self, config: EngineConfig):
         """Start SGLang inference server"""
         cmd = f"python -m sglang.launch_server --model-path {self.model_path} --host 0.0.0.0 --port {config.port} {config.args}"
         self.run_command(cmd, config.conda_env, wait=False)
+        self.monitor_service_startup(config, self.current_process)
+        
         time.sleep(15)  # SGLang may need longer startup time
     
     def start_trtllm(self, config: EngineConfig):
         """Start TRT-LLM inference server"""
         cmd = f"trtllm-serve {self.model_path} {config.args}"
         self.run_command(cmd, config.conda_env, wait=False)
+        self.monitor_service_startup(config, self.current_process)
+        
         time.sleep(20)  # TRT-LLM typically needs longer startup time
-    
+        
+    def is_api_ready(
+        self, config: EngineConfig
+    ) -> bool:
+        """
+        Access the health endpoint of and check if it is servable.
+        """
+        
+            
+        health_check_path = "/v1/models"
+        try:
+            health_check_url = f"http://localhost:{config.port}/{health_check_path}"
+            response = requests.get(health_check_url, timeout=1)
+            if response.status_code == 200:
+                return True
+        except Exception as e:
+            logger.error(f"Health check failed: {e}")
+        return False
+
     def stop_current_service(self):
         """Stop currently running inference service"""
         if self.current_process:
@@ -224,7 +251,7 @@ class EngineManager:
     
     def run_benchmark(self, test_case: TestCase, result_filename: str):
         """Execute performance benchmark for given test case"""
-        base_cmd = f"vllm bench serve --model {self.model_path} --endpoint-type openai-chat --endpoint http://localhost:8000/v1/chat/completions"
+        base_cmd = f"vllm bench serve --model {self.model_path} --backend openai-chat --endpoint http://localhost:8000/v1/chat/completions"
         
         if test_case.type == TestCaseType.SHAREGPT:
             if not test_case.dataset_path:
@@ -236,6 +263,9 @@ class EngineManager:
         
         elif test_case.type == TestCaseType.RANDOM:
             cmd = f"{base_cmd} --dataset-name random --random-input-len {test_case.random_input_len} --random-output-len {test_case.random_output_len} --num-prompts {test_case.num_prompts} --seed {test_case.seed}"
+        
+        if test_case.args:
+            cmd = f"{cmd} {args}"
         
         cmd += f" --result-filename {result_filename}"
         
@@ -278,6 +308,9 @@ class EngineManager:
                 self.start_sglang(config)
             elif config.engine == EngineType.TRTLLM:
                 self.start_trtllm(config)
+                
+            # # Wait until service is ready
+            # self.wait_until_ready_in_process(config)
             
             # Execute all test cases for this engine
             for test_case in config.test_cases:
@@ -359,12 +392,17 @@ def create_test_case_from_dict(name: str, tc_config: Dict) -> TestCase:
     
     return test_case
 
-def create_engine_configs_from_config(config: Dict) -> List[EngineConfig]:
+def create_engine_configs_from_config(config: Dict, run_names: Optional[List[str]]) -> List[EngineConfig]:
     """Create EngineConfig objects from configuration data"""
     engine_configs = []
     
+    # default health check
+    default_health_check_timeout = config.get('health_check', {}).get('timeout', 30)
+    default_health_check_interval = config.get('health_check', {}).get('interval', 1.0)
+    default_health_check = HealthCheck(timeout=default_health_check_timeout, interval=default_health_check_interval)
+    
     # Create test case templates dictionary
-    test_case_templates = get_default_test_cases()
+    test_case_templates = get_default_test_case_templates()
     
     if 'test_cases' in config:
         test_case_templates = {}
@@ -386,12 +424,17 @@ def create_engine_configs_from_config(config: Dict) -> List[EngineConfig]:
             engine=EngineType.VLLM,
             test_cases=baseline_test_cases,
             args=config.get('baseline_args', ''),
-            conda_env="vllm"
+            conda_env="vllm",
+            health_check=default_health_check
         )
         engine_configs.append(baseline_config)
     
     # Process custom run configurations
     for run_config in config.get('runs', []):
+        if run_names and run_config['name'] not in run_names:
+            logger.info(f"Skipping run {run_config['name']} as it's not in specified run names")
+            continue
+        
         test_cases = []
         
         # Get test cases by name from templates
@@ -402,6 +445,10 @@ def create_engine_configs_from_config(config: Dict) -> List[EngineConfig]:
                 test_cases.append(test_case)
             else:
                 logger.warning(f"Test case '{test_case_name}' not found in templates, skipping")
+                
+        default_health_check_timeout = config.get('health_check', {}).get('timeout', None)
+        default_health_check_interval = config.get('health_check', {}).get('interval', None)
+        health_check = HealthCheck(timeout=default_health_check_timeout, interval=default_health_check_interval) if default_health_check_timeout and default_health_check_interval else default_health_check
         
         engine_config = EngineConfig(
             name=run_config['name'],
@@ -410,7 +457,8 @@ def create_engine_configs_from_config(config: Dict) -> List[EngineConfig]:
             envs=run_config.get('envs', {}),
             args=run_config.get('args', ''),
             port=run_config.get('port', 8000),
-            conda_env=run_config.get('conda_env')
+            conda_env=run_config.get('conda_env'),
+            health_check=health_check
         )
         engine_configs.append(engine_config)
     
@@ -425,6 +473,7 @@ def main():
     parser.add_argument("--model", "-m", help="Model path (overrides config model)")
     parser.add_argument("--output-dir", "-o", default="benchmark_results", help="Output directory for results")
     parser.add_argument("--verbose", "-v", action="store_true", help="Enable verbose logging")
+    parser.add_argument("--run-names", type=lambda s: s.split(","), default=[], help="Specific run case names to run, comma-separated case names, e.g. n1,n2,n3")
     
     args = parser.parse_args()
     
@@ -439,7 +488,7 @@ def main():
     manager = EngineManager(model_path, args.output_dir)
     
     # Create engine configurations from YAML
-    engine_configs = create_engine_configs_from_config(config)
+    engine_configs = create_engine_configs_from_config(config, args.run_names)
     
     # Execute all benchmark tests
     for engine_config in engine_configs:
