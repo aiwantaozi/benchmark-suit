@@ -321,9 +321,6 @@ class EngineManager:
                         self.start_sglang(config)
                     elif config.engine == EngineType.TRTLLM:
                         self.start_trtllm(config)
-                
-            # # Wait until service is ready
-            # self.wait_until_ready_in_process(config)
             
             # Execute all test cases for this engine
             for test_case in config.test_cases:
