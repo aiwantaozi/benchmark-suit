@@ -48,29 +48,32 @@ create_env_if_not_exists () {
 
     if conda info --envs | grep -qE "^${ENV_NAME}\s"; then
         echo "✅ Environment '$ENV_NAME' already exists. Skipping creation."
+        pip install $PKGS
     else
         conda init
         echo "🌱 Creating environment '$ENV_NAME'..."
         conda create -n $ENV_NAME -y python=$PY_VER
 
-        CONDA_BASE=$(conda info --base)
-        source "$CONDA_BASE/etc/profile.d/conda.sh"
-
-        conda activate $ENV_NAME
-        echo "📦 Installing packages: $PKGS"
-        pip install $PKGS
-
         echo "🧩 Ensuring modern libstdc++ runtime..."
         conda install -c conda-forge -y libstdcxx-ng>=12
-
-        conda deactivate
     fi
+
+    CONDA_BASE=$(conda info --base)
+    source "$CONDA_BASE/etc/profile.d/conda.sh"
+
+    conda activate $ENV_NAME
+    echo "📦 Installing packages: $PKGS"
+    pip install $PKGS
+
+    conda deactivate
 }
 
 install_vllm() {
   echo "🚀 Installing vllm env..."
   create_env_if_not_exists "vllm" "3.12" \
-    "vllm[bench] flashinfer-python hf_transfer"
+    "vllm[bench] --pre --extra-index-url https://wheels.vllm.ai/nightly"
+  create_env_if_not_exists "vllm" "3.12" \
+    "flashinfer-python hf_transfer"
 }
 
 install_sglang() {

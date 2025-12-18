@@ -8,6 +8,10 @@
 
 #### SGLang
 
+apt update
+apt install -y libnuma1 libnuma-dev
+pip install --upgrade sgl_kernel
+
 **Usage**: The activation and weight optimization above are turned on by default for DeepSeek V3 models. DeepGEMM is enabled by default on NVIDIA Hopper/Blackwell GPUs and disabled by default on other devices. DeepGEMM can also be manually turned off by setting the environment variable `SGLANG_ENABLE_JIT_DEEPGEMM=0`.
 
 ```{tip}
@@ -23,3 +27,11 @@ python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --tru
 ```bash
 install_deepgemm.sh
 ```
+
+#### tensorRT
+
+deepgemm
+https://github.com/NVIDIA/TensorRT-LLM/blob/main/examples/models/core/deepseek_v3/README.md#deepgemm
+
+####
+tensortt
