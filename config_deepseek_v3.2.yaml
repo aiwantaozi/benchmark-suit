@@ -61,7 +61,7 @@ runs:
   - name: "vllm-baseline"
     engine: "vllm"
     conda_env: "vllm"
-    args: "--tp 8"
+    args: "--tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3"
     # result_filename defaults to {run_name}_{test_case_name}.json
     test_cases:
       - sharegpt
@@ -88,7 +88,7 @@ runs:
   - name: "vllm-speculative-decoding-mtp"
     engine: "vllm"
     conda_env: "vllm"
-    args: "--tp 8 --speculative-config='{"method": "deepseek_mtp", "num_speculative_tokens": 1}'"
+    args: "--tp 8  --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3 --speculative-config='{"method": "deepseek_mtp", "num_speculative_tokens": 1}'"
     test_cases:
       - sharegpt
 
