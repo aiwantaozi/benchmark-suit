@@ -82,7 +82,7 @@ install_sglang() {
 install_trtllm() {
   echo "🚀 Installing trtllm env..."
   create_env_if_not_exists "trtllm" "3.12" \
-    "tensorrt_llm"
+    "--pre --extra-index-url https://pypi.nvidia.com/ tensorrt-llm"
 }
 
 install_deepgemm() {
