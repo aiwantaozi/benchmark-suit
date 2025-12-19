@@ -3,8 +3,8 @@ run_baseline: false
 baseline_args: ""
 health_check:
   init_delay: 180
-  timeout: 1800 # 30 minutes
-  interval: 5.0
+  timeout: 3200 # 30 minutes
+  interval: 10.0
 
 # Define benchmark cases
 test_cases:
