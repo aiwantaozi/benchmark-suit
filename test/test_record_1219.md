@@ -79,6 +79,20 @@ License-Expression: Apache-2.0
 Location: /root/miniconda3/envs/vllm/lib/python3.12/site-packages
 Requires: aiohttp, anthropic, blake3, cachetools, cbor2, cloudpickle, compressed-tensors, depyf, diskcache, einops, fastapi, filelock, flashinfer-python, gguf, ijson, lark, llguidance, lm-format-enforcer, mcp, mistral_common, model-hosting-container-standards, msgspec, ninja, numba, numpy, openai, openai-harmony, opencv-python-headless, outlines_core, partial-json-parser, pillow, prometheus-fastapi-instrumentator, prometheus_client, protobuf, psutil, py-cpuinfo, pybase64, pydantic, python-json-logger, pyyaml, pyzmq, ray, regex, requests, scipy, sentencepiece, setproctitle, setuptools, six, tiktoken, tokenizers, torch, torchaudio, torchvision, tqdm, transformers, typing_extensions, watchfiles, xgrammar
 
+
+1.
+vllm serve deepseek-ai/DeepSeek-V3.2 \
+--tensor-parallel-size 1 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3 -dp 8 --enable-expert-parallel 
+起不来
+
+2.
+
+vllm serve deepseek-ai/DeepSeek-V3.2 \
+--tensor-parallel-size 1 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3 -dp 8 --enable-expert-parallel --max-num-seqs 128 --max-model-len 122880 \
+--port 8000
+
+total --max-model-len is 163840
+
 ### TOOD
 
 https://github.com/vllm-project/vllm/pull/29848

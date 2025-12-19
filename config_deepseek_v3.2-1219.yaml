@@ -237,6 +237,8 @@ runs:
       --reasoning-parser deepseek_v3
       -dp 8
       --enable-expert-parallel
+      --max-num-seqs 128
+      --max-model-len 122880
     test_cases:
       - sharegpt
       - random_32k
@@ -254,6 +256,8 @@ runs:
       --reasoning-parser deepseek_v3
       -dp 8
       --enable-expert-parallel
+      --max-num-seqs 128
+      --max-model-len 122880
       --all2all-backend pplx
     test_cases:
       - sharegpt
@@ -268,14 +272,15 @@ runs:
       -dcp 8
     test_cases:
       - sharegpt
-  - name: "vllm-tp-short-ctx-bf16"
-    engine: "vllm"
-    conda_env: "vllm"
-    args: >
-      --tokenizer-mode deepseek_v32
-      --reasoning-parser deepseek_v3
-      -tp 8
-      -dcp 8
-      --kv-cache-dtype bfloat16
-    test_cases:
-      - random_128
+  
+  # - name: "vllm-tp-short-ctx-bf16"
+  #   engine: "vllm"
+  #   conda_env: "vllm"
+  #   args: >
+  #     --tokenizer-mode deepseek_v32
+  #     --reasoning-parser deepseek_v3
+  #     -tp 8
+  #     -dcp 8
+  #     --kv-cache-dtype bfloat16
+  #   test_cases:
+  #     - random_128
