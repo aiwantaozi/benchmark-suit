@@ -1,0 +1,147 @@
+[0;36m(APIServer pid=14145)[0;0m INFO 12-19 14:28:11 [api_server.py:1351] vLLM API server version 0.13.0
+[0;36m(APIServer pid=14145)[0;0m INFO 12-19 14:28:11 [utils.py:253] non-default args: {'model_tag': 'deepseek-ai/DeepSeek-V3.2', 'model': 'deepseek-ai/DeepSeek-V3.2', 'tokenizer_mode': 'deepseek_v32', 'reasoning_parser': 'deepseek_v3', 'data_parallel_size': 8, 'enable_expert_parallel': True}
+[0;36m(APIServer pid=14145)[0;0m You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+[0;36m(APIServer pid=14145)[0;0m INFO 12-19 14:28:13 [config.py:682] Detected quantization_config.scale_fmt=ue8m0; enabling UE8M0 for DeepGEMM.
+[0;36m(APIServer pid=14145)[0;0m INFO 12-19 14:28:21 [model.py:514] Resolved architecture: DeepseekV32ForCausalLM
+[0;36m(APIServer pid=14145)[0;0m INFO 12-19 14:28:21 [model.py:1661] Using max model len 163840
+[0;36m(APIServer pid=14145)[0;0m INFO 12-19 14:28:21 [scheduler.py:230] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(APIServer pid=14145)[0;0m INFO 12-19 14:28:21 [cuda.py:211] Forcing kv cache block size to 64 for FlashMLA backend.
+[0;36m(APIServer pid=14145)[0;0m INFO 12-19 14:28:24 [utils.py:821] Started DP Coordinator process (PID: 14420)
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:28:35 [core.py:93] Initializing a V1 LLM engine (v0.13.0) with config: model='deepseek-ai/DeepSeek-V3.2', speculative_config=None, tokenizer='deepseek-ai/DeepSeek-V3.2', skip_tokenizer_init=False, tokenizer_mode=deepseek_v32, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=163840, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=8, disable_custom_all_reduce=False, quantization=fp8, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='deepseek_v3', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False), seed=0, served_model_name=deepseek-ai/DeepSeek-V3.2, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['+quant_fp8', 'none', '+quant_fp8'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'eliminate_noops': True, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False}, 'local_cache_dir': None}
+[0;36m(EngineCore_DP6 pid=14429)[0;0m INFO 12-19 14:28:41 [parallel_state.py:1203] world_size=8 rank=6 local_rank=6 distributed_init_method=tcp://127.0.0.1:55819 backend=nccl
+[0;36m(EngineCore_DP4 pid=14427)[0;0m INFO 12-19 14:28:42 [parallel_state.py:1203] world_size=8 rank=4 local_rank=4 distributed_init_method=tcp://127.0.0.1:55819 backend=nccl
+[0;36m(EngineCore_DP3 pid=14426)[0;0m INFO 12-19 14:28:42 [parallel_state.py:1203] world_size=8 rank=3 local_rank=3 distributed_init_method=tcp://127.0.0.1:55819 backend=nccl
+[0;36m(EngineCore_DP2 pid=14425)[0;0m INFO 12-19 14:28:42 [parallel_state.py:1203] world_size=8 rank=2 local_rank=2 distributed_init_method=tcp://127.0.0.1:55819 backend=nccl
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:28:42 [parallel_state.py:1203] world_size=8 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:55819 backend=nccl
+[0;36m(EngineCore_DP1 pid=14424)[0;0m INFO 12-19 14:28:42 [parallel_state.py:1203] world_size=8 rank=1 local_rank=1 distributed_init_method=tcp://127.0.0.1:55819 backend=nccl
+[0;36m(EngineCore_DP7 pid=14430)[0;0m INFO 12-19 14:28:42 [parallel_state.py:1203] world_size=8 rank=7 local_rank=7 distributed_init_method=tcp://127.0.0.1:55819 backend=nccl
+[0;36m(EngineCore_DP5 pid=14428)[0;0m INFO 12-19 14:28:42 [parallel_state.py:1203] world_size=8 rank=5 local_rank=5 distributed_init_method=tcp://127.0.0.1:55819 backend=nccl
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:28:43 [pynccl.py:111] vLLM is using nccl==2.27.5
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:28:53 [cuda_communicator.py:120] Using AgRsAll2AllManager all2all manager.
+[0;36m(EngineCore_DP7 pid=14430)[0;0m INFO 12-19 14:28:53 [parallel_state.py:1411] rank 7 in world size 8 is assigned as DP rank 7, PP rank 0, PCP rank 0, TP rank 0, EP rank 7
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:28:53 [parallel_state.py:1411] rank 0 in world size 8 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank 0
+[0;36m(EngineCore_DP1 pid=14424)[0;0m INFO 12-19 14:28:53 [parallel_state.py:1411] rank 1 in world size 8 is assigned as DP rank 1, PP rank 0, PCP rank 0, TP rank 0, EP rank 1
+[0;36m(EngineCore_DP6 pid=14429)[0;0m INFO 12-19 14:28:53 [parallel_state.py:1411] rank 6 in world size 8 is assigned as DP rank 6, PP rank 0, PCP rank 0, TP rank 0, EP rank 6
+[0;36m(EngineCore_DP3 pid=14426)[0;0m INFO 12-19 14:28:53 [parallel_state.py:1411] rank 3 in world size 8 is assigned as DP rank 3, PP rank 0, PCP rank 0, TP rank 0, EP rank 3
+[0;36m(EngineCore_DP5 pid=14428)[0;0m INFO 12-19 14:28:53 [parallel_state.py:1411] rank 5 in world size 8 is assigned as DP rank 5, PP rank 0, PCP rank 0, TP rank 0, EP rank 5
+[0;36m(EngineCore_DP2 pid=14425)[0;0m INFO 12-19 14:28:53 [parallel_state.py:1411] rank 2 in world size 8 is assigned as DP rank 2, PP rank 0, PCP rank 0, TP rank 0, EP rank 2
+[0;36m(EngineCore_DP4 pid=14427)[0;0m INFO 12-19 14:28:53 [parallel_state.py:1411] rank 4 in world size 8 is assigned as DP rank 4, PP rank 0, PCP rank 0, TP rank 0, EP rank 4
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:28:55 [gpu_model_runner.py:3562] Starting to load model deepseek-ai/DeepSeek-V3.2...
+[0;36m(EngineCore_DP3 pid=14426)[0;0m INFO 12-19 14:28:55 [layer.py:494] [EP Rank 3/8] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 32/256. Experts local to global index map: 0->96, 1->97, 2->98, 3->99, 4->100, 5->101, 6->102, 7->103, 8->104, 9->105, 10->106, 11->107, 12->108, 13->109, 14->110, 15->111, 16->112, 17->113, 18->114, 19->115, 20->116, 21->117, 22->118, 23->119, 24->120, 25->121, 26->122, 27->123, 28->124, 29->125, 30->126, 31->127.
+[0;36m(EngineCore_DP3 pid=14426)[0;0m INFO 12-19 14:28:55 [fp8.py:205] Using Triton backend for FP8 MoE
+[0;36m(EngineCore_DP7 pid=14430)[0;0m INFO 12-19 14:28:55 [layer.py:494] [EP Rank 7/8] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 32/256. Experts local to global index map: 0->224, 1->225, 2->226, 3->227, 4->228, 5->229, 6->230, 7->231, 8->232, 9->233, 10->234, 11->235, 12->236, 13->237, 14->238, 15->239, 16->240, 17->241, 18->242, 19->243, 20->244, 21->245, 22->246, 23->247, 24->248, 25->249, 26->250, 27->251, 28->252, 29->253, 30->254, 31->255.
+[0;36m(EngineCore_DP7 pid=14430)[0;0m INFO 12-19 14:28:55 [fp8.py:205] Using Triton backend for FP8 MoE
+[0;36m(EngineCore_DP4 pid=14427)[0;0m INFO 12-19 14:28:55 [layer.py:494] [EP Rank 4/8] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 32/256. Experts local to global index map: 0->128, 1->129, 2->130, 3->131, 4->132, 5->133, 6->134, 7->135, 8->136, 9->137, 10->138, 11->139, 12->140, 13->141, 14->142, 15->143, 16->144, 17->145, 18->146, 19->147, 20->148, 21->149, 22->150, 23->151, 24->152, 25->153, 26->154, 27->155, 28->156, 29->157, 30->158, 31->159.
+[0;36m(EngineCore_DP4 pid=14427)[0;0m INFO 12-19 14:28:55 [fp8.py:205] Using Triton backend for FP8 MoE
+[0;36m(EngineCore_DP6 pid=14429)[0;0m INFO 12-19 14:28:55 [layer.py:494] [EP Rank 6/8] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 32/256. Experts local to global index map: 0->192, 1->193, 2->194, 3->195, 4->196, 5->197, 6->198, 7->199, 8->200, 9->201, 10->202, 11->203, 12->204, 13->205, 14->206, 15->207, 16->208, 17->209, 18->210, 19->211, 20->212, 21->213, 22->214, 23->215, 24->216, 25->217, 26->218, 27->219, 28->220, 29->221, 30->222, 31->223.
+[0;36m(EngineCore_DP6 pid=14429)[0;0m INFO 12-19 14:28:55 [fp8.py:205] Using Triton backend for FP8 MoE
+[0;36m(EngineCore_DP5 pid=14428)[0;0m INFO 12-19 14:28:55 [layer.py:494] [EP Rank 5/8] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 32/256. Experts local to global index map: 0->160, 1->161, 2->162, 3->163, 4->164, 5->165, 6->166, 7->167, 8->168, 9->169, 10->170, 11->171, 12->172, 13->173, 14->174, 15->175, 16->176, 17->177, 18->178, 19->179, 20->180, 21->181, 22->182, 23->183, 24->184, 25->185, 26->186, 27->187, 28->188, 29->189, 30->190, 31->191.
+[0;36m(EngineCore_DP5 pid=14428)[0;0m INFO 12-19 14:28:55 [fp8.py:205] Using Triton backend for FP8 MoE
+[0;36m(EngineCore_DP1 pid=14424)[0;0m INFO 12-19 14:28:55 [layer.py:494] [EP Rank 1/8] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 32/256. Experts local to global index map: 0->32, 1->33, 2->34, 3->35, 4->36, 5->37, 6->38, 7->39, 8->40, 9->41, 10->42, 11->43, 12->44, 13->45, 14->46, 15->47, 16->48, 17->49, 18->50, 19->51, 20->52, 21->53, 22->54, 23->55, 24->56, 25->57, 26->58, 27->59, 28->60, 29->61, 30->62, 31->63.
+[0;36m(EngineCore_DP1 pid=14424)[0;0m INFO 12-19 14:28:55 [fp8.py:205] Using Triton backend for FP8 MoE
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:28:55 [cuda.py:351] Using FLASHMLA_SPARSE attention backend out of potential backends: ('FLASHMLA_SPARSE',)
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:28:55 [layer.py:372] Enabled separate cuda stream for MoE shared_experts
+[0;36m(EngineCore_DP2 pid=14425)[0;0m INFO 12-19 14:28:55 [layer.py:494] [EP Rank 2/8] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 32/256. Experts local to global index map: 0->64, 1->65, 2->66, 3->67, 4->68, 5->69, 6->70, 7->71, 8->72, 9->73, 10->74, 11->75, 12->76, 13->77, 14->78, 15->79, 16->80, 17->81, 18->82, 19->83, 20->84, 21->85, 22->86, 23->87, 24->88, 25->89, 26->90, 27->91, 28->92, 29->93, 30->94, 31->95.
+[0;36m(EngineCore_DP2 pid=14425)[0;0m INFO 12-19 14:28:55 [fp8.py:205] Using Triton backend for FP8 MoE
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:28:55 [layer.py:494] [EP Rank 0/8] Expert parallelism is enabled. Expert placement strategy: linear. Local/global number of experts: 32/256. Experts local to global index map: 0->0, 1->1, 2->2, 3->3, 4->4, 5->5, 6->6, 7->7, 8->8, 9->9, 10->10, 11->11, 12->12, 13->13, 14->14, 15->15, 16->16, 17->17, 18->18, 19->19, 20->20, 21->21, 22->22, 23->23, 24->24, 25->25, 26->26, 27->27, 28->28, 29->29, 30->30, 31->31.
+[0;36m(EngineCore_DP0 pid=14423)[0;0m WARNING 12-19 14:28:55 [fp8.py:186] DeepGEMM backend requested but not available.
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:28:55 [fp8.py:205] Using Triton backend for FP8 MoE
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:29:19 [weight_utils.py:487] Time spent downloading weights for deepseek-ai/DeepSeek-V3.2: 1.460874 seconds
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/163 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:   1% Completed | 2/163 [00:00<00:09, 16.14it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:   2% Completed | 4/163 [00:00<00:21,  7.25it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:   3% Completed | 5/163 [00:00<00:29,  5.40it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:   4% Completed | 7/163 [00:00<00:20,  7.52it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:   5% Completed | 8/163 [00:01<00:46,  3.31it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:   6% Completed | 9/163 [00:01<00:38,  3.96it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:   7% Completed | 11/163 [00:02<00:26,  5.72it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:   7% Completed | 12/163 [00:02<00:29,  5.17it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:   8% Completed | 13/163 [00:02<00:26,  5.75it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:   9% Completed | 14/163 [00:02<00:29,  5.03it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  10% Completed | 16/163 [00:03<00:28,  5.16it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  11% Completed | 18/163 [00:03<00:27,  5.25it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  12% Completed | 20/163 [00:03<00:27,  5.27it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  13% Completed | 22/163 [00:03<00:20,  6.73it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  14% Completed | 23/163 [00:04<00:22,  6.11it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  15% Completed | 25/163 [00:04<00:23,  5.85it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  16% Completed | 26/163 [00:04<00:22,  6.06it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  17% Completed | 28/163 [00:04<00:16,  8.00it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  18% Completed | 30/163 [00:05<00:19,  6.82it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  20% Completed | 32/163 [00:05<00:16,  8.00it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  20% Completed | 33/163 [00:05<00:19,  6.61it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  21% Completed | 35/163 [00:05<00:19,  6.70it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  22% Completed | 36/163 [00:05<00:17,  7.09it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  23% Completed | 38/163 [00:06<00:19,  6.47it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  25% Completed | 40/163 [00:06<00:15,  8.03it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  26% Completed | 42/163 [00:06<00:16,  7.14it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  26% Completed | 43/163 [00:07<00:21,  5.70it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  27% Completed | 44/163 [00:07<00:23,  5.16it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  28% Completed | 45/163 [00:07<00:21,  5.56it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  29% Completed | 47/163 [00:07<00:18,  6.22it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  29% Completed | 48/163 [00:08<00:22,  5.20it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  30% Completed | 49/163 [00:08<00:24,  4.57it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  31% Completed | 51/163 [00:08<00:17,  6.45it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  33% Completed | 54/163 [00:08<00:12,  8.41it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  35% Completed | 57/163 [00:09<00:12,  8.74it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  36% Completed | 58/163 [00:09<00:11,  8.80it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  37% Completed | 60/163 [00:09<00:09, 10.61it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  38% Completed | 62/163 [00:09<00:15,  6.42it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  39% Completed | 63/163 [00:10<00:18,  5.47it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  40% Completed | 65/163 [00:10<00:16,  5.87it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  41% Completed | 67/163 [00:10<00:13,  6.96it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  42% Completed | 69/163 [00:10<00:14,  6.61it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  43% Completed | 70/163 [00:11<00:16,  5.58it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  44% Completed | 72/163 [00:11<00:12,  7.20it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  45% Completed | 73/163 [00:11<00:12,  7.26it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  46% Completed | 75/163 [00:11<00:09,  9.30it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  47% Completed | 77/163 [00:11<00:10,  8.32it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  48% Completed | 79/163 [00:12<00:14,  5.76it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  50% Completed | 82/163 [00:12<00:09,  8.21it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  52% Completed | 85/163 [00:12<00:07, 10.52it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  53% Completed | 87/163 [00:13<00:08,  8.61it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  55% Completed | 89/163 [00:13<00:07,  9.31it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  56% Completed | 91/163 [00:13<00:10,  6.69it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  57% Completed | 93/163 [00:13<00:08,  8.07it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  58% Completed | 95/163 [00:14<00:09,  7.42it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  60% Completed | 97/163 [00:14<00:09,  7.01it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  60% Completed | 98/163 [00:14<00:11,  5.89it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  61% Completed | 100/163 [00:15<00:08,  7.43it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  62% Completed | 101/163 [00:15<00:08,  7.49it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  63% Completed | 102/163 [00:15<00:09,  6.71it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  63% Completed | 103/163 [00:15<00:10,  5.72it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  64% Completed | 105/163 [00:15<00:07,  7.75it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  65% Completed | 106/163 [00:16<00:09,  6.17it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  66% Completed | 108/163 [00:16<00:09,  5.91it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  67% Completed | 109/163 [00:16<00:08,  6.38it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  68% Completed | 111/163 [00:16<00:06,  7.79it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  69% Completed | 112/163 [00:16<00:08,  6.20it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  69% Completed | 113/163 [00:17<00:09,  5.53it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  71% Completed | 115/163 [00:17<00:06,  7.53it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  71% Completed | 116/163 [00:17<00:07,  6.04it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  72% Completed | 118/163 [00:17<00:05,  7.97it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  74% Completed | 120/163 [00:18<00:06,  7.10it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  75% Completed | 123/163 [00:18<00:04,  9.61it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  77% Completed | 125/163 [00:18<00:04,  8.41it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  78% Completed | 127/163 [00:18<00:05,  6.88it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  79% Completed | 129/163 [00:19<00:05,  6.51it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  80% Completed | 131/163 [00:19<00:05,  6.22it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  82% Completed | 133/163 [00:19<00:04,  6.35it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  83% Completed | 135/163 [00:20<00:03,  7.79it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  83% Completed | 136/163 [00:20<00:04,  6.43it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  85% Completed | 138/163 [00:20<00:03,  8.02it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  86% Completed | 140/163 [00:20<00:03,  7.16it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  87% Completed | 142/163 [00:21<00:03,  6.67it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  88% Completed | 144/163 [00:21<00:02,  7.77it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  89% Completed | 145/163 [00:21<00:02,  6.64it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  90% Completed | 147/163 [00:21<00:01,  8.34it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  91% Completed | 149/163 [00:22<00:02,  5.60it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  93% Completed | 151/163 [00:22<00:01,  6.60it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  94% Completed | 153/163 [00:22<00:01,  6.43it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  95% Completed | 155/163 [00:23<00:01,  6.50it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  97% Completed | 158/163 [00:23<00:00,  9.28it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  98% Completed | 160/163 [00:23<00:00,  8.95it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards:  99% Completed | 162/163 [00:23<00:00,  8.12it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m Loading safetensors checkpoint shards: 100% Completed | 163/163 [00:23<00:00,  6.86it/s]
+[0;36m(EngineCore_DP0 pid=14423)[0;0m 
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:29:45 [default_loader.py:308] Loading weights took 23.79 seconds
+[0;36m(EngineCore_DP0 pid=14423)[0;0m INFO 12-19 14:29:45 [gpu_model_runner.py:3659] Model loading took 96.8702 GiB memory and 50.006043 seconds
