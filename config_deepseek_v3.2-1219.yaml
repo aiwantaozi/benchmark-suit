@@ -230,8 +230,14 @@ runs:
       -dcp 8
     test_cases:
       - sharegpt
-      - random_32k
-      - random_4k
-      - random_2k
+  - name: "vllm-tp-short-ctx-bf16"
+    engine: "vllm"
+    conda_env: "vllm"
+    args: >
+      --tokenizer-mode deepseek_v32
+      --reasoning-parser deepseek_v3
+      -tp 8
+      -dcp 8
+      --kv-cache-dtype bfloat16
+    test_cases:
       - random_128
-      - random_2k_output
