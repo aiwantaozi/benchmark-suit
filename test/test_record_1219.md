@@ -60,3 +60,5 @@ python bench_serving.py --config ./config_deepseek_v3.2-1219.yaml --output-dir .
 2025-12-19 12:49:59,517 - llm_benchmark - INFO - All tests completed. Report: test/deepseek_v3.2-results-1219/benchmark_report_1766148599.json
 
 6. sglang-official-recommended-tp-dp
+
+7. sglang-speculative-decoding-mtp-step3-env-max-req-256
