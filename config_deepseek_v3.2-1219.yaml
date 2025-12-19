@@ -87,7 +87,7 @@ runs:
   - name: "sglang-official-recommended-tp-dp"
     engine: "sglang"
     conda_env: "sglang"
-    args: "--tensor-parallel-size 8 --enable-dp-attention --dp 8"
+    args: "--tensor-parallel-size 8 --enable-dp-attention --chat-template ./tool_chat_template_deepseekv32.jinja --dp 8"
     test_cases:
       - sharegpt
   # after test: 可能根据结果排除所有包含dp的测试
@@ -95,7 +95,7 @@ runs:
   - name: "sglang-official-recommended-tp-dp-ep"
     engine: "sglang"
     conda_env: "sglang"
-    args: "--tensor-parallel-size 8 --enable-dp-attention --ep 8 --dp 8"
+    args: "--tensor-parallel-size 8 --enable-dp-attention --chat-template ./tool_chat_template_deepseekv32.jinja --ep 8 --dp 8"
     test_cases:
       - sharegpt
 
@@ -105,6 +105,7 @@ runs:
     conda_env: "sglang"
     args: >
       --tensor-parallel-size 8
+      --chat-template ./tool_chat_template_deepseekv32.jinja
       --dp 8
       --enable-dp-attention
       --speculative-algorithm EAGLE
@@ -123,6 +124,7 @@ runs:
   #   args: >
   #     --tensor-parallel-size 8
   #     --dp 8
+  #     --chat-template ./tool_chat_template_deepseekv32.jinja
   #     --enable-dp-attention
   #     --speculative-algorithm EAGLE
   #     --speculative-num-steps 3
@@ -138,6 +140,7 @@ runs:
     engine: "sglang"
     conda_env: "sglang"
     args: >
+      --chat-template ./tool_chat_template_deepseekv32.jinja
       --trust-remote-code
       --tp 8
       --dp 2
@@ -156,6 +159,7 @@ runs:
     engine: "sglang"
     conda_env: "sglang"
     args: >
+      --chat-template ./tool_chat_template_deepseekv32.jinja
       --trust-remote-code
       --tp 8
       --enable-dp-attention
@@ -173,6 +177,7 @@ runs:
     engine: "sglang"
     conda_env: "sglang"
     args: >
+      --chat-template ./tool_chat_template_deepseekv32.jinja
       --trust-remote-code
       --tp 8
       --ep 8
@@ -190,6 +195,7 @@ runs:
     engine: "sglang"
     conda_env: "sglang"
     args: >
+      --chat-template ./tool_chat_template_deepseekv32.jinja
       --trust-remote-code
       --tp 8
       --ep 8
@@ -208,6 +214,7 @@ runs:
     engine: "vllm"
     conda_env: "vllm"
     args: >
+      --tensor-parallel-size 1
       --tokenizer-mode deepseek_v32
       --reasoning-parser deepseek_v3
       -dp 8
@@ -219,6 +226,19 @@ runs:
       - random_2k
       - random_128
       - random_2k_output
+  
+  - name: "vllm-dp-ep-pplx"
+    engine: "vllm"
+    conda_env: "vllm"
+    args: >
+      --tensor-parallel-size 1
+      --tokenizer-mode deepseek_v32
+      --reasoning-parser deepseek_v3
+      -dp 8
+      --enable-expert-parallel
+      --all2all-backend pplx
+    test_cases:
+      - sharegpt
 
   - name: "vllm-tp-dcp"
     engine: "vllm"

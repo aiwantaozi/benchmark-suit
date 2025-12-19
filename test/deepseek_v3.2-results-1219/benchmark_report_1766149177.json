@@ -1,0 +1,48 @@
+{
+  "timestamp": "2025-12-19 12:59:37",
+  "model": "deepseek-ai/DeepSeek-V3.2",
+  "results": [
+    {
+      "config_name": "sglang-official-recommended-tp-dp",
+      "engine": "sglang",
+      "test_case": "sharegpt",
+      "result_file": "test/deepseek_v3.2-results-1219/sglang_official_recommended_tp_dp_sharegpt.json",
+      "timestamp": "2025-12-19 12:59:32",
+      "metrics": {
+        "date": "20251219-125931",
+        "endpoint_type": "openai-chat",
+        "backend": "openai-chat",
+        "label": null,
+        "model_id": "deepseek-ai/DeepSeek-V3.2",
+        "tokenizer_id": "deepseek-ai/DeepSeek-V3.2",
+        "num_prompts": 1000,
+        "request_rate": "inf",
+        "burstiness": 1.0,
+        "max_concurrency": null,
+        "duration": 56.61726312339306,
+        "completed": 1000,
+        "failed": 0,
+        "total_input_tokens": 219111,
+        "total_output_tokens": 197116,
+        "request_throughput": 17.662457434944805,
+        "request_goodput": null,
+        "output_throughput": 3481.5529597465797,
+        "total_token_throughput": 7351.591670774771,
+        "max_output_tokens_per_s": 11298.0,
+        "max_concurrent_requests": 1000,
+        "mean_ttft_ms": 7815.000899516046,
+        "median_ttft_ms": 8024.808079004288,
+        "std_ttft_ms": 2684.8849692943268,
+        "p99_ttft_ms": 12928.45877662301,
+        "mean_tpot_ms": 287.8561525004791,
+        "median_tpot_ms": 107.5794549090085,
+        "std_tpot_ms": 426.6076063199459,
+        "p99_tpot_ms": 2096.1754451791444,
+        "mean_itl_ms": 91.67994565158088,
+        "median_itl_ms": 58.86957794427872,
+        "std_itl_ms": 443.0875073668107,
+        "p99_itl_ms": 317.43244960904116
+      }
+    }
+  ]
+}

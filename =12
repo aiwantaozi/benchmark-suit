@@ -1,0 +1,26 @@
+2 channel Terms of Service accepted
+Channels:
+ - conda-forge
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): - \ | / - \ | / done
+Solving environment: \ done
+
+## Package Plan ##
+
+  environment location: /root/miniconda3/envs/sglang
+
+  added / updated specs:
+    - libstdcxx-ng
+
+
+The following packages will be UPDATED:
+
+  openssl              pkgs/main::openssl-3.0.18-hd6dcaed_0 --> conda-forge::openssl-3.6.0-h26f9b46_0 
+
+
+
+Downloading and Extracting Packages: ...working... done
+Preparing transaction: / done
+Verifying transaction: \ | done
+Executing transaction: - done

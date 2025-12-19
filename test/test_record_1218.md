@@ -39,7 +39,6 @@ vllm serve deepseek-ai/DeepSeek-V3.2 \
 --tool-call-parser deepseek_v32 \
 --enable-auto-tool-choice \
 --reasoning-parser deepseek_v3
-
 这里花了 27分钟
 
 6. simple test
@@ -182,8 +181,6 @@ mkdir -p ./cache/test
 conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name random --random-input-len 4000 --random-output-len 200 --num-prompts 10 --seed 42 --result-filename ./cache/test/sglang-simple-test.json --save-result
 
 5. base line
-
-
 python bench_serving.py --config ./config_deepseek_v3.2.yaml --output-dir ./.cache/deepseek_v3.2-results --run-names sglang-baseline
 2025-12-18 14:16:42,826 - llm_benchmark - INFO - Completed test case: sharegpt
 2025-12-18 14:16:42,827 - llm_benchmark - INFO - Running benchmark: random_32k

@@ -1,0 +1,62 @@
+
+1. 
+hf download deepseek-ai/DeepSeek-V3.2
+
+
+## vllm
+
+0.13.0
+
+1. 
+./setup_env.sh vllm
+
+2. 
+./setup_ep_env.sh
+
+## sglang
+
+1. 
+./setup_env.sh sglang
+
+2. dataset
+download_dataset.sh
+
+3. 
+python -m sglang.launch_server --model deepseek-ai/DeepSeek-V3.2 --tp 8 --port 8000 --chat-template ./tool_chat_template_deepseekv32.jinja
+如果遇到这个错误：https://github.com/sgl-project/sglang/issues/10354
+pip3 install sgl-kernel --force-reinstall
+16分钟
+
+4. sglang-no-chat-template
+python bench_serving.py --config ./config_deepseek_v3.2-1219.yaml --output-dir ./.cache/deepseek_v3.2-results --run-names sglang-baseline
+
+2025-12-19 12:32:37,192 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n sglang python -m sglang.launch_server --model-path deepseek-ai/DeepSeek-V3.2 --host 0.0.0.0 --port 8000 --tensor-parallel-size 8
+2025-12-19 12:32:37,198 - llm_benchmark - INFO - Waiting for initial delay of 180 seconds
+
+2025-12-19 12:35:37,199 - llm_benchmark - INFO - Checking service readiness...
+2025-12-19 12:38:27,382 - llm_benchmark - INFO - Service is ready
+2025-12-19 12:38:27,383 - llm_benchmark - INFO - Running benchmark: sharegpt
+2025-12-19 12:38:27,383 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name sharegpt --dataset-path ShareGPT_V3_unfiltered_cleaned_split.json --num-prompts 1000 --result-filename test/deepseek_v3.2-results-1219/sglang_no_chat_template_sharegpt.json --save-result
+2025-12-19 12:41:11,054 - llm_benchmark - INFO - Completed test case: sharegpt
+2025-12-19 12:41:11,054 - llm_benchmark - INFO - Stopping current service...
+2025-12-19 12:41:11,258 - llm_benchmark - INFO - Successfully stopped current service
+2025-12-19 12:41:16,259 - llm_benchmark - INFO - Successfully completed test: sglang-no-chat-template
+2025-12-19 12:41:16,261 - llm_benchmark - INFO - Report generated: test/deepseek_v3.2-results-1219/benchmark_report_1766148076.json
+2025-12-19 12:41:16,261 - llm_benchmark - INFO - All tests completed. Report: test/deepseek_v3.2-results-1219/benchmark_report_1766148076.json
+
+
+5. sglang-dp-attention 
+2025-12-19 12:43:21,281 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n sglang python -m sglang.launch_server --model-path deepseek-ai/DeepSeek-V3.2 --host 0.0.0.0 --port 8000 --tensor-parallel-size 8 --chat-template ./tool_chat_template_deepseekv32.jinja --enable-dp-attention
+2025-12-19 12:43:21,287 - llm_benchmark - INFO - Waiting for initial delay of 180 seconds
+2025-12-19 12:46:21,287 - llm_benchmark - INFO - Checking service readiness...
+2025-12-19 12:47:51,440 - llm_benchmark - INFO - Service is ready
+2025-12-19 12:47:51,441 - llm_benchmark - INFO - Running benchmark: sharegpt
+2025-12-19 12:47:51,441 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name sharegpt --dataset-path ShareGPT_V3_unfiltered_cleaned_split.json --num-prompts 1000 --result-filename test/deepseek_v3.2-results-1219/sglang_dp_attention_sharegpt.json --save-result
+2025-12-19 12:49:54,294 - llm_benchmark - INFO - Completed test case: sharegpt
+2025-12-19 12:49:54,294 - llm_benchmark - INFO - Stopping current service...
+2025-12-19 12:49:54,511 - llm_benchmark - INFO - Successfully stopped current service
+2025-12-19 12:49:59,515 - llm_benchmark - INFO - Successfully completed test: sglang-dp-attention
+2025-12-19 12:49:59,517 - llm_benchmark - INFO - Report generated: test/deepseek_v3.2-results-1219/benchmark_report_1766148599.json
+2025-12-19 12:49:59,517 - llm_benchmark - INFO - All tests completed. Report: test/deepseek_v3.2-results-1219/benchmark_report_1766148599.json
+
+6. sglang-official-recommended-tp-dp

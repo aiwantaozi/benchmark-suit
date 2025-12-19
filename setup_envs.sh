@@ -37,7 +37,7 @@ install_cuda(){
 # Ensure dependencies
 install_dependencies(){
     echo "🔧 Installing system dependencies..."
-    sudo apt-get update && apt-get -y install libopenmpi-dev numactl
+    apt-get update && apt-get -y install libopenmpi-dev numactl libnuma1 libnuma-dev
 }
 
 # ===== 2. Create and configure environments =====
@@ -71,27 +71,25 @@ create_env_if_not_exists () {
 install_vllm() {
   echo "🚀 Installing vllm env..."
   create_env_if_not_exists "vllm" "3.12" \
-    "vllm[bench] --pre --extra-index-url https://wheels.vllm.ai/nightly"
-  create_env_if_not_exists "vllm" "3.12" \
-    "flashinfer-python hf_transfer"
+    "vllm[bench] flashinfer-python hf_transfer torch-c-dlpack-ext"
+
+#   # pre
+#   create_env_if_not_exists "vllm" "3.12" \
+#     "vllm[bench] --pre --extra-index-url https://wheels.vllm.ai/nightly"
+#   create_env_if_not_exists "vllm" "3.12" \
+#     "flashinfer-python hf_transfer"
 }
 
 install_sglang() {
   echo "🚀 Installing sglang env..."
   create_env_if_not_exists "sglang" "3.12" \
-    "sglang[all]"
+    "sglang[all] torch-c-dlpack-ext"
 }
 
 install_trtllm() {
   echo "🚀 Installing trtllm env..."
   create_env_if_not_exists "trtllm" "3.12" \
     "--pre --extra-index-url https://pypi.nvidia.com/ tensorrt-llm"
-}
-
-install_deepgemm() {
-    echo "TODO"
-    # https://github.com/sgl-project/sglang/issues/9710
-    # https://blog.csdn.net/gitblog_00617/article/details/151436824
 }
 
 usage() {
@@ -105,6 +103,16 @@ Examples:
   $0                 # install all envs
 EOF
 }
+
+
+
+
+# Install
+./download_dataset.sh
+install_cuda
+
+install_dependencies
+
 
 ALL_ENVS=("vllm" "sglang" "trtllm")
 
