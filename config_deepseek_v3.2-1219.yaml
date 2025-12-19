@@ -213,6 +213,21 @@ runs:
   #   test_cases:
   #     - sharegpt
 
+  - name: "vllm-tp"
+    engine: "vllm"
+    conda_env: "vllm"
+    args: >
+      --tensor-parallel-size 8
+      --tokenizer-mode deepseek_v32
+      --reasoning-parser deepseek_v3
+    test_cases:
+      - sharegpt
+      - random_32k
+      - random_4k
+      - random_2k
+      - random_128
+      - random_2k_output
+  
   - name: "vllm-dp-ep"
     engine: "vllm"
     conda_env: "vllm"
