@@ -8,6 +8,7 @@ health_check:
 
 # Define benchmark cases
 test_cases:
+  
   sharegpt:
     type: sharegpt
     num_prompts: 1000
@@ -75,7 +76,6 @@ runs:
     engine: "vllm"
     conda_env: "vllm"
     args: "-tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3"
-    # result_filename defaults to {run_name}_{test_case_name}.json
     test_cases:
       # - sharegpt
       - random_32k
