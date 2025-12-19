@@ -112,7 +112,6 @@ runs:
       --speculative-num-steps 3
       --speculative-eagle-topk 1
       --speculative-num-draft-tokens 4
-      --model-loader-extra-config {"enable_multithread_load": true}
       --max-running-requests 256
     test_cases:
       - sharegpt
@@ -130,7 +129,6 @@ runs:
   #     --speculative-num-steps 3
   #     --speculative-eagle-topk 1
   #     --speculative-num-draft-tokens 4
-  #     --model-loader-extra-config {"enable_multithread_load": true}
   #     --max-running-requests 128
   #   test_cases:
   #     - sharegpt
