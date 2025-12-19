@@ -313,14 +313,14 @@ class EngineManager:
             # Start inference server based on engine type
             log_file_path = f"{output_dir}/{config.name}.log"
             
-            # with open(log_file_path, "w", buffering=1, encoding="utf-8") as log_file:
-            #     with RedirectStdoutStderr(log_file):
-            #         if config.engine == EngineType.VLLM:
-            #             self.start_vllm(config)
-            #         elif config.engine == EngineType.SGLANG:
-            #             self.start_sglang(config)
-            #         elif config.engine == EngineType.TRTLLM:
-            #             self.start_trtllm(config)
+            with open(log_file_path, "w", buffering=1, encoding="utf-8") as log_file:
+                with RedirectStdoutStderr(log_file):
+                    if config.engine == EngineType.VLLM:
+                        self.start_vllm(config)
+                    elif config.engine == EngineType.SGLANG:
+                        self.start_sglang(config)
+                    elif config.engine == EngineType.TRTLLM:
+                        self.start_trtllm(config)
             
             # Execute all test cases for this engine
             for test_case in config.test_cases:
