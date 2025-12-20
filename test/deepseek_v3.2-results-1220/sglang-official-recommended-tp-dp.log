@@ -1,0 +1,2 @@
+/root/miniconda3/envs/sglang/bin/python: Error while finding module specification for 'sglang.launch_server' (ModuleNotFoundError: No module named 'sglang')
+ERROR conda.cli.main_run:execute(127): `conda run python -m sglang.launch_server --model-path deepseek-ai/DeepSeek-V3.2 --host 0.0.0.0 --port 8000 --tensor-parallel-size 8 --enable-dp-attention --chat-template ./tool_chat_template_deepseekv32.jinja --dp 8` failed. (See above for error)

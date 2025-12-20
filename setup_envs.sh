@@ -71,19 +71,30 @@ create_env_if_not_exists () {
 install_vllm() {
   echo "🚀 Installing vllm env..."
   create_env_if_not_exists "vllm" "3.12" \
-    "vllm[bench] flashinfer-python hf_transfer torch-c-dlpack-ext"
+    "vllm[bench] flashinfer-python hf_transfer torch-c-dlpack-ext uv"
 
 #   # pre
 #   create_env_if_not_exists "vllm" "3.12" \
 #     "vllm[bench] --pre --extra-index-url https://wheels.vllm.ai/nightly"
 #   create_env_if_not_exists "vllm" "3.12" \
 #     "flashinfer-python hf_transfer"
+
+  CONDA_BASE=$(conda info --base)
+  source "$CONDA_BASE/etc/profile.d/conda.sh"
+  conda activate vllm
+  ./setup_ep_env.sh
+  ./install_deepgemm.sh
 }
 
 install_sglang() {
   echo "🚀 Installing sglang env..."
   create_env_if_not_exists "sglang" "3.12" \
-    "sglang[all] torch-c-dlpack-ext"
+    "sglang[all] torch-c-dlpack-ext uv"
+
+  CONDA_BASE=$(conda info --base)
+  source "$CONDA_BASE/etc/profile.d/conda.sh"
+  conda activate sglang
+  python -m sglang.launch_server --model deepseek-ai/DeepSeek-V3.2 --tp 8 --port 8000 --chat-template ./tool_chat_template_deepseekv32.jinja
 }
 
 install_trtllm() {
