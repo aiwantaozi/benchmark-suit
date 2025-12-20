@@ -14,3 +14,24 @@ Sglang: 0.5.6.post2
 
 vLLM: vllm-0.13.0
 Sglang: 0.5.6.post2
+
+
+| engine | tp-sharegpt | dp-ep-sharegpt | tp-attention | tp-dp-attention | tp-dp-ep |  mtp | cp  |
+| ------ | ----------: | -------------: | -----------: | --------------: | -------: | ---: | --- |
+| vllm   |             |           5176 |              |                 |          |      |     |
+| sglang |        3012 |                |         4190 |            7351 |     7293 | 3718 |     |
+
+
+## TODO
+
+### SGLANG
+
+1. best + 128k random
+
+other datasets
+
+### vllm
+
+1. tp
+
+other datasets + 128k random

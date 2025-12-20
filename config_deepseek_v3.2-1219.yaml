@@ -228,6 +228,17 @@ runs:
       - random_128
       - random_2k_output
   
+  - name: "vllm-tp-dcp"
+    engine: "vllm"
+    conda_env: "vllm"
+    args: >
+      --tokenizer-mode deepseek_v32
+      --reasoning-parser deepseek_v3
+      -tp 8
+      -dcp 8
+    test_cases:
+      - sharegpt
+
   - name: "vllm-dp-ep"
     engine: "vllm"
     conda_env: "vllm"
@@ -241,11 +252,19 @@ runs:
       --max-model-len 122880
     test_cases:
       - sharegpt
-      - random_32k
-      - random_4k
-      - random_2k
-      - random_128
-      - random_2k_output
+  
+  - name: "vllm-dp-ep-half-ctx"
+    engine: "vllm"
+    conda_env: "vllm"
+    args: >
+      --tensor-parallel-size 1
+      --tokenizer-mode deepseek_v32
+      --reasoning-parser deepseek_v3
+      -dp 8
+      --enable-expert-parallel
+      --max-model-len 81920
+    test_cases:
+      - sharegpt
   
   - name: "vllm-dp-ep-pplx"
     engine: "vllm"
@@ -259,17 +278,6 @@ runs:
       --max-num-seqs 128
       --max-model-len 122880
       --all2all-backend pplx
-    test_cases:
-      - sharegpt
-
-  - name: "vllm-tp-dcp"
-    engine: "vllm"
-    conda_env: "vllm"
-    args: >
-      --tokenizer-mode deepseek_v32
-      --reasoning-parser deepseek_v3
-      -tp 8
-      -dcp 8
     test_cases:
       - sharegpt
   

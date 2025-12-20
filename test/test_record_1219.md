@@ -93,6 +93,19 @@ vllm serve deepseek-ai/DeepSeek-V3.2 \
 
 total --max-model-len is 163840
 
+3.
+
+(vllm) root@77ace2f29454:~/benchmark-suit# python bench_serving.py --config ./config_deepseek_v3.2-1219.yaml --output-dir ./test/deepseek_v3.2-results-1219 --run-names vllm-tp
+
+2025-12-19 16:00:58,723 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm serve deepseek-ai/DeepSeek-V3.2 --tensor-parallel-size 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3
+ --port 8000
+2025-12-19 16:00:58,729 - llm_benchmark - INFO - Waiting for initial delay of 180 seconds
+2025-12-19 16:03:58,736 - llm_benchmark - INFO - Checking service readiness...
+2025-12-19 16:23:41,261 - llm_benchmark - INFO - Service is ready
+2025-12-19 16:23:41,262 - llm_benchmark - INFO - Running benchmark: sharegpt
+2025-12-19 16:23:41,262 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name sharegpt --dataset-path ShareGPT_V3_unfiltered_cleaned_split.json --num-prompts 1000 --result-filename test/deepseek_v3.2-results-1219/vllm_tp_sharegpt.json --save-result
+
+
 ### TOOD
 
 https://github.com/vllm-project/vllm/pull/29848
