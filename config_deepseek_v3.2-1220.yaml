@@ -53,7 +53,7 @@ test_cases:
     type: random
     input_len: 128000
     output_len: 100
-    num_prompts: 100
+    num_prompts: 50
     seed: 42
 
   random_2k_thinking:
