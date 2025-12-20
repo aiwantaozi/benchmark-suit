@@ -66,17 +66,17 @@ test_cases:
 
 # Engine test configurations
 runs:
-  # - name: "sglang-official-recommended-tp-dp"
-  #   engine: "sglang"
-  #   conda_env: "sglang"
-  #   args: "--tensor-parallel-size 8 --enable-dp-attention --chat-template ./tool_chat_template_deepseekv32.jinja --dp 8"
-  #   test_cases:
-  #     - random_32k
-  #     - random_4k
-  #     - random_2k
-  #     - random_128
-  #     - random_128k
-  #     - random_2k_output
+  - name: "sglang-official-recommended-tp-dp"
+    engine: "sglang"
+    conda_env: "sglang"
+    args: "--tensor-parallel-size 8 --enable-dp-attention --chat-template ./tool_chat_template_deepseekv32.jinja --dp 8"
+    test_cases:
+      - random_32k
+      - random_4k
+      - random_2k
+      - random_128
+      - random_128k
+      - random_2k_output
 
   - name: "vllm-tp"
     engine: "vllm"

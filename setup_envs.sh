@@ -90,11 +90,6 @@ install_sglang() {
   echo "🚀 Installing sglang env..."
   create_env_if_not_exists "sglang" "3.12" \
     "sglang[all] torch-c-dlpack-ext uv"
-
-  CONDA_BASE=$(conda info --base)
-  source "$CONDA_BASE/etc/profile.d/conda.sh"
-  conda activate sglang
-  python -m sglang.launch_server --model deepseek-ai/DeepSeek-V3.2 --tp 8 --port 8000 --chat-template ./tool_chat_template_deepseekv32.jinja
 }
 
 install_trtllm() {

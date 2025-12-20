@@ -1,0 +1,788 @@
+[0;36m(APIServer pid=98345)[0;0m INFO 12-20 10:00:59 [api_server.py:1351] vLLM API server version 0.13.0
+[0;36m(APIServer pid=98345)[0;0m INFO 12-20 10:00:59 [utils.py:253] non-default args: {'model_tag': 'deepseek-ai/DeepSeek-V3.2', 'model': 'deepseek-ai/DeepSeek-V3.2', 'tokenizer_mode': 'deepseek_v32', 'max_model_len': 122880, 'reasoning_parser': 'deepseek_v3', 'data_parallel_size': 8, 'enable_expert_parallel': True, 'all2all_backend': 'pplx', 'max_num_seqs': 128}
+[0;36m(APIServer pid=98345)[0;0m You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+[0;36m(APIServer pid=98345)[0;0m INFO 12-20 10:00:59 [config.py:682] Detected quantization_config.scale_fmt=ue8m0; enabling UE8M0 for DeepGEMM.
+[0;36m(APIServer pid=98345)[0;0m INFO 12-20 10:00:59 [model.py:514] Resolved architecture: DeepseekV32ForCausalLM
+[0;36m(APIServer pid=98345)[0;0m INFO 12-20 10:00:59 [model.py:1661] Using max model len 122880
+[0;36m(APIServer pid=98345)[0;0m INFO 12-20 10:01:00 [scheduler.py:230] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(APIServer pid=98345)[0;0m INFO 12-20 10:01:00 [cuda.py:211] Forcing kv cache block size to 64 for FlashMLA backend.
+[0;36m(APIServer pid=98345)[0;0m INFO 12-20 10:01:01 [utils.py:821] Started DP Coordinator process (PID: 98517)
+[0;36m(EngineCore_DP0 pid=98520)[0;0m INFO 12-20 10:01:09 [core.py:93] Initializing a V1 LLM engine (v0.13.0) with config: model='deepseek-ai/DeepSeek-V3.2', speculative_config=None, tokenizer='deepseek-ai/DeepSeek-V3.2', skip_tokenizer_init=False, tokenizer_mode=deepseek_v32, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=122880, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=8, disable_custom_all_reduce=False, quantization=fp8, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='deepseek_v3', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False), seed=0, served_model_name=deepseek-ai/DeepSeek-V3.2, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['+quant_fp8', 'none', '+quant_fp8'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'eliminate_noops': True, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 256, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False}, 'local_cache_dir': None}
+[0;36m(EngineCore_DP7 pid=98527)[0;0m INFO 12-20 10:01:16 [parallel_state.py:1203] world_size=8 rank=7 local_rank=7 distributed_init_method=tcp://127.0.0.1:40947 backend=nccl
+[0;36m(EngineCore_DP0 pid=98520)[0;0m INFO 12-20 10:01:17 [parallel_state.py:1203] world_size=8 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:40947 backend=nccl
+[0;36m(EngineCore_DP6 pid=98526)[0;0m INFO 12-20 10:01:17 [parallel_state.py:1203] world_size=8 rank=6 local_rank=6 distributed_init_method=tcp://127.0.0.1:40947 backend=nccl
+[0;36m(EngineCore_DP4 pid=98524)[0;0m INFO 12-20 10:01:17 [parallel_state.py:1203] world_size=8 rank=4 local_rank=4 distributed_init_method=tcp://127.0.0.1:40947 backend=nccl
+[0;36m(EngineCore_DP2 pid=98522)[0;0m INFO 12-20 10:01:17 [parallel_state.py:1203] world_size=8 rank=2 local_rank=2 distributed_init_method=tcp://127.0.0.1:40947 backend=nccl
+[0;36m(EngineCore_DP1 pid=98521)[0;0m INFO 12-20 10:01:17 [parallel_state.py:1203] world_size=8 rank=1 local_rank=1 distributed_init_method=tcp://127.0.0.1:40947 backend=nccl
+[0;36m(EngineCore_DP5 pid=98525)[0;0m INFO 12-20 10:01:17 [parallel_state.py:1203] world_size=8 rank=5 local_rank=5 distributed_init_method=tcp://127.0.0.1:40947 backend=nccl
+[0;36m(EngineCore_DP3 pid=98523)[0;0m INFO 12-20 10:01:17 [parallel_state.py:1203] world_size=8 rank=3 local_rank=3 distributed_init_method=tcp://127.0.0.1:40947 backend=nccl
+[0;36m(EngineCore_DP0 pid=98520)[0;0m INFO 12-20 10:01:18 [pynccl.py:111] vLLM is using nccl==2.27.5
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866] EngineCore failed to start.
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866] Traceback (most recent call last):
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self._init_executor()
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.driver_worker.init_device()
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     init_worker_distributed_environment(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     initialize_model_parallel(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     return GroupCoordinator(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]     assert has_pplx(), (
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m ERROR 12-20 10:01:25 [core.py:866] AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866] EngineCore failed to start.
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866] Traceback (most recent call last):
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self._init_executor()
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.driver_worker.init_device()
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     init_worker_distributed_environment(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     initialize_model_parallel(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     return GroupCoordinator(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]     assert has_pplx(), (
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m ERROR 12-20 10:01:25 [core.py:866] AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP4 pid=98524)[0;0m Process EngineCore_DP4:
+[0;36m(EngineCore_DP7 pid=98527)[0;0m Process EngineCore_DP7:
+[0;36m(EngineCore_DP4 pid=98524)[0;0m Traceback (most recent call last):
+[0;36m(EngineCore_DP7 pid=98527)[0;0m Traceback (most recent call last):
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     self.run()
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 108, in run
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     self._target(*self._args, **self._kwargs)
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 870, in run_engine_core
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     self.run()
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     raise e
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 108, in run
+[0;36m(EngineCore_DP4 pid=98524)[0;0m                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     self._target(*self._args, **self._kwargs)
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     super().__init__(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 870, in run_engine_core
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     raise e
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     super().__init__(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP7 pid=98527)[0;0m                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     super().__init__(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     self._init_executor()
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     super().__init__(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     self.driver_worker.init_device()
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP7 pid=98527)[0;0m                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     self._init_executor()
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     init_worker_distributed_environment(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     self.driver_worker.init_device()
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     initialize_model_parallel(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     init_worker_distributed_environment(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     return GroupCoordinator(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     initialize_model_parallel(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     return GroupCoordinator(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP4 pid=98524)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m     assert has_pplx(), (
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP4 pid=98524)[0;0m            ^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP4 pid=98524)[0;0m AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP7 pid=98527)[0;0m                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP7 pid=98527)[0;0m     assert has_pplx(), (
+[0;36m(EngineCore_DP7 pid=98527)[0;0m            ^^^^^^^^^^
+[0;36m(EngineCore_DP7 pid=98527)[0;0m AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866] EngineCore failed to start.
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866] Traceback (most recent call last):
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self._init_executor()
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.driver_worker.init_device()
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     init_worker_distributed_environment(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     initialize_model_parallel(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     return GroupCoordinator(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]     assert has_pplx(), (
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m ERROR 12-20 10:01:25 [core.py:866] AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP5 pid=98525)[0;0m Process EngineCore_DP5:
+[0;36m(EngineCore_DP5 pid=98525)[0;0m Traceback (most recent call last):
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     self.run()
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 108, in run
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     self._target(*self._args, **self._kwargs)
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 870, in run_engine_core
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     raise e
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP5 pid=98525)[0;0m                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     super().__init__(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     super().__init__(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP5 pid=98525)[0;0m                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     self._init_executor()
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     self.driver_worker.init_device()
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     init_worker_distributed_environment(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     initialize_model_parallel(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     return GroupCoordinator(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP5 pid=98525)[0;0m                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP5 pid=98525)[0;0m                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP5 pid=98525)[0;0m     assert has_pplx(), (
+[0;36m(EngineCore_DP5 pid=98525)[0;0m            ^^^^^^^^^^
+[0;36m(EngineCore_DP5 pid=98525)[0;0m AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866] EngineCore failed to start.
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866] Traceback (most recent call last):
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self._init_executor()
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.driver_worker.init_device()
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     init_worker_distributed_environment(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     initialize_model_parallel(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     return GroupCoordinator(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]     assert has_pplx(), (
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m ERROR 12-20 10:01:25 [core.py:866] AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP2 pid=98522)[0;0m Process EngineCore_DP2:
+[0;36m(EngineCore_DP2 pid=98522)[0;0m Traceback (most recent call last):
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     self.run()
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 108, in run
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     self._target(*self._args, **self._kwargs)
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 870, in run_engine_core
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     raise e
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP2 pid=98522)[0;0m                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     super().__init__(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     super().__init__(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP2 pid=98522)[0;0m                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     self._init_executor()
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     self.driver_worker.init_device()
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     init_worker_distributed_environment(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     initialize_model_parallel(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     return GroupCoordinator(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP2 pid=98522)[0;0m                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP2 pid=98522)[0;0m                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP2 pid=98522)[0;0m     assert has_pplx(), (
+[0;36m(EngineCore_DP2 pid=98522)[0;0m            ^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=98522)[0;0m AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866] EngineCore failed to start.
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866] Traceback (most recent call last):
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self._init_executor()
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.driver_worker.init_device()
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     init_worker_distributed_environment(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     initialize_model_parallel(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     return GroupCoordinator(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]     assert has_pplx(), (
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m ERROR 12-20 10:01:25 [core.py:866] AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP6 pid=98526)[0;0m Process EngineCore_DP6:
+[0;36m(EngineCore_DP6 pid=98526)[0;0m Traceback (most recent call last):
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     self.run()
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 108, in run
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     self._target(*self._args, **self._kwargs)
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 870, in run_engine_core
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     raise e
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP6 pid=98526)[0;0m                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     super().__init__(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     super().__init__(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP6 pid=98526)[0;0m                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     self._init_executor()
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     self.driver_worker.init_device()
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     init_worker_distributed_environment(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     initialize_model_parallel(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     return GroupCoordinator(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP6 pid=98526)[0;0m                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP6 pid=98526)[0;0m                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP6 pid=98526)[0;0m     assert has_pplx(), (
+[0;36m(EngineCore_DP6 pid=98526)[0;0m            ^^^^^^^^^^
+[0;36m(EngineCore_DP6 pid=98526)[0;0m AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866] EngineCore failed to start.
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866] Traceback (most recent call last):
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self._init_executor()
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.driver_worker.init_device()
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     init_worker_distributed_environment(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     initialize_model_parallel(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     return GroupCoordinator(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]     assert has_pplx(), (
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m ERROR 12-20 10:01:25 [core.py:866] AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP3 pid=98523)[0;0m Process EngineCore_DP3:
+[0;36m(EngineCore_DP3 pid=98523)[0;0m Traceback (most recent call last):
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     self.run()
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 108, in run
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     self._target(*self._args, **self._kwargs)
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 870, in run_engine_core
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     raise e
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP3 pid=98523)[0;0m                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     super().__init__(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     super().__init__(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP3 pid=98523)[0;0m                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     self._init_executor()
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     self.driver_worker.init_device()
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     init_worker_distributed_environment(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     initialize_model_parallel(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     return GroupCoordinator(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP3 pid=98523)[0;0m                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP3 pid=98523)[0;0m                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP3 pid=98523)[0;0m     assert has_pplx(), (
+[0;36m(EngineCore_DP3 pid=98523)[0;0m            ^^^^^^^^^^
+[0;36m(EngineCore_DP3 pid=98523)[0;0m AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866] EngineCore failed to start.
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866] Traceback (most recent call last):
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self._init_executor()
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.driver_worker.init_device()
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     init_worker_distributed_environment(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     initialize_model_parallel(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     return GroupCoordinator(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]     assert has_pplx(), (
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m ERROR 12-20 10:01:25 [core.py:866] AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP1 pid=98521)[0;0m Process EngineCore_DP1:
+[0;36m(EngineCore_DP1 pid=98521)[0;0m Traceback (most recent call last):
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     self.run()
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 108, in run
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     self._target(*self._args, **self._kwargs)
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 870, in run_engine_core
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     raise e
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP1 pid=98521)[0;0m                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     super().__init__(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     super().__init__(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP1 pid=98521)[0;0m                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     self._init_executor()
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     self.driver_worker.init_device()
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     init_worker_distributed_environment(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     initialize_model_parallel(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     return GroupCoordinator(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP1 pid=98521)[0;0m                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP1 pid=98521)[0;0m                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP1 pid=98521)[0;0m     assert has_pplx(), (
+[0;36m(EngineCore_DP1 pid=98521)[0;0m            ^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=98521)[0;0m AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866] EngineCore failed to start.
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866] Traceback (most recent call last):
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     super().__init__(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self._init_executor()
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.driver_worker.init_device()
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     init_worker_distributed_environment(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     initialize_model_parallel(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     return GroupCoordinator(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]     assert has_pplx(), (
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866]            ^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m ERROR 12-20 10:01:25 [core.py:866] AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[0;36m(EngineCore_DP0 pid=98520)[0;0m Process EngineCore_DP0:
+[0;36m(EngineCore_DP0 pid=98520)[0;0m Traceback (most recent call last):
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     self.run()
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/multiprocessing/process.py", line 108, in run
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     self._target(*self._args, **self._kwargs)
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 870, in run_engine_core
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     raise e
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 853, in run_engine_core
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     engine_core = DPEngineCoreProc(*args, **kwargs)
+[0;36m(EngineCore_DP0 pid=98520)[0;0m                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 1159, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     super().__init__(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 637, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     super().__init__(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP0 pid=98520)[0;0m                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     self._init_executor()
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     self.driver_worker.init_device()
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     self.worker.init_device()  # type: ignore
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 224, in init_device
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     init_worker_distributed_environment(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/worker/gpu_worker.py", line 946, in init_worker_distributed_environment
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     ensure_model_parallel_initialized(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1438, in ensure_model_parallel_initialized
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     initialize_model_parallel(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1407, in initialize_model_parallel
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     _EP = init_model_parallel_group(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 1062, in init_model_parallel_group
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     return GroupCoordinator(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m            ^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/parallel_state.py", line 364, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     self.device_communicator = device_comm_cls(
+[0;36m(EngineCore_DP0 pid=98520)[0;0m                                ^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/cuda_communicator.py", line 104, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     self.all2all_manager = PPLXAll2AllManager(self.cpu_group)
+[0;36m(EngineCore_DP0 pid=98520)[0;0m                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/distributed/device_communicators/all2all.py", line 159, in __init__
+[0;36m(EngineCore_DP0 pid=98520)[0;0m     assert has_pplx(), (
+[0;36m(EngineCore_DP0 pid=98520)[0;0m            ^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=98520)[0;0m AssertionError: pplx_kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md to install pplx_kernels.
+[rank0]:[W1220 10:01:25.499465621 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[0;36m(APIServer pid=98345)[0;0m Traceback (most recent call last):
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/bin/vllm", line 7, in <module>
+[0;36m(APIServer pid=98345)[0;0m     sys.exit(main())
+[0;36m(APIServer pid=98345)[0;0m              ^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/entrypoints/cli/main.py", line 73, in main
+[0;36m(APIServer pid=98345)[0;0m     args.dispatch_function(args)
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/entrypoints/cli/serve.py", line 60, in cmd
+[0;36m(APIServer pid=98345)[0;0m     uvloop.run(run_server(args))
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/uvloop/__init__.py", line 96, in run
+[0;36m(APIServer pid=98345)[0;0m     return __asyncio.run(
+[0;36m(APIServer pid=98345)[0;0m            ^^^^^^^^^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/asyncio/runners.py", line 195, in run
+[0;36m(APIServer pid=98345)[0;0m     return runner.run(main)
+[0;36m(APIServer pid=98345)[0;0m            ^^^^^^^^^^^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/asyncio/runners.py", line 118, in run
+[0;36m(APIServer pid=98345)[0;0m     return self._loop.run_until_complete(task)
+[0;36m(APIServer pid=98345)[0;0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/uvloop/__init__.py", line 48, in wrapper
+[0;36m(APIServer pid=98345)[0;0m     return await main
+[0;36m(APIServer pid=98345)[0;0m            ^^^^^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 1398, in run_server
+[0;36m(APIServer pid=98345)[0;0m     await run_server_worker(listen_address, sock, args, **uvicorn_kwargs)
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 1417, in run_server_worker
+[0;36m(APIServer pid=98345)[0;0m     async with build_async_engine_client(
+[0;36m(APIServer pid=98345)[0;0m                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/contextlib.py", line 210, in __aenter__
+[0;36m(APIServer pid=98345)[0;0m     return await anext(self.gen)
+[0;36m(APIServer pid=98345)[0;0m            ^^^^^^^^^^^^^^^^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 172, in build_async_engine_client
+[0;36m(APIServer pid=98345)[0;0m     async with build_async_engine_client_from_engine_args(
+[0;36m(APIServer pid=98345)[0;0m                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/contextlib.py", line 210, in __aenter__
+[0;36m(APIServer pid=98345)[0;0m     return await anext(self.gen)
+[0;36m(APIServer pid=98345)[0;0m            ^^^^^^^^^^^^^^^^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 213, in build_async_engine_client_from_engine_args
+[0;36m(APIServer pid=98345)[0;0m     async_llm = AsyncLLM.from_vllm_config(
+[0;36m(APIServer pid=98345)[0;0m                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/async_llm.py", line 215, in from_vllm_config
+[0;36m(APIServer pid=98345)[0;0m     return cls(
+[0;36m(APIServer pid=98345)[0;0m            ^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/async_llm.py", line 134, in __init__
+[0;36m(APIServer pid=98345)[0;0m     self.engine_core = EngineCoreClient.make_async_mp_client(
+[0;36m(APIServer pid=98345)[0;0m                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core_client.py", line 120, in make_async_mp_client
+[0;36m(APIServer pid=98345)[0;0m     return DPLBAsyncMPClient(*client_args)
+[0;36m(APIServer pid=98345)[0;0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core_client.py", line 1192, in __init__
+[0;36m(APIServer pid=98345)[0;0m     super().__init__(
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core_client.py", line 1033, in __init__
+[0;36m(APIServer pid=98345)[0;0m     super().__init__(
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core_client.py", line 820, in __init__
+[0;36m(APIServer pid=98345)[0;0m     super().__init__(
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core_client.py", line 477, in __init__
+[0;36m(APIServer pid=98345)[0;0m     with launch_core_engines(vllm_config, executor_class, log_stats) as (
+[0;36m(APIServer pid=98345)[0;0m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/contextlib.py", line 144, in __exit__
+[0;36m(APIServer pid=98345)[0;0m     next(self.gen)
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/utils.py", line 903, in launch_core_engines
+[0;36m(APIServer pid=98345)[0;0m     wait_for_engine_startup(
+[0;36m(APIServer pid=98345)[0;0m   File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/v1/engine/utils.py", line 960, in wait_for_engine_startup
+[0;36m(APIServer pid=98345)[0;0m     raise RuntimeError(
+[0;36m(APIServer pid=98345)[0;0m RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+ERROR conda.cli.main_run:execute(127): `conda run vllm serve deepseek-ai/DeepSeek-V3.2 --tensor-parallel-size 1 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3 -dp 8 --enable-expert-parallel --max-num-seqs 128 --max-model-len 122880 --all2all-backend pplx --port 8000` failed. (See above for error)
