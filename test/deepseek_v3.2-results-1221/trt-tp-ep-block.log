@@ -6,6 +6,6 @@
 Usage: trtllm-serve serve [OPTIONS] MODEL
 Try 'trtllm-serve serve --help' for help.
 
-Error: No such option: --tokens_per_block Did you mean --tokenizer?
-[1766398174.971970] [33e830c955af:69656:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
-[1766398175.068807] [33e830c955af:69656:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+Error: No such option: --tokens-per-block Did you mean --tokenizer?
+[1766398473.195449] [33e830c955af:69968:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766398473.292049] [33e830c955af:69968:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
