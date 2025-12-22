@@ -116,6 +116,10 @@ python convert_benchmark_results.py \
   ./test/deepseek_v3.2-results-1220/sglang_official_recommended_tp_dp_random_128k.json \
   -o ./test/deepseek_v3.2-results-1220/converted_results
 
+python convert_benchmark_results.py \
+  ./test/deepseek_v3.2-results-1220/vllm_dp_ep_half_ctx_sharegpt.json \
+  -o ./test/deepseek_v3.2-results-1220/converted_results
+  
 ### TOOD
 
 https://github.com/vllm-project/vllm/pull/29848

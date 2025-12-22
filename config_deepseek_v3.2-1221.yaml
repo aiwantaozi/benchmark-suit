@@ -116,6 +116,6 @@ runs:
       --tp_size 8
       --pp_size 1
       --spec_decode_algo MTP
-      --spec_decode_max_draft_len N
+      --spec_decode_max_draft_len 2
     test_cases:
       - sharegpt

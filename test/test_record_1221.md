@@ -1,8 +1,10 @@
 
 1. 
+export HF_HOME=/workspace/trtllm_cache/huggingface
 hf download deepseek-ai/DeepSeek-V3.2
-1. 
 
+
+1. 
 git clone https://github.com/aiwantaozi/benchmark-suit
 git checkout test
 
