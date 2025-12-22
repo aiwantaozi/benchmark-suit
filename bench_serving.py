@@ -106,6 +106,7 @@ class EngineConfig:
     """Configuration for an engine test run"""
     name: str
     engine: EngineType
+    command: Optional[str] = None
     test_cases: List[TestCase]
     envs: Dict[str, str] = None
     args: str = ""
@@ -218,6 +219,14 @@ class EngineManager:
         self.run_command(cmd, config.conda_env, wait=False)
         self.monitor_service_startup(config, self.current_process)
         
+    def start_inference_server_with_command(self, config: EngineConfig):
+        """Start inference server with custom command"""
+        if not config.command:
+            raise ValueError("No command provided for starting inference server")
+        cmd = config.command
+        self.run_command(cmd, config.conda_env, wait=False)
+        self.monitor_service_startup(config, self.current_process)
+        
     def is_api_ready(
         self, config: EngineConfig
     ) -> bool:
@@ -315,7 +324,9 @@ class EngineManager:
             
             with open(log_file_path, "w", buffering=1, encoding="utf-8") as log_file:
                 with RedirectStdoutStderr(log_file):
-                    if config.engine == EngineType.VLLM:
+                    if config.command:
+                        self.start_inference_server_with_command(config)
+                    elif config.engine == EngineType.VLLM:
                         self.start_vllm(config)
                     elif config.engine == EngineType.SGLANG:
                         self.start_sglang(config)
