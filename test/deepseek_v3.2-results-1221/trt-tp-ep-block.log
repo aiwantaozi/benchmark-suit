@@ -1,0 +1,11 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[TensorRT-LLM] TensorRT LLM version: 1.2.0rc5
+/usr/local/lib/python3.12/dist-packages/tensorrt_llm/serve/openai_protocol.py:104: UserWarning: Field name "schema" in "ResponseFormat" shadows an attribute in parent "OpenAIBaseModel"
+  class ResponseFormat(OpenAIBaseModel):
+Usage: trtllm-serve serve [OPTIONS] MODEL
+Try 'trtllm-serve serve --help' for help.
+
+Error: No such option: --tokens_per_block Did you mean --tokenizer?
+[1766398174.971970] [33e830c955af:69656:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766398175.068807] [33e830c955af:69656:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
