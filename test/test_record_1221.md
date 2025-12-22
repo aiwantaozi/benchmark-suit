@@ -23,3 +23,5 @@ git config --global user.name "xxx"
 3.
 python bench_serving.py --config ./config_qwen3_0.6b-1221.yaml --output-dir ./test/qwen3_0.6b-results-1221 
 python bench_serving.py --config ./config_deepseek_v3.2-1221.yaml --output-dir ./test/deepseek_v3.2-results-1221 
+
+trtllm-serve /workspace/DeepSeek-R1-0528 --tp_size 8 --ep_size 8 --max_batch_size 128 --max_num_tokens 1151 --kv_cache_free_gpu_memory_fraction 0.8 --extra_llm_api_options ./extra-llm-api-config.yml
