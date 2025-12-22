@@ -106,8 +106,8 @@ class EngineConfig:
     """Configuration for an engine test run"""
     name: str
     engine: EngineType
-    command: Optional[str] = None
     test_cases: List[TestCase]
+    command: Optional[str] = None
     envs: Dict[str, str] = None
     args: str = ""
     port: int = 8000
