@@ -110,7 +110,7 @@ runs:
       --tp_size 8
       --ep_size 8
       --pp_size 1
-      --tokens_per_block 64
+      --tokens-per-block 64
     test_cases:
       - sharegpt
   - name: "trt-deepgemm-disabled"
@@ -128,6 +128,7 @@ runs:
       --tp_size 8
       --ep_size 8
       --pp_size 1
+      --tokens-per-block 64
     test_cases:
       - sharegpt
   - name: "trt-mtp" # TODO: adjust N
@@ -145,6 +146,7 @@ runs:
       --tp_size 8
       --ep_size 8
       --pp_size 1
+      --tokens-per-block 64
       --spec_decode_algo MTP
       --spec_decode_max_draft_len 2
     test_cases:
