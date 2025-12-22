@@ -136,14 +136,22 @@ runs:
     envs:
       TRTLLM_DG_ENABLED: "0"
       HF_HOME: /workspace/trtllm_cache/huggingface
+    # command: >
+    #   trtllm-serve
+    #   deepseek-ai/DeepSeek-V3.2
+    #   --chat_template ./tool_chat_template_deepseekv32.jinja
+    #   --host localhost
+    #   --port 8000
+    #   --tp_size 8
+    #   --ep_size 8
+    #   --pp_size 1
+    #   --spec_decode_algo MTP
+    #   --spec_decode_max_draft_len 2
     command: >
       trtllm-serve
-      deepseek-ai/DeepSeek-V3.2
-      --chat_template ./tool_chat_template_deepseekv32.jinja
-      --host localhost
-      --port 8000
+      quickstart_advanced.py 
+      --model_dir /workspace/trtllm_cache/huggingface/hub/models--deepseek-ai--DeepSeek-V3.2/snapshots/a7e62ac04ecb2c0a54d736dc46601c5606cf10a6/
       --tp_size 8
-      --ep_size 8
       --pp_size 1
       --spec_decode_algo MTP
       --spec_decode_max_draft_len 2
