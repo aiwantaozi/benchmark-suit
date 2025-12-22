@@ -73,7 +73,34 @@ python bench_serving.py --config ./config_deepseek_v3.2-1219.yaml --output-dir .
  --port 8000
 
 
+## tensorrt
+
+1. image
+nvcr.io/nvidia/tensorrt-llm/release:1.2.0rc5
+
+2. serve to download model
+trtllm-serve "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+trtllm-serve deepseek-ai/DeepSeek-V3.2 --tp_size 8 --tokens_per_block 64
+
+3. clone
+git clone https://github.com/aiwantaozi/benchmark-suit
+cd benchmark-suit
+git checkout test
+
+git clone
+https://github.com/NVIDIA/TensorRT-LLM
+
+4. 
+cd examples/llm-api
+python quickstart_advanced.py --model_dir <YOUR_MODEL_DIR> --tp_size 8 --tokens_per_block 64
+
+5. mtp
+cd examples/llm-api
+python quickstart_advanced.py --model_dir <YOUR_MODEL_DIR> --spec_decode_algo MTP --spec_decode_max_draft_len N
+
+
 ### TOOD
 
 https://github.com/vllm-project/vllm/pull/29848
 考虑这个tool call
+

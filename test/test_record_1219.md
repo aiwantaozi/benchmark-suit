@@ -7,8 +7,9 @@ hf download deepseek-ai/DeepSeek-V3.2
 
 0.13.0
 
-1. 
-./setup_env.sh vllm
+1.
+chmod +x setup_envs.sh
+./setup_envs.sh vllm
 
 2. 
 ./setup_ep_env.sh
