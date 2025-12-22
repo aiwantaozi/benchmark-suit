@@ -1,11 +1,875 @@
 /usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   import pynvml  # type: ignore[import]
 [TensorRT-LLM] TensorRT LLM version: 1.2.0rc5
+Running MTP eagle with two model style.
+[12/22/2025-11:02:07] [TRT-LLM] [I] Using LLM with PyTorch backend
+[12/22/2025-11:02:07] [TRT-LLM] [W] Using default gpus_per_node: 8
+[12/22/2025-11:02:07] [TRT-LLM] [I] neither checkpoint_format nor checkpoint_loader were provided, checkpoint_format will be set to HF.
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+You are using a model of type deepseek_v32 to instantiate a model of type . This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+`torch_dtype` is deprecated! Use `dtype` instead!
+[33;20mrank 0 using MpiPoolSession to spawn MPI processes
+[0m[1766401327.635318] [33e830c955af:96017:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401327.635645] [33e830c955af:96016:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401327.635700] [33e830c955af:96018:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401327.637070] [33e830c955af:96019:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401327.644100] [33e830c955af:96020:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401327.647368] [33e830c955af:96021:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401327.649055] [33e830c955af:96022:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401327.650390] [33e830c955af:96023:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401330.507462] [33e830c955af:96018:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401330.507653] [33e830c955af:96016:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401330.507686] [33e830c955af:96020:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401330.507695] [33e830c955af:96023:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401330.507701] [33e830c955af:96022:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401330.507726] [33e830c955af:96021:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401330.507779] [33e830c955af:96017:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401330.507858] [33e830c955af:96019:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Multiple distributions found for package optimum. Picked distribution: optimum
+Multiple distributions found for package optimum. Picked distribution: optimum
+Multiple distributions found for package optimum. Picked distribution: optimum
+Multiple distributions found for package optimum. Picked distribution: optimum
+Multiple distributions found for package optimum. Picked distribution: optimum
+Multiple distributions found for package optimum. Picked distribution: optimum
+Multiple distributions found for package optimum. Picked distribution: optimum
+Multiple distributions found for package optimum. Picked distribution: optimum
+[TensorRT-LLM] TensorRT LLM version: 1.2.0rc5
+[TensorRT-LLM] TensorRT LLM version: 1.2.0rc5
+[TensorRT-LLM] TensorRT LLM version: 1.2.0rc5
+[TensorRT-LLM] TensorRT LLM version: 1.2.0rc5
+[TensorRT-LLM] TensorRT LLM version: 1.2.0rc5
+[TensorRT-LLM] TensorRT LLM version: 1.2.0rc5
+[TensorRT-LLM] TensorRT LLM version: 1.2.0rc5
+[TensorRT-LLM] TensorRT LLM version: 1.2.0rc5
+[TensorRT-LLM][INFO] Refreshed the MPI local session
+[TensorRT-LLM][INFO] Refreshed the MPI local session
+[TensorRT-LLM][INFO] Refreshed the MPI local session
+[TensorRT-LLM][INFO] Refreshed the MPI local session
+[TensorRT-LLM][INFO] Refreshed the MPI local session
+[TensorRT-LLM][INFO] Refreshed the MPI local session
+[TensorRT-LLM][INFO] Refreshed the MPI local session
+[TensorRT-LLM][INFO] Refreshed the MPI local session
 /usr/local/lib/python3.12/dist-packages/tensorrt_llm/serve/openai_protocol.py:104: UserWarning: Field name "schema" in "ResponseFormat" shadows an attribute in parent "OpenAIBaseModel"
   class ResponseFormat(OpenAIBaseModel):
-Usage: trtllm-serve serve [OPTIONS] MODEL
-Try 'trtllm-serve serve --help' for help.
+/usr/local/lib/python3.12/dist-packages/tensorrt_llm/serve/openai_protocol.py:104: UserWarning: Field name "schema" in "ResponseFormat" shadows an attribute in parent "OpenAIBaseModel"
+  class ResponseFormat(OpenAIBaseModel):
+/usr/local/lib/python3.12/dist-packages/tensorrt_llm/serve/openai_protocol.py:104: UserWarning: Field name "schema" in "ResponseFormat" shadows an attribute in parent "OpenAIBaseModel"
+  class ResponseFormat(OpenAIBaseModel):
+/usr/local/lib/python3.12/dist-packages/tensorrt_llm/serve/openai_protocol.py:104: UserWarning: Field name "schema" in "ResponseFormat" shadows an attribute in parent "OpenAIBaseModel"
+  class ResponseFormat(OpenAIBaseModel):
+/usr/local/lib/python3.12/dist-packages/tensorrt_llm/serve/openai_protocol.py:104: UserWarning: Field name "schema" in "ResponseFormat" shadows an attribute in parent "OpenAIBaseModel"
+  class ResponseFormat(OpenAIBaseModel):
+/usr/local/lib/python3.12/dist-packages/tensorrt_llm/serve/openai_protocol.py:104: UserWarning: Field name "schema" in "ResponseFormat" shadows an attribute in parent "OpenAIBaseModel"
+  class ResponseFormat(OpenAIBaseModel):
+/usr/local/lib/python3.12/dist-packages/tensorrt_llm/serve/openai_protocol.py:104: UserWarning: Field name "schema" in "ResponseFormat" shadows an attribute in parent "OpenAIBaseModel"
+  class ResponseFormat(OpenAIBaseModel):
+/usr/local/lib/python3.12/dist-packages/tensorrt_llm/serve/openai_protocol.py:104: UserWarning: Field name "schema" in "ResponseFormat" shadows an attribute in parent "OpenAIBaseModel"
+  class ResponseFormat(OpenAIBaseModel):
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+`torch_dtype` is deprecated! Use `dtype` instead!
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+`torch_dtype` is deprecated! Use `dtype` instead!
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+`torch_dtype` is deprecated! Use `dtype` instead!
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+`torch_dtype` is deprecated! Use `dtype` instead!
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+`torch_dtype` is deprecated! Use `dtype` instead!
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+`torch_dtype` is deprecated! Use `dtype` instead!
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+`torch_dtype` is deprecated! Use `dtype` instead!
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+`torch_dtype` is deprecated! Use `dtype` instead!
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+Loading safetensors weights in parallel:   0%|          | 0/163 [00:00<?, ?it/s]Loading safetensors weights in parallel:   0%|          | 0/163 [00:00<?, ?it/s]Loading safetensors weights in parallel:   0%|          | 0/163 [00:00<?, ?it/s]Loading safetensors weights in parallel:   0%|          | 0/163 [00:00<?, ?it/s]Loading safetensors weights in parallel:   0%|          | 0/163 [00:00<?, ?it/s]Loading safetensors weights in parallel:   0%|          | 0/163 [00:00<?, ?it/s]Loading safetensors weights in parallel:   0%|          | 0/163 [00:00<?, ?it/s]Loading safetensors weights in parallel:   0%|          | 0/163 [00:00<?, ?it/s]Loading safetensors weights in parallel:   1%|          | 1/163 [00:00<01:48,  1.50it/s]Loading safetensors weights in parallel:   1%|          | 1/163 [00:00<01:59,  1.36it/s]Loading safetensors weights in parallel:   1%|          | 1/163 [00:00<02:00,  1.35it/s]Loading safetensors weights in parallel:   1%|          | 1/163 [00:00<02:00,  1.34it/s]Loading safetensors weights in parallel:   1%|          | 1/163 [00:00<02:01,  1.33it/s]Loading safetensors weights in parallel:   1%|          | 1/163 [00:00<02:02,  1.32it/s]Loading safetensors weights in parallel:   1%|          | 1/163 [00:00<02:19,  1.16it/s]Loading safetensors weights in parallel:   2%|▏         | 4/163 [00:00<00:28,  5.56it/s]Loading safetensors weights in parallel:   1%|          | 2/163 [00:00<01:04,  2.49it/s]Loading safetensors weights in parallel:   1%|          | 2/163 [00:00<01:06,  2.42it/s]Loading safetensors weights in parallel:   1%|          | 2/163 [00:00<01:07,  2.40it/s]Loading safetensors weights in parallel:   1%|          | 1/163 [00:00<02:31,  1.07it/s]Loading safetensors weights in parallel:   1%|          | 2/163 [00:00<01:10,  2.27it/s]Loading safetensors weights in parallel:   1%|          | 2/163 [00:00<01:10,  2.28it/s]Loading safetensors weights in parallel:   2%|▏         | 3/163 [00:01<00:44,  3.60it/s]Loading safetensors weights in parallel:   4%|▍         | 7/163 [00:01<00:18,  8.61it/s]Loading safetensors weights in parallel:   2%|▏         | 3/163 [00:01<00:45,  3.49it/s]Loading safetensors weights in parallel:   2%|▏         | 3/163 [00:01<00:47,  3.35it/s]Loading safetensors weights in parallel:   2%|▏         | 3/163 [00:01<00:50,  3.20it/s]Loading safetensors weights in parallel:   2%|▏         | 4/163 [00:01<00:39,  4.03it/s]Loading safetensors weights in parallel:   6%|▌         | 9/163 [00:01<00:16,  9.36it/s]Loading safetensors weights in parallel:   2%|▏         | 4/163 [00:01<00:41,  3.85it/s]Loading safetensors weights in parallel:   3%|▎         | 5/163 [00:01<00:33,  4.73it/s]Loading safetensors weights in parallel:   2%|▏         | 4/163 [00:01<00:45,  3.53it/s]Loading safetensors weights in parallel:   2%|▏         | 4/163 [00:01<00:47,  3.36it/s]Loading safetensors weights in parallel:   7%|▋         | 11/163 [00:01<00:14, 10.70it/s]Loading safetensors weights in parallel:   3%|▎         | 5/163 [00:01<00:33,  4.68it/s]Loading safetensors weights in parallel:   2%|▏         | 4/163 [00:01<00:50,  3.16it/s]Loading safetensors weights in parallel:   4%|▎         | 6/163 [00:01<00:28,  5.48it/s]Loading safetensors weights in parallel:   2%|▏         | 4/163 [00:01<00:49,  3.24it/s]Loading safetensors weights in parallel:   3%|▎         | 5/163 [00:01<00:35,  4.46it/s]Loading safetensors weights in parallel:   3%|▎         | 5/163 [00:01<00:35,  4.50it/s]Loading safetensors weights in parallel:   5%|▍         | 8/163 [00:01<00:19,  8.13it/s]Loading safetensors weights in parallel:   9%|▉         | 15/163 [00:01<00:09, 16.33it/s]Loading safetensors weights in parallel:   5%|▍         | 8/163 [00:01<00:18,  8.41it/s]Loading safetensors weights in parallel:   6%|▌         | 9/163 [00:01<00:15, 10.15it/s]Loading safetensors weights in parallel:   5%|▍         | 8/163 [00:01<00:19,  8.05it/s]Loading safetensors weights in parallel:   5%|▍         | 8/163 [00:01<00:19,  7.82it/s]Loading safetensors weights in parallel:   8%|▊         | 13/163 [00:01<00:08, 18.51it/s]Loading safetensors weights in parallel:   7%|▋         | 11/163 [00:01<00:11, 13.62it/s]Loading safetensors weights in parallel:   9%|▉         | 15/163 [00:01<00:08, 17.77it/s]Loading safetensors weights in parallel:  13%|█▎        | 22/163 [00:01<00:05, 28.04it/s]Loading safetensors weights in parallel:   9%|▊         | 14/163 [00:01<00:08, 17.49it/s]Loading safetensors weights in parallel:   9%|▊         | 14/163 [00:01<00:09, 16.08it/s]Loading safetensors weights in parallel:  14%|█▍        | 23/163 [00:01<00:04, 34.85it/s]Loading safetensors weights in parallel:  10%|█         | 17/163 [00:01<00:07, 19.12it/s]Loading safetensors weights in parallel:  10%|█         | 17/163 [00:01<00:06, 22.61it/s]Loading safetensors weights in parallel:  10%|▉         | 16/163 [00:01<00:07, 19.65it/s]Loading safetensors weights in parallel:  17%|█▋        | 27/163 [00:01<00:04, 33.16it/s]Loading safetensors weights in parallel:  16%|█▌        | 26/163 [00:01<00:04, 33.47it/s]Loading safetensors weights in parallel:  15%|█▍        | 24/163 [00:01<00:04, 34.06it/s]Loading safetensors weights in parallel:  15%|█▍        | 24/163 [00:01<00:04, 31.69it/s]Loading safetensors weights in parallel:  15%|█▍        | 24/163 [00:01<00:04, 32.54it/s]Loading safetensors weights in parallel:  15%|█▌        | 25/163 [00:01<00:04, 33.65it/s]Loading safetensors weights in parallel:  13%|█▎        | 22/163 [00:01<00:05, 23.57it/s]Loading safetensors weights in parallel:  17%|█▋        | 28/163 [00:01<00:03, 35.33it/s]Loading safetensors weights in parallel:  19%|█▉        | 31/163 [00:01<00:03, 41.63it/s]Loading safetensors weights in parallel:  20%|█▉        | 32/163 [00:01<00:03, 34.29it/s]Loading safetensors weights in parallel:  19%|█▉        | 31/163 [00:01<00:03, 37.81it/s]Loading safetensors weights in parallel:  17%|█▋        | 28/163 [00:01<00:04, 29.83it/s]Loading safetensors weights in parallel:  19%|█▉        | 31/163 [00:01<00:03, 38.60it/s]Loading safetensors weights in parallel:  22%|██▏       | 36/163 [00:01<00:03, 35.05it/s]Loading safetensors weights in parallel:  20%|█▉        | 32/163 [00:01<00:04, 30.47it/s]Loading safetensors weights in parallel:  18%|█▊        | 30/163 [00:01<00:04, 32.49it/s]Loading safetensors weights in parallel:  20%|██        | 33/163 [00:02<00:04, 27.66it/s]Loading safetensors weights in parallel:  20%|██        | 33/163 [00:02<00:05, 25.53it/s]Loading safetensors weights in parallel:  25%|██▍       | 40/163 [00:02<00:04, 25.00it/s]Loading safetensors weights in parallel:  21%|██▏       | 35/163 [00:02<00:05, 24.16it/s]Loading safetensors weights in parallel:  27%|██▋       | 44/163 [00:02<00:04, 27.93it/s]Loading safetensors weights in parallel:  22%|██▏       | 36/163 [00:02<00:05, 22.49it/s]Loading safetensors weights in parallel:  23%|██▎       | 37/163 [00:02<00:06, 20.69it/s]Loading safetensors weights in parallel:  29%|██▉       | 48/163 [00:02<00:04, 24.42it/s]Loading safetensors weights in parallel:  23%|██▎       | 37/163 [00:02<00:07, 17.73it/s]Loading safetensors weights in parallel:  23%|██▎       | 37/163 [00:02<00:06, 18.26it/s]Loading safetensors weights in parallel:  23%|██▎       | 37/163 [00:02<00:07, 16.39it/s]Loading safetensors weights in parallel:  23%|██▎       | 37/163 [00:02<00:07, 15.87it/s]Loading safetensors weights in parallel:  26%|██▋       | 43/163 [00:02<00:05, 21.24it/s]Loading safetensors weights in parallel:  25%|██▍       | 40/163 [00:02<00:07, 17.52it/s]Loading safetensors weights in parallel:  31%|███▏      | 51/163 [00:02<00:05, 20.21it/s]Loading safetensors weights in parallel:  24%|██▍       | 39/163 [00:02<00:07, 16.30it/s]Loading safetensors weights in parallel:  26%|██▌       | 42/163 [00:02<00:06, 17.78it/s]Loading safetensors weights in parallel:  31%|███▏      | 51/163 [00:02<00:03, 29.20it/s]Loading safetensors weights in parallel:  25%|██▌       | 41/163 [00:02<00:06, 17.87it/s]Loading safetensors weights in parallel:  27%|██▋       | 44/163 [00:02<00:05, 20.42it/s]Loading safetensors weights in parallel:  25%|██▍       | 40/163 [00:02<00:07, 15.69it/s]Loading safetensors weights in parallel:  25%|██▍       | 40/163 [00:02<00:07, 15.94it/s]Loading safetensors weights in parallel:  34%|███▍      | 56/163 [00:02<00:04, 25.55it/s]Loading safetensors weights in parallel:  26%|██▋       | 43/163 [00:02<00:06, 18.61it/s]Loading safetensors weights in parallel:  28%|██▊       | 45/163 [00:02<00:05, 20.69it/s]Loading safetensors weights in parallel:  30%|███       | 49/163 [00:02<00:04, 23.81it/s]Loading safetensors weights in parallel:  31%|███       | 50/163 [00:02<00:04, 27.31it/s]Loading safetensors weights in parallel:  29%|██▉       | 48/163 [00:02<00:04, 24.70it/s]Loading safetensors weights in parallel:  28%|██▊       | 46/163 [00:02<00:05, 20.61it/s]Loading safetensors weights in parallel:  37%|███▋      | 61/163 [00:02<00:03, 29.72it/s]Loading safetensors weights in parallel:  35%|███▍      | 57/163 [00:03<00:03, 30.08it/s]Loading safetensors weights in parallel:  30%|███       | 49/163 [00:03<00:04, 24.17it/s]Loading safetensors weights in parallel:  30%|███       | 49/163 [00:03<00:04, 23.17it/s]Loading safetensors weights in parallel:  34%|███▎      | 55/163 [00:03<00:03, 31.75it/s]Loading safetensors weights in parallel:  34%|███▎      | 55/163 [00:03<00:03, 27.72it/s]Loading safetensors weights in parallel:  32%|███▏      | 52/163 [00:03<00:04, 25.10it/s]Loading safetensors weights in parallel:  32%|███▏      | 52/163 [00:03<00:04, 23.95it/s]Loading safetensors weights in parallel:  38%|███▊      | 62/163 [00:03<00:03, 31.59it/s]Loading safetensors weights in parallel:  40%|███▉      | 65/163 [00:03<00:03, 27.16it/s]Loading safetensors weights in parallel:  39%|███▉      | 64/163 [00:03<00:02, 37.03it/s]Loading safetensors weights in parallel:  33%|███▎      | 53/163 [00:03<00:04, 24.06it/s]Loading safetensors weights in parallel:  33%|███▎      | 54/163 [00:03<00:04, 25.94it/s]Loading safetensors weights in parallel:  37%|███▋      | 60/163 [00:03<00:03, 32.81it/s]Loading safetensors weights in parallel:  34%|███▍      | 56/163 [00:03<00:04, 25.64it/s]Loading safetensors weights in parallel:  34%|███▍      | 56/163 [00:03<00:04, 25.35it/s]Loading safetensors weights in parallel:  44%|████▎     | 71/163 [00:03<00:02, 31.52it/s]Loading safetensors weights in parallel:  37%|███▋      | 61/163 [00:03<00:03, 33.21it/s]Loading safetensors weights in parallel:  36%|███▌      | 59/163 [00:03<00:03, 29.02it/s]Loading safetensors weights in parallel:  39%|███▊      | 63/163 [00:03<00:03, 32.91it/s]Loading safetensors weights in parallel:  39%|███▉      | 64/163 [00:03<00:03, 25.20it/s]Loading safetensors weights in parallel:  39%|███▊      | 63/163 [00:03<00:03, 28.60it/s]Loading safetensors weights in parallel:  46%|████▌     | 75/163 [00:03<00:03, 28.27it/s]Loading safetensors weights in parallel:  41%|████      | 67/163 [00:03<00:03, 24.04it/s]Loading safetensors weights in parallel:  40%|████      | 66/163 [00:03<00:03, 31.06it/s]Loading safetensors weights in parallel:  37%|███▋      | 60/163 [00:03<00:04, 22.80it/s]Loading safetensors weights in parallel:  42%|████▏     | 68/163 [00:03<00:03, 27.66it/s]Loading safetensors weights in parallel:  43%|████▎     | 70/163 [00:03<00:03, 24.37it/s]Loading safetensors weights in parallel:  41%|████      | 67/163 [00:03<00:03, 24.92it/s]Loading safetensors weights in parallel:  40%|███▉      | 65/163 [00:03<00:04, 23.31it/s]Loading safetensors weights in parallel:  48%|████▊     | 79/163 [00:03<00:03, 23.78it/s]Loading safetensors weights in parallel:  42%|████▏     | 68/163 [00:03<00:04, 20.90it/s]Loading safetensors weights in parallel:  44%|████▎     | 71/163 [00:03<00:04, 20.24it/s]Loading safetensors weights in parallel:  50%|█████     | 82/163 [00:03<00:03, 22.72it/s]Loading safetensors weights in parallel:  42%|████▏     | 68/163 [00:03<00:04, 21.86it/s]Loading safetensors weights in parallel:  43%|████▎     | 70/163 [00:03<00:04, 21.23it/s]Loading safetensors weights in parallel:  43%|████▎     | 70/163 [00:03<00:04, 20.15it/s]Loading safetensors weights in parallel:  46%|████▌     | 75/163 [00:03<00:03, 22.59it/s]Loading safetensors weights in parallel:  46%|████▌     | 75/163 [00:03<00:04, 21.27it/s]Loading safetensors weights in parallel:  49%|████▉     | 80/163 [00:04<00:03, 26.75it/s]Loading safetensors weights in parallel:  44%|████▎     | 71/163 [00:04<00:05, 16.97it/s]Loading safetensors weights in parallel:  52%|█████▏    | 85/163 [00:04<00:03, 20.91it/s]Loading safetensors weights in parallel:  48%|████▊     | 79/163 [00:04<00:03, 22.66it/s]Loading safetensors weights in parallel:  44%|████▎     | 71/163 [00:04<00:05, 18.24it/s]Loading safetensors weights in parallel:  44%|████▍     | 72/163 [00:04<00:05, 17.35it/s]Loading safetensors weights in parallel:  45%|████▍     | 73/163 [00:04<00:04, 18.06it/s]Loading safetensors weights in parallel:  47%|████▋     | 76/163 [00:04<00:04, 21.48it/s]Loading safetensors weights in parallel:  54%|█████▍    | 88/163 [00:04<00:03, 22.33it/s]Loading safetensors weights in parallel:  45%|████▍     | 73/163 [00:04<00:05, 17.60it/s]Loading safetensors weights in parallel:  52%|█████▏    | 84/163 [00:04<00:03, 25.79it/s]Loading safetensors weights in parallel:  53%|█████▎    | 86/163 [00:04<00:02, 29.54it/s]Loading safetensors weights in parallel:  47%|████▋     | 76/163 [00:04<00:03, 22.84it/s]Loading safetensors weights in parallel:  47%|████▋     | 77/163 [00:04<00:04, 21.30it/s]Loading safetensors weights in parallel:  50%|█████     | 82/163 [00:04<00:02, 28.02it/s]Loading safetensors weights in parallel:  48%|████▊     | 78/163 [00:04<00:03, 21.83it/s]Loading safetensors weights in parallel:  56%|█████▋    | 92/163 [00:04<00:02, 25.26it/s]Loading safetensors weights in parallel:  54%|█████▍    | 88/163 [00:04<00:02, 27.98it/s]Loading safetensors weights in parallel:  47%|████▋     | 76/163 [00:04<00:04, 18.31it/s]Loading safetensors weights in parallel:  56%|█████▌    | 91/163 [00:04<00:02, 32.16it/s]Loading safetensors weights in parallel:  50%|████▉     | 81/163 [00:04<00:03, 23.87it/s]Loading safetensors weights in parallel:  54%|█████▍    | 88/163 [00:04<00:02, 32.41it/s]Loading safetensors weights in parallel:  50%|████▉     | 81/163 [00:04<00:03, 25.81it/s]Loading safetensors weights in parallel:  50%|████▉     | 81/163 [00:04<00:03, 22.41it/s]Loading safetensors weights in parallel:  57%|█████▋    | 93/163 [00:04<00:02, 32.49it/s]Loading safetensors weights in parallel:  50%|█████     | 82/163 [00:04<00:03, 25.74it/s]Loading safetensors weights in parallel:  60%|█████▉    | 97/163 [00:04<00:02, 27.42it/s]Loading safetensors weights in parallel:  59%|█████▉    | 96/163 [00:04<00:01, 34.51it/s]Loading safetensors weights in parallel:  52%|█████▏    | 85/163 [00:04<00:03, 24.81it/s]Loading safetensors weights in parallel:  52%|█████▏    | 85/163 [00:04<00:03, 24.90it/s]Loading safetensors weights in parallel:  53%|█████▎    | 86/163 [00:04<00:02, 29.30it/s]Loading safetensors weights in parallel:  57%|█████▋    | 93/163 [00:04<00:02, 33.27it/s]Loading safetensors weights in parallel:  53%|█████▎    | 86/163 [00:04<00:02, 27.13it/s]Loading safetensors weights in parallel:  62%|██████▏   | 101/163 [00:04<00:02, 29.67it/s]Loading safetensors weights in parallel:  60%|█████▉    | 97/163 [00:04<00:02, 27.63it/s]Loading safetensors weights in parallel:  56%|█████▋    | 92/163 [00:04<00:02, 32.56it/s]Loading safetensors weights in parallel:  55%|█████▌    | 90/163 [00:04<00:02, 26.72it/s]Loading safetensors weights in parallel:  56%|█████▌    | 91/163 [00:04<00:02, 28.42it/s]Loading safetensors weights in parallel:  55%|█████▌    | 90/163 [00:04<00:02, 26.52it/s]Loading safetensors weights in parallel:  59%|█████▉    | 96/163 [00:04<00:02, 31.82it/s]Loading safetensors weights in parallel:  58%|█████▊    | 94/163 [00:04<00:02, 27.88it/s]Loading safetensors weights in parallel:  60%|█████▉    | 97/163 [00:04<00:02, 25.54it/s]Loading safetensors weights in parallel:  57%|█████▋    | 93/163 [00:04<00:02, 26.99it/s]Loading safetensors weights in parallel:  58%|█████▊    | 95/163 [00:04<00:02, 29.12it/s]Loading safetensors weights in parallel:  64%|██████▍   | 105/163 [00:04<00:02, 22.20it/s]Loading safetensors weights in parallel:  62%|██████▏   | 101/163 [00:04<00:02, 22.46it/s]Loading safetensors weights in parallel:  62%|██████▏   | 101/163 [00:04<00:02, 21.49it/s]Loading safetensors weights in parallel:  61%|██████    | 99/163 [00:04<00:02, 31.06it/s]Loading safetensors weights in parallel:  60%|█████▉    | 97/163 [00:04<00:02, 29.36it/s]Loading safetensors weights in parallel:  66%|██████▋   | 108/163 [00:04<00:02, 21.69it/s]Loading safetensors weights in parallel:  62%|██████▏   | 101/163 [00:05<00:02, 30.11it/s]Loading safetensors weights in parallel:  62%|██████▏   | 101/163 [00:05<00:02, 22.32it/s]Loading safetensors weights in parallel:  61%|██████▏   | 100/163 [00:05<00:02, 23.58it/s]Loading safetensors weights in parallel:  64%|██████▍   | 104/163 [00:05<00:02, 20.39it/s]Loading safetensors weights in parallel:  68%|██████▊   | 111/163 [00:05<00:02, 21.79it/s]Loading safetensors weights in parallel:  67%|██████▋   | 109/163 [00:05<00:02, 25.19it/s]Loading safetensors weights in parallel:  64%|██████▍   | 105/163 [00:05<00:03, 18.37it/s]Loading safetensors weights in parallel:  63%|██████▎   | 103/163 [00:05<00:02, 21.62it/s]Loading safetensors weights in parallel:  71%|███████   | 115/163 [00:05<00:02, 23.33it/s]Loading safetensors weights in parallel:  64%|██████▍   | 104/163 [00:05<00:03, 19.35it/s]Loading safetensors weights in parallel:  69%|██████▉   | 113/163 [00:05<00:01, 27.55it/s]Loading safetensors weights in parallel:  62%|██████▏   | 101/163 [00:05<00:03, 18.13it/s]Loading safetensors weights in parallel:  67%|██████▋   | 110/163 [00:05<00:02, 22.01it/s]Loading safetensors weights in parallel:  66%|██████▋   | 108/163 [00:05<00:02, 22.27it/s]Loading safetensors weights in parallel:  72%|███████▏  | 118/163 [00:05<00:01, 23.36it/s]Loading safetensors weights in parallel:  63%|██████▎   | 103/163 [00:05<00:03, 17.84it/s]Loading safetensors weights in parallel:  64%|██████▍   | 105/163 [00:05<00:02, 19.81it/s]Loading safetensors weights in parallel:  72%|███████▏  | 117/163 [00:05<00:01, 28.21it/s]Loading safetensors weights in parallel:  71%|███████   | 115/163 [00:05<00:01, 26.02it/s]Loading safetensors weights in parallel:  64%|██████▍   | 105/163 [00:05<00:02, 20.09it/s]Loading safetensors weights in parallel:  70%|██████▉   | 114/163 [00:05<00:01, 28.30it/s]Loading safetensors weights in parallel:  66%|██████▌   | 107/163 [00:05<00:02, 20.35it/s]Loading safetensors weights in parallel:  75%|███████▍  | 122/163 [00:05<00:01, 24.33it/s]Loading safetensors weights in parallel:  66%|██████▋   | 108/163 [00:05<00:02, 20.50it/s]Loading safetensors weights in parallel:  65%|██████▌   | 106/163 [00:05<00:03, 16.96it/s]Loading safetensors weights in parallel:  73%|███████▎  | 119/163 [00:05<00:01, 28.05it/s]Loading safetensors weights in parallel:  74%|███████▍  | 121/163 [00:05<00:01, 26.73it/s]Loading safetensors weights in parallel:  72%|███████▏  | 118/163 [00:05<00:01, 30.22it/s]Loading safetensors weights in parallel:  67%|██████▋   | 109/163 [00:05<00:02, 22.14it/s]Loading safetensors weights in parallel:  69%|██████▊   | 112/163 [00:05<00:02, 24.88it/s]Loading safetensors weights in parallel:  69%|██████▊   | 112/163 [00:05<00:02, 22.18it/s]Loading safetensors weights in parallel:  67%|██████▋   | 110/163 [00:05<00:02, 18.92it/s]Loading safetensors weights in parallel:  77%|███████▋  | 125/163 [00:05<00:00, 38.29it/s]Loading safetensors weights in parallel:  71%|███████   | 115/163 [00:05<00:01, 29.19it/s]Loading safetensors weights in parallel:  71%|███████   | 116/163 [00:05<00:01, 25.14it/s]Loading safetensors weights in parallel:  72%|███████▏  | 118/163 [00:05<00:01, 29.14it/s]Loading safetensors weights in parallel:  70%|██████▉   | 114/163 [00:05<00:02, 22.26it/s]Loading safetensors weights in parallel:  74%|███████▎  | 120/163 [00:05<00:01, 29.38it/s]Loading safetensors weights in parallel:  74%|███████▎  | 120/163 [00:05<00:01, 29.03it/s]Loading safetensors weights in parallel:  75%|███████▍  | 122/163 [00:05<00:01, 29.48it/s]Loading safetensors weights in parallel:  75%|███████▍  | 122/163 [00:05<00:01, 26.22it/s]Loading safetensors weights in parallel:  76%|███████▌  | 124/163 [00:06<00:01, 28.83it/s]Loading safetensors weights in parallel:  76%|███████▌  | 124/163 [00:06<00:02, 14.44it/s]Loading safetensors weights in parallel:  79%|███████▊  | 128/163 [00:06<00:01, 19.94it/s]Loading safetensors weights in parallel:  78%|███████▊  | 127/163 [00:06<00:02, 16.20it/s]Loading safetensors weights in parallel:  77%|███████▋  | 125/163 [00:06<00:03, 10.75it/s]Loading safetensors weights in parallel:  80%|████████  | 131/163 [00:06<00:01, 20.45it/s]Loading safetensors weights in parallel:  80%|███████▉  | 130/163 [00:06<00:01, 18.43it/s]Loading safetensors weights in parallel:  79%|███████▉  | 129/163 [00:06<00:02, 13.61it/s]Loading safetensors weights in parallel:  79%|███████▊  | 128/163 [00:06<00:01, 21.83it/s]Loading safetensors weights in parallel:  77%|███████▋  | 126/163 [00:06<00:02, 17.18it/s]Loading safetensors weights in parallel:  82%|████████▏ | 134/163 [00:06<00:01, 20.39it/s]Loading safetensors weights in parallel:  80%|███████▉  | 130/163 [00:06<00:02, 15.73it/s]Loading safetensors weights in parallel:  77%|███████▋  | 126/163 [00:06<00:02, 15.66it/s]Loading safetensors weights in parallel:  82%|████████▏ | 133/163 [00:06<00:01, 16.82it/s]Loading safetensors weights in parallel:  79%|███████▊  | 128/163 [00:06<00:02, 16.66it/s]Loading safetensors weights in parallel:  82%|████████▏ | 134/163 [00:06<00:01, 18.08it/s]Loading safetensors weights in parallel:  80%|████████  | 131/163 [00:06<00:01, 21.37it/s]Loading safetensors weights in parallel:  81%|████████  | 132/163 [00:06<00:01, 21.87it/s]Loading safetensors weights in parallel:  79%|███████▉  | 129/163 [00:06<00:01, 17.04it/s]Loading safetensors weights in parallel:  83%|████████▎ | 136/163 [00:06<00:01, 17.66it/s]Loading safetensors weights in parallel:  84%|████████▍ | 137/163 [00:06<00:01, 18.64it/s]Loading safetensors weights in parallel:  82%|████████▏ | 134/163 [00:06<00:01, 16.37it/s]Loading safetensors weights in parallel:  84%|████████▍ | 137/163 [00:06<00:01, 17.64it/s]Loading safetensors weights in parallel:  82%|████████▏ | 134/163 [00:06<00:01, 19.96it/s]Loading safetensors weights in parallel:  89%|████████▉ | 145/163 [00:06<00:00, 29.17it/s]Loading safetensors weights in parallel:  80%|████████  | 131/163 [00:06<00:02, 15.02it/s]Loading safetensors weights in parallel:  85%|████████▍ | 138/163 [00:06<00:01, 18.97it/s]Loading safetensors weights in parallel:  85%|████████▌ | 139/163 [00:06<00:01, 17.69it/s]Loading safetensors weights in parallel:  82%|████████▏ | 134/163 [00:06<00:01, 17.60it/s]Loading safetensors weights in parallel:  87%|████████▋ | 141/163 [00:06<00:01, 19.85it/s]Loading safetensors weights in parallel:  84%|████████▍ | 137/163 [00:06<00:01, 21.35it/s]Loading safetensors weights in parallel:  94%|█████████▍| 154/163 [00:06<00:00, 41.65it/s]Loading safetensors weights in parallel:  83%|████████▎ | 136/163 [00:06<00:01, 17.53it/s]Loading safetensors weights in parallel:  90%|████████▉ | 146/163 [00:06<00:00, 27.46it/s]Loading safetensors weights in parallel:  83%|████████▎ | 135/163 [00:06<00:01, 17.69it/s]Loading safetensors weights in parallel:  89%|████████▉ | 145/163 [00:06<00:00, 24.53it/s]Loading safetensors weights in parallel: 100%|██████████| 163/163 [00:06<00:00, 23.38it/s]
+Loading safetensors weights in parallel:  94%|█████████▍| 153/163 [00:06<00:00, 37.08it/s]Loading weights:   0%|          | 0/2250 [00:00<?, ?it/s]Loading safetensors weights in parallel: 100%|██████████| 163/163 [00:07<00:00, 23.21it/s]
+Loading weights:   0%|          | 0/2250 [00:00<?, ?it/s]Loading safetensors weights in parallel:  97%|█████████▋| 158/163 [00:07<00:00, 43.41it/s]Loading safetensors weights in parallel:  87%|████████▋ | 142/163 [00:07<00:00, 23.02it/s]Loading safetensors weights in parallel:  85%|████████▍ | 138/163 [00:07<00:01, 19.40it/s]Loading safetensors weights in parallel: 100%|██████████| 163/163 [00:07<00:00, 23.12it/s]
+Loading safetensors weights in parallel:  94%|█████████▍| 153/163 [00:07<00:00, 34.98it/s]Loading weights:   0%|          | 0/2250 [00:00<?, ?it/s]Loading safetensors weights in parallel:  85%|████████▌ | 139/163 [00:07<00:01, 18.36it/s]Loading safetensors weights in parallel: 100%|██████████| 163/163 [00:07<00:00, 22.95it/s]
+Loading weights:   0%|          | 0/2250 [00:00<?, ?it/s]Loading safetensors weights in parallel:  91%|█████████▏| 149/163 [00:07<00:00, 30.56it/s]Loading safetensors weights in parallel:  86%|████████▌ | 140/163 [00:07<00:01, 18.12it/s]Loading safetensors weights in parallel:  88%|████████▊ | 144/163 [00:07<00:00, 25.43it/s]Loading safetensors weights in parallel:  87%|████████▋ | 142/163 [00:07<00:01, 19.83it/s]Loading weights:   0%|          | 3/2250 [00:00<03:14, 11.57it/s]Loading safetensors weights in parallel: 100%|██████████| 163/163 [00:07<00:00, 51.04it/s]Loading safetensors weights in parallel: 100%|██████████| 163/163 [00:07<00:00, 22.50it/s]
+Loading weights:   0%|          | 0/2250 [00:00<?, ?it/s]Loading safetensors weights in parallel:  94%|█████████▍| 153/163 [00:07<00:00, 37.29it/s]Loading weights:   0%|          | 3/2250 [00:00<03:02, 12.33it/s]Loading safetensors weights in parallel: 100%|██████████| 163/163 [00:07<00:00, 22.36it/s]
+Loading weights:   0%|          | 0/2250 [00:00<?, ?it/s]Loading safetensors weights in parallel:  94%|█████████▍| 153/163 [00:07<00:00, 36.60it/s]Loading safetensors weights in parallel: 100%|██████████| 163/163 [00:07<00:00, 22.30it/s]
+Loading weights:   0%|          | 0/2250 [00:00<?, ?it/s]Loading weights:   0%|          | 3/2250 [00:00<03:21, 11.13it/s]Loading weights:   1%|          | 23/2250 [00:00<00:28, 77.10it/s]Loading weights:   0%|          | 3/2250 [00:00<03:02, 12.33it/s]Loading safetensors weights in parallel: 100%|██████████| 163/163 [00:07<00:00, 22.17it/s]
+Loading weights:   0%|          | 0/2250 [00:00<?, ?it/s]Loading weights:   1%|          | 23/2250 [00:00<00:27, 79.84it/s]Loading weights:   1%|          | 23/2250 [00:00<00:29, 74.89it/s]Loading weights:   2%|▏         | 42/2250 [00:00<00:19, 113.88it/s]Loading weights:   1%|          | 24/2250 [00:00<00:27, 80.62it/s]Loading weights:   2%|▏         | 40/2250 [00:00<00:20, 110.40it/s]Loading weights:   0%|          | 3/2250 [00:00<03:23, 11.05it/s]Loading weights:   0%|          | 3/2250 [00:00<03:02, 12.28it/s]Loading weights:   2%|▏         | 42/2250 [00:00<00:20, 109.52it/s]Loading weights:   3%|▎         | 64/2250 [00:00<00:15, 139.91it/s]Loading weights:   0%|          | 3/2250 [00:00<03:21, 11.14it/s]Loading weights:   2%|▏         | 48/2250 [00:00<00:17, 125.83it/s]Loading weights:   3%|▎         | 62/2250 [00:00<00:15, 138.64it/s]Loading weights:   0%|          | 3/2250 [00:00<03:19, 11.26it/s]Loading weights:   1%|          | 23/2250 [00:00<00:30, 73.84it/s]Loading weights:   3%|▎         | 62/2250 [00:00<00:15, 136.84it/s]Loading weights:   1%|          | 23/2250 [00:00<00:27, 80.40it/s]Loading weights:   4%|▍         | 88/2250 [00:00<00:12, 167.17it/s]Loading weights:   3%|▎         | 72/2250 [00:00<00:13, 160.80it/s]Loading weights:   1%|          | 23/2250 [00:00<00:29, 74.60it/s]Loading weights:   4%|▎         | 83/2250 [00:00<00:13, 157.68it/s]Loading weights:   1%|          | 23/2250 [00:00<00:29, 75.14it/s]Loading weights:   2%|▏         | 42/2250 [00:00<00:20, 109.99it/s]Loading weights:   2%|▏         | 42/2250 [00:00<00:18, 117.38it/s]Loading weights:   4%|▎         | 83/2250 [00:00<00:13, 157.82it/s]Loading weights:   5%|▍         | 112/2250 [00:00<00:11, 187.45it/s]Loading weights:   4%|▍         | 94/2250 [00:00<00:12, 177.74it/s]Loading weights:   5%|▍         | 106/2250 [00:00<00:11, 179.02it/s]Loading weights:   2%|▏         | 42/2250 [00:00<00:20, 108.15it/s]Loading weights:   2%|▏         | 42/2250 [00:00<00:20, 109.33it/s]Loading weights:   3%|▎         | 62/2250 [00:00<00:15, 144.39it/s]Loading weights:   5%|▍         | 107/2250 [00:00<00:11, 181.81it/s]Loading weights:   3%|▎         | 64/2250 [00:00<00:15, 137.95it/s]Loading weights:   5%|▌         | 117/2250 [00:00<00:11, 189.81it/s]Loading weights:   3%|▎         | 64/2250 [00:00<00:16, 134.60it/s]Loading weights:   3%|▎         | 62/2250 [00:00<00:16, 136.05it/s]Loading weights:   4%|▎         | 83/2250 [00:00<00:13, 164.39it/s]Loading weights:   4%|▍         | 88/2250 [00:00<00:13, 164.45it/s]Loading weights:   4%|▍         | 87/2250 [00:00<00:13, 159.64it/s]Loading weights:   4%|▍         | 85/2250 [00:00<00:13, 162.83it/s]Loading weights:   5%|▍         | 107/2250 [00:00<00:11, 184.83it/s]Loading weights:   5%|▍         | 112/2250 [00:00<00:11, 186.30it/s]Loading weights:   5%|▍         | 112/2250 [00:00<00:11, 181.41it/s]Loading weights:   5%|▍         | 110/2250 [00:00<00:11, 188.35it/s]Loading weights:   6%|▌         | 133/2250 [00:01<00:26, 79.78it/s] Loading weights:   6%|▌         | 127/2250 [00:01<00:27, 77.40it/s] Loading weights:   6%|▌         | 127/2250 [00:01<00:27, 76.17it/s] Loading weights:   7%|▋         | 157/2250 [00:01<00:20, 102.99it/s]Loading weights:   7%|▋         | 149/2250 [00:01<00:21, 98.76it/s]Loading weights:   6%|▌         | 138/2250 [00:01<00:26, 78.91it/s] Loading weights:   7%|▋         | 149/2250 [00:01<00:21, 97.50it/s]Loading weights:   6%|▌         | 127/2250 [00:01<00:27, 77.61it/s] Loading weights:   6%|▌         | 133/2250 [00:01<00:26, 78.83it/s] Loading weights:   6%|▌         | 132/2250 [00:01<00:27, 78.23it/s] Loading weights:   7%|▋         | 149/2250 [00:01<00:21, 97.99it/s]Loading weights:   6%|▌         | 131/2250 [00:01<00:27, 77.46it/s] Loading weights:   7%|▋         | 157/2250 [00:01<00:20, 101.39it/s]Loading weights:   7%|▋         | 156/2250 [00:01<00:20, 101.07it/s]Loading weights:   7%|▋         | 154/2250 [00:01<00:21, 99.30it/s]Loading weights:   8%|▊         | 175/2250 [00:02<00:31, 64.85it/s] Loading weights:   7%|▋         | 166/2250 [00:01<00:33, 63.08it/s]Loading weights:   7%|▋         | 166/2250 [00:02<00:33, 62.74it/s]Loading weights:   7%|▋         | 164/2250 [00:01<00:34, 60.81it/s]Loading weights:   8%|▊         | 186/2250 [00:02<00:25, 80.03it/s]Loading weights:   8%|▊         | 186/2250 [00:02<00:25, 79.42it/s]Loading weights:   8%|▊         | 189/2250 [00:02<00:25, 80.37it/s]Loading weights:   7%|▋         | 166/2250 [00:01<00:33, 61.61it/s]Loading weights:   8%|▊         | 175/2250 [00:02<00:31, 65.17it/s] Loading weights:   8%|▊         | 173/2250 [00:02<00:32, 64.46it/s] Loading weights:   8%|▊         | 186/2250 [00:02<00:26, 78.09it/s]Loading weights:   8%|▊         | 172/2250 [00:02<00:32, 64.26it/s]Loading weights:   9%|▊         | 193/2250 [00:02<00:25, 80.49it/s]Loading weights:   9%|▊         | 194/2250 [00:02<00:24, 82.72it/s]Loading weights:   9%|▉         | 201/2250 [00:02<00:37, 54.84it/s]Loading weights:   9%|▉         | 201/2250 [00:02<00:38, 53.50it/s]Loading weights:   9%|▉         | 201/2250 [00:02<00:37, 54.46it/s]Loading weights:  10%|█         | 226/2250 [00:02<00:27, 73.05it/s]Loading weights:   9%|▉         | 205/2250 [00:02<00:36, 56.03it/s]Loading weights:  10%|█         | 226/2250 [00:02<00:27, 74.85it/s]Loading weights:  10%|█         | 226/2250 [00:02<00:26, 75.77it/s]Loading weights:   9%|▉         | 201/2250 [00:02<00:36, 56.36it/s]Loading weights:  10%|█         | 230/2250 [00:02<00:26, 75.70it/s]Loading weights:   9%|▉         | 201/2250 [00:02<00:38, 53.38it/s]Loading weights:  10%|▉         | 223/2250 [00:02<00:27, 72.51it/s]Loading weights:   9%|▉         | 208/2250 [00:02<00:37, 55.16it/s]Loading weights:   9%|▉         | 210/2250 [00:02<00:35, 57.83it/s]Loading weights:  10%|▉         | 223/2250 [00:02<00:28, 71.99it/s]Loading weights:  10%|█         | 230/2250 [00:02<00:27, 73.72it/s]Loading weights:  10%|█         | 231/2250 [00:02<00:26, 74.87it/s]Loading weights:  11%|█         | 241/2250 [00:03<00:36, 54.95it/s]Loading weights:  11%|█         | 241/2250 [00:03<00:34, 57.56it/s]Loading weights:  11%|█         | 241/2250 [00:03<00:37, 53.75it/s]Loading weights:  12%|█▏        | 260/2250 [00:03<00:29, 68.58it/s]Loading weights:  12%|█▏        | 260/2250 [00:03<00:27, 73.00it/s]Loading weights:  11%|█         | 245/2250 [00:03<00:36, 55.10it/s]Loading weights:  11%|█         | 238/2250 [00:03<00:34, 58.01it/s]Loading weights:  12%|█▏        | 260/2250 [00:03<00:29, 68.14it/s]Loading weights:  12%|█▏        | 268/2250 [00:03<00:26, 73.53it/s]Loading weights:  12%|█▏        | 263/2250 [00:03<00:25, 78.56it/s]Loading weights:  11%|█         | 238/2250 [00:03<00:38, 52.19it/s]Loading weights:  11%|█         | 246/2250 [00:03<00:35, 56.56it/s]Loading weights:  11%|█         | 245/2250 [00:03<00:37, 54.14it/s]Loading weights:  12%|█▏        | 260/2250 [00:03<00:28, 70.75it/s]Loading weights:  12%|█▏        | 274/2250 [00:03<00:24, 82.19it/s]Loading weights:  12%|█▏        | 267/2250 [00:03<00:27, 72.86it/s]Loading weights:  12%|█▏        | 275/2250 [00:03<00:38, 51.00it/s]Loading weights:  12%|█▏        | 275/2250 [00:03<00:37, 53.02it/s]Loading weights:  12%|█▏        | 275/2250 [00:03<00:39, 49.94it/s]Loading weights:  13%|█▎        | 300/2250 [00:03<00:25, 75.45it/s]Loading weights:  13%|█▎        | 300/2250 [00:04<00:27, 71.18it/s]Loading weights:  12%|█▏        | 278/2250 [00:03<00:34, 57.98it/s]Loading weights:  13%|█▎        | 283/2250 [00:03<00:36, 53.80it/s]Loading weights:  13%|█▎        | 297/2250 [00:04<00:28, 68.25it/s]Loading weights:  13%|█▎        | 297/2250 [00:03<00:26, 72.54it/s]Loading weights:  14%|█▎        | 305/2250 [00:04<00:27, 71.58it/s]Loading weights:  13%|█▎        | 290/2250 [00:03<00:31, 62.38it/s]Loading weights:  13%|█▎        | 282/2250 [00:03<00:35, 55.65it/s]Loading weights:  12%|█▏        | 275/2250 [00:03<00:38, 51.01it/s]Loading weights:  14%|█▍        | 311/2250 [00:03<00:24, 79.88it/s]Loading weights:  14%|█▎        | 305/2250 [00:03<00:25, 75.98it/s]Loading weights:  13%|█▎        | 297/2250 [00:04<00:28, 69.19it/s]Loading weights:  14%|█▍        | 315/2250 [00:04<00:32, 59.69it/s]Loading weights:  14%|█▍        | 314/2250 [00:04<00:36, 53.34it/s]Loading weights:  15%|█▍        | 334/2250 [00:04<00:25, 74.51it/s]Loading weights:  14%|█▍        | 312/2250 [00:04<00:37, 51.08it/s]Loading weights:  14%|█▍        | 312/2250 [00:04<00:34, 55.70it/s]Loading weights:  15%|█▍        | 334/2250 [00:04<00:27, 69.06it/s]Loading weights:  14%|█▍        | 320/2250 [00:04<00:36, 53.32it/s]Loading weights:  15%|█▍        | 334/2250 [00:04<00:27, 69.49it/s]Loading weights:  15%|█▍        | 334/2250 [00:04<00:25, 74.00it/s]Loading weights:  14%|█▍        | 326/2250 [00:04<00:31, 60.82it/s]Loading weights:  14%|█▍        | 320/2250 [00:04<00:32, 59.29it/s]Loading weights:  15%|█▌        | 342/2250 [00:04<00:26, 71.54it/s]Loading weights:  15%|█▌        | 342/2250 [00:04<00:24, 78.38it/s]Loading weights:  14%|█▍        | 312/2250 [00:04<00:37, 51.89it/s]Loading weights:  16%|█▌        | 349/2250 [00:04<00:31, 59.81it/s]Loading weights:  15%|█▍        | 334/2250 [00:04<00:27, 69.98it/s]Loading weights:  16%|█▋        | 371/2250 [00:04<00:23, 80.22it/s]Loading weights:  16%|█▌        | 349/2250 [00:05<00:36, 52.71it/s]Loading weights:  16%|█▌        | 349/2250 [00:05<00:36, 52.26it/s]Loading weights:  16%|█▌        | 349/2250 [00:04<00:34, 54.57it/s]Loading weights:  16%|█▋        | 371/2250 [00:05<00:26, 70.94it/s]Loading weights:  16%|█▌        | 349/2250 [00:04<00:34, 55.15it/s]Loading weights:  16%|█▌        | 356/2250 [00:04<00:32, 59.10it/s]Loading weights:  16%|█▌        | 357/2250 [00:05<00:35, 53.50it/s]Loading weights:  16%|█▋        | 371/2250 [00:05<00:26, 70.66it/s]Loading weights:  16%|█▋        | 371/2250 [00:05<00:25, 73.46it/s]Loading weights:  16%|█▋        | 371/2250 [00:04<00:26, 72.16it/s]Loading weights:  17%|█▋        | 379/2250 [00:05<00:23, 80.20it/s]Loading weights:  17%|█▋        | 379/2250 [00:05<00:26, 71.86it/s]Loading weights:  17%|█▋        | 386/2250 [00:05<00:30, 62.10it/s]Loading weights:  16%|█▌        | 349/2250 [00:05<00:35, 52.89it/s]Loading weights:  18%|█▊        | 408/2250 [00:05<00:22, 82.19it/s]Loading weights:  17%|█▋        | 374/2250 [00:05<00:25, 74.28it/s]Loading weights:  17%|█▋        | 386/2250 [00:05<00:35, 53.24it/s]Loading weights:  17%|█▋        | 386/2250 [00:05<00:31, 59.10it/s]Loading weights:  18%|█▊        | 408/2250 [00:05<00:25, 71.67it/s]Loading weights:  17%|█▋        | 386/2250 [00:05<00:35, 52.66it/s]Loading weights:  17%|█▋        | 386/2250 [00:05<00:34, 54.60it/s]Loading weights:  18%|█▊        | 408/2250 [00:05<00:23, 78.58it/s]Loading weights:  18%|█▊        | 394/2250 [00:05<00:32, 57.41it/s]Loading weights:  17%|█▋        | 393/2250 [00:05<00:35, 52.30it/s]Loading weights:  18%|█▊        | 408/2250 [00:05<00:25, 72.80it/s]Loading weights:  18%|█▊        | 408/2250 [00:05<00:26, 70.77it/s]Loading weights:  18%|█▊        | 415/2250 [00:05<00:24, 75.59it/s]Loading weights:  19%|█▉        | 423/2250 [00:05<00:29, 62.32it/s]Loading weights:  18%|█▊        | 416/2250 [00:05<00:25, 71.99it/s]Loading weights:  17%|█▋        | 389/2250 [00:05<00:33, 55.55it/s]Loading weights:  20%|█▉        | 445/2250 [00:05<00:22, 81.96it/s]Loading weights:  18%|█▊        | 408/2250 [00:05<00:26, 70.29it/s]Loading weights:  19%|█▉        | 423/2250 [00:05<00:30, 60.85it/s]Loading weights:  19%|█▉        | 423/2250 [00:06<00:34, 52.23it/s]Loading weights:  19%|█▉        | 423/2250 [00:05<00:31, 57.81it/s]Loading weights:  20%|█▉        | 445/2250 [00:06<00:22, 80.38it/s]Loading weights:  19%|█▉        | 429/2250 [00:06<00:31, 57.38it/s]Loading weights:  20%|█▉        | 445/2250 [00:06<00:25, 70.77it/s]Loading weights:  19%|█▉        | 423/2250 [00:06<00:35, 51.62it/s]Loading weights:  20%|█▉        | 445/2250 [00:06<00:23, 76.52it/s]Loading weights:  20%|██        | 452/2250 [00:06<00:22, 78.61it/s]Loading weights:  20%|██        | 460/2250 [00:06<00:28, 62.00it/s]Loading weights:  19%|█▉        | 431/2250 [00:06<00:34, 52.50it/s]Loading weights:  20%|█▉        | 448/2250 [00:06<00:24, 72.60it/s]Loading weights:  21%|██▏       | 482/2250 [00:06<00:21, 82.24it/s]Loading weights:  20%|██        | 453/2250 [00:06<00:25, 70.74it/s]Loading weights:  19%|█▉        | 423/2250 [00:06<00:35, 51.35it/s]Loading weights:  20%|██        | 460/2250 [00:06<00:28, 62.13it/s]Loading weights:  20%|█▉        | 448/2250 [00:06<00:24, 72.49it/s]Loading weights:  21%|██▏       | 482/2250 [00:06<00:21, 82.49it/s]Loading weights:  20%|██        | 460/2250 [00:06<00:30, 58.79it/s]Loading weights:  21%|██        | 467/2250 [00:06<00:29, 59.99it/s]Loading weights:  20%|██        | 460/2250 [00:06<00:34, 52.04it/s]Loading weights:  21%|██▏       | 482/2250 [00:06<00:22, 78.34it/s]Loading weights:  22%|██▏       | 497/2250 [00:06<00:27, 63.19it/s]Loading weights:  22%|██▏       | 490/2250 [00:06<00:21, 81.14it/s]Loading weights:  21%|██▏       | 482/2250 [00:07<00:25, 70.19it/s]Loading weights:  21%|██        | 462/2250 [00:06<00:33, 53.04it/s]Loading weights:  23%|██▎       | 519/2250 [00:06<00:20, 83.19it/s]Loading weights:  21%|██        | 467/2250 [00:06<00:35, 50.79it/s]Loading weights:  21%|██▏       | 482/2250 [00:07<00:25, 69.03it/s]Loading weights:  22%|██▏       | 497/2250 [00:06<00:27, 64.18it/s]Loading weights:  22%|██▏       | 490/2250 [00:07<00:25, 70.29it/s]Loading weights:  21%|██        | 462/2250 [00:06<00:33, 52.76it/s]Loading weights:  23%|██▎       | 519/2250 [00:07<00:20, 84.62it/s]Loading weights:  22%|██▏       | 497/2250 [00:06<00:28, 61.71it/s]Loading weights:  21%|██▏       | 482/2250 [00:07<00:25, 68.62it/s]Loading weights:  22%|██▏       | 505/2250 [00:07<00:27, 63.44it/s]Loading weights:  23%|██▎       | 519/2250 [00:07<00:21, 81.76it/s]Loading weights:  24%|██▎       | 533/2250 [00:07<00:18, 90.95it/s]Loading weights:  24%|██▎       | 534/2250 [00:07<00:27, 62.06it/s]Loading weights:  22%|██▏       | 497/2250 [00:07<00:32, 53.16it/s]Loading weights:  25%|██▍       | 556/2250 [00:07<00:20, 82.02it/s]Loading weights:  23%|██▎       | 519/2250 [00:07<00:24, 71.61it/s]Loading weights:  22%|██▏       | 497/2250 [00:07<00:33, 52.07it/s]Loading weights:  22%|██▏       | 505/2250 [00:07<00:33, 52.88it/s]Loading weights:  24%|██▎       | 534/2250 [00:07<00:26, 63.85it/s]Loading weights:  23%|██▎       | 519/2250 [00:07<00:24, 70.56it/s]Loading weights:  23%|██▎       | 527/2250 [00:07<00:24, 71.30it/s]Loading weights:  25%|██▍       | 559/2250 [00:07<00:19, 87.96it/s]Loading weights:  22%|██▏       | 497/2250 [00:07<00:33, 52.07it/s]Loading weights:  24%|██▎       | 534/2250 [00:07<00:27, 61.48it/s]Loading weights:  24%|██▍       | 549/2250 [00:07<00:25, 67.84it/s]Loading weights:  23%|██▎       | 522/2250 [00:07<00:23, 73.28it/s]Loading weights:  25%|██▍       | 556/2250 [00:07<00:20, 81.64it/s]Loading weights:  25%|██▌       | 571/2250 [00:07<00:27, 61.01it/s]Loading weights:  24%|██▎       | 534/2250 [00:08<00:32, 52.60it/s]Loading weights:  26%|██▋       | 593/2250 [00:08<00:20, 80.64it/s]Loading weights:  26%|██▌       | 574/2250 [00:07<00:25, 66.15it/s]Loading weights:  25%|██▍       | 556/2250 [00:08<00:23, 70.88it/s]Loading weights:  24%|██▎       | 534/2250 [00:08<00:33, 51.78it/s]Loading weights:  26%|██▋       | 593/2250 [00:08<00:20, 82.42it/s]Loading weights:  24%|██▍       | 541/2250 [00:08<00:33, 51.21it/s]Loading weights:  25%|██▍       | 556/2250 [00:08<00:24, 70.02it/s]Loading weights:  25%|██▌       | 571/2250 [00:08<00:28, 59.77it/s]Loading weights:  25%|██▌       | 571/2250 [00:08<00:27, 61.71it/s]Loading weights:  25%|██▌       | 564/2250 [00:08<00:23, 70.49it/s]Loading weights:  26%|██▋       | 593/2250 [00:08<00:21, 77.66it/s]Loading weights:  24%|██▍       | 536/2250 [00:08<00:32, 53.03it/s]Loading weights:  26%|██▋       | 593/2250 [00:08<00:20, 82.03it/s]Loading weights:  27%|██▋       | 608/2250 [00:08<00:27, 60.37it/s]Loading weights:  25%|██▍       | 556/2250 [00:08<00:24, 69.08it/s]Loading weights:  28%|██▊       | 630/2250 [00:08<00:20, 79.97it/s]Loading weights:  25%|██▌       | 571/2250 [00:08<00:31, 52.61it/s]Loading weights:  27%|██▋       | 608/2250 [00:08<00:26, 61.70it/s]Loading weights:  26%|██▋       | 593/2250 [00:08<00:23, 70.81it/s]Loading weights:  28%|██▊       | 630/2250 [00:08<00:19, 81.65it/s]Loading weights:  25%|██▌       | 571/2250 [00:08<00:32, 51.79it/s]Loading weights:  27%|██▋       | 608/2250 [00:08<00:26, 60.82it/s]Loading weights:  27%|██▋       | 608/2250 [00:08<00:26, 61.65it/s]Loading weights:  26%|██▌       | 578/2250 [00:08<00:32, 50.96it/s]Loading weights:  26%|██▋       | 596/2250 [00:08<00:22, 72.86it/s]Loading weights:  28%|██▊       | 630/2250 [00:08<00:20, 79.75it/s]Loading weights:  28%|██▊       | 630/2250 [00:08<00:19, 81.36it/s]Loading weights:  27%|██▋       | 601/2250 [00:08<00:23, 70.42it/s]Loading weights:  25%|██▌       | 571/2250 [00:08<00:32, 51.25it/s]Loading weights:  29%|██▊       | 645/2250 [00:09<00:26, 60.49it/s]Loading weights:  26%|██▋       | 596/2250 [00:08<00:22, 72.46it/s]Loading weights:  30%|██▉       | 667/2250 [00:09<00:19, 80.24it/s]Loading weights:  29%|██▊       | 645/2250 [00:09<00:25, 61.83it/s]Loading weights:  30%|██▉       | 667/2250 [00:09<00:19, 82.14it/s]Loading weights:  27%|██▋       | 608/2250 [00:09<00:32, 50.96it/s]Loading weights:  29%|██▊       | 645/2250 [00:09<00:26, 61.36it/s]Loading weights:  29%|██▊       | 645/2250 [00:09<00:26, 61.45it/s]Loading weights:  28%|██▊       | 630/2250 [00:09<00:23, 69.00it/s]Loading weights:  27%|██▋       | 610/2250 [00:09<00:31, 51.88it/s]Loading weights:  30%|██▉       | 667/2250 [00:09<00:19, 80.89it/s]Loading weights:  30%|██▉       | 670/2250 [00:09<00:18, 84.65it/s]Loading weights:  27%|██▋       | 616/2250 [00:09<00:31, 51.14it/s]Loading weights:  30%|███       | 682/2250 [00:09<00:25, 62.40it/s]Loading weights:  28%|██▊       | 633/2250 [00:09<00:22, 70.39it/s]Loading weights:  28%|██▊       | 638/2250 [00:09<00:23, 69.42it/s]Loading weights:  31%|███▏      | 704/2250 [00:09<00:18, 82.15it/s]Loading weights:  27%|██▋       | 610/2250 [00:09<00:31, 51.69it/s]Loading weights:  30%|███       | 682/2250 [00:09<00:24, 64.19it/s]Loading weights:  28%|██▊       | 633/2250 [00:09<00:23, 70.28it/s]Loading weights:  31%|███▏      | 704/2250 [00:09<00:18, 84.74it/s]Loading weights:  30%|███       | 682/2250 [00:09<00:24, 63.52it/s]Loading weights:  30%|███       | 685/2250 [00:09<00:23, 66.43it/s]Loading weights:  31%|███▏      | 704/2250 [00:09<00:18, 83.63it/s]Loading weights:  29%|██▊       | 645/2250 [00:10<00:31, 51.23it/s]Loading weights:  31%|███▏      | 704/2250 [00:09<00:18, 82.72it/s]Loading weights:  30%|██▉       | 667/2250 [00:10<00:22, 69.16it/s]Loading weights:  32%|███▏      | 719/2250 [00:10<00:24, 62.25it/s]Loading weights:  29%|██▉       | 647/2250 [00:10<00:31, 51.31it/s]Loading weights:  29%|██▉       | 653/2250 [00:10<00:31, 50.80it/s]Loading weights:  33%|███▎      | 741/2250 [00:10<00:18, 82.17it/s]Loading weights:  30%|██▉       | 667/2250 [00:10<00:23, 66.94it/s]Loading weights:  32%|███▏      | 719/2250 [00:09<00:23, 64.03it/s]Loading weights:  30%|███       | 675/2250 [00:10<00:22, 68.84it/s]Loading weights:  29%|██▉       | 647/2250 [00:10<00:31, 51.18it/s]Loading weights:  33%|███▎      | 741/2250 [00:10<00:17, 84.28it/s]Loading weights:  32%|███▏      | 719/2250 [00:10<00:23, 64.24it/s]Loading weights:  32%|███▏      | 719/2250 [00:10<00:24, 63.30it/s]Loading weights:  30%|██▉       | 667/2250 [00:10<00:23, 67.08it/s]Loading weights:  33%|███▎      | 741/2250 [00:10<00:17, 84.63it/s]Loading weights:  33%|███▎      | 744/2250 [00:10<00:17, 86.68it/s]Loading weights:  30%|███       | 682/2250 [00:10<00:29, 52.72it/s]Loading weights:  34%|███▎      | 756/2250 [00:10<00:23, 62.55it/s]Loading weights:  31%|███▏      | 704/2250 [00:10<00:21, 71.10it/s]Loading weights:  30%|███       | 682/2250 [00:10<00:30, 50.98it/s]Loading weights:  35%|███▍      | 778/2250 [00:10<00:17, 82.49it/s]Loading weights:  34%|███▎      | 756/2250 [00:10<00:23, 63.96it/s]Loading weights:  31%|███       | 689/2250 [00:10<00:30, 51.44it/s]Loading weights:  31%|███▏      | 707/2250 [00:10<00:21, 72.06it/s]Loading weights:  35%|███▍      | 781/2250 [00:10<00:16, 87.65it/s]Loading weights:  34%|███▎      | 756/2250 [00:10<00:23, 63.79it/s]Loading weights:  32%|███▏      | 718/2250 [00:10<00:19, 77.43it/s]Loading weights:  34%|███▎      | 759/2250 [00:10<00:22, 66.30it/s]Loading weights:  30%|███       | 682/2250 [00:10<00:30, 51.15it/s]Loading weights:  35%|███▍      | 778/2250 [00:10<00:17, 84.20it/s]Loading weights:  35%|███▍      | 778/2250 [00:10<00:17, 82.79it/s]Loading weights:  31%|███▏      | 707/2250 [00:10<00:21, 72.46it/s]Loading weights:  35%|███▌      | 793/2250 [00:11<00:23, 62.42it/s]Loading weights:  32%|███▏      | 719/2250 [00:11<00:29, 52.71it/s]Loading weights:  35%|███▌      | 796/2250 [00:10<00:21, 67.02it/s]Loading weights:  36%|███▌      | 815/2250 [00:11<00:17, 82.25it/s]Loading weights:  33%|███▎      | 741/2250 [00:11<00:21, 71.00it/s]Loading weights:  32%|███▏      | 721/2250 [00:11<00:28, 52.84it/s]Loading weights:  36%|███▌      | 815/2250 [00:11<00:17, 83.22it/s]Loading weights:  35%|███▌      | 793/2250 [00:11<00:22, 63.85it/s]Loading weights:  33%|███▎      | 734/2250 [00:11<00:26, 56.23it/s]Loading weights:  35%|███▌      | 793/2250 [00:11<00:23, 62.45it/s]Loading weights:  33%|███▎      | 744/2250 [00:11<00:20, 71.78it/s]Loading weights:  36%|███▌      | 815/2250 [00:11<00:17, 84.26it/s]Loading weights:  36%|███▌      | 815/2250 [00:11<00:17, 83.04it/s]Loading weights:  32%|███▏      | 721/2250 [00:11<00:28, 53.07it/s]Loading weights:  33%|███▎      | 744/2250 [00:11<00:20, 72.21it/s]Loading weights:  37%|███▋      | 830/2250 [00:11<00:23, 60.32it/s]Loading weights:  37%|███▋      | 830/2250 [00:11<00:23, 61.04it/s]Loading weights:  34%|███▎      | 756/2250 [00:11<00:28, 52.26it/s]Loading weights:  38%|███▊      | 855/2250 [00:11<00:16, 82.65it/s]Loading weights:  38%|███▊      | 852/2250 [00:11<00:17, 81.38it/s]Loading weights:  35%|███▍      | 778/2250 [00:11<00:20, 70.35it/s]Loading weights:  37%|███▋      | 830/2250 [00:11<00:23, 61.53it/s]Loading weights:  34%|███▎      | 758/2250 [00:11<00:28, 52.30it/s]Loading weights:  37%|███▋      | 830/2250 [00:11<00:23, 60.57it/s]Loading weights:  34%|███▎      | 756/2250 [00:11<00:30, 49.14it/s]Loading weights:  38%|███▊      | 852/2250 [00:11<00:17, 81.48it/s]Loading weights:  35%|███▍      | 778/2250 [00:12<00:21, 68.42it/s]Loading weights:  38%|███▊      | 852/2250 [00:11<00:17, 80.72it/s]Loading weights:  35%|███▍      | 778/2250 [00:11<00:22, 65.08it/s]Loading weights:  34%|███▎      | 758/2250 [00:11<00:28, 52.60it/s]Loading weights:  39%|███▊      | 869/2250 [00:12<00:22, 61.43it/s]Loading weights:  35%|███▍      | 778/2250 [00:11<00:21, 68.70it/s]Loading weights:  39%|███▊      | 867/2250 [00:12<00:22, 61.21it/s]Loading weights:  40%|███▉      | 892/2250 [00:12<00:16, 81.50it/s]Loading weights:  35%|███▌      | 793/2250 [00:12<00:27, 52.74it/s]Loading weights:  40%|███▉      | 889/2250 [00:12<00:16, 81.55it/s]Loading weights:  39%|███▊      | 867/2250 [00:12<00:22, 61.21it/s]Loading weights:  39%|███▊      | 867/2250 [00:12<00:22, 60.82it/s]Loading weights:  36%|███▌      | 815/2250 [00:12<00:20, 70.97it/s]Loading weights:  35%|███▌      | 793/2250 [00:12<00:28, 51.24it/s]Loading weights:  40%|███▉      | 889/2250 [00:12<00:16, 81.19it/s]Loading weights:  35%|███▌      | 793/2250 [00:12<00:28, 51.08it/s]Loading weights:  40%|███▉      | 889/2250 [00:12<00:16, 81.01it/s]Loading weights:  36%|███▋      | 818/2250 [00:12<00:19, 72.45it/s]Loading weights:  36%|███▌      | 815/2250 [00:12<00:21, 68.32it/s]Loading weights:  35%|███▌      | 793/2250 [00:12<00:28, 51.73it/s]Loading weights:  40%|████      | 906/2250 [00:12<00:21, 61.68it/s]Loading weights:  40%|████      | 904/2250 [00:12<00:21, 62.14it/s]Loading weights:  36%|███▌      | 815/2250 [00:12<00:20, 70.19it/s]Loading weights:  41%|████      | 926/2250 [00:12<00:16, 78.85it/s]Loading weights:  41%|████      | 926/2250 [00:12<00:16, 82.04it/s]Loading weights:  40%|████      | 904/2250 [00:12<00:21, 61.93it/s]Loading weights:  40%|████      | 904/2250 [00:12<00:21, 61.51it/s]Loading weights:  37%|███▋      | 830/2250 [00:13<00:27, 51.89it/s]Loading weights:  41%|████      | 926/2250 [00:12<00:16, 82.01it/s]Loading weights:  41%|████      | 926/2250 [00:12<00:16, 81.30it/s]Loading weights:  38%|███▊      | 852/2250 [00:13<00:19, 70.04it/s]Loading weights:  37%|███▋      | 832/2250 [00:13<00:27, 52.05it/s]Loading weights:  37%|███▋      | 830/2250 [00:13<00:28, 50.57it/s]Loading weights:  42%|████▏     | 941/2250 [00:13<00:21, 60.17it/s]Loading weights:  38%|███▊      | 855/2250 [00:13<00:19, 70.47it/s]Loading weights:  38%|███▊      | 852/2250 [00:13<00:20, 68.03it/s]Loading weights:  42%|████▏     | 941/2250 [00:13<00:21, 62.21it/s]Loading weights:  43%|████▎     | 963/2250 [00:13<00:16, 80.38it/s]Loading weights:  37%|███▋      | 830/2250 [00:13<00:27, 50.88it/s]Loading weights:  43%|████▎     | 963/2250 [00:13<00:15, 82.51it/s]Loading weights:  38%|███▊      | 852/2250 [00:13<00:20, 69.03it/s]Loading weights:  42%|████▏     | 941/2250 [00:13<00:21, 62.20it/s]Loading weights:  42%|████▏     | 941/2250 [00:13<00:21, 62.08it/s]Loading weights:  43%|████▎     | 963/2250 [00:13<00:15, 82.29it/s]Loading weights:  39%|███▊      | 867/2250 [00:13<00:26, 52.12it/s]Loading weights:  43%|████▎     | 963/2250 [00:13<00:15, 82.20it/s]Loading weights:  40%|███▉      | 889/2250 [00:13<00:19, 70.27it/s]Loading weights:  43%|████▎     | 978/2250 [00:13<00:20, 61.69it/s]Loading weights:  39%|███▊      | 869/2250 [00:13<00:26, 51.65it/s]Loading weights:  43%|████▎     | 978/2250 [00:13<00:19, 63.71it/s]Loading weights:  39%|███▊      | 867/2250 [00:13<00:27, 50.83it/s]Loading weights:  44%|████▍     | 1000/2250 [00:13<00:15, 81.78it/s]Loading weights:  40%|███▉      | 889/2250 [00:13<00:20, 67.55it/s]Loading weights:  44%|████▍     | 1000/2250 [00:13<00:14, 84.25it/s]Loading weights:  40%|███▉      | 889/2250 [00:13<00:19, 68.63it/s]Loading weights:  43%|████▎     | 978/2250 [00:13<00:19, 63.74it/s]Loading weights:  39%|███▊      | 867/2250 [00:13<00:26, 51.30it/s]Loading weights:  43%|████▎     | 978/2250 [00:13<00:20, 63.03it/s]Loading weights:  44%|████▍     | 1000/2250 [00:13<00:14, 84.19it/s]Loading weights:  40%|███▉      | 889/2250 [00:13<00:19, 69.39it/s]Loading weights:  44%|████▍     | 1000/2250 [00:13<00:14, 83.34it/s]Loading weights:  40%|████      | 904/2250 [00:14<00:26, 50.99it/s]Loading weights:  45%|████▌     | 1015/2250 [00:14<00:19, 62.59it/s]Loading weights:  45%|████▌     | 1015/2250 [00:14<00:19, 64.61it/s]Loading weights:  41%|████      | 926/2250 [00:14<00:19, 68.93it/s]Loading weights:  46%|████▌     | 1037/2250 [00:14<00:14, 82.43it/s]Loading weights:  46%|████▌     | 1037/2250 [00:14<00:14, 84.71it/s]Loading weights:  40%|████      | 904/2250 [00:14<00:27, 48.93it/s]Loading weights:  45%|████▌     | 1015/2250 [00:14<00:19, 64.12it/s]Loading weights:  40%|████      | 904/2250 [00:14<00:26, 50.04it/s]Loading weights:  45%|████▌     | 1015/2250 [00:14<00:19, 64.17it/s]Loading weights:  41%|████▏     | 929/2250 [00:14<00:18, 69.59it/s]Loading weights:  41%|████▏     | 929/2250 [00:14<00:18, 70.76it/s]Loading weights:  46%|████▌     | 1037/2250 [00:14<00:14, 83.49it/s]Loading weights:  46%|████▌     | 1037/2250 [00:14<00:14, 84.70it/s]Loading weights:  40%|████      | 904/2250 [00:14<00:26, 50.18it/s]Loading weights:  41%|████      | 926/2250 [00:14<00:19, 68.15it/s]Loading weights:  47%|████▋     | 1052/2250 [00:14<00:18, 63.55it/s]Loading weights:  47%|████▋     | 1052/2250 [00:14<00:18, 64.75it/s]Loading weights:  42%|████▏     | 941/2250 [00:14<00:25, 51.08it/s]Loading weights:  48%|████▊     | 1074/2250 [00:14<00:14, 83.80it/s]Loading weights:  48%|████▊     | 1074/2250 [00:14<00:13, 85.14it/s]Loading weights:  43%|████▎     | 963/2250 [00:15<00:18, 68.99it/s]Loading weights:  47%|████▋     | 1052/2250 [00:14<00:18, 63.35it/s]Loading weights:  47%|████▋     | 1052/2250 [00:14<00:18, 64.32it/s]Loading weights:  42%|████▏     | 943/2250 [00:15<00:25, 51.17it/s]Loading weights:  42%|████▏     | 944/2250 [00:15<00:24, 52.60it/s]Loading weights:  48%|████▊     | 1074/2250 [00:14<00:14, 82.84it/s]Loading weights:  48%|████▊     | 1074/2250 [00:14<00:13, 84.90it/s]Loading weights:  43%|████▎     | 963/2250 [00:15<00:19, 66.86it/s]Loading weights:  43%|████▎     | 963/2250 [00:15<00:19, 67.25it/s]Loading weights:  42%|████▏     | 941/2250 [00:15<00:26, 50.03it/s]Loading weights:  48%|████▊     | 1089/2250 [00:15<00:18, 64.47it/s]Loading weights:  48%|████▊     | 1089/2250 [00:15<00:17, 65.63it/s]Loading weights:  43%|████▎     | 963/2250 [00:15<00:18, 67.77it/s]Loading weights:  49%|████▉     | 1111/2250 [00:15<00:13, 84.83it/s]Loading weights:  49%|████▉     | 1111/2250 [00:15<00:13, 86.08it/s]Loading weights:  43%|████▎     | 978/2250 [00:15<00:24, 52.40it/s]Loading weights:  48%|████▊     | 1089/2250 [00:15<00:18, 64.20it/s]Loading weights:  48%|████▊     | 1089/2250 [00:15<00:17, 65.13it/s]Loading weights:  44%|████▍     | 1000/2250 [00:15<00:17, 70.63it/s]Loading weights:  49%|████▉     | 1111/2250 [00:15<00:13, 83.49it/s]Loading weights:  49%|████▉     | 1111/2250 [00:15<00:13, 85.75it/s]Loading weights:  43%|████▎     | 978/2250 [00:15<00:24, 50.91it/s]Loading weights:  43%|████▎     | 978/2250 [00:15<00:24, 50.90it/s]Loading weights:  45%|████▍     | 1003/2250 [00:15<00:17, 71.88it/s]Loading weights:  50%|█████     | 1126/2250 [00:15<00:17, 64.30it/s]Loading weights:  50%|█████     | 1126/2250 [00:15<00:17, 64.52it/s]Loading weights:  44%|████▍     | 1000/2250 [00:15<00:18, 69.23it/s]Loading weights:  43%|████▎     | 978/2250 [00:15<00:24, 51.68it/s]Loading weights:  51%|█████     | 1151/2250 [00:15<00:12, 87.45it/s]Loading weights:  51%|█████     | 1151/2250 [00:15<00:12, 88.66it/s]Loading weights:  44%|████▍     | 1000/2250 [00:15<00:17, 70.04it/s]Loading weights:  50%|█████     | 1126/2250 [00:15<00:17, 64.33it/s]Loading weights:  50%|█████     | 1126/2250 [00:15<00:17, 64.52it/s]Loading weights:  45%|████▌     | 1015/2250 [00:16<00:23, 52.55it/s]Loading weights:  51%|█████     | 1148/2250 [00:15<00:13, 83.62it/s]Loading weights:  51%|█████     | 1148/2250 [00:15<00:12, 85.06it/s]Loading weights:  46%|████▌     | 1037/2250 [00:16<00:17, 70.73it/s]Loading weights:  45%|████▌     | 1017/2250 [00:16<00:23, 52.83it/s]Loading weights:  52%|█████▏    | 1166/2250 [00:16<00:16, 67.57it/s]Loading weights:  52%|█████▏    | 1166/2250 [00:16<00:15, 68.19it/s]Loading weights:  45%|████▌     | 1015/2250 [00:16<00:23, 51.65it/s]Loading weights:  46%|████▌     | 1040/2250 [00:16<00:16, 71.72it/s]Loading weights:  53%|█████▎    | 1185/2250 [00:16<00:12, 83.66it/s]Loading weights:  53%|█████▎    | 1185/2250 [00:16<00:12, 84.69it/s]Loading weights:  46%|████▌     | 1040/2250 [00:16<00:16, 73.21it/s]Loading weights:  45%|████▌     | 1015/2250 [00:16<00:23, 52.24it/s]Loading weights:  52%|█████▏    | 1163/2250 [00:16<00:16, 64.80it/s]Loading weights:  52%|█████▏    | 1163/2250 [00:16<00:16, 64.98it/s]Loading weights:  46%|████▌     | 1040/2250 [00:16<00:16, 73.28it/s]Loading weights:  53%|█████▎    | 1185/2250 [00:16<00:12, 84.27it/s]Loading weights:  53%|█████▎    | 1185/2250 [00:16<00:12, 85.63it/s]Loading weights:  47%|████▋     | 1052/2250 [00:16<00:22, 52.46it/s]Loading weights:  53%|█████▎    | 1200/2250 [00:16<00:16, 62.74it/s]Loading weights:  53%|█████▎    | 1200/2250 [00:16<00:16, 63.31it/s]Loading weights:  48%|████▊     | 1074/2250 [00:16<00:16, 70.80it/s]Loading weights:  47%|████▋     | 1054/2250 [00:16<00:22, 52.71it/s]Loading weights:  54%|█████▍    | 1222/2250 [00:16<00:12, 82.91it/s]Loading weights:  54%|█████▍    | 1222/2250 [00:16<00:12, 83.48it/s]Loading weights:  47%|████▋     | 1055/2250 [00:16<00:22, 54.18it/s]Loading weights:  48%|████▊     | 1074/2250 [00:16<00:17, 69.09it/s]Loading weights:  53%|█████▎    | 1200/2250 [00:16<00:16, 63.75it/s]Loading weights:  48%|████▊     | 1074/2250 [00:16<00:16, 69.26it/s]Loading weights:  53%|█████▎    | 1200/2250 [00:16<00:16, 63.51it/s]Loading weights:  47%|████▋     | 1054/2250 [00:16<00:22, 53.66it/s]Loading weights:  54%|█████▍    | 1219/2250 [00:16<00:12, 80.48it/s]Loading weights:  54%|█████▍    | 1220/2250 [00:16<00:12, 81.54it/s]Loading weights:  48%|████▊     | 1077/2250 [00:16<00:16, 72.79it/s]Loading weights:  48%|████▊     | 1089/2250 [00:17<00:21, 53.40it/s]Loading weights:  55%|█████▍    | 1237/2250 [00:17<00:16, 63.14it/s]Loading weights:  55%|█████▍    | 1237/2250 [00:17<00:15, 63.33it/s]Loading weights:  49%|████▉     | 1111/2250 [00:17<00:15, 71.72it/s]Loading weights:  56%|█████▌    | 1259/2250 [00:17<00:11, 83.53it/s]Loading weights:  56%|█████▌    | 1259/2250 [00:17<00:11, 83.98it/s]Loading weights:  48%|████▊     | 1089/2250 [00:17<00:22, 52.34it/s]Loading weights:  48%|████▊     | 1089/2250 [00:17<00:22, 52.39it/s]Loading weights:  55%|█████▍    | 1237/2250 [00:17<00:15, 63.43it/s]Loading weights:  55%|█████▍    | 1237/2250 [00:17<00:15, 63.37it/s]Loading weights:  50%|████▉     | 1114/2250 [00:17<00:15, 73.74it/s]Loading weights:  49%|████▉     | 1111/2250 [00:17<00:16, 71.08it/s]Loading weights:  56%|█████▌    | 1259/2250 [00:17<00:11, 82.68it/s]Loading weights:  56%|█████▌    | 1259/2250 [00:17<00:11, 83.82it/s]Loading weights:  48%|████▊     | 1091/2250 [00:17<00:21, 54.57it/s]Loading weights:  50%|████▉     | 1114/2250 [00:17<00:15, 74.02it/s]Loading weights:  57%|█████▋    | 1274/2250 [00:17<00:16, 60.71it/s]Loading weights:  57%|█████▋    | 1274/2250 [00:17<00:15, 61.00it/s]Loading weights:  50%|█████     | 1126/2250 [00:17<00:21, 53.34it/s]Loading weights:  58%|█████▊    | 1296/2250 [00:17<00:11, 80.33it/s]Loading weights:  58%|█████▊    | 1296/2250 [00:17<00:11, 80.28it/s]Loading weights:  51%|█████     | 1148/2250 [00:18<00:15, 71.67it/s]Loading weights:  50%|█████     | 1128/2250 [00:18<00:20, 53.71it/s]Loading weights:  57%|█████▋    | 1274/2250 [00:17<00:16, 60.84it/s]Loading weights:  57%|█████▋    | 1274/2250 [00:17<00:16, 60.82it/s]Loading weights:  50%|█████     | 1126/2250 [00:18<00:21, 52.28it/s]Loading weights:  51%|█████     | 1148/2250 [00:18<00:15, 69.75it/s]Loading weights:  58%|█████▊    | 1296/2250 [00:17<00:12, 79.33it/s]Loading weights:  58%|█████▊    | 1296/2250 [00:17<00:11, 80.37it/s]Loading weights:  51%|█████     | 1151/2250 [00:18<00:14, 73.82it/s]Loading weights:  50%|█████     | 1128/2250 [00:17<00:20, 53.99it/s]Loading weights:  51%|█████     | 1148/2250 [00:18<00:15, 70.26it/s]Loading weights:  58%|█████▊    | 1311/2250 [00:18<00:17, 55.13it/s]Loading weights:  58%|█████▊    | 1311/2250 [00:18<00:16, 55.25it/s]Loading weights:  52%|█████▏    | 1163/2250 [00:18<00:20, 53.56it/s]Loading weights:  59%|█████▉    | 1333/2250 [00:18<00:12, 73.67it/s]Loading weights:  53%|█████▎    | 1188/2250 [00:18<00:14, 75.33it/s]Loading weights:  59%|█████▉    | 1333/2250 [00:18<00:12, 73.33it/s]Loading weights:  52%|█████▏    | 1163/2250 [00:18<00:20, 52.47it/s]Loading weights:  58%|█████▊    | 1311/2250 [00:18<00:16, 56.06it/s]Loading weights:  52%|█████▏    | 1166/2250 [00:18<00:19, 55.27it/s]Loading weights:  58%|█████▊    | 1311/2250 [00:18<00:16, 55.48it/s]Loading weights:  53%|█████▎    | 1185/2250 [00:18<00:14, 71.06it/s]Loading weights:  53%|█████▎    | 1185/2250 [00:18<00:15, 70.49it/s]Loading weights:  59%|█████▉    | 1333/2250 [00:18<00:12, 73.91it/s]Loading weights:  59%|█████▉    | 1333/2250 [00:18<00:12, 74.09it/s]Loading weights:  52%|█████▏    | 1163/2250 [00:18<00:20, 52.65it/s]Loading weights:  53%|█████▎    | 1185/2250 [00:18<00:14, 71.67it/s]Loading weights:  53%|█████▎    | 1203/2250 [00:19<00:19, 54.52it/s]Loading weights:  60%|█████▉    | 1348/2250 [00:19<00:17, 50.72it/s]Loading weights:  60%|█████▉    | 1348/2250 [00:18<00:17, 50.71it/s]Loading weights:  54%|█████▍    | 1222/2250 [00:19<00:14, 69.55it/s]Loading weights:  61%|██████    | 1373/2250 [00:19<00:12, 71.63it/s]Loading weights:  61%|██████    | 1373/2250 [00:19<00:12, 71.85it/s]Loading weights:  53%|█████▎    | 1200/2250 [00:19<00:20, 51.36it/s]Loading weights:  53%|█████▎    | 1200/2250 [00:19<00:20, 50.98it/s]Loading weights:  60%|█████▉    | 1348/2250 [00:19<00:17, 51.81it/s]Loading weights:  60%|█████▉    | 1348/2250 [00:19<00:17, 51.54it/s]Loading weights:  54%|█████▍    | 1225/2250 [00:19<00:14, 72.52it/s]Loading weights:  54%|█████▍    | 1225/2250 [00:19<00:14, 72.27it/s]Loading weights:  53%|█████▎    | 1200/2250 [00:19<00:20, 51.61it/s]Loading weights:  61%|██████    | 1370/2250 [00:19<00:12, 69.55it/s]Loading weights:  61%|██████    | 1370/2250 [00:19<00:12, 69.91it/s]Loading weights:  54%|█████▍    | 1225/2250 [00:19<00:14, 73.00it/s]Loading weights:  55%|█████▍    | 1237/2250 [00:19<00:19, 51.59it/s]Loading weights:  56%|█████▌    | 1259/2250 [00:19<00:14, 70.13it/s]Loading weights:  62%|██████▏   | 1387/2250 [00:19<00:17, 50.34it/s]Loading weights:  62%|██████▏   | 1387/2250 [00:19<00:17, 50.43it/s]Loading weights:  55%|█████▌    | 1239/2250 [00:19<00:19, 53.02it/s]Loading weights:  63%|██████▎   | 1407/2250 [00:19<00:12, 66.16it/s]Loading weights:  63%|██████▎   | 1407/2250 [00:19<00:12, 65.72it/s]Loading weights:  55%|█████▌    | 1239/2250 [00:19<00:19, 52.84it/s]Loading weights:  56%|█████▌    | 1262/2250 [00:20<00:13, 71.89it/s]Loading weights:  62%|██████▏   | 1385/2250 [00:19<00:17, 50.05it/s]Loading weights:  62%|██████▏   | 1385/2250 [00:19<00:17, 49.84it/s]Loading weights:  56%|█████▌    | 1259/2250 [00:19<00:14, 69.01it/s]Loading weights:  55%|█████▌    | 1240/2250 [00:19<00:18, 54.23it/s]Loading weights:  63%|██████▎   | 1407/2250 [00:19<00:12, 67.00it/s]Loading weights:  63%|██████▎   | 1407/2250 [00:19<00:12, 67.49it/s]Loading weights:  56%|█████▌    | 1262/2250 [00:19<00:13, 71.81it/s]Loading weights:  57%|█████▋    | 1274/2250 [00:20<00:18, 51.44it/s]Loading weights:  58%|█████▊    | 1296/2250 [00:20<00:13, 69.33it/s]Loading weights:  63%|██████▎   | 1422/2250 [00:20<00:17, 46.93it/s]Loading weights:  63%|██████▎   | 1422/2250 [00:20<00:17, 46.58it/s]Loading weights:  57%|█████▋    | 1276/2250 [00:20<00:18, 51.82it/s]Loading weights:  57%|█████▋    | 1274/2250 [00:20<00:19, 50.65it/s]Loading weights:  64%|██████▍   | 1444/2250 [00:20<00:12, 64.31it/s]Loading weights:  64%|██████▍   | 1444/2250 [00:20<00:12, 63.66it/s]Loading weights:  58%|█████▊    | 1299/2250 [00:20<00:13, 70.34it/s]Loading weights:  58%|█████▊    | 1299/2250 [00:20<00:13, 71.77it/s]Loading weights:  57%|█████▋    | 1276/2250 [00:20<00:18, 51.75it/s]Loading weights:  63%|██████▎   | 1422/2250 [00:20<00:17, 48.30it/s]Loading weights:  63%|██████▎   | 1422/2250 [00:20<00:17, 47.56it/s]Loading weights:  58%|█████▊    | 1296/2250 [00:20<00:14, 67.45it/s]Loading weights:  64%|██████▍   | 1444/2250 [00:20<00:12, 65.22it/s]Loading weights:  64%|██████▍   | 1444/2250 [00:20<00:12, 64.79it/s]Loading weights:  58%|█████▊    | 1311/2250 [00:21<00:19, 48.98it/s]Loading weights:  59%|█████▉    | 1333/2250 [00:21<00:13, 66.54it/s]Loading weights:  65%|██████▍   | 1459/2250 [00:20<00:17, 46.41it/s]Loading weights:  58%|█████▊    | 1313/2250 [00:21<00:19, 49.02it/s]Loading weights:  65%|██████▍   | 1459/2250 [00:21<00:17, 46.20it/s]Loading weights:  58%|█████▊    | 1313/2250 [00:21<00:18, 49.54it/s]Loading weights:  59%|█████▉    | 1333/2250 [00:21<00:14, 64.92it/s]Loading weights:  66%|██████▌   | 1481/2250 [00:21<00:12, 63.29it/s]Loading weights:  66%|██████▌   | 1481/2250 [00:21<00:12, 63.39it/s]Loading weights:  59%|█████▉    | 1336/2250 [00:21<00:13, 67.68it/s]Loading weights:  65%|██████▍   | 1459/2250 [00:21<00:16, 47.76it/s]Loading weights:  58%|█████▊    | 1311/2250 [00:21<00:19, 47.72it/s]Loading weights:  65%|██████▍   | 1459/2250 [00:21<00:16, 47.26it/s]Loading weights:  66%|██████▌   | 1481/2250 [00:21<00:11, 64.69it/s]Loading weights:  59%|█████▉    | 1336/2250 [00:21<00:13, 68.14it/s]Loading weights:  66%|██████▌   | 1481/2250 [00:21<00:11, 64.61it/s]Loading weights:  60%|█████▉    | 1348/2250 [00:21<00:18, 48.19it/s]Loading weights:  61%|██████    | 1370/2250 [00:21<00:13, 65.67it/s]Loading weights:  60%|█████▉    | 1348/2250 [00:21<00:19, 46.66it/s]Loading weights:  66%|██████▋   | 1496/2250 [00:21<00:16, 45.33it/s]Loading weights:  60%|██████    | 1350/2250 [00:21<00:18, 48.08it/s]Loading weights:  66%|██████▋   | 1496/2250 [00:21<00:16, 45.26it/s]Loading weights:  61%|██████    | 1370/2250 [00:22<00:13, 64.27it/s]Loading weights:  67%|██████▋   | 1518/2250 [00:21<00:11, 62.21it/s]Loading weights:  61%|██████    | 1370/2250 [00:21<00:13, 63.53it/s]Loading weights:  67%|██████▋   | 1518/2250 [00:22<00:11, 62.13it/s]Loading weights:  60%|██████    | 1350/2250 [00:21<00:18, 48.76it/s]Loading weights:  66%|██████▋   | 1496/2250 [00:21<00:16, 46.59it/s]Loading weights:  66%|██████▋   | 1496/2250 [00:21<00:16, 46.06it/s]Loading weights:  61%|██████    | 1370/2250 [00:21<00:13, 64.23it/s]Loading weights:  67%|██████▋   | 1518/2250 [00:21<00:11, 62.78it/s]Loading weights:  67%|██████▋   | 1518/2250 [00:21<00:11, 63.06it/s]Loading weights:  62%|██████▏   | 1385/2250 [00:22<00:17, 48.46it/s]Loading weights:  63%|██████▎   | 1407/2250 [00:22<00:12, 65.87it/s]Loading weights:  62%|██████▏   | 1385/2250 [00:22<00:18, 47.54it/s]Loading weights:  62%|██████▏   | 1385/2250 [00:22<00:18, 47.16it/s]Loading weights:  68%|██████▊   | 1533/2250 [00:22<00:15, 45.38it/s]Loading weights:  68%|██████▊   | 1533/2250 [00:22<00:15, 45.14it/s]Loading weights:  63%|██████▎   | 1407/2250 [00:22<00:12, 65.20it/s]Loading weights:  63%|██████▎   | 1410/2250 [00:22<00:12, 67.48it/s]Loading weights:  62%|██████▏   | 1385/2250 [00:22<00:18, 47.65it/s]Loading weights:  69%|██████▉   | 1555/2250 [00:22<00:11, 61.92it/s]Loading weights:  69%|██████▉   | 1555/2250 [00:22<00:11, 61.76it/s]Loading weights:  68%|██████▊   | 1533/2250 [00:22<00:15, 46.00it/s]Loading weights:  68%|██████▊   | 1533/2250 [00:22<00:15, 45.95it/s]Loading weights:  63%|██████▎   | 1410/2250 [00:22<00:12, 68.01it/s]Loading weights:  69%|██████▉   | 1555/2250 [00:22<00:11, 62.37it/s]Loading weights:  69%|██████▉   | 1555/2250 [00:22<00:11, 63.08it/s]Loading weights:  63%|██████▎   | 1422/2250 [00:23<00:17, 47.50it/s]Loading weights:  64%|██████▍   | 1444/2250 [00:23<00:12, 64.61it/s]Loading weights:  63%|██████▎   | 1422/2250 [00:23<00:17, 46.68it/s]Loading weights:  63%|██████▎   | 1424/2250 [00:23<00:17, 47.62it/s]Loading weights:  70%|██████▉   | 1570/2250 [00:23<00:14, 46.71it/s]Loading weights:  70%|██████▉   | 1570/2250 [00:23<00:14, 46.73it/s]Loading weights:  64%|██████▍   | 1444/2250 [00:23<00:12, 63.69it/s]Loading weights:  64%|██████▍   | 1444/2250 [00:23<00:12, 62.76it/s]Loading weights:  63%|██████▎   | 1424/2250 [00:23<00:17, 48.37it/s]Loading weights:  71%|███████   | 1592/2250 [00:23<00:10, 63.55it/s]Loading weights:  71%|███████   | 1592/2250 [00:23<00:10, 64.00it/s]Loading weights:  70%|██████▉   | 1570/2250 [00:23<00:14, 47.23it/s]Loading weights:  70%|██████▉   | 1570/2250 [00:23<00:14, 47.30it/s]Loading weights:  64%|██████▍   | 1444/2250 [00:23<00:12, 63.57it/s]Loading weights:  71%|███████   | 1592/2250 [00:23<00:10, 63.86it/s]Loading weights:  71%|███████   | 1592/2250 [00:23<00:10, 64.62it/s]Loading weights:  65%|██████▍   | 1459/2250 [00:23<00:16, 48.05it/s]Loading weights:  66%|██████▌   | 1481/2250 [00:23<00:11, 65.18it/s]Loading weights:  65%|██████▍   | 1459/2250 [00:23<00:16, 47.09it/s]Loading weights:  71%|███████▏  | 1607/2250 [00:23<00:13, 48.87it/s]Loading weights:  71%|███████▏  | 1607/2250 [00:23<00:13, 48.65it/s]Loading weights:  65%|██████▍   | 1459/2250 [00:23<00:17, 46.27it/s]Loading weights:  66%|██████▌   | 1481/2250 [00:24<00:11, 64.19it/s]Loading weights:  72%|███████▏  | 1629/2250 [00:23<00:09, 66.20it/s]Loading weights:  72%|███████▏  | 1629/2250 [00:24<00:09, 66.08it/s]Loading weights:  65%|██████▍   | 1459/2250 [00:23<00:16, 46.99it/s]Loading weights:  66%|██████▌   | 1481/2250 [00:23<00:12, 63.63it/s]Loading weights:  71%|███████▏  | 1607/2250 [00:23<00:13, 48.88it/s]Loading weights:  71%|███████▏  | 1607/2250 [00:23<00:13, 48.80it/s]Loading weights:  66%|██████▌   | 1481/2250 [00:23<00:11, 64.34it/s]Loading weights:  72%|███████▏  | 1629/2250 [00:23<00:09, 65.99it/s]Loading weights:  72%|███████▏  | 1629/2250 [00:23<00:09, 66.08it/s]Loading weights:  66%|██████▋   | 1496/2250 [00:24<00:15, 48.28it/s]Loading weights:  67%|██████▋   | 1518/2250 [00:24<00:11, 65.84it/s]Loading weights:  73%|███████▎  | 1644/2250 [00:24<00:12, 49.92it/s]Loading weights:  73%|███████▎  | 1644/2250 [00:24<00:12, 49.78it/s]Loading weights:  66%|██████▋   | 1496/2250 [00:24<00:15, 47.31it/s]Loading weights:  66%|██████▋   | 1496/2250 [00:24<00:16, 47.05it/s]Loading weights:  74%|███████▍  | 1666/2250 [00:24<00:08, 67.78it/s]Loading weights:  74%|███████▍  | 1666/2250 [00:24<00:08, 67.66it/s]Loading weights:  68%|██████▊   | 1521/2250 [00:24<00:10, 67.00it/s]Loading weights:  73%|███████▎  | 1644/2250 [00:24<00:12, 50.16it/s]Loading weights:  66%|██████▋   | 1496/2250 [00:24<00:15, 47.27it/s]Loading weights:  68%|██████▊   | 1521/2250 [00:24<00:10, 67.15it/s]Loading weights:  73%|███████▎  | 1644/2250 [00:24<00:12, 49.96it/s]Loading weights:  74%|███████▍  | 1666/2250 [00:24<00:08, 67.28it/s]Loading weights:  68%|██████▊   | 1521/2250 [00:24<00:10, 67.23it/s]Loading weights:  74%|███████▍  | 1666/2250 [00:24<00:08, 67.87it/s]Loading weights:  68%|██████▊   | 1533/2250 [00:25<00:14, 50.51it/s]Loading weights:  69%|██████▉   | 1555/2250 [00:25<00:10, 68.09it/s]Loading weights:  75%|███████▍  | 1681/2250 [00:24<00:10, 52.04it/s]Loading weights:  75%|███████▍  | 1681/2250 [00:25<00:10, 51.89it/s]Loading weights:  68%|██████▊   | 1535/2250 [00:25<00:14, 50.85it/s]Loading weights:  68%|██████▊   | 1535/2250 [00:25<00:14, 50.81it/s]Loading weights:  76%|███████▌  | 1703/2250 [00:25<00:07, 70.01it/s]Loading weights:  76%|███████▌  | 1703/2250 [00:25<00:07, 70.26it/s]Loading weights:  69%|██████▉   | 1555/2250 [00:25<00:10, 66.11it/s]Loading weights:  75%|███████▍  | 1681/2250 [00:25<00:11, 51.51it/s]Loading weights:  68%|██████▊   | 1535/2250 [00:25<00:13, 51.22it/s]Loading weights:  69%|██████▉   | 1555/2250 [00:25<00:10, 66.41it/s]Loading weights:  75%|███████▍  | 1681/2250 [00:25<00:11, 51.71it/s]Loading weights:  69%|██████▉   | 1555/2250 [00:25<00:10, 66.76it/s]Loading weights:  76%|███████▌  | 1703/2250 [00:25<00:07, 68.74it/s]Loading weights:  76%|███████▌  | 1703/2250 [00:25<00:07, 69.91it/s]Loading weights:  70%|██████▉   | 1570/2250 [00:25<00:12, 53.02it/s]Loading weights:  71%|███████   | 1592/2250 [00:25<00:09, 71.48it/s]Loading weights:  76%|███████▋  | 1718/2250 [00:25<00:10, 51.76it/s]Loading weights:  76%|███████▋  | 1718/2250 [00:25<00:10, 51.54it/s]Loading weights:  70%|██████▉   | 1570/2250 [00:25<00:13, 51.45it/s]Loading weights:  70%|██████▉   | 1570/2250 [00:25<00:13, 51.96it/s]Loading weights:  77%|███████▋  | 1743/2250 [00:25<00:06, 72.73it/s]Loading weights:  77%|███████▋  | 1743/2250 [00:25<00:06, 72.43it/s]Loading weights:  71%|███████   | 1592/2250 [00:25<00:09, 69.90it/s]Loading weights:  71%|███████   | 1592/2250 [00:25<00:09, 70.81it/s]Loading weights:  70%|██████▉   | 1570/2250 [00:25<00:13, 52.20it/s]Loading weights:  76%|███████▋  | 1718/2250 [00:25<00:10, 51.33it/s]Loading weights:  76%|███████▋  | 1718/2250 [00:25<00:10, 50.86it/s]Loading weights:  71%|███████   | 1595/2250 [00:25<00:08, 74.05it/s]Loading weights:  71%|███████▏  | 1607/2250 [00:26<00:10, 58.56it/s]Loading weights:  77%|███████▋  | 1740/2250 [00:25<00:07, 68.57it/s]Loading weights:  77%|███████▋  | 1740/2250 [00:25<00:07, 68.99it/s]Loading weights:  73%|███████▎  | 1632/2250 [00:26<00:07, 81.34it/s]Loading weights:  71%|███████▏  | 1607/2250 [00:26<00:11, 56.83it/s]Loading weights:  71%|███████▏  | 1607/2250 [00:26<00:11, 57.31it/s]Loading weights:  78%|███████▊  | 1757/2250 [00:26<00:09, 53.88it/s]Loading weights:  78%|███████▊  | 1758/2250 [00:26<00:09, 54.37it/s]Loading weights:  72%|███████▏  | 1610/2250 [00:26<00:10, 60.29it/s]Loading weights:  73%|███████▎  | 1632/2250 [00:26<00:07, 79.27it/s]Loading weights:  73%|███████▎  | 1632/2250 [00:26<00:07, 80.40it/s]Loading weights:  79%|███████▉  | 1777/2250 [00:26<00:06, 69.70it/s]Loading weights:  79%|███████▉  | 1780/2250 [00:26<00:06, 71.89it/s]Loading weights:  72%|███████▏  | 1629/2250 [00:26<00:08, 76.09it/s]Loading weights:  73%|███████▎  | 1647/2250 [00:26<00:09, 64.91it/s]Loading weights:  78%|███████▊  | 1755/2250 [00:26<00:09, 51.90it/s]Loading weights:  78%|███████▊  | 1755/2250 [00:26<00:09, 51.30it/s]Loading weights:  74%|███████▍  | 1666/2250 [00:26<00:07, 80.57it/s]Loading weights:  79%|███████▉  | 1777/2250 [00:26<00:06, 69.51it/s]Loading weights:  79%|███████▉  | 1777/2250 [00:26<00:06, 69.26it/s]Loading weights:  73%|███████▎  | 1647/2250 [00:26<00:09, 63.05it/s]Loading weights:  73%|███████▎  | 1647/2250 [00:26<00:09, 63.36it/s]Loading weights:  73%|███████▎  | 1644/2250 [00:26<00:10, 60.10it/s]Loading weights:  74%|███████▍  | 1666/2250 [00:26<00:07, 78.68it/s]Loading weights:  74%|███████▍  | 1666/2250 [00:26<00:07, 79.41it/s]Loading weights:  75%|███████▍  | 1681/2250 [00:27<00:08, 63.71it/s]Loading weights:  80%|███████▉  | 1792/2250 [00:26<00:09, 50.37it/s]Loading weights:  74%|███████▍  | 1669/2250 [00:26<00:06, 83.95it/s]Loading weights:  80%|███████▉  | 1794/2250 [00:27<00:08, 51.20it/s]Loading weights:  76%|███████▌  | 1703/2250 [00:27<00:06, 84.18it/s]Loading weights:  81%|████████  | 1814/2250 [00:26<00:06, 68.31it/s]Loading weights:  81%|████████  | 1814/2250 [00:27<00:06, 67.43it/s]Loading weights:  80%|███████▉  | 1792/2250 [00:26<00:09, 50.51it/s]Loading weights:  80%|███████▉  | 1792/2250 [00:26<00:09, 49.78it/s]Loading weights:  75%|███████▍  | 1681/2250 [00:27<00:09, 62.39it/s]Loading weights:  75%|███████▍  | 1681/2250 [00:27<00:09, 62.49it/s]Loading weights:  81%|████████  | 1812/2250 [00:27<00:06, 66.61it/s]Loading weights:  81%|████████  | 1814/2250 [00:27<00:06, 67.32it/s]Loading weights:  75%|███████▍  | 1684/2250 [00:27<00:08, 66.27it/s]Loading weights:  76%|███████▌  | 1706/2250 [00:27<00:06, 86.43it/s]Loading weights:  76%|███████▌  | 1706/2250 [00:27<00:06, 86.81it/s]Loading weights:  76%|███████▌  | 1703/2250 [00:27<00:06, 82.62it/s]Loading weights:  76%|███████▋  | 1718/2250 [00:27<00:08, 64.70it/s]Loading weights:  77%|███████▋  | 1740/2250 [00:27<00:05, 85.12it/s]Loading weights:  81%|████████▏ | 1829/2250 [00:27<00:08, 50.76it/s]Loading weights:  81%|████████▏ | 1829/2250 [00:27<00:08, 49.86it/s]Loading weights:  82%|████████▏ | 1851/2250 [00:27<00:05, 68.63it/s]Loading weights:  82%|████████▏ | 1851/2250 [00:27<00:05, 68.00it/s]Loading weights:  76%|███████▋  | 1721/2250 [00:27<00:07, 66.27it/s]Loading weights:  76%|███████▋  | 1721/2250 [00:27<00:08, 66.01it/s]Loading weights:  81%|████████▏ | 1829/2250 [00:27<00:08, 50.64it/s]Loading weights:  76%|███████▋  | 1718/2250 [00:27<00:08, 63.28it/s]Loading weights:  77%|███████▋  | 1740/2250 [00:27<00:06, 82.29it/s]Loading weights:  81%|████████▏ | 1829/2250 [00:27<00:08, 50.03it/s]Loading weights:  77%|███████▋  | 1740/2250 [00:27<00:06, 82.36it/s]Loading weights:  82%|████████▏ | 1851/2250 [00:27<00:05, 67.77it/s]Loading weights:  78%|███████▊  | 1755/2250 [00:28<00:07, 65.54it/s]Loading weights:  77%|███████▋  | 1743/2250 [00:27<00:05, 87.19it/s]Loading weights:  82%|████████▏ | 1851/2250 [00:27<00:05, 67.81it/s]Loading weights:  79%|███████▉  | 1777/2250 [00:28<00:05, 85.87it/s]Loading weights:  83%|████████▎ | 1866/2250 [00:28<00:07, 52.22it/s]Loading weights:  83%|████████▎ | 1866/2250 [00:28<00:07, 51.95it/s]Loading weights:  78%|███████▊  | 1755/2250 [00:28<00:07, 63.43it/s]Loading weights:  78%|███████▊  | 1755/2250 [00:28<00:07, 63.43it/s]Loading weights:  84%|████████▍ | 1888/2250 [00:28<00:05, 70.68it/s]Loading weights:  84%|████████▍ | 1888/2250 [00:28<00:05, 70.18it/s]Loading weights:  78%|███████▊  | 1758/2250 [00:28<00:07, 67.50it/s]Loading weights:  79%|███████▉  | 1780/2250 [00:28<00:05, 87.53it/s]Loading weights:  79%|███████▉  | 1780/2250 [00:28<00:05, 88.26it/s]Loading weights:  83%|████████▎ | 1866/2250 [00:28<00:07, 51.68it/s]Loading weights:  79%|███████▉  | 1780/2250 [00:28<00:05, 87.70it/s]Loading weights:  80%|███████▉  | 1792/2250 [00:28<00:07, 64.89it/s]Loading weights:  83%|████████▎ | 1866/2250 [00:28<00:07, 51.65it/s]Loading weights:  84%|████████▍ | 1888/2250 [00:28<00:05, 68.87it/s]Loading weights:  81%|████████  | 1814/2250 [00:28<00:05, 85.31it/s]Loading weights:  84%|████████▍ | 1888/2250 [00:28<00:05, 69.86it/s]Loading weights:  80%|███████▉  | 1795/2250 [00:28<00:06, 66.38it/s]Loading weights:  80%|███████▉  | 1795/2250 [00:28<00:06, 66.20it/s]Loading weights:  85%|████████▍ | 1903/2250 [00:28<00:06, 52.07it/s]Loading weights:  80%|███████▉  | 1795/2250 [00:28<00:06, 66.23it/s]Loading weights:  85%|████████▍ | 1903/2250 [00:28<00:06, 51.44it/s]Loading weights:  81%|████████  | 1817/2250 [00:28<00:05, 85.89it/s]Loading weights:  81%|████████  | 1817/2250 [00:28<00:05, 86.42it/s]Loading weights:  86%|████████▌ | 1925/2250 [00:28<00:04, 69.94it/s]Loading weights:  86%|████████▌ | 1925/2250 [00:28<00:04, 69.50it/s]Loading weights:  81%|████████  | 1817/2250 [00:28<00:05, 85.95it/s]Loading weights:  81%|████████▏ | 1829/2250 [00:29<00:06, 65.31it/s]Loading weights:  82%|████████▏ | 1851/2250 [00:29<00:04, 86.04it/s]Loading weights:  85%|████████▍ | 1903/2250 [00:28<00:06, 51.26it/s]Loading weights:  85%|████████▍ | 1903/2250 [00:28<00:06, 50.97it/s]Loading weights:  85%|████████▌ | 1923/2250 [00:28<00:04, 67.46it/s]Loading weights:  86%|████████▌ | 1925/2250 [00:28<00:04, 68.49it/s]Loading weights:  81%|████████▏ | 1832/2250 [00:29<00:06, 66.48it/s]Loading weights:  81%|████████▏ | 1831/2250 [00:29<00:06, 63.92it/s]Loading weights:  81%|████████▏ | 1831/2250 [00:29<00:06, 64.70it/s]Loading weights:  82%|████████▏ | 1851/2250 [00:29<00:04, 83.17it/s]Loading weights:  82%|████████▏ | 1854/2250 [00:29<00:04, 85.23it/s]Loading weights:  83%|████████▎ | 1866/2250 [00:29<00:05, 66.98it/s]Loading weights:  86%|████████▌ | 1940/2250 [00:29<00:05, 51.86it/s]Loading weights:  82%|████████▏ | 1854/2250 [00:29<00:04, 86.37it/s]Loading weights:  86%|████████▌ | 1940/2250 [00:29<00:06, 51.50it/s]Loading weights:  84%|████████▍ | 1888/2250 [00:29<00:04, 87.68it/s]Loading weights:  87%|████████▋ | 1965/2250 [00:29<00:03, 72.92it/s]Loading weights:  87%|████████▋ | 1962/2250 [00:29<00:04, 69.62it/s]Loading weights:  86%|████████▌ | 1940/2250 [00:29<00:06, 51.14it/s]Loading weights:  83%|████████▎ | 1866/2250 [00:29<00:05, 64.56it/s]Loading weights:  86%|████████▌ | 1940/2250 [00:29<00:06, 50.41it/s]Loading weights:  83%|████████▎ | 1868/2250 [00:29<00:05, 65.58it/s]Loading weights:  83%|████████▎ | 1868/2250 [00:29<00:05, 66.19it/s]Loading weights:  87%|████████▋ | 1962/2250 [00:29<00:04, 68.24it/s]Loading weights:  84%|████████▍ | 1888/2250 [00:29<00:04, 85.79it/s]Loading weights:  84%|████████▍ | 1891/2250 [00:29<00:04, 87.17it/s]Loading weights:  87%|████████▋ | 1962/2250 [00:29<00:04, 67.70it/s]Loading weights:  84%|████████▍ | 1888/2250 [00:29<00:04, 84.36it/s]Loading weights:  85%|████████▍ | 1903/2250 [00:30<00:05, 66.22it/s]Loading weights:  88%|████████▊ | 1979/2250 [00:29<00:04, 54.55it/s]Loading weights:  86%|████████▌ | 1928/2250 [00:30<00:03, 90.16it/s]Loading weights:  88%|████████▊ | 1977/2250 [00:30<00:05, 52.98it/s]Loading weights:  89%|████████▉ | 1999/2250 [00:29<00:03, 70.16it/s]Loading weights:  89%|████████▉ | 1999/2250 [00:30<00:03, 71.44it/s]Loading weights:  85%|████████▍ | 1903/2250 [00:30<00:05, 64.80it/s]Loading weights:  85%|████████▍ | 1906/2250 [00:30<00:05, 66.02it/s]Loading weights:  85%|████████▍ | 1903/2250 [00:30<00:05, 63.60it/s]Loading weights:  88%|████████▊ | 1977/2250 [00:30<00:05, 51.60it/s]Loading weights:  86%|████████▌ | 1928/2250 [00:30<00:03, 88.89it/s]Loading weights:  86%|████████▌ | 1928/2250 [00:30<00:03, 85.67it/s]Loading weights:  88%|████████▊ | 1977/2250 [00:30<00:05, 51.16it/s]Loading weights:  86%|████████▋ | 1943/2250 [00:30<00:04, 69.30it/s]Loading weights:  86%|████████▌ | 1925/2250 [00:30<00:03, 84.42it/s]Loading weights:  89%|████████▉ | 1997/2250 [00:30<00:03, 67.84it/s]Loading weights:  89%|████████▉ | 1999/2250 [00:30<00:03, 68.79it/s]Loading weights:  87%|████████▋ | 1962/2250 [00:30<00:03, 85.50it/s]Loading weights:  90%|████████▉ | 2014/2250 [00:30<00:04, 51.53it/s]Loading weights:  90%|████████▉ | 2014/2250 [00:30<00:04, 51.95it/s]Loading weights:  86%|████████▋ | 1943/2250 [00:30<00:04, 68.12it/s]Loading weights:  86%|████████▋ | 1942/2250 [00:30<00:04, 64.30it/s]Loading weights:  90%|█████████ | 2036/2250 [00:30<00:03, 69.70it/s]Loading weights:  90%|█████████ | 2036/2250 [00:30<00:03, 70.08it/s]Loading weights:  86%|████████▌ | 1940/2250 [00:30<00:04, 64.29it/s]Loading weights:  87%|████████▋ | 1965/2250 [00:30<00:03, 88.53it/s]Loading weights:  87%|████████▋ | 1965/2250 [00:30<00:03, 85.48it/s]Loading weights:  88%|████████▊ | 1977/2250 [00:30<00:04, 66.48it/s]Loading weights:  87%|████████▋ | 1962/2250 [00:30<00:03, 85.08it/s]Loading weights:  90%|████████▉ | 2014/2250 [00:30<00:04, 51.75it/s]Loading weights:  89%|████████▉ | 1999/2250 [00:31<00:02, 87.53it/s]Loading weights:  90%|████████▉ | 2014/2250 [00:30<00:04, 51.18it/s]Loading weights:  90%|█████████ | 2036/2250 [00:30<00:03, 68.96it/s]Loading weights:  90%|█████████ | 2036/2250 [00:30<00:03, 69.36it/s]Loading weights:  88%|████████▊ | 1980/2250 [00:31<00:03, 68.72it/s]Loading weights:  88%|████████▊ | 1979/2250 [00:31<00:04, 65.98it/s]Loading weights:  91%|█████████ | 2051/2250 [00:31<00:03, 50.81it/s]Loading weights:  89%|████████▉ | 1999/2250 [00:31<00:02, 85.60it/s]Loading weights:  88%|████████▊ | 1977/2250 [00:31<00:04, 66.00it/s]Loading weights:  91%|█████████ | 2051/2250 [00:31<00:03, 50.90it/s]Loading weights:  89%|████████▉ | 1999/2250 [00:31<00:02, 84.35it/s]Loading weights:  90%|████████▉ | 2014/2250 [00:31<00:03, 66.84it/s]Loading weights:  92%|█████████▏| 2073/2250 [00:31<00:02, 68.62it/s]Loading weights:  89%|████████▉ | 2002/2250 [00:31<00:02, 90.14it/s]Loading weights:  92%|█████████▏| 2073/2250 [00:31<00:02, 69.09it/s]Loading weights:  90%|█████████ | 2036/2250 [00:31<00:02, 87.85it/s]Loading weights:  91%|█████████ | 2051/2250 [00:31<00:03, 50.69it/s]Loading weights:  91%|█████████ | 2051/2250 [00:31<00:03, 50.33it/s]Loading weights:  90%|████████▉ | 2014/2250 [00:31<00:03, 65.27it/s]Loading weights:  92%|█████████▏| 2073/2250 [00:31<00:02, 67.79it/s]Loading weights:  90%|████████▉ | 2014/2250 [00:31<00:03, 63.77it/s]Loading weights:  92%|█████████▏| 2073/2250 [00:31<00:02, 68.12it/s]Loading weights:  90%|████████▉ | 2017/2250 [00:31<00:03, 68.72it/s]Loading weights:  91%|█████████ | 2039/2250 [00:31<00:02, 89.81it/s]Loading weights:  91%|█████████ | 2039/2250 [00:31<00:02, 88.15it/s]Loading weights:  91%|█████████ | 2051/2250 [00:31<00:03, 65.40it/s]Loading weights:  90%|█████████ | 2036/2250 [00:31<00:02, 85.12it/s]Loading weights:  93%|█████████▎| 2088/2250 [00:31<00:03, 50.72it/s]Loading weights:  93%|█████████▎| 2088/2250 [00:31<00:03, 51.13it/s]Loading weights:  92%|█████████▏| 2073/2250 [00:32<00:02, 86.04it/s]Loading weights:  94%|█████████▍| 2110/2250 [00:31<00:02, 69.12it/s]Loading weights:  94%|█████████▍| 2110/2250 [00:32<00:02, 69.22it/s]Loading weights:  91%|█████████▏| 2054/2250 [00:32<00:02, 67.32it/s]Loading weights:  91%|█████████▏| 2054/2250 [00:32<00:02, 66.21it/s]Loading weights:  93%|█████████▎| 2088/2250 [00:31<00:03, 50.58it/s]Loading weights:  93%|█████████▎| 2088/2250 [00:31<00:03, 50.42it/s]Loading weights:  92%|█████████▏| 2076/2250 [00:32<00:01, 87.25it/s]Loading weights:  91%|█████████ | 2051/2250 [00:32<00:03, 63.42it/s]Loading weights:  94%|█████████▎| 2108/2250 [00:32<00:02, 66.68it/s]Loading weights:  92%|█████████▏| 2076/2250 [00:32<00:02, 85.81it/s]Loading weights:  93%|█████████▎| 2088/2250 [00:32<00:02, 65.03it/s]Loading weights:  94%|█████████▍| 2110/2250 [00:32<00:02, 68.32it/s]Loading weights:  92%|█████████▏| 2076/2250 [00:32<00:02, 86.76it/s]Loading weights:  94%|█████████▍| 2110/2250 [00:32<00:01, 85.58it/s]Loading weights:  94%|█████████▍| 2125/2250 [00:32<00:02, 52.50it/s]Loading weights:  94%|█████████▍| 2125/2250 [00:32<00:02, 52.70it/s]Loading weights:  95%|█████████▌| 2147/2250 [00:32<00:01, 70.79it/s]Loading weights:  95%|█████████▌| 2147/2250 [00:32<00:01, 71.06it/s]Loading weights:  93%|█████████▎| 2090/2250 [00:32<00:02, 65.76it/s]Loading weights:  93%|█████████▎| 2090/2250 [00:32<00:02, 64.69it/s]Loading weights:  94%|█████████▍| 2110/2250 [00:32<00:01, 83.73it/s]Loading weights:  93%|█████████▎| 2090/2250 [00:32<00:02, 65.29it/s]Loading weights:  94%|█████████▍| 2110/2250 [00:32<00:01, 82.90it/s]Loading weights:  94%|█████████▍| 2125/2250 [00:32<00:02, 51.79it/s]Loading weights:  94%|█████████▍| 2125/2250 [00:32<00:01, 64.89it/s]Loading weights:  94%|█████████▍| 2125/2250 [00:32<00:02, 51.65it/s]Loading weights:  94%|█████████▍| 2110/2250 [00:32<00:01, 82.88it/s]Loading weights:  95%|█████████▌| 2147/2250 [00:32<00:01, 68.98it/s]Loading weights:  95%|█████████▌| 2147/2250 [00:33<00:01, 85.24it/s]Loading weights:  95%|█████████▌| 2147/2250 [00:32<00:01, 69.73it/s]Loading weights:  96%|█████████▌| 2162/2250 [00:32<00:01, 52.04it/s]Loading weights:  96%|█████████▌| 2162/2250 [00:33<00:01, 52.09it/s]Loading weights:  94%|█████████▍| 2125/2250 [00:33<00:01, 64.70it/s]Loading weights:  94%|█████████▍| 2125/2250 [00:33<00:01, 64.11it/s]Loading weights:  97%|█████████▋| 2184/2250 [00:33<00:00, 70.15it/s]Loading weights:  97%|█████████▋| 2184/2250 [00:33<00:00, 70.59it/s]Loading weights:  96%|█████████▌| 2150/2250 [00:33<00:01, 88.90it/s]Loading weights:  94%|█████████▍| 2125/2250 [00:33<00:01, 64.37it/s]Loading weights:  96%|█████████▌| 2150/2250 [00:33<00:01, 88.13it/s]Loading weights:  96%|█████████▌| 2162/2250 [00:33<00:01, 65.50it/s]Loading weights:  95%|█████████▌| 2147/2250 [00:33<00:01, 85.08it/s]Loading weights:  97%|█████████▋| 2184/2250 [00:33<00:00, 86.27it/s]Loading weights:  96%|█████████▌| 2162/2250 [00:33<00:01, 51.29it/s]Loading weights:  96%|█████████▌| 2162/2250 [00:33<00:01, 50.90it/s]Loading weights:  97%|█████████▋| 2184/2250 [00:33<00:00, 68.45it/s]Loading weights:  97%|█████████▋| 2184/2250 [00:33<00:00, 68.90it/s]Loading weights:  96%|█████████▌| 2165/2250 [00:33<00:01, 68.02it/s]Loading weights:  96%|█████████▌| 2165/2250 [00:33<00:01, 66.75it/s]Loading weights:  98%|█████████▊| 2199/2250 [00:33<00:00, 52.25it/s]Loading weights:  97%|█████████▋| 2187/2250 [00:33<00:00, 88.11it/s]Loading weights:  98%|█████████▊| 2199/2250 [00:33<00:00, 52.14it/s]Loading weights:  96%|█████████▌| 2162/2250 [00:33<00:01, 64.84it/s]Loading weights:  97%|█████████▋| 2187/2250 [00:33<00:00, 86.53it/s]Loading weights:  98%|█████████▊| 2199/2250 [00:33<00:00, 66.28it/s]Loading weights:  99%|█████████▊| 2221/2250 [00:33<00:00, 70.63it/s]Loading weights:  99%|█████████▉| 2224/2250 [00:33<00:00, 73.90it/s]Loading weights:  97%|█████████▋| 2184/2250 [00:33<00:00, 85.59it/s]Loading weights:  99%|█████████▉| 2224/2250 [00:34<00:00, 90.19it/s]Loading weights:  98%|█████████▊| 2199/2250 [00:33<00:00, 51.32it/s]Loading weights:  98%|█████████▊| 2199/2250 [00:33<00:00, 51.04it/s]Loading weights:  98%|█████████▊| 2201/2250 [00:34<00:00, 65.96it/s]Loading weights:  98%|█████████▊| 2201/2250 [00:34<00:00, 65.43it/s]Loading weights:  99%|█████████▊| 2221/2250 [00:33<00:00, 68.60it/s]Loading weights:  99%|█████████▊| 2221/2250 [00:34<00:00, 83.95it/s]Loading weights:  99%|█████████▊| 2221/2250 [00:33<00:00, 69.10it/s]Loading weights:  98%|█████████▊| 2199/2250 [00:34<00:00, 65.73it/s]Loading weights:  99%|█████████▉| 2224/2250 [00:34<00:00, 86.75it/s]Loading weights: 100%|█████████▉| 2239/2250 [00:34<00:00, 68.99it/s]Loading weights:  99%|█████████▉| 2236/2250 [00:34<00:00, 52.99it/s]Loading weights: 100%|█████████▉| 2239/2250 [00:34<00:00, 55.69it/s]Loading weights:  99%|█████████▉| 2224/2250 [00:34<00:00, 89.38it/s]Loading weights: 100%|██████████| 2250/2250 [00:34<00:00, 65.19it/s]
+Model init total -- 75.72s
+Loading weights: 100%|██████████| 2250/2250 [00:34<00:00, 65.69it/s]
+Loading weights: 100%|██████████| 2250/2250 [00:34<00:00, 65.32it/s]
+Model init total -- 75.88s
+Model init total -- 75.98s
+Loading weights:  99%|█████████▉| 2236/2250 [00:34<00:00, 64.02it/s]Loading weights: 100%|██████████| 2250/2250 [00:34<00:00, 64.88it/s]
+Model init total -- 75.91s
+Loading weights:  99%|█████████▉| 2236/2250 [00:34<00:00, 52.84it/s]Loading weights:  99%|█████████▉| 2238/2250 [00:34<00:00, 63.67it/s]Loading weights:  99%|█████████▉| 2236/2250 [00:34<00:00, 51.82it/s]Loading weights: 100%|█████████▉| 2239/2250 [00:34<00:00, 68.47it/s]Loading weights: 100%|██████████| 2250/2250 [00:34<00:00, 64.56it/s]
+Loading weights: 100%|██████████| 2250/2250 [00:34<00:00, 65.17it/s]
+Model init total -- 76.16s
+Model init total -- 76.31s
+Loading weights: 100%|██████████| 2250/2250 [00:34<00:00, 65.08it/s]
+Model init total -- 76.23s
+Loading weights: 100%|██████████| 2250/2250 [00:34<00:00, 65.00it/s]
+Model init total -- 76.09s
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+[12/22/2025-11:03:45] [TRT-LLM] [RANK 0] [E] Failed to initialize executor on rank 0: Executor creation failed due to insufficient GPU memory.
 
-Error: No such option: --spec_decode_algo
-[1766399221.760051] [33e830c955af:81310:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
-[1766399221.855547] [33e830c955af:81310:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 52.68
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 138.71 / 52.68
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+[12/22/2025-11:03:45] [TRT-LLM] [RANK 0] [E] Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 155, in observe_creation_stage
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 328, in allocation_scope
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 389, in create_py_executor
+    draft_model_engine = PyTorchModelEngine(
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_engine.py", line 204, in __init__
+    self.model, moe_load_balancer = self.model_loader.load(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_loader.py", line 260, in load
+    model.to("cuda")
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1371, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 957, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1357, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.73 GiB. GPU 0 has a total capacity of 139.81 GiB of which 3.88 MiB is free. Process 95787 has 592.00 MiB memory in use. Including non-PyTorch memory, this process has 139.21 GiB memory in use. Of the allocated memory 136.39 GiB is allocated by PyTorch, and 154.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 365, in worker_main
+    worker: GenerationExecutorWorker = worker_cls(
+                                       ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 63, in __init__
+    self.setup_engine()
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 257, in setup_engine
+    self.engine = _create_py_executor(
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 228, in _create_py_executor
+    _executor = create_executor(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 350, in create_py_executor
+    with allocation_scope(ExecutorMemoryType.MODEL_ENGINE_DRAFT,
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 325, in allocation_scope
+    with mem_monitor.observe_creation_stage(current_stage):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 163, in observe_creation_stage
+    raise RuntimeError(explanation) from e
+RuntimeError: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 52.68
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 138.71 / 52.68
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+
+[12/22/2025-11:03:45] [TRT-LLM] [E] Executor worker initialization error: Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 155, in observe_creation_stage
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 328, in allocation_scope
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 389, in create_py_executor
+    draft_model_engine = PyTorchModelEngine(
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_engine.py", line 204, in __init__
+    self.model, moe_load_balancer = self.model_loader.load(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_loader.py", line 260, in load
+    model.to("cuda")
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1371, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 957, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1357, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.73 GiB. GPU 0 has a total capacity of 139.81 GiB of which 3.88 MiB is free. Process 95787 has 592.00 MiB memory in use. Including non-PyTorch memory, this process has 139.21 GiB memory in use. Of the allocated memory 136.39 GiB is allocated by PyTorch, and 154.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 365, in worker_main
+    worker: GenerationExecutorWorker = worker_cls(
+                                       ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 63, in __init__
+    self.setup_engine()
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 257, in setup_engine
+    self.engine = _create_py_executor(
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 228, in _create_py_executor
+    _executor = create_executor(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 350, in create_py_executor
+    with allocation_scope(ExecutorMemoryType.MODEL_ENGINE_DRAFT,
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 325, in allocation_scope
+    with mem_monitor.observe_creation_stage(current_stage):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 163, in observe_creation_stage
+    raise RuntimeError(explanation) from e
+RuntimeError: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 52.68
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 138.71 / 52.68
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+
+[12/22/2025-11:03:45] [TRT-LLM] [RANK 3] [E] Failed to initialize executor on rank 3: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+[12/22/2025-11:03:46] [TRT-LLM] [RANK 3] [E] Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 155, in observe_creation_stage
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 328, in allocation_scope
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 389, in create_py_executor
+    draft_model_engine = PyTorchModelEngine(
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_engine.py", line 204, in __init__
+    self.model, moe_load_balancer = self.model_loader.load(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_loader.py", line 260, in load
+    model.to("cuda")
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1371, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 957, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1357, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.73 GiB. GPU 3 has a total capacity of 139.81 GiB of which 601.44 MiB is free. Including non-PyTorch memory, this process has 139.21 GiB memory in use. Of the allocated memory 136.39 GiB is allocated by PyTorch, and 154.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 365, in worker_main
+    worker: GenerationExecutorWorker = worker_cls(
+                                       ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 63, in __init__
+    self.setup_engine()
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 257, in setup_engine
+    self.engine = _create_py_executor(
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 228, in _create_py_executor
+    _executor = create_executor(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 350, in create_py_executor
+    with allocation_scope(ExecutorMemoryType.MODEL_ENGINE_DRAFT,
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 325, in allocation_scope
+    with mem_monitor.observe_creation_stage(current_stage):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 163, in observe_creation_stage
+    raise RuntimeError(explanation) from e
+RuntimeError: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+
+[12/22/2025-11:03:46] [TRT-LLM] [RANK 1] [E] Failed to initialize executor on rank 1: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+[12/22/2025-11:03:46] [TRT-LLM] [RANK 1] [E] Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 155, in observe_creation_stage
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 328, in allocation_scope
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 389, in create_py_executor
+    draft_model_engine = PyTorchModelEngine(
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_engine.py", line 204, in __init__
+    self.model, moe_load_balancer = self.model_loader.load(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_loader.py", line 260, in load
+    model.to("cuda")
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1371, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 957, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1357, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.73 GiB. GPU 1 has a total capacity of 139.81 GiB of which 601.44 MiB is free. Including non-PyTorch memory, this process has 139.21 GiB memory in use. Of the allocated memory 136.39 GiB is allocated by PyTorch, and 154.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 365, in worker_main
+    worker: GenerationExecutorWorker = worker_cls(
+                                       ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 63, in __init__
+    self.setup_engine()
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 257, in setup_engine
+    self.engine = _create_py_executor(
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 228, in _create_py_executor
+    _executor = create_executor(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 350, in create_py_executor
+    with allocation_scope(ExecutorMemoryType.MODEL_ENGINE_DRAFT,
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 325, in allocation_scope
+    with mem_monitor.observe_creation_stage(current_stage):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 163, in observe_creation_stage
+    raise RuntimeError(explanation) from e
+RuntimeError: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+
+You are using a model of type deepseek_v32 to instantiate a model of type deepseek_v3. This is not supported for all configurations of models and can yield errors.
+[12/22/2025-11:03:46] [TRT-LLM] [RANK 6] [E] Failed to initialize executor on rank 6: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+[12/22/2025-11:03:46] [TRT-LLM] [RANK 6] [E] Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 155, in observe_creation_stage
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 328, in allocation_scope
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 389, in create_py_executor
+    draft_model_engine = PyTorchModelEngine(
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_engine.py", line 204, in __init__
+    self.model, moe_load_balancer = self.model_loader.load(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_loader.py", line 260, in load
+    model.to("cuda")
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1371, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 957, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1357, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.73 GiB. GPU 6 has a total capacity of 139.81 GiB of which 601.44 MiB is free. Including non-PyTorch memory, this process has 139.21 GiB memory in use. Of the allocated memory 136.39 GiB is allocated by PyTorch, and 154.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 365, in worker_main
+    worker: GenerationExecutorWorker = worker_cls(
+                                       ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 63, in __init__
+    self.setup_engine()
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 257, in setup_engine
+    self.engine = _create_py_executor(
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 228, in _create_py_executor
+    _executor = create_executor(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 350, in create_py_executor
+    with allocation_scope(ExecutorMemoryType.MODEL_ENGINE_DRAFT,
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 325, in allocation_scope
+    with mem_monitor.observe_creation_stage(current_stage):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 163, in observe_creation_stage
+    raise RuntimeError(explanation) from e
+RuntimeError: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+
+[12/22/2025-11:03:46] [TRT-LLM] [RANK 7] [E] Failed to initialize executor on rank 7: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+[12/22/2025-11:03:46] [TRT-LLM] [RANK 7] [E] Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 155, in observe_creation_stage
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 328, in allocation_scope
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 389, in create_py_executor
+    draft_model_engine = PyTorchModelEngine(
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_engine.py", line 204, in __init__
+    self.model, moe_load_balancer = self.model_loader.load(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_loader.py", line 260, in load
+    model.to("cuda")
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1371, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 957, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1357, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.73 GiB. GPU 7 has a total capacity of 139.81 GiB of which 601.44 MiB is free. Including non-PyTorch memory, this process has 139.21 GiB memory in use. Of the allocated memory 136.39 GiB is allocated by PyTorch, and 154.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 365, in worker_main
+    worker: GenerationExecutorWorker = worker_cls(
+                                       ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 63, in __init__
+    self.setup_engine()
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 257, in setup_engine
+    self.engine = _create_py_executor(
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 228, in _create_py_executor
+    _executor = create_executor(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 350, in create_py_executor
+    with allocation_scope(ExecutorMemoryType.MODEL_ENGINE_DRAFT,
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 325, in allocation_scope
+    with mem_monitor.observe_creation_stage(current_stage):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 163, in observe_creation_stage
+    raise RuntimeError(explanation) from e
+RuntimeError: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+
+[12/22/2025-11:03:46] [TRT-LLM] [RANK 4] [E] Failed to initialize executor on rank 4: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+[12/22/2025-11:03:46] [TRT-LLM] [RANK 4] [E] Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 155, in observe_creation_stage
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 328, in allocation_scope
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 389, in create_py_executor
+    draft_model_engine = PyTorchModelEngine(
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_engine.py", line 204, in __init__
+    self.model, moe_load_balancer = self.model_loader.load(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_loader.py", line 260, in load
+    model.to("cuda")
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1371, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 957, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1357, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.73 GiB. GPU 4 has a total capacity of 139.81 GiB of which 601.44 MiB is free. Including non-PyTorch memory, this process has 139.21 GiB memory in use. Of the allocated memory 136.39 GiB is allocated by PyTorch, and 154.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 365, in worker_main
+    worker: GenerationExecutorWorker = worker_cls(
+                                       ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 63, in __init__
+    self.setup_engine()
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 257, in setup_engine
+    self.engine = _create_py_executor(
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 228, in _create_py_executor
+    _executor = create_executor(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 350, in create_py_executor
+    with allocation_scope(ExecutorMemoryType.MODEL_ENGINE_DRAFT,
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 325, in allocation_scope
+    with mem_monitor.observe_creation_stage(current_stage):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 163, in observe_creation_stage
+    raise RuntimeError(explanation) from e
+RuntimeError: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+
+[12/22/2025-11:03:46] [TRT-LLM] [RANK 5] [E] Failed to initialize executor on rank 5: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+[12/22/2025-11:03:46] [TRT-LLM] [RANK 5] [E] Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 155, in observe_creation_stage
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 328, in allocation_scope
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 389, in create_py_executor
+    draft_model_engine = PyTorchModelEngine(
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_engine.py", line 204, in __init__
+    self.model, moe_load_balancer = self.model_loader.load(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_loader.py", line 260, in load
+    model.to("cuda")
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1371, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 957, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1357, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.73 GiB. GPU 5 has a total capacity of 139.81 GiB of which 601.44 MiB is free. Including non-PyTorch memory, this process has 139.21 GiB memory in use. Of the allocated memory 136.39 GiB is allocated by PyTorch, and 154.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 365, in worker_main
+    worker: GenerationExecutorWorker = worker_cls(
+                                       ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 63, in __init__
+    self.setup_engine()
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 257, in setup_engine
+    self.engine = _create_py_executor(
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 228, in _create_py_executor
+    _executor = create_executor(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 350, in create_py_executor
+    with allocation_scope(ExecutorMemoryType.MODEL_ENGINE_DRAFT,
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 325, in allocation_scope
+    with mem_monitor.observe_creation_stage(current_stage):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 163, in observe_creation_stage
+    raise RuntimeError(explanation) from e
+RuntimeError: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+
+[12/22/2025-11:03:47] [TRT-LLM] [RANK 2] [E] Failed to initialize executor on rank 2: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+[12/22/2025-11:03:47] [TRT-LLM] [RANK 2] [E] Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 155, in observe_creation_stage
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 328, in allocation_scope
+    yield
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 389, in create_py_executor
+    draft_model_engine = PyTorchModelEngine(
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_engine.py", line 204, in __init__
+    self.model, moe_load_balancer = self.model_loader.load(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/model_loader.py", line 260, in load
+    model.to("cuda")
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1371, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 957, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1357, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.73 GiB. GPU 2 has a total capacity of 139.81 GiB of which 601.44 MiB is free. Including non-PyTorch memory, this process has 139.21 GiB memory in use. Of the allocated memory 136.39 GiB is allocated by PyTorch, and 154.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 365, in worker_main
+    worker: GenerationExecutorWorker = worker_cls(
+                                       ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/worker.py", line 63, in __init__
+    self.setup_engine()
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 257, in setup_engine
+    self.engine = _create_py_executor(
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/base_worker.py", line 228, in _create_py_executor
+    _executor = create_executor(**args)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 350, in create_py_executor
+    with allocation_scope(ExecutorMemoryType.MODEL_ENGINE_DRAFT,
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 325, in allocation_scope
+    with mem_monitor.observe_creation_stage(current_stage):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/_torch/pyexecutor/py_executor_creator.py", line 163, in observe_creation_stage
+    raise RuntimeError(explanation) from e
+RuntimeError: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 53.27
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 139.29 / 53.27
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+
+[1766401322.484594] [33e830c955af:95787:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766401322.581612] [33e830c955af:95787:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.1 (loaded from /usr/local/ucx//lib/libucp.so.0)
+RuntimeError: Executor creation failed due to insufficient GPU memory.
+
+The following component could not be created: Draft model for speculative decoding
+Total GPU memory (GiB): 139.81
+Free GPU memory before component creation attempt (GiB): 52.68
+
+Previously created components and free GPU memory before/after creation (GiB):
+model: 138.71 / 52.68
+
+Please refer to the TensorRT LLM documentation for information on how to control the memory usage through TensorRT LLM configuration options. Possible options include:
+  model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+  draft_model: reduce max_num_tokens and/or shard the model weights across GPUs by enabling pipeline and/or tensor parallelism
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/tensorrt_llm/examples/llm-api/quickstart_advanced.py", line 349, in <module>
+    main()
+  File "/app/tensorrt_llm/examples/llm-api/quickstart_advanced.py", line 301, in main
+    llm, sampling_params = setup_llm(args)
+                           ^^^^^^^^^^^^^^^
+  File "/app/tensorrt_llm/examples/llm-api/quickstart_advanced.py", line 237, in setup_llm
+    llm = LLM(
+          ^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/llmapi/llm.py", line 1154, in __init__
+    super().__init__(model, tokenizer, tokenizer_mode, skip_tokenizer_init,
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/llmapi/llm.py", line 1040, in __init__
+    super().__init__(model,
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/llmapi/llm.py", line 233, in __init__
+    self._build_model()
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/llmapi/llm.py", line 1101, in _build_model
+    self._executor = self._executor_cls.create(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/executor.py", line 501, in create
+    return GenerationExecutor._create_ipc_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/executor.py", line 417, in _create_ipc_executor
+    return GenerationExecutorProxy(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/proxy.py", line 103, in __init__
+    self._start_executor_workers(worker_kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/executor/proxy.py", line 344, in _start_executor_workers
+    raise RuntimeError(
+RuntimeError: Executor worker returned error

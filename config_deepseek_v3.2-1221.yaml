@@ -155,7 +155,7 @@ runs:
       --pp_size 1
       --spec_decode_algo MTP
       --spec_decode_max_draft_len 2
-      --max_batch_size 2048
-      --max_num_tokens 40960
+      --max_batch_size 512
+      --max_num_tokens 10240
     test_cases:
       - sharegpt
