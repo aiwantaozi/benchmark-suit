@@ -98,6 +98,23 @@ python quickstart_advanced.py --model_dir <YOUR_MODEL_DIR> --tp_size 8 --tokens_
 cd examples/llm-api
 python quickstart_advanced.py --model_dir <YOUR_MODEL_DIR> --spec_decode_algo MTP --spec_decode_max_draft_len N
 
+## convert results
+
+python convert_benchmark_results.py \
+  ./test/deepseek_v3.2-results-1220/vllm_tp_random_2k_output.json \
+  ./test/deepseek_v3.2-results-1220/vllm_tp_random_2k.json \
+  ./test/deepseek_v3.2-results-1220/vllm_tp_random_4k.json \
+  ./test/deepseek_v3.2-results-1220/vllm_tp_random_32k.json \
+  ./test/deepseek_v3.2-results-1220/vllm_tp_random_128.json \
+  ./test/deepseek_v3.2-results-1220/vllm_tp_random_128k.json \
+  ./test/deepseek_v3.2-results-1220/vllm_tp_sharegpt.json \
+  ./test/deepseek_v3.2-results-1220/sglang_official_recommended_tp_dp_random_2k_output.json \
+  ./test/deepseek_v3.2-results-1220/sglang_official_recommended_tp_dp_random_2k.json \
+  ./test/deepseek_v3.2-results-1220/sglang_official_recommended_tp_dp_random_4k.json \
+  ./test/deepseek_v3.2-results-1220/sglang_official_recommended_tp_dp_random_32k.json \
+  ./test/deepseek_v3.2-results-1220/sglang_official_recommended_tp_dp_random_128.json \
+  ./test/deepseek_v3.2-results-1220/sglang_official_recommended_tp_dp_random_128k.json \
+  -o ./test/deepseek_v3.2-results-1220/converted_results
 
 ### TOOD
 

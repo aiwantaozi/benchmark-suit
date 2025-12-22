@@ -106,6 +106,14 @@ total --max-model-len is 163840
 2025-12-19 16:23:41,262 - llm_benchmark - INFO - Running benchmark: sharegpt
 2025-12-19 16:23:41,262 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name sharegpt --dataset-path ShareGPT_V3_unfiltered_cleaned_split.json --num-prompts 1000 --result-filename test/deepseek_v3.2-results-1219/vllm_tp_sharegpt.json --save-result
 
+## convert result
+
+python convert_benchmark_results.py \
+  ./test/deepseek_v3.2-results-1219/sglang_dp_attention_sharegpt.json \
+  ./test/deepseek_v3.2-results-1219/sglang_official_recommended_tp_dp_sharegpt.json \
+  ./test/deepseek_v3.2-results-1219/sglang_official_recommended_tp_dp_ep_sharegpt.json \
+  -o ./test/deepseek_v3.2-results-1219/converted_results
+
 
 ### TOOD
 

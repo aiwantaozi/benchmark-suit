@@ -216,3 +216,20 @@ python bench_serving.py --config ./config_deepseek_v3.2.yaml --output-dir ./.cac
 https://github.com/NVIDIA/TensorRT-LLM/blob/main/examples/models/core/deepseek_v3/README.md
 
 trtllm-serve --tp_size 8 --tokens_per_block 64
+
+## convert result
+
+python convert_benchmark_results.py \
+  ./test/deepseek_v3.2-results-1218/sglang_baseline_random_2k_output.json \
+  ./test/deepseek_v3.2-results-1218/sglang_baseline_random_2k.json \
+  ./test/deepseek_v3.2-results-1218/sglang_baseline_random_4k.json \
+  ./test/deepseek_v3.2-results-1218/sglang_baseline_random_32k.json \
+  ./test/deepseek_v3.2-results-1218/sglang_baseline_random_128.json \
+  ./test/deepseek_v3.2-results-1218/sglang_baseline_sharegpt.json \
+  ./test/deepseek_v3.2-results-1218/sglang_speculative_decoding_mtp_sharegpt.json \
+  ./test/deepseek_v3.2-results-1218/sglang_speculative_decoding_mtp_step3_sharegpt.json \
+  -o ./test/deepseek_v3.2-results-1218/converted_results
+
+python convert_benchmark_results.py \
+  ./test/deepseek_v3.2-results-1218/vllm_speculative_decoding_mtp_sharegpt.json \
+  -o ./test/deepseek_v3.2-results-1218/converted_results
