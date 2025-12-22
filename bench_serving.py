@@ -224,7 +224,7 @@ class EngineManager:
         if not config.command:
             raise ValueError("No command provided for starting inference server")
         cmd = config.command
-        self.run_command(cmd, config.conda_env, wait=False)
+        self.run_command(cmd, None, wait=False)
         self.monitor_service_startup(config, self.current_process)
         
     def is_api_ready(
