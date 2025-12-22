@@ -94,6 +94,22 @@ runs:
       --pp_size 1
     test_cases:
       - sharegpt
+  - name: "trt-tp-ep-block"
+    engine: "trtllm"
+    conda_env: "trtllm"
+    envs:
+      HF_HOME: /workspace/trtllm_cache/huggingface
+    command: >
+      trtllm-serve
+      deepseek-ai/DeepSeek-V3.2
+      --host localhost
+      --port 8000
+      --tp_size 8
+      --ep_size 8
+      --pp_size 1
+      --tokens_per_block 64
+    test_cases:
+      - sharegpt
   - name: "trt-deepgemm-disabled"
     engine: "trtllm"
     conda_env: "trtllm"
