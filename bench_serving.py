@@ -480,8 +480,9 @@ def create_engine_configs_from_config(config: Dict, run_names: Optional[List[str
             envs=run_config.get('envs', {}),
             args=run_config.get('args', ''),
             port=run_config.get('port', 8000),
+            command=run_config.get('command'),
             conda_env=run_config.get('conda_env'),
-            health_check=health_check
+            health_check=health_check,
         )
         engine_configs.append(engine_config)
     
