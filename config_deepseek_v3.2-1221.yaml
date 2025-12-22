@@ -148,8 +148,8 @@ runs:
     #   --spec_decode_algo MTP
     #   --spec_decode_max_draft_len 2
     command: >
-      trtllm-serve
-      quickstart_advanced.py 
+      python
+      /app/tensorrt_llm/examples/llm-api/quickstart_advanced.py 
       --model_dir /workspace/trtllm_cache/huggingface/hub/models--deepseek-ai--DeepSeek-V3.2/snapshots/a7e62ac04ecb2c0a54d736dc46601c5606cf10a6/
       --tp_size 8
       --pp_size 1
