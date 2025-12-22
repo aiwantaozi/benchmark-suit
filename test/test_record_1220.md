@@ -80,7 +80,7 @@ nvcr.io/nvidia/tensorrt-llm/release:1.2.0rc5
 
 2. serve to download model
 trtllm-serve "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
-trtllm-serve deepseek-ai/DeepSeek-V3.2 --tp_size 8 --tokens_per_block 64
+trtllm-serve deepseek-ai/DeepSeek-V3.2 --tp_size 8 --tokens-per-block 64
 
 3. clone
 git clone https://github.com/aiwantaozi/benchmark-suit

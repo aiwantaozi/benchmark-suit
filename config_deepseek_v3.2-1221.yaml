@@ -136,7 +136,7 @@ runs:
     envs:
       TRTLLM_DG_ENABLED: "0"
       HF_HOME: /workspace/trtllm_cache/huggingface
-    args: >
+    command: >
       trtllm-serve
       deepseek-ai/DeepSeek-V3.2
       --chat_template ./tool_chat_template_deepseekv32.jinja
