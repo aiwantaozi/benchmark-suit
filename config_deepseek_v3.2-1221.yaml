@@ -1,0 +1,121 @@
+model: "deepseek-ai/DeepSeek-V3.2"
+run_baseline: false
+baseline_args: ""
+health_check:
+  init_delay: 180
+  timeout: 3000 # 50 minutes
+  interval: 10.0
+
+# Define benchmark cases
+test_cases:
+  
+  sharegpt:
+    type: sharegpt
+    num_prompts: 1000
+    dataset_path: "ShareGPT_V3_unfiltered_cleaned_split.json"
+
+  random_32k:
+    type: random
+    input_len: 32000
+    output_len: 100
+    num_prompts: 100
+    seed: 42
+
+  random_4k:
+    type: random
+    input_len: 4000
+    output_len: 200
+    num_prompts: 500
+    seed: 42
+
+  random_2k:
+    type: random
+    input_len: 2000
+    output_len: 100
+    num_prompts: 500
+    seed: 42
+
+  random_128:
+    type: random
+    input_len: 128
+    output_len: 4
+    num_prompts: 1000
+    seed: 42
+
+  random_2k_output:
+    type: random
+    input_len: 1000
+    output_len: 2000
+    num_prompts: 100
+    seed: 42
+  
+  random_128k:
+    type: random
+    input_len: 128000
+    output_len: 100
+    num_prompts: 50
+    seed: 42
+
+  random_2k_thinking:
+    type: random
+    input_len: 2000
+    output_len: 100
+    num_prompts: 500
+    seed: 42
+    args: '--extra_body={"chat_template_kwargs": {"thinking": True}}'
+
+# Engine test configurations
+runs:
+  - name: "trt-baseline"
+    engine: "trtllm"
+    conda_env: "trtllm"
+    command: >
+      trtllm-serve
+      deepseek-ai/DeepSeek-V3.2
+      --host localhost
+      --port 8000
+      --tp_size 8
+    test_cases:
+      - sharegpt
+  - name: "trt-tp-ep"
+    engine: "trtllm"
+    conda_env: "trtllm"
+    command: >
+      trtllm-serve
+      deepseek-ai/DeepSeek-V3.2
+      --host localhost
+      --port 8000
+      --tp_size 8
+      --pp_size 1
+    test_cases:
+      - sharegpt
+  - name: "trt-deepgemm-disabled"
+    engine: "trtllm"
+    conda_env: "trtllm"
+    envs:
+      TRTLLM_DG_ENABLED: "0"
+    command: >
+      trtllm-serve
+      deepseek-ai/DeepSeek-V3.2
+      --host localhost
+      --port 8000
+      --tp_size 8
+      --pp_size 1
+    test_cases:
+      - sharegpt
+  - name: "trt-mtp" # TODO: adjust N
+    engine: "trtllm"
+    conda_env: "trtllm"
+    envs:
+      TRTLLM_DG_ENABLED: "0"
+    args: >
+      trtllm-serve
+      deepseek-ai/DeepSeek-V3.2
+      --host localhost
+      --port 8000
+      --tp_size 8
+      --pp_size 1
+      --spec_decode_algo MTP
+      --spec_decode_max_draft_len N
+    test_cases:
+      - sharegpt
