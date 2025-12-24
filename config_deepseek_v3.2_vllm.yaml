@@ -2,7 +2,7 @@ model: "deepseek-ai/DeepSeek-V3.2"
 run_baseline: false
 baseline_args: ""
 health_check:
-  init_delay: 180
+  init_delay: 60
   timeout: 3600 # 60 minutes
   interval: 10.0
 

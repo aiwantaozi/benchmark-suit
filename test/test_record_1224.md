@@ -116,6 +116,61 @@ python bench_serving.py --config ./config_deepseek_v3.2_vllm.yaml --output-dir .
 
 
 4. 
+ python bench_serving.py --config ./config_deepseek_v3.2_vllm.yaml --output-dir ./test/deepseek_v3.2-results-1224 --run-names vllm-tp-tokenizer-reason,vllm-tp-tokenizer-reason-second,vllm-flashmla,vllm-cutlass-mla,vllm-triton-mla
+2025-12-24 11:52:41,040 - llm_benchmark - INFO - Skipping run vllm-tp-tokenizer-reason-max-model-len as it's not in specified run names
+2025-12-24 11:52:41,040 - llm_benchmark - INFO - Skipping run vllm-tool-call as it's not in specified run names
+2025-12-24 11:52:41,040 - llm_benchmark - INFO - Skipping run vllm-speculative-decoding-mtp as it's not in specified run names
+2025-12-24 11:52:41,040 - llm_benchmark - INFO - Skipping run vllm-deepgemm-disable as it's not in specified run names
+2025-12-24 11:52:41,040 - llm_benchmark - INFO - Skipping run vllm-flashinfer as it's not in specified run names
+2025-12-24 11:52:41,040 - llm_benchmark - INFO - Skipping run vllm-xformers as it's not in specified run names
+2025-12-24 11:52:41,040 - llm_benchmark - INFO - Starting test for vllm-tp-tokenizer-reason
+2025-12-24 11:52:41,040 - llm_benchmark - INFO - Set env HF_HOME=/workspace/gpustack_cache
+2025-12-24 11:52:41,040 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm serve deepseek-ai/DeepSeek-V3.2 -tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3 --port 8000
+2025-12-24 11:52:41,042 - llm_benchmark - INFO - Waiting for initial delay of 180 seconds
+2025-12-24 11:55:41,043 - llm_benchmark - INFO - Checking service readiness...
+2025-12-24 12:12:01,159 - llm_benchmark - INFO - Service is ready
+2025-12-24 12:12:01,159 - llm_benchmark - INFO - Running benchmark: sharegpt
+2025-12-24 12:12:01,159 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name sharegpt --dataset-path ShareGPT_V3_unfiltered_cleaned_split.json --num-prompts 1000 --result-filename test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_sharegpt.json --save-result
+2025-12-24 12:13:27,435 - llm_benchmark - INFO - Completed test case: sharegpt
+2025-12-24 12:13:27,435 - llm_benchmark - INFO - Stopping current service...
+2025-12-24 12:13:27,442 - llm_benchmark - INFO - Successfully stopped current service
+2025-12-24 12:13:32,442 - llm_benchmark - INFO - Successfully completed test: vllm-tp-tokenizer-reason
+2025-12-24 12:13:32,442 - llm_benchmark - INFO - Starting test for vllm-tp-tokenizer-reason-second
+2025-12-24 12:13:32,442 - llm_benchmark - INFO - Set env HF_HOME=/workspace/gpustack_cache
+2025-12-24 12:13:32,443 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm serve deepseek-ai/DeepSeek-V3.2 -tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3 --port 8000
+2025-12-24 12:13:32,446 - llm_benchmark - INFO - Waiting for initial delay of 180 seconds
+2025-12-24 12:16:32,446 - llm_benchmark - INFO - Checking service readiness...
+2025-12-24 12:30:02,540 - llm_benchmark - INFO - Service is ready
+2025-12-24 12:30:02,540 - llm_benchmark - INFO - Running benchmark: sharegpt
+2025-12-24 12:30:02,541 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name sharegpt --dataset-path ShareGPT_V3_unfiltered_cleaned_split.json --num-prompts 1000 --result-filename test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_sharegpt.json --save-result
+2025-12-24 12:31:30,982 - llm_benchmark - INFO - Completed test case: sharegpt
+2025-12-24 12:31:30,982 - llm_benchmark - INFO - Running benchmark: random_32k
+2025-12-24 12:31:30,982 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name random --random-input-len 32000 --random-output-len 100 --num-prompts 100 --seed 42 --result-filename test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_random_32k.json --save-result
+2025-12-24 12:37:39,083 - llm_benchmark - INFO - Completed test case: random_32k
+2025-12-24 12:37:39,083 - llm_benchmark - INFO - Running benchmark: random_4k
+2025-12-24 12:37:39,083 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name random --random-input-len 4000 --random-output-len 200 --num-prompts 500 --seed 42 --result-filename test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_random_4k.json --save-result
+2025-12-24 12:41:39,649 - llm_benchmark - INFO - Completed test case: random_4k
+2025-12-24 12:41:39,649 - llm_benchmark - INFO - Running benchmark: random_2k
+2025-12-24 12:41:39,649 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name random --random-input-len 2000 --random-output-len 100 --num-prompts 500 --seed 42 --result-filename test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_random_2k.json --save-result
+2025-12-24 12:43:32,978 - llm_benchmark - INFO - Completed test case: random_2k
+2025-12-24 12:43:32,978 - llm_benchmark - INFO - Running benchmark: random_128
+2025-12-24 12:43:32,978 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name random --random-input-len 128 --random-output-len 4 --num-prompts 1000 --seed 42 --result-filename test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_random_128.json --save-result
+2025-12-24 12:43:56,164 - llm_benchmark - INFO - Completed test case: random_128
+2025-12-24 12:43:56,165 - llm_benchmark - INFO - Running benchmark: random_2k_output
+2025-12-24 12:43:56,165 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name random --random-input-len 1000 --random-output-len 2000 --num-prompts 100 --seed 42 --result-filename test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_random_2k_output.json --save-result
+2025-12-24 12:46:17,371 - llm_benchmark - INFO - Completed test case: random_2k_output
+2025-12-24 12:46:17,371 - llm_benchmark - INFO - Running benchmark: random_128k
+2025-12-24 12:46:17,371 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm bench serve --model deepseek-ai/DeepSeek-V3.2 --backend openai-chat --endpoint /v1/chat/completions --dataset-name random --random-input-len 128000 --random-output-len 100 --num-prompts 50 --seed 42 --result-filename test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_random_128k.json --save-result
+
+2025-12-24 13:04:34,880 - llm_benchmark - INFO - Completed test case: random_128k
+2025-12-24 13:04:34,880 - llm_benchmark - INFO - Stopping current service...
+2025-12-24 13:04:34,888 - llm_benchmark - INFO - Successfully stopped current service
+2025-12-24 13:04:39,888 - llm_benchmark - INFO - Successfully completed test: vllm-tp-tokenizer-reason-second
+2025-12-24 13:04:39,888 - llm_benchmark - INFO - Starting test for vllm-flashmla
+2025-12-24 13:04:39,888 - llm_benchmark - INFO - Set env VLLM_ATTENTION_BACKEND=FLASHMLA
+2025-12-24 13:04:39,888 - llm_benchmark - INFO - Set env HF_HOME=/workspace/gpustack_cache
+2025-12-24 13:04:39,888 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm serve deepseek-ai/DeepSeek-V3.2 -tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3 --port 8000
+
 # sglang
 
 1.
@@ -129,5 +184,14 @@ conda activate sglang
 3.
 python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3.2 --tp 8 --trust-remote-code
 
+mkdir -p logs
+
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
+nohup python3 -m sglang.compile_deep_gemm \
+  --model deepseek-ai/DeepSeek-V3.2 \
+  --tp 8 \
+  --trust-remote-code \
+  > logs/compile_deep_gemm.log 2>&1 &
+
 4.
-python bench_serving.py --config ./config_deepseek_v3.2-1220.yaml --output-dir ./test/deepseek_v3.2-results-1220 --run-names sglang-official-recommended-tp-dp
+python bench_serving.py --config ./config_deepseek_v3.2_sglang-1224.yaml --output-dir ./test/deepseek_v3.2-results-1224 --run-names sglang-official-recommended-tp-dp
