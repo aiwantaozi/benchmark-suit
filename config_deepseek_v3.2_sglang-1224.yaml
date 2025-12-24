@@ -56,6 +56,13 @@ test_cases:
     num_prompts: 500
     seed: 42
     args: '--extra_body={"chat_template_kwargs": {"thinking": True}}'
+  
+  random_128k:
+    type: random
+    input_len: 128000
+    output_len: 100
+    num_prompts: 50
+    seed: 42
 
 # Engine test configurations
 runs:
@@ -221,6 +228,31 @@ runs:
       - random_128
       - random_128k
       - random_2k_output
+  
+  - name: "sglang-official-tp-dp-context-length-32k-backend-fa3-fa3-2"
+    engine: "sglang"
+    conda_env: "sglang"
+    envs:
+      HF_HOME: /workspace/gpustack_cache
+    args: >
+      --tensor-parallel-size 8
+      --enable-dp-attention
+      --chat-template ./tool_chat_template_deepseekv32.jinja
+      --dp 8
+      --reasoning-parser deepseek-v3 
+      --tool-call-parser deepseekv32
+      --context-length=32768
+      --attention-backend nsa
+      --nsa-prefill-backend fa3
+      --nsa-decode-backend fa3
+    test_cases:
+      # - sharegpt
+      # - random_32k
+      # - random_4k
+      # - random_2k
+      # - random_128
+      - random_128k
+      # - random_2k_output
 
 # Torch Compile
 # torch.compile accelerates small models on small batch sizes
