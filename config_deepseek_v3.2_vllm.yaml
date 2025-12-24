@@ -3,8 +3,8 @@ run_baseline: false
 baseline_args: ""
 health_check:
   init_delay: 180
-  timeout: 1800 # 30 minutes
-  interval: 5.0
+  timeout: 3600 # 60 minutes
+  interval: 10.0
 
 # Define benchmark cases
 test_cases:
@@ -148,20 +148,20 @@ runs:
   #   test_cases:
   #     - sharegpt
   
-  - name: "vllm-dp-ep-pplx" # TODO: install pplx and test
-    engine: "vllm"
-    conda_env: "vllm"
-    envs:
-      HF_HOME: /workspace/gpustack_cache
-    args: >
-      --tensor-parallel-size 1
-      --tokenizer-mode deepseek_v32
-      --reasoning-parser deepseek_v3
-      -dp 8
-      --enable-expert-parallel
-      --all2all-backend pplx
-    test_cases:
-      - sharegpt
+  # - name: "vllm-dp-ep-pplx" # TODO: install pplx and test
+  #   engine: "vllm"
+  #   conda_env: "vllm"
+  #   envs:
+  #     HF_HOME: /workspace/gpustack_cache
+  #   args: >
+  #     --tensor-parallel-size 1
+  #     --tokenizer-mode deepseek_v32
+  #     --reasoning-parser deepseek_v3
+  #     -dp 8
+  #     --enable-expert-parallel
+  #     --all2all-backend pplx
+  #   test_cases:
+  #     - sharegpt
   
   # - name: "vllm-tp-short-ctx-bf16"
   #   engine: "vllm"
@@ -269,6 +269,9 @@ runs:
     args: "-tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3"
     test_cases:
       - sharegpt
+
+# kv-cache-dtype
+# default is fp8 https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-V3_2-Exp.html#accuracy-benchmarking
 
 # TODO: 
 # 1. --kv-cache-dtype fp8
