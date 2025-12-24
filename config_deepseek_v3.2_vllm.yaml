@@ -90,6 +90,22 @@ runs:
       # - random_2k_output
       # - random_128k
 
+  - name: "vllm-tp-tokenizer-reason-second" # TODO: run other test cases
+    engine: "vllm"
+    conda_env: "vllm"
+    envs:
+      HF_HOME: /workspace/gpustack_cache
+    # result_filename defaults to {run_name}_{test_case_name}.json
+    args: "-tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3"
+    test_cases:
+      - sharegpt
+      - random_32k
+      - random_4k
+      - random_2k
+      - random_128
+      - random_2k_output
+      - random_128k
+
   - name: "vllm-tp-tokenizer-reason-max-model-len"
     engine: "vllm"
     conda_env: "vllm"
@@ -265,6 +281,36 @@ runs:
     conda_env: "vllm"
     envs:
       VLLM_ATTENTION_BACKEND: "XFORMERS"
+      HF_HOME: /workspace/gpustack_cache
+    args: "-tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3"
+    test_cases:
+      - sharegpt
+
+  - name: "vllm-flashmla"
+    engine: "vllm"
+    conda_env: "vllm"
+    envs:
+      VLLM_ATTENTION_BACKEND: "FLASHMLA"
+      HF_HOME: /workspace/gpustack_cache
+    args: "-tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3"
+    test_cases:
+      - sharegpt
+
+  - name: "vllm-cutlass-mla"
+    engine: "vllm"
+    conda_env: "vllm"
+    envs:
+      VLLM_ATTENTION_BACKEND: "CUTLASS_MLA"
+      HF_HOME: /workspace/gpustack_cache
+    args: "-tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3"
+    test_cases:
+      - sharegpt
+
+  - name: "vllm-triton-mla"
+    engine: "vllm"
+    conda_env: "vllm"
+    envs:
+      VLLM_ATTENTION_BACKEND: "TRITON_MLA"
       HF_HOME: /workspace/gpustack_cache
     args: "-tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3"
     test_cases:

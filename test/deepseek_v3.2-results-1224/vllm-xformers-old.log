@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/vllm/bin/vllm", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/entrypoints/cli/main.py", line 66, in main
+    cmd.subparser_init(subparsers).set_defaults(dispatch_function=cmd.cmd)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/entrypoints/cli/serve.py", line 72, in subparser_init
+    serve_parser = make_arg_parser(serve_parser)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/entrypoints/openai/cli_args.py", line 278, in make_arg_parser
+    parser = AsyncEngineArgs.add_cli_args(parser)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2000, in add_cli_args
+    parser = EngineArgs.add_cli_args(parser)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 1114, in add_cli_args
+    vllm_kwargs = get_kwargs(VllmConfig)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 349, in get_kwargs
+    return copy.deepcopy(_compute_kwargs(cls))
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 259, in _compute_kwargs
+    default = default.default_factory()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/vllm/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+    s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for AttentionConfig
+  Value error, Invalid value 'XFORMERS' for VLLM_ATTENTION_BACKEND. Valid options: ['FLASH_ATTN', 'TRITON_ATTN', 'ROCM_ATTN', 'ROCM_AITER_MLA', 'ROCM_AITER_TRITON_MLA', 'ROCM_AITER_FA', 'ROCM_AITER_MLA_SPARSE', 'TORCH_SDPA', 'FLASHINFER', 'FLASHINFER_MLA', 'TRITON_MLA', 'CUTLASS_MLA', 'FLASHMLA', 'FLASHMLA_SPARSE', 'FLASH_ATTN_MLA', 'PALLAS', 'IPEX', 'NO_ATTENTION', 'FLEX_ATTENTION', 'TREE_ATTN', 'ROCM_AITER_UNIFIED_ATTN', 'CPU_ATTN', 'CUSTOM']. [type=value_error, input_value=ArgsKwargs(()), input_type=ArgsKwargs]
+    For further information visit https://errors.pydantic.dev/2.12/v/value_error
+ERROR conda.cli.main_run:execute(127): `conda run vllm serve deepseek-ai/DeepSeek-V3.2 -tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3 --port 8000` failed. (See above for error)
