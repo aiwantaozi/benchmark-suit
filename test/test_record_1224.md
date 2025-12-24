@@ -215,4 +215,24 @@ nohup python3 -m sglang.compile_deep_gemm \
 4.
 python bench_serving.py --config ./config_deepseek_v3.2_sglang-1224.yaml --output-dir ./test/deepseek_v3.2-results-1224 
 
-python bench_serving.py --config ./config_deepseek_v3.2_sglang-1224.yaml --output-dir ./test/deepseek_v3.2-results-1224 --run-names sglang-official-tp-dp-context-length-32k,sglang-official-tp-dp-context-length-32k-kv-cache-type,sglang-official-tp-dp-context-length-32k-backend-flashmla-sparse-kv,sglang-official-tp-dp-context-length-32k-backend-fa3-fa3
+python bench_serving.py --config ./config_deepseek_v3.2_sglang-1224.yaml --output-dir ./test/deepseek_v3.2-results-1224 --run-names sglang-official-tp-dp-reason-tool-context-length-32k,sglang-official-tp-dp-context-length-32k-kv-cache-type,sglang-official-tp-dp-context-length-32k-backend-flashmla-sparse-kv,sglang-official-tp-dp-context-length-32k-backend-fa3-fa3
+
+python bench_serving.py --config ./config_deepseek_v3.2_sglang-1224.yaml --output-dir ./test/deepseek_v3.2-results-1224 --run-names sglang-official-tp-dp-context-length-32k-backend-flashmla-sparse-kv,sglang-official-tp-dp-context-length-32k-backend-fa3-fa3
+
+export HF_HOME=/workspace/gpustack_cache
+python bench_serving.py --config ./config_deepseek_v3.2_sglang-1224.yaml --output-dir ./test/deepseek_v3.2-results-1224 --run-names sglang-official-tp-dp-context-length-32k-backend-fa3-fa3
+
+export HF_HOME=/workspace/gpustack_cache
+python bench_serving.py --config ./config_deepseek_v3.2_sglang-1224.yaml --output-dir ./test/deepseek_v3.2-results-1224 --run-names sglang-official-tp-dp-context-length-32k-kv-cache-type-fp8,sglang-official-tp-dp-context-length-32k-backend-fa3-fa3
+
+
+## convert results
+
+ls test/deepseek_v3.2-results-1224/ | grep sglang |grep json
+
+python convert_benchmark_results.py \
+  ./test/deepseek_v3.2-results-1224/sglang_official_recommended_tp_dp_reasoning_tool_call_sharegpt.json \
+  ./test/deepseek_v3.2-results-1224/sglang_official_tp_dp_reason_tool_context_length_32k_sharegpt.json \
+  ./test/deepseek_v3.2-results-1224/sglang_official_tp_dp_context_length_32k_backend_flashmla_sparse_kv_sharegpt.json \
+  -o ./test/deepseek_v3.2-results-1224/converted_results
+
