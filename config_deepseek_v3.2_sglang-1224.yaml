@@ -214,7 +214,13 @@ runs:
       --nsa-prefill-backend fa3
       --nsa-decode-backend fa3
     test_cases:
-      - sharegpt
+      # - sharegpt
+      - random_32k
+      - random_4k
+      - random_2k
+      - random_128
+      - random_128k
+      - random_2k_output
 
 # Torch Compile
 # torch.compile accelerates small models on small batch sizes

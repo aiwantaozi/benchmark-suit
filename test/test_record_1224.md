@@ -226,6 +226,10 @@ export HF_HOME=/workspace/gpustack_cache
 python bench_serving.py --config ./config_deepseek_v3.2_sglang-1224.yaml --output-dir ./test/deepseek_v3.2-results-1224 --run-names sglang-official-tp-dp-context-length-32k-kv-cache-type-fp8,sglang-official-tp-dp-context-length-32k-backend-fa3-fa3
 
 
+export HF_HOME=/workspace/gpustack_cache
+python bench_serving.py --config ./config_deepseek_v3.2_sglang-1224.yaml --output-dir ./test/deepseek_v3.2-results-1224 --run-names 
+sglang-official-tp-dp-context-length-32k-backend-fa3-fa3
+
 ## convert results
 
 ls test/deepseek_v3.2-results-1224/ | grep sglang |grep json
