@@ -194,6 +194,7 @@ python convert_benchmark_results.py \
 
 1.
 ./setup_envs.sh vllm
+./setup_envs.sh sglang
 
 2. 
 CONDA_BASE=$(conda info --base)
@@ -240,3 +241,12 @@ python convert_benchmark_results.py \
   ./test/deepseek_v3.2-results-1224/sglang_official_tp_dp_context_length_32k_backend_flashmla_sparse_kv_sharegpt.json \
   -o ./test/deepseek_v3.2-results-1224/converted_results
 
+
+python convert_benchmark_results.py \
+  ./test/deepseek_v3.2-results-1224/sglang-official-tp-dp-context-length-32k-backend-fa3-fa3_random_2k_output.json \
+  ./test/deepseek_v3.2-results-1224/sglang-official-tp-dp-context-length-32k-backend-fa3-fa3_random_2k.json \
+  ./test/deepseek_v3.2-results-1224/sglang-official-tp-dp-context-length-32k-backend-fa3-fa3_random_4k.json \
+  ./test/deepseek_v3.2-results-1224/sglang-official-tp-dp-context-length-32k-backend-fa3-fa3_random_32k.json \
+  ./test/deepseek_v3.2-results-1224/sglang-official-tp-dp-context-length-32k-backend-fa3-fa3_random_128k.json \
+  ./test/deepseek_v3.2-results-1224/sglang-official-tp-dp-context-length-32k-backend-fa3-fa3_random_128.json \
+  -o ./test/deepseek_v3.2-results-1224/converted_results
