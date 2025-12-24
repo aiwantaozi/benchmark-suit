@@ -171,6 +171,25 @@ python bench_serving.py --config ./config_deepseek_v3.2_vllm.yaml --output-dir .
 2025-12-24 13:04:39,888 - llm_benchmark - INFO - Set env HF_HOME=/workspace/gpustack_cache
 2025-12-24 13:04:39,888 - llm_benchmark - INFO - Running command: conda run --no-capture-output -n vllm vllm serve deepseek-ai/DeepSeek-V3.2 -tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3 --port 8000
 
+## convert results
+
+python convert_benchmark_results.py \
+  ./test/deepseek_v3.2-results-1224/vllm_deepgemm_disable_sharegpt.json \
+  ./test/deepseek_v3.2-results-1224/vllm_speculative_decoding_mtp_sharegpt.json \
+  ./test/deepseek_v3.2-results-1224/vllm_tool_call_sharegpt.json \
+  ./test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_max_model_len_sharegpt.json \
+  ./test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_random_128.json \
+  ./test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_random_128k.json \
+  ./test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_random_2k.json \
+  ./test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_random_2k_output.json \
+  ./test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_random_32k.json \
+  ./test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_random_4k.json \
+  ./test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_second_sharegpt.json \
+  ./test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_sharegpt-1.json \
+  ./test/deepseek_v3.2-results-1224/vllm_tp_tokenizer_reason_sharegpt.json \
+  -o ./test/deepseek_v3.2-results-1224/converted_results
+
+
 # sglang
 
 1.
@@ -194,4 +213,6 @@ nohup python3 -m sglang.compile_deep_gemm \
   > logs/compile_deep_gemm.log 2>&1 &
 
 4.
-python bench_serving.py --config ./config_deepseek_v3.2_sglang-1224.yaml --output-dir ./test/deepseek_v3.2-results-1224 --run-names sglang-official-recommended-tp-dp
+python bench_serving.py --config ./config_deepseek_v3.2_sglang-1224.yaml --output-dir ./test/deepseek_v3.2-results-1224 
+
+python bench_serving.py --config ./config_deepseek_v3.2_sglang-1224.yaml --output-dir ./test/deepseek_v3.2-results-1224 --run-names sglang-official-tp-dp-context-length-32k,sglang-official-tp-dp-context-length-32k-kv-cache-type,sglang-official-tp-dp-context-length-32k-backend-flashmla-sparse-kv,sglang-official-tp-dp-context-length-32k-backend-fa3-fa3
