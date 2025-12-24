@@ -62,6 +62,8 @@ runs:
   - name: "sglang-official-recommended-tp-dp-ep"
     engine: "sglang"
     conda_env: "sglang"
+    envs:
+      HF_HOME: /workspace/gpustack_cache
     args: "--tensor-parallel-size 8 --enable-dp-attention --chat-template ./tool_chat_template_deepseekv32.jinja --ep 8 --dp 8"
     test_cases:
       - sharegpt
@@ -75,6 +77,8 @@ runs:
   - name: "sglang-official-recommended-tp-dp-reasoning"
     engine: "sglang"
     conda_env: "sglang"
+    envs:
+      HF_HOME: /workspace/gpustack_cache
     args: >
       --tensor-parallel-size 8
       --enable-dp-attention 
@@ -87,6 +91,8 @@ runs:
   - name: "sglang-official-recommended-tp-dp-reasoning-tool-call"
     engine: "sglang"
     conda_env: "sglang"
+    envs:
+      HF_HOME: /workspace/gpustack_cache
     args: >
       --tensor-parallel-size 8 
       --enable-dp-attention 
@@ -100,6 +106,8 @@ runs:
   - name: "sglang-official-tp-dp-cp"
     engine: "sglang"
     conda_env: "sglang"
+    envs:
+      HF_HOME: /workspace/gpustack_cache
     args: >
       --tensor-parallel-size 8
       --enable-dp-attention
@@ -112,6 +120,8 @@ runs:
   - name: "sglang-official-tp-dp-context-length-32k"
     engine: "sglang"
     conda_env: "sglang"
+    envs:
+      HF_HOME: /workspace/gpustack_cache
     args: >
       --tensor-parallel-size 8
       --enable-dp-attention
@@ -124,6 +134,8 @@ runs:
   - name: "sglang-official-tp-dp-context-length-32k-kv-cache-type" # default is fpfloat16
     engine: "sglang"
     conda_env: "sglang"
+    envs:
+      HF_HOME: /workspace/gpustack_cache
     args: >
       --tensor-parallel-size 8
       --enable-dp-attention
@@ -138,6 +150,8 @@ runs:
   - name: "sglang-official-tp-dp-context-length-32k-backend-flashmla-sparse-kv"
     engine: "sglang"
     conda_env: "sglang"
+    envs:
+      HF_HOME: /workspace/gpustack_cache
     args: >
       --tensor-parallel-size 8
       --enable-dp-attention
@@ -153,6 +167,8 @@ runs:
   - name: "sglang-official-tp-dp-context-length-32k-backend-fa3-fa3"
     engine: "sglang"
     conda_env: "sglang"
+    envs:
+      HF_HOME: /workspace/gpustack_cache
     args: >
       --tensor-parallel-size 8
       --enable-dp-attention

@@ -74,7 +74,7 @@ runs:
   #   test_cases:
   #     - sharegpt
 
-  - name: "vllm-tp-tokenizer-reason"
+  - name: "vllm-tp-tokenizer-reason" # TODO: run other test cases
     engine: "vllm"
     conda_env: "vllm"
     envs:
