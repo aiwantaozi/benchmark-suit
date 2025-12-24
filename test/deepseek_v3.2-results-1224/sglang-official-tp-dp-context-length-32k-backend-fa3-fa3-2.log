@@ -176,3 +176,218 @@ NSA_DUAL_STREAM=True NSA_FUSE_TOPK=True NSA_FLASHMLA_BACKEND_DECODE_COMPUTE_FP8=
 Loading safetensors checkpoint shards:  99% Completed | 161/163 [00:58<00:00, 21.90it/s]
 Loading safetensors checkpoint shards: 100% Completed | 163/163 [00:58<00:00,  2.78it/s]
 
+[2025-12-24 17:51:57 DP5 TP5] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.62 GB, mem usage=92.35 GB.
+[2025-12-24 17:51:57 DP0 TP0] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.67 GB, mem usage=92.35 GB.
+[2025-12-24 17:51:57 DP2 TP2] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.62 GB, mem usage=92.35 GB.
+[2025-12-24 17:51:57 DP7 TP7] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.86 GB, mem usage=92.35 GB.
+[2025-12-24 17:51:57 DP4 TP4] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.62 GB, mem usage=92.35 GB.
+[2025-12-24 17:51:57 DP3 TP3] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.62 GB, mem usage=92.35 GB.
+[2025-12-24 17:51:57 DP6 TP6] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.62 GB, mem usage=92.35 GB.
+[2025-12-24 17:51:57 DP1 TP1] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.62 GB, mem usage=92.35 GB.
+[2025-12-24 17:51:57 DP0 TP0] Using KV cache dtype: torch.bfloat16
+[2025-12-24 17:51:57 DP4 TP4] KV Cache is allocated. #tokens: 188352, KV size: 13.74 GB
+[2025-12-24 17:51:58 DP4 TP4] Memory pool end. avail mem=31.47 GB
+[2025-12-24 17:51:58 DP2 TP2] KV Cache is allocated. #tokens: 188352, KV size: 13.74 GB
+[2025-12-24 17:51:58 DP2 TP2] Memory pool end. avail mem=31.47 GB
+[2025-12-24 17:51:58 DP6 TP6] KV Cache is allocated. #tokens: 188352, KV size: 13.74 GB
+[2025-12-24 17:51:58 DP5 TP5] KV Cache is allocated. #tokens: 188352, KV size: 13.74 GB
+[2025-12-24 17:51:58 DP0 TP0] KV Cache is allocated. #tokens: 188352, KV size: 13.74 GB
+[2025-12-24 17:51:58 DP6 TP6] Memory pool end. avail mem=31.47 GB
+[2025-12-24 17:51:58 DP5 TP5] Memory pool end. avail mem=31.47 GB
+[2025-12-24 17:51:58 DP0 TP0] Memory pool end. avail mem=31.51 GB
+[2025-12-24 17:51:58 DP3 TP3] KV Cache is allocated. #tokens: 188352, KV size: 13.74 GB
+[2025-12-24 17:51:58 DP3 TP3] Memory pool end. avail mem=31.47 GB
+[2025-12-24 17:51:58 DP1 TP1] KV Cache is allocated. #tokens: 188352, KV size: 13.74 GB
+[2025-12-24 17:51:58 DP1 TP1] Memory pool end. avail mem=31.47 GB
+[2025-12-24 17:51:58 DP7 TP7] KV Cache is allocated. #tokens: 188352, KV size: 13.74 GB
+[2025-12-24 17:51:58 DP7 TP7] Memory pool end. avail mem=31.70 GB
+[2025-12-24 17:51:58 DP4 TP4] Capture cuda graph begin. This can take up to several minutes. avail mem=31.37 GB
+[2025-12-24 17:51:58 DP2 TP2] Capture cuda graph begin. This can take up to several minutes. avail mem=31.37 GB
+[2025-12-24 17:51:58 DP0 TP0] Capture cuda graph begin. This can take up to several minutes. avail mem=31.42 GB
+[2025-12-24 17:51:58 DP5 TP5] Capture cuda graph begin. This can take up to several minutes. avail mem=31.37 GB
+[2025-12-24 17:51:58 DP0 TP0] Capture cuda graph bs [1, 2, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512]
+[2025-12-24 17:51:58 DP3 TP3] Capture cuda graph begin. This can take up to several minutes. avail mem=31.37 GB
+[2025-12-24 17:51:58 DP7 TP7] Capture cuda graph begin. This can take up to several minutes. avail mem=31.61 GB
+[2025-12-24 17:51:58 DP1 TP1] Capture cuda graph begin. This can take up to several minutes. avail mem=31.37 GB
+[2025-12-24 17:51:58 DP6 TP6] Capture cuda graph begin. This can take up to several minutes. avail mem=31.37 GB
+  0%|          | 0/52 [00:00<?, ?it/s]Capturing batches (bs=512 avail_mem=31.11 GB):   0%|          | 0/52 [00:00<?, ?it/s][2025-12-24 17:51:58 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2025-12-24 17:51:58 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=2112, K=7168, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2025-12-24 17:51:58 DP0 TP0] Required memory for warmup: 0.18792724609375GB, Available memory: 31.08465576171875GB
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+DeepGEMM warmup:   9%|▉         | 1550/16384 [00:00<00:00, 15496.14it/s][A
+DeepGEMM warmup:  24%|██▍       | 3973/16384 [00:00<00:00, 20629.66it/s][A
+DeepGEMM warmup:  40%|███▉      | 6482/16384 [00:00<00:00, 22664.89it/s][A
+DeepGEMM warmup:  57%|█████▋    | 9284/16384 [00:00<00:00, 24776.31it/s][A
+DeepGEMM warmup:  73%|███████▎  | 12033/16384 [00:00<00:00, 25751.75it/s][A
+DeepGEMM warmup:  92%|█████████▏| 15036/16384 [00:00<00:00, 27203.94it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:00<00:00, 25395.85it/s]
+[2025-12-24 17:51:59 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2025-12-24 17:51:59 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=24576, K=1536, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2025-12-24 17:51:59 DP0 TP0] Required memory for warmup: 0.80859375GB, Available memory: 31.05731201171875GB
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+DeepGEMM warmup:  14%|█▍        | 2338/16384 [00:00<00:00, 23373.56it/s][A
+DeepGEMM warmup:  32%|███▏      | 5252/16384 [00:00<00:00, 26758.83it/s][A
+DeepGEMM warmup:  50%|████▉     | 8143/16384 [00:00<00:00, 27738.99it/s][A
+DeepGEMM warmup:  68%|██████▊   | 11136/16384 [00:00<00:00, 28602.08it/s][A
+DeepGEMM warmup:  86%|████████▋ | 14133/16384 [00:00<00:00, 29093.02it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:00<00:00, 27037.21it/s]
+[2025-12-24 17:51:59 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2025-12-24 17:51:59 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=8192, K=1536, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2025-12-24 17:51:59 DP0 TP0] Required memory for warmup: 0.28515625GB, Available memory: 30.94207763671875GB
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+DeepGEMM warmup:   3%|▎         | 533/16384 [00:00<00:02, 5328.43it/s][A
+DeepGEMM warmup:  21%|██        | 3392/16384 [00:00<00:00, 19006.78it/s][A
+DeepGEMM warmup:  39%|███▊      | 6341/16384 [00:00<00:00, 23791.23it/s][A
+DeepGEMM warmup:  57%|█████▋    | 9376/16384 [00:00<00:00, 26378.30it/s][A
+DeepGEMM warmup:  76%|███████▌  | 12418/16384 [00:00<00:00, 27832.47it/s][A
+DeepGEMM warmup:  94%|█████████▍| 15396/16384 [00:00<00:00, 28494.21it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:00<00:00, 25893.54it/s]
+[2025-12-24 17:52:00 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2025-12-24 17:52:00 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=128, K=7168, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2025-12-24 17:52:00 DP0 TP0] Required memory for warmup: 0.1141357421875GB, Available memory: 30.92254638671875GB
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+DeepGEMM warmup:   8%|▊         | 1285/16384 [00:00<00:01, 12845.48it/s][A
+DeepGEMM warmup:  16%|█▋        | 2689/16384 [00:00<00:01, 13541.00it/s][A
+DeepGEMM warmup:  26%|██▌       | 4225/16384 [00:00<00:00, 14326.88it/s][A
+DeepGEMM warmup:  37%|███▋      | 6081/16384 [00:00<00:00, 15962.76it/s][A
+DeepGEMM warmup:  47%|████▋     | 7681/16384 [00:00<00:00, 15957.13it/s][A
+DeepGEMM warmup:  59%|█████▉    | 9677/16384 [00:00<00:00, 17312.82it/s][A
+DeepGEMM warmup:  73%|███████▎  | 11889/16384 [00:00<00:00, 18879.51it/s][A
+DeepGEMM warmup:  84%|████████▍ | 13778/16384 [00:00<00:00, 18702.75it/s][A
+DeepGEMM warmup:  96%|█████████▌| 15720/16384 [00:00<00:00, 18923.28it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:00<00:00, 17322.87it/s]
+[2025-12-24 17:52:02 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2025-12-24 17:52:02 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=7168, K=16384, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2025-12-24 17:52:02 DP0 TP0] Required memory for warmup: 0.578125GB, Available memory: 27.36199951171875GB
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+DeepGEMM warmup:  13%|█▎        | 2049/16384 [00:00<00:00, 20213.87it/s][A
+DeepGEMM warmup:  29%|██▉       | 4712/16384 [00:00<00:00, 23962.99it/s][A
+DeepGEMM warmup:  43%|████▎     | 7111/16384 [00:00<00:00, 23851.20it/s][A
+DeepGEMM warmup:  62%|██████▏   | 10124/16384 [00:00<00:00, 26315.26it/s][A
+DeepGEMM warmup:  80%|████████  | 13139/16384 [00:00<00:00, 27690.31it/s][A
+DeepGEMM warmup:  98%|█████████▊| 16133/16384 [00:00<00:00, 28451.94it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:00<00:00, 26801.40it/s]
+[2025-12-24 17:52:03 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2025-12-24 17:52:03 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=4608, K=7168, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2025-12-24 17:52:03 DP0 TP0] Required memory for warmup: 0.28076171875GB, Available memory: 27.42059326171875GB
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+DeepGEMM warmup:  11%|█▏        | 1862/16384 [00:00<00:00, 18615.05it/s][A
+DeepGEMM warmup:  26%|██▌       | 4284/16384 [00:00<00:00, 21911.11it/s][A
+DeepGEMM warmup:  43%|████▎     | 7008/16384 [00:00<00:00, 24340.20it/s][A
+DeepGEMM warmup:  61%|██████    | 9913/16384 [00:00<00:00, 26197.93it/s][A
+DeepGEMM warmup:  79%|███████▊  | 12879/16384 [00:00<00:00, 27443.38it/s][A
+DeepGEMM warmup:  97%|█████████▋| 15889/16384 [00:00<00:00, 28345.91it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:00<00:00, 26563.57it/s]
+[2025-12-24 17:52:03 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2025-12-24 17:52:03 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=7168, K=2304, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2025-12-24 17:52:03 DP0 TP0] Required memory for warmup: 0.269287109375GB, Available memory: 27.41864013671875GB
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+DeepGEMM warmup:  13%|█▎        | 2049/16384 [00:00<00:00, 20303.75it/s][A
+DeepGEMM warmup:  28%|██▊       | 4631/16384 [00:00<00:00, 23534.76it/s][A
+DeepGEMM warmup:  46%|████▌     | 7560/16384 [00:00<00:00, 26154.75it/s][A
+DeepGEMM warmup:  65%|██████▍   | 10570/16384 [00:00<00:00, 27706.83it/s][A
+DeepGEMM warmup:  83%|████████▎ | 13568/16384 [00:00<00:00, 28524.04it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:00<00:00, 27554.36it/s]
+[2025-12-24 17:52:04 DP3 TP3] Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Fallback to triton version 3.3.1 and use MoE kernel config from /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_3_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Performance might be sub-optimal!
+[2025-12-24 17:52:04 DP1 TP1] Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Fallback to triton version 3.3.1 and use MoE kernel config from /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_3_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Performance might be sub-optimal!
+[2025-12-24 17:52:04 DP6 TP6] Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Fallback to triton version 3.3.1 and use MoE kernel config from /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_3_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Performance might be sub-optimal!
+[2025-12-24 17:52:04 DP4 TP4] Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Fallback to triton version 3.3.1 and use MoE kernel config from /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_3_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Performance might be sub-optimal!
+[2025-12-24 17:52:04 DP5 TP5] Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Fallback to triton version 3.3.1 and use MoE kernel config from /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_3_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Performance might be sub-optimal!
+[2025-12-24 17:52:04 DP7 TP7] Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Fallback to triton version 3.3.1 and use MoE kernel config from /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_3_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Performance might be sub-optimal!
+[2025-12-24 17:52:04 DP3 TP3] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128]_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2025-12-24 17:52:04 DP1 TP1] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128]_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2025-12-24 17:52:04 DP2 TP2] Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Fallback to triton version 3.3.1 and use MoE kernel config from /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_3_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Performance might be sub-optimal!
+[2025-12-24 17:52:04 DP4 TP4] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128]_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2025-12-24 17:52:04 DP6 TP6] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128]_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2025-12-24 17:52:04 DP7 TP7] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128]_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2025-12-24 17:52:04 DP5 TP5] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128]_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2025-12-24 17:52:04 DP2 TP2] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128]_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2025-12-24 17:52:04 DP0 TP0] Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Fallback to triton version 3.3.1 and use MoE kernel config from /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_3_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Performance might be sub-optimal!
+[2025-12-24 17:52:04 DP0 TP0] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128]_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+Capturing batches (bs=512 avail_mem=31.11 GB):   2%|▏         | 1/52 [00:07<06:23,  7.53s/it]Capturing batches (bs=496 avail_mem=23.78 GB):   2%|▏         | 1/52 [00:07<06:23,  7.53s/it]Capturing batches (bs=496 avail_mem=23.78 GB):   4%|▍         | 2/52 [00:08<02:52,  3.45s/it]Capturing batches (bs=480 avail_mem=23.72 GB):   4%|▍         | 2/52 [00:08<02:52,  3.45s/it]Capturing batches (bs=480 avail_mem=23.72 GB):   6%|▌         | 3/52 [00:08<01:45,  2.15s/it]Capturing batches (bs=464 avail_mem=23.66 GB):   6%|▌         | 3/52 [00:08<01:45,  2.15s/it]Capturing batches (bs=464 avail_mem=23.66 GB):   8%|▊         | 4/52 [00:09<01:13,  1.53s/it]Capturing batches (bs=448 avail_mem=23.60 GB):   8%|▊         | 4/52 [00:09<01:13,  1.53s/it]Capturing batches (bs=448 avail_mem=23.60 GB):  10%|▉         | 5/52 [00:10<01:07,  1.44s/it]Capturing batches (bs=432 avail_mem=23.54 GB):  10%|▉         | 5/52 [00:10<01:07,  1.44s/it]Capturing batches (bs=432 avail_mem=23.54 GB):  12%|█▏        | 6/52 [00:11<00:53,  1.15s/it]Capturing batches (bs=416 avail_mem=23.49 GB):  12%|█▏        | 6/52 [00:11<00:53,  1.15s/it]Capturing batches (bs=416 avail_mem=23.49 GB):  13%|█▎        | 7/52 [00:11<00:43,  1.03it/s]Capturing batches (bs=400 avail_mem=23.43 GB):  13%|█▎        | 7/52 [00:11<00:43,  1.03it/s]Capturing batches (bs=400 avail_mem=23.43 GB):  15%|█▌        | 8/52 [00:12<00:37,  1.17it/s]Capturing batches (bs=384 avail_mem=23.37 GB):  15%|█▌        | 8/52 [00:12<00:37,  1.17it/s]Capturing batches (bs=384 avail_mem=23.37 GB):  17%|█▋        | 9/52 [00:12<00:33,  1.28it/s]Capturing batches (bs=368 avail_mem=23.31 GB):  17%|█▋        | 9/52 [00:12<00:33,  1.28it/s]Capturing batches (bs=368 avail_mem=23.31 GB):  19%|█▉        | 10/52 [00:13<00:30,  1.38it/s]Capturing batches (bs=352 avail_mem=23.25 GB):  19%|█▉        | 10/52 [00:13<00:30,  1.38it/s]Capturing batches (bs=352 avail_mem=23.25 GB):  21%|██        | 11/52 [00:14<00:28,  1.46it/s]Capturing batches (bs=336 avail_mem=23.19 GB):  21%|██        | 11/52 [00:14<00:28,  1.46it/s]Capturing batches (bs=336 avail_mem=23.19 GB):  23%|██▎       | 12/52 [00:14<00:26,  1.52it/s]Capturing batches (bs=320 avail_mem=23.13 GB):  23%|██▎       | 12/52 [00:14<00:26,  1.52it/s]Capturing batches (bs=320 avail_mem=23.13 GB):  25%|██▌       | 13/52 [00:15<00:24,  1.56it/s]Capturing batches (bs=304 avail_mem=23.07 GB):  25%|██▌       | 13/52 [00:15<00:24,  1.56it/s]Capturing batches (bs=304 avail_mem=23.07 GB):  27%|██▋       | 14/52 [00:15<00:23,  1.59it/s]Capturing batches (bs=288 avail_mem=23.01 GB):  27%|██▋       | 14/52 [00:15<00:23,  1.59it/s]Capturing batches (bs=288 avail_mem=23.01 GB):  29%|██▉       | 15/52 [00:16<00:22,  1.62it/s]Capturing batches (bs=272 avail_mem=22.96 GB):  29%|██▉       | 15/52 [00:16<00:22,  1.62it/s]Capturing batches (bs=272 avail_mem=22.96 GB):  31%|███       | 16/52 [00:17<00:21,  1.65it/s]Capturing batches (bs=256 avail_mem=22.90 GB):  31%|███       | 16/52 [00:17<00:21,  1.65it/s]Capturing batches (bs=256 avail_mem=22.90 GB):  33%|███▎      | 17/52 [00:17<00:21,  1.64it/s]Capturing batches (bs=248 avail_mem=22.84 GB):  33%|███▎      | 17/52 [00:17<00:21,  1.64it/s]Capturing batches (bs=248 avail_mem=22.84 GB):  35%|███▍      | 18/52 [00:18<00:21,  1.56it/s]Capturing batches (bs=240 avail_mem=22.78 GB):  35%|███▍      | 18/52 [00:18<00:21,  1.56it/s]Capturing batches (bs=240 avail_mem=22.78 GB):  37%|███▋      | 19/52 [00:19<00:20,  1.60it/s]Capturing batches (bs=232 avail_mem=22.72 GB):  37%|███▋      | 19/52 [00:19<00:20,  1.60it/s]Capturing batches (bs=232 avail_mem=22.72 GB):  38%|███▊      | 20/52 [00:19<00:19,  1.65it/s]Capturing batches (bs=224 avail_mem=22.66 GB):  38%|███▊      | 20/52 [00:19<00:19,  1.65it/s]Capturing batches (bs=224 avail_mem=22.66 GB):  40%|████      | 21/52 [00:20<00:18,  1.67it/s]Capturing batches (bs=216 avail_mem=22.60 GB):  40%|████      | 21/52 [00:20<00:18,  1.67it/s]Capturing batches (bs=216 avail_mem=22.60 GB):  42%|████▏     | 22/52 [00:20<00:17,  1.69it/s]Capturing batches (bs=208 avail_mem=22.55 GB):  42%|████▏     | 22/52 [00:20<00:17,  1.69it/s]Capturing batches (bs=208 avail_mem=22.55 GB):  44%|████▍     | 23/52 [00:21<00:17,  1.70it/s]Capturing batches (bs=200 avail_mem=22.49 GB):  44%|████▍     | 23/52 [00:21<00:17,  1.70it/s]Capturing batches (bs=200 avail_mem=22.49 GB):  46%|████▌     | 24/52 [00:21<00:16,  1.72it/s]Capturing batches (bs=192 avail_mem=22.43 GB):  46%|████▌     | 24/52 [00:21<00:16,  1.72it/s]Capturing batches (bs=192 avail_mem=22.43 GB):  48%|████▊     | 25/52 [00:22<00:15,  1.72it/s]Capturing batches (bs=184 avail_mem=22.37 GB):  48%|████▊     | 25/52 [00:22<00:15,  1.72it/s]Capturing batches (bs=184 avail_mem=22.37 GB):  50%|█████     | 26/52 [00:23<00:14,  1.74it/s]Capturing batches (bs=176 avail_mem=22.31 GB):  50%|█████     | 26/52 [00:23<00:14,  1.74it/s]Capturing batches (bs=176 avail_mem=22.31 GB):  52%|█████▏    | 27/52 [00:23<00:14,  1.74it/s]Capturing batches (bs=168 avail_mem=22.25 GB):  52%|█████▏    | 27/52 [00:23<00:14,  1.74it/s]Capturing batches (bs=168 avail_mem=22.25 GB):  54%|█████▍    | 28/52 [00:24<00:13,  1.73it/s]Capturing batches (bs=160 avail_mem=22.19 GB):  54%|█████▍    | 28/52 [00:24<00:13,  1.73it/s]Capturing batches (bs=160 avail_mem=22.19 GB):  56%|█████▌    | 29/52 [00:24<00:13,  1.74it/s]Capturing batches (bs=152 avail_mem=22.14 GB):  56%|█████▌    | 29/52 [00:24<00:13,  1.74it/s]Capturing batches (bs=152 avail_mem=22.14 GB):  58%|█████▊    | 30/52 [00:25<00:12,  1.75it/s]Capturing batches (bs=144 avail_mem=22.09 GB):  58%|█████▊    | 30/52 [00:25<00:12,  1.75it/s]Capturing batches (bs=144 avail_mem=22.09 GB):  60%|█████▉    | 31/52 [00:25<00:11,  1.76it/s]Capturing batches (bs=136 avail_mem=22.04 GB):  60%|█████▉    | 31/52 [00:25<00:11,  1.76it/s]Capturing batches (bs=136 avail_mem=22.04 GB):  62%|██████▏   | 32/52 [00:26<00:11,  1.77it/s]Capturing batches (bs=128 avail_mem=21.99 GB):  62%|██████▏   | 32/52 [00:26<00:11,  1.77it/s]Capturing batches (bs=128 avail_mem=21.99 GB):  63%|██████▎   | 33/52 [00:27<00:10,  1.75it/s]Capturing batches (bs=120 avail_mem=21.94 GB):  63%|██████▎   | 33/52 [00:27<00:10,  1.75it/s]Capturing batches (bs=120 avail_mem=21.94 GB):  65%|██████▌   | 34/52 [00:27<00:10,  1.76it/s]Capturing batches (bs=112 avail_mem=21.89 GB):  65%|██████▌   | 34/52 [00:27<00:10,  1.76it/s]Capturing batches (bs=112 avail_mem=21.89 GB):  67%|██████▋   | 35/52 [00:28<00:09,  1.76it/s]Capturing batches (bs=104 avail_mem=21.83 GB):  67%|██████▋   | 35/52 [00:28<00:09,  1.76it/s]Capturing batches (bs=104 avail_mem=21.83 GB):  69%|██████▉   | 36/52 [00:28<00:09,  1.76it/s]Capturing batches (bs=96 avail_mem=21.78 GB):  69%|██████▉   | 36/52 [00:28<00:09,  1.76it/s] Capturing batches (bs=96 avail_mem=21.78 GB):  71%|███████   | 37/52 [00:29<00:10,  1.38it/s]Capturing batches (bs=88 avail_mem=21.73 GB):  71%|███████   | 37/52 [00:29<00:10,  1.38it/s]Capturing batches (bs=88 avail_mem=21.73 GB):  73%|███████▎  | 38/52 [00:30<00:09,  1.47it/s]Capturing batches (bs=80 avail_mem=21.68 GB):  73%|███████▎  | 38/52 [00:30<00:09,  1.47it/s]Capturing batches (bs=80 avail_mem=21.68 GB):  75%|███████▌  | 39/52 [00:31<00:08,  1.54it/s]Capturing batches (bs=72 avail_mem=21.63 GB):  75%|███████▌  | 39/52 [00:31<00:08,  1.54it/s]Capturing batches (bs=72 avail_mem=21.63 GB):  77%|███████▋  | 40/52 [00:31<00:07,  1.60it/s]Capturing batches (bs=64 avail_mem=21.57 GB):  77%|███████▋  | 40/52 [00:31<00:07,  1.60it/s]Capturing batches (bs=64 avail_mem=21.57 GB):  79%|███████▉  | 41/52 [00:32<00:06,  1.65it/s]Capturing batches (bs=56 avail_mem=21.52 GB):  79%|███████▉  | 41/52 [00:32<00:06,  1.65it/s]Capturing batches (bs=56 avail_mem=21.52 GB):  81%|████████  | 42/52 [00:32<00:05,  1.68it/s]Capturing batches (bs=48 avail_mem=21.47 GB):  81%|████████  | 42/52 [00:32<00:05,  1.68it/s]Capturing batches (bs=48 avail_mem=21.47 GB):  83%|████████▎ | 43/52 [00:33<00:06,  1.35it/s]Capturing batches (bs=40 avail_mem=21.42 GB):  83%|████████▎ | 43/52 [00:33<00:06,  1.35it/s]Capturing batches (bs=40 avail_mem=21.42 GB):  85%|████████▍ | 44/52 [00:34<00:05,  1.46it/s]Capturing batches (bs=32 avail_mem=21.37 GB):  85%|████████▍ | 44/52 [00:34<00:05,  1.46it/s]Capturing batches (bs=32 avail_mem=21.37 GB):  87%|████████▋ | 45/52 [00:34<00:04,  1.53it/s]Capturing batches (bs=24 avail_mem=21.32 GB):  87%|████████▋ | 45/52 [00:34<00:04,  1.53it/s]Capturing batches (bs=24 avail_mem=21.32 GB):  88%|████████▊ | 46/52 [00:35<00:03,  1.60it/s]Capturing batches (bs=16 avail_mem=21.26 GB):  88%|████████▊ | 46/52 [00:35<00:03,  1.60it/s]Capturing batches (bs=16 avail_mem=21.26 GB):  90%|█████████ | 47/52 [00:36<00:03,  1.62it/s]Capturing batches (bs=12 avail_mem=21.21 GB):  90%|█████████ | 47/52 [00:36<00:03,  1.62it/s]Capturing batches (bs=12 avail_mem=21.21 GB):  92%|█████████▏| 48/52 [00:36<00:02,  1.68it/s]Capturing batches (bs=8 avail_mem=21.16 GB):  92%|█████████▏| 48/52 [00:36<00:02,  1.68it/s] Capturing batches (bs=8 avail_mem=21.16 GB):  94%|█████████▍| 49/52 [00:37<00:02,  1.35it/s]Capturing batches (bs=4 avail_mem=21.11 GB):  94%|█████████▍| 49/52 [00:37<00:02,  1.35it/s]Capturing batches (bs=4 avail_mem=21.11 GB):  96%|█████████▌| 50/52 [00:38<00:01,  1.12it/s]Capturing batches (bs=2 avail_mem=21.06 GB):  96%|█████████▌| 50/52 [00:38<00:01,  1.12it/s]Capturing batches (bs=2 avail_mem=21.06 GB):  98%|█████████▊| 51/52 [00:39<00:00,  1.22it/s]Capturing batches (bs=1 avail_mem=21.01 GB):  98%|█████████▊| 51/52 [00:39<00:00,  1.22it/s]Capturing batches (bs=1 avail_mem=21.01 GB): 100%|██████████| 52/52 [00:41<00:00,  1.01s/it]Capturing batches (bs=1 avail_mem=21.01 GB): 100%|██████████| 52/52 [00:41<00:00,  1.27it/s]
+[2025-12-24 17:52:39 DP0 TP0] Registering 13 cuda graph addresses
+[2025-12-24 17:52:39 DP4 TP4] Capture cuda graph end. Time elapsed: 41.69 s. mem usage=10.45 GB. avail mem=20.92 GB.
+[2025-12-24 17:52:39 DP7 TP7] Capture cuda graph end. Time elapsed: 41.68 s. mem usage=10.45 GB. avail mem=21.15 GB.
+[2025-12-24 17:52:39 DP0 TP0] Capture cuda graph end. Time elapsed: 41.70 s. mem usage=10.46 GB. avail mem=20.96 GB.
+[2025-12-24 17:52:39 DP1 TP1] Capture cuda graph end. Time elapsed: 41.67 s. mem usage=10.45 GB. avail mem=20.92 GB.
+[2025-12-24 17:52:39 DP3 TP3] Capture cuda graph end. Time elapsed: 41.70 s. mem usage=10.45 GB. avail mem=20.92 GB.
+[2025-12-24 17:52:39 DP5 TP5] Capture cuda graph end. Time elapsed: 41.71 s. mem usage=10.45 GB. avail mem=20.92 GB.
+[2025-12-24 17:52:39 DP2 TP2] Capture cuda graph end. Time elapsed: 41.72 s. mem usage=10.45 GB. avail mem=20.92 GB.
+[2025-12-24 17:52:39 DP6 TP6] Capture cuda graph end. Time elapsed: 41.71 s. mem usage=10.45 GB. avail mem=20.92 GB.
+[2025-12-24 17:52:40 DP0 TP0] max_total_num_tokens=188352, chunked_prefill_size=1024, max_prefill_tokens=16384, max_running_requests=2943, context_len=32768, available_gpu_mem=20.96 GB
+[2025-12-24 17:52:40] INFO:     Started server process [35084]
+[2025-12-24 17:52:40] INFO:     Waiting for application startup.
+[2025-12-24 17:52:40] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 1.0, 'top_k': 50, 'top_p': 0.95}
+[2025-12-24 17:52:40] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 1.0, 'top_k': 50, 'top_p': 0.95}
+[2025-12-24 17:52:40] INFO:     Application startup complete.
+[2025-12-24 17:52:40] INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[2025-12-24 17:52:41] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
+[2025-12-24 17:52:41] INFO:     127.0.0.1:49518 - "GET /get_model_info HTTP/1.1" 200 OK
+[2025-12-24 17:52:41 DP1 TP1] Prefill batch, #new-seq: 1, #new-token: 64, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2025-12-24 17:52:41 DP5 TP5] Prefill batch, #new-seq: 1, #new-token: 64, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2025-12-24 17:52:41 DP3 TP3] Prefill batch, #new-seq: 1, #new-token: 64, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2025-12-24 17:52:41 DP7 TP7] Prefill batch, #new-seq: 1, #new-token: 64, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2025-12-24 17:52:41 DP0 TP0] Prefill batch, #new-seq: 1, #new-token: 64, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2025-12-24 17:52:41 DP4 TP4] Prefill batch, #new-seq: 1, #new-token: 64, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2025-12-24 17:52:41 DP6 TP6] Prefill batch, #new-seq: 1, #new-token: 64, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2025-12-24 17:52:41 DP2 TP2] Prefill batch, #new-seq: 1, #new-token: 64, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2025-12-24 17:52:42 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2025-12-24 17:52:42 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=32768, K=512, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2025-12-24 17:52:42 DP0 TP0] Required memory for warmup: 1.0234375GB, Available memory: 20.95379638671875GB
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s]DeepGEMM warmup:  15%|█▌        | 2471/16384 [00:00<00:00, 24708.49it/s]DeepGEMM warmup:  33%|███▎      | 5400/16384 [00:00<00:00, 27402.25it/s]DeepGEMM warmup:  51%|█████▏    | 8411/16384 [00:00<00:00, 28636.33it/s]DeepGEMM warmup:  70%|██████▉   | 11427/16384 [00:00<00:00, 29237.08it/s]DeepGEMM warmup:  88%|████████▊ | 14442/16384 [00:00<00:00, 29564.34it/s]DeepGEMM warmup: 100%|██████████| 16384/16384 [00:00<00:00, 29017.06it/s]
+[2025-12-24 17:52:43] INFO:     127.0.0.1:49522 - "POST /generate HTTP/1.1" 200 OK
+[2025-12-24 17:52:43] The server is fired up and ready to roll!
+[2025-12-24 17:52:45] INFO:     127.0.0.1:48838 - "GET /v1/models HTTP/1.1" 200 OK
+[2025-12-24 17:53:38] INFO:     127.0.0.1:33338 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:38] INFO:     127.0.0.1:33338 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:39] INFO:     127.0.0.1:33340 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:39] INFO:     127.0.0.1:33342 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:39] INFO:     127.0.0.1:33344 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:40] INFO:     127.0.0.1:33354 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:40] INFO:     127.0.0.1:33366 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:41] INFO:     127.0.0.1:33368 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:41] INFO:     127.0.0.1:33376 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:41] INFO:     127.0.0.1:33386 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:42] INFO:     127.0.0.1:33402 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:42] INFO:     127.0.0.1:33406 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:43] INFO:     127.0.0.1:33422 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:43] INFO:     127.0.0.1:33434 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:43] INFO:     127.0.0.1:33442 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:44] INFO:     127.0.0.1:33450 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:44] INFO:     127.0.0.1:33452 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:45] INFO:     127.0.0.1:33466 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:45] INFO:     127.0.0.1:33480 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:45] INFO:     127.0.0.1:33482 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:46] INFO:     127.0.0.1:33496 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:46] INFO:     127.0.0.1:33508 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:46] INFO:     127.0.0.1:33516 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:47] INFO:     127.0.0.1:33522 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:47] INFO:     127.0.0.1:33536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:48] INFO:     127.0.0.1:33538 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:48] INFO:     127.0.0.1:33542 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:48] INFO:     127.0.0.1:33546 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:49] INFO:     127.0.0.1:33556 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:49] INFO:     127.0.0.1:33562 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:49] INFO:     127.0.0.1:33568 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:50] INFO:     127.0.0.1:33582 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:50] INFO:     127.0.0.1:33590 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:51] INFO:     127.0.0.1:33598 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:51] INFO:     127.0.0.1:33608 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:51] INFO:     127.0.0.1:33616 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:52] INFO:     127.0.0.1:33620 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:52] INFO:     127.0.0.1:33634 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:52] INFO:     127.0.0.1:33636 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:53] INFO:     127.0.0.1:33640 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:53] INFO:     127.0.0.1:33656 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:54] INFO:     127.0.0.1:33670 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:54] INFO:     127.0.0.1:33674 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:54] INFO:     127.0.0.1:33678 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:55] INFO:     127.0.0.1:33680 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:55] INFO:     127.0.0.1:33684 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:55] INFO:     127.0.0.1:33694 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:56] INFO:     127.0.0.1:33710 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:56] INFO:     127.0.0.1:33718 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:57] INFO:     127.0.0.1:33728 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:57] INFO:     127.0.0.1:33736 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2025-12-24 17:53:57] SIGTERM received. signum=None frame=None. Draining requests and shutting down...
+[2025-12-24 17:53:58] Gracefully exiting... Remaining number of requests 0. Remaining requests remaining_rids=[].
