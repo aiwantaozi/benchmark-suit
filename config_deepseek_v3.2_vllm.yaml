@@ -125,6 +125,17 @@ runs:
     test_cases:
       - sharegpt
 
+  - name: "vllm-tool-call-max-model-len-env"
+    engine: "vllm"
+    conda_env: "vllm"
+    envs:
+      HF_HOME: /workspace/gpustack_cache
+      OMP_NUM_THREADS: "1"
+      SAFETENSORS_FAST_GPU: "1"
+    args: "-tp 8 --tokenizer-mode deepseek_v32 --reasoning-parser deepseek_v3 --tool-call-parser deepseek_v32 --enable-auto-tool-choice --max-model-len 32768"
+    test_cases:
+      - sharegpt
+
 # Parallelism
   # - name: "vllm-tp-dcp"
   #   engine: "vllm"
