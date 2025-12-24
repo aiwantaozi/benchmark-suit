@@ -59,6 +59,15 @@ test_cases:
 
 # Engine test configurations
 runs:
+  - name: "sglang-official-recommended-tp-dp" # run before test: python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 -tp 8 --trust-remote-code
+    engine: "sglang"
+    conda_env: "sglang"
+    envs:
+      SGLANG_ENABLE_JIT_DEEPGEMM: "0"
+    args: "--tensor-parallel-size 8 --enable-dp-attention --chat-template ./tool_chat_template_deepseekv32.jinja --dp 8"
+    test_cases:
+      - sharegpt
+
   - name: "sglang-official-recommended-tp-dp-ep"
     engine: "sglang"
     conda_env: "sglang"
