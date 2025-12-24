@@ -96,6 +96,7 @@ runs:
       --pp_size 1
     test_cases:
       - sharegpt
+
   # - name: "trt-tp-ep-block"
   #   engine: "trtllm"
   #   conda_env: "trtllm"
@@ -113,6 +114,7 @@ runs:
   #     --tokens-per-block 64
   #   test_cases:
   #     - sharegpt
+
   - name: "trt-deepgemm-disabled"
     engine: "trtllm"
     conda_env: "trtllm"
@@ -130,7 +132,7 @@ runs:
       --pp_size 1
     test_cases:
       - sharegpt
-  - name: "trt-mtp" # TODO: adjust N
+  - name: "trt-mtp"
     engine: "trtllm"
     conda_env: "trtllm"
     envs:

@@ -233,3 +233,7 @@ python convert_benchmark_results.py \
 python convert_benchmark_results.py \
   ./test/deepseek_v3.2-results-1218/vllm_speculative_decoding_mtp_sharegpt.json \
   -o ./test/deepseek_v3.2-results-1218/converted_results
+
+python convert_benchmark_results.py \
+  ./test/deepseek_v3.2-results-1218/vllm_deepgemm_disable_sharegpt.json \
+  -o ./test/deepseek_v3.2-results-1218/converted_results

@@ -1,4 +1,6 @@
-Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files: 100%|██████████| 11/11 [00:00<00:00, 19049.27it/s]
+
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]
+Fetching 11 files: 100%|██████████| 11/11 [00:00<00:00, 19049.27it/s]
 [2025-12-19 12:52:37] WARNING server_args.py:1000: Set nsa attention backend for DeepSeek NSA.
 [2025-12-19 12:52:37] WARNING server_args.py:1004: DP attention is enabled for DeepSeek NSA.
 [2025-12-19 12:52:37] WARNING server_args.py:1027: Setting page size to 64 for DeepSeek NSA.
@@ -84,174 +86,335 @@ NSA_DUAL_STREAM=True NSA_FUSE_TOPK=True NSA_FLASHMLA_BACKEND_DECODE_COMPUTE_FP8=
 [2025-12-19 12:53:15 DP5 TP5] Load weight begin. avail mem=137.88 GB
 [2025-12-19 12:53:16 DP0 TP0] Shared experts fusion optimization enabled.
 [2025-12-19 12:53:16 DP0 TP0] Found local HF snapshot for deepseek-ai/DeepSeek-V3.2 at /root/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V3.2/snapshots/a7e62ac04ecb2c0a54d736dc46601c5606cf10a6; skipping download.
-Loading safetensors checkpoint shards:   0% Completed | 0/163 [00:00<?, ?it/s]
-Loading safetensors checkpoint shards:   1% Completed | 1/163 [00:00<02:06,  1.28it/s]
-Loading safetensors checkpoint shards:   1% Completed | 2/163 [00:01<02:12,  1.22it/s]
-Loading safetensors checkpoint shards:   2% Completed | 3/163 [00:02<02:10,  1.23it/s]
-Loading safetensors checkpoint shards:   2% Completed | 4/163 [00:03<02:13,  1.19it/s]
-Loading safetensors checkpoint shards:   3% Completed | 5/163 [00:04<02:12,  1.19it/s]
-Loading safetensors checkpoint shards:   4% Completed | 6/163 [00:05<02:14,  1.17it/s]
-Loading safetensors checkpoint shards:   4% Completed | 7/163 [00:05<02:09,  1.20it/s]
-Loading safetensors checkpoint shards:   5% Completed | 8/163 [00:06<01:40,  1.55it/s]
-Loading safetensors checkpoint shards:   6% Completed | 10/163 [00:06<00:55,  2.75it/s]
-Loading safetensors checkpoint shards:   7% Completed | 12/163 [00:06<00:54,  2.79it/s]
-Loading safetensors checkpoint shards:   8% Completed | 13/163 [00:08<01:26,  1.73it/s]
-Loading safetensors checkpoint shards:   9% Completed | 14/163 [00:09<01:38,  1.52it/s]
-Loading safetensors checkpoint shards:   9% Completed | 15/163 [00:09<01:43,  1.43it/s]
-Loading safetensors checkpoint shards:  10% Completed | 16/163 [00:10<01:48,  1.35it/s]
-Loading safetensors checkpoint shards:  10% Completed | 17/163 [00:11<01:51,  1.31it/s]
-Loading safetensors checkpoint shards:  11% Completed | 18/163 [00:12<01:58,  1.22it/s]
-Loading safetensors checkpoint shards:  12% Completed | 19/163 [00:13<02:01,  1.19it/s]
-Loading safetensors checkpoint shards:  12% Completed | 20/163 [00:14<02:02,  1.17it/s]
-Loading safetensors checkpoint shards:  13% Completed | 21/163 [00:15<02:03,  1.15it/s]
-Loading safetensors checkpoint shards:  13% Completed | 22/163 [00:16<02:01,  1.16it/s]
-Loading safetensors checkpoint shards:  14% Completed | 23/163 [00:17<02:05,  1.11it/s]
-Loading safetensors checkpoint shards:  15% Completed | 24/163 [00:18<02:06,  1.10it/s]
-Loading safetensors checkpoint shards:  15% Completed | 25/163 [00:18<02:06,  1.09it/s]
-Loading safetensors checkpoint shards:  16% Completed | 26/163 [00:19<02:04,  1.10it/s]
-Loading safetensors checkpoint shards:  17% Completed | 27/163 [00:20<02:04,  1.10it/s]
-Loading safetensors checkpoint shards:  17% Completed | 28/163 [00:21<02:02,  1.11it/s]
-Loading safetensors checkpoint shards:  18% Completed | 29/163 [00:22<02:01,  1.10it/s]
-Loading safetensors checkpoint shards:  18% Completed | 30/163 [00:23<02:01,  1.09it/s]
-Loading safetensors checkpoint shards:  19% Completed | 31/163 [00:24<02:00,  1.09it/s]
-Loading safetensors checkpoint shards:  20% Completed | 32/163 [00:25<01:57,  1.11it/s]
-Loading safetensors checkpoint shards:  20% Completed | 33/163 [00:26<01:56,  1.12it/s]
-Loading safetensors checkpoint shards:  21% Completed | 34/163 [00:27<01:56,  1.11it/s]
-Loading safetensors checkpoint shards:  21% Completed | 35/163 [00:28<01:59,  1.07it/s]
-Loading safetensors checkpoint shards:  22% Completed | 36/163 [00:28<01:55,  1.10it/s]
-Loading safetensors checkpoint shards:  23% Completed | 37/163 [00:29<01:54,  1.10it/s]
-Loading safetensors checkpoint shards:  23% Completed | 38/163 [00:30<01:54,  1.10it/s]
-Loading safetensors checkpoint shards:  24% Completed | 39/163 [00:31<01:52,  1.10it/s]
-Loading safetensors checkpoint shards:  25% Completed | 40/163 [00:32<01:52,  1.10it/s]
-Loading safetensors checkpoint shards:  25% Completed | 41/163 [00:33<01:50,  1.11it/s]
-Loading safetensors checkpoint shards:  26% Completed | 42/163 [00:34<01:51,  1.09it/s]
-Loading safetensors checkpoint shards:  26% Completed | 43/163 [00:35<01:51,  1.07it/s]
-Loading safetensors checkpoint shards:  27% Completed | 44/163 [00:36<01:53,  1.05it/s]
-Loading safetensors checkpoint shards:  28% Completed | 45/163 [00:37<01:49,  1.08it/s]
-Loading safetensors checkpoint shards:  28% Completed | 46/163 [00:38<01:48,  1.08it/s]
-Loading safetensors checkpoint shards:  29% Completed | 47/163 [00:39<01:49,  1.06it/s]
-Loading safetensors checkpoint shards:  29% Completed | 48/163 [00:40<01:48,  1.06it/s]
-Loading safetensors checkpoint shards:  30% Completed | 49/163 [00:41<01:47,  1.06it/s]
-Loading safetensors checkpoint shards:  31% Completed | 50/163 [00:41<01:44,  1.08it/s]
-Loading safetensors checkpoint shards:  31% Completed | 51/163 [00:42<01:42,  1.09it/s]
-Loading safetensors checkpoint shards:  32% Completed | 52/163 [00:43<01:42,  1.08it/s]
-Loading safetensors checkpoint shards:  33% Completed | 53/163 [00:44<01:38,  1.11it/s]
-Loading safetensors checkpoint shards:  33% Completed | 54/163 [00:45<01:38,  1.10it/s]
-Loading safetensors checkpoint shards:  34% Completed | 55/163 [00:46<01:36,  1.12it/s]
-Loading safetensors checkpoint shards:  34% Completed | 56/163 [00:46<01:21,  1.31it/s]
-Loading safetensors checkpoint shards:  35% Completed | 57/163 [00:47<01:25,  1.24it/s]
-Loading safetensors checkpoint shards:  36% Completed | 58/163 [00:48<01:27,  1.20it/s]
-Loading safetensors checkpoint shards:  36% Completed | 59/163 [00:49<01:29,  1.17it/s]
-Loading safetensors checkpoint shards:  37% Completed | 60/163 [00:50<01:27,  1.17it/s]
-Loading safetensors checkpoint shards:  37% Completed | 61/163 [00:51<01:29,  1.14it/s]
-Loading safetensors checkpoint shards:  38% Completed | 62/163 [00:52<01:30,  1.12it/s]
-Loading safetensors checkpoint shards:  39% Completed | 63/163 [00:53<01:31,  1.09it/s]
-Loading safetensors checkpoint shards:  39% Completed | 64/163 [00:54<01:29,  1.10it/s]
-Loading safetensors checkpoint shards:  40% Completed | 65/163 [00:55<01:32,  1.06it/s]
-Loading safetensors checkpoint shards:  40% Completed | 66/163 [00:55<01:27,  1.11it/s]
-Loading safetensors checkpoint shards:  41% Completed | 67/163 [00:56<01:27,  1.09it/s]
-Loading safetensors checkpoint shards:  42% Completed | 68/163 [00:57<01:26,  1.09it/s]
-Loading safetensors checkpoint shards:  42% Completed | 69/163 [00:58<01:28,  1.07it/s]
-Loading safetensors checkpoint shards:  43% Completed | 70/163 [01:00<01:42,  1.10s/it]
-Loading safetensors checkpoint shards:  44% Completed | 71/163 [01:01<01:36,  1.05s/it]
-Loading safetensors checkpoint shards:  44% Completed | 72/163 [01:02<01:32,  1.01s/it]
-Loading safetensors checkpoint shards:  45% Completed | 73/163 [01:03<01:28,  1.02it/s]
-Loading safetensors checkpoint shards:  45% Completed | 74/163 [01:04<01:26,  1.03it/s]
-Loading safetensors checkpoint shards:  46% Completed | 75/163 [01:04<01:22,  1.07it/s]
-Loading safetensors checkpoint shards:  47% Completed | 76/163 [01:05<01:20,  1.08it/s]
-Loading safetensors checkpoint shards:  47% Completed | 77/163 [01:06<01:22,  1.05it/s]
-Loading safetensors checkpoint shards:  48% Completed | 78/163 [01:07<01:22,  1.04it/s]
-Loading safetensors checkpoint shards:  48% Completed | 79/163 [01:08<01:20,  1.05it/s]
-Loading safetensors checkpoint shards:  49% Completed | 80/163 [01:09<01:17,  1.07it/s]
-Loading safetensors checkpoint shards:  50% Completed | 81/163 [01:10<01:03,  1.30it/s]
-Loading safetensors checkpoint shards:  50% Completed | 82/163 [01:10<01:05,  1.23it/s]
-Loading safetensors checkpoint shards:  51% Completed | 83/163 [01:11<01:08,  1.17it/s]
-Loading safetensors checkpoint shards:  52% Completed | 84/163 [01:12<01:08,  1.15it/s]
-Loading safetensors checkpoint shards:  52% Completed | 85/163 [01:13<01:09,  1.12it/s]
-Loading safetensors checkpoint shards:  53% Completed | 86/163 [01:14<01:10,  1.08it/s]
-Loading safetensors checkpoint shards:  53% Completed | 87/163 [01:15<01:09,  1.09it/s]
-Loading safetensors checkpoint shards:  54% Completed | 88/163 [01:16<01:07,  1.10it/s]
-Loading safetensors checkpoint shards:  55% Completed | 89/163 [01:17<01:07,  1.10it/s]
-Loading safetensors checkpoint shards:  55% Completed | 90/163 [01:18<01:08,  1.07it/s]
-Loading safetensors checkpoint shards:  56% Completed | 91/163 [01:19<01:09,  1.04it/s]
-Loading safetensors checkpoint shards:  56% Completed | 92/163 [01:20<01:04,  1.09it/s]
-Loading safetensors checkpoint shards:  57% Completed | 93/163 [01:21<01:00,  1.15it/s]
-Loading safetensors checkpoint shards:  58% Completed | 94/163 [01:21<00:59,  1.16it/s]
-Loading safetensors checkpoint shards:  58% Completed | 95/163 [01:22<00:47,  1.43it/s]
-Loading safetensors checkpoint shards:  59% Completed | 96/163 [01:22<00:48,  1.37it/s]
-Loading safetensors checkpoint shards:  60% Completed | 97/163 [01:23<00:50,  1.30it/s]
-Loading safetensors checkpoint shards:  60% Completed | 98/163 [01:24<00:51,  1.26it/s]
-Loading safetensors checkpoint shards:  61% Completed | 99/163 [01:25<00:49,  1.28it/s]
-Loading safetensors checkpoint shards:  61% Completed | 100/163 [01:26<00:48,  1.29it/s]
-Loading safetensors checkpoint shards:  62% Completed | 101/163 [01:27<00:48,  1.28it/s]
-Loading safetensors checkpoint shards:  63% Completed | 102/163 [01:27<00:49,  1.24it/s]
-Loading safetensors checkpoint shards:  63% Completed | 103/163 [01:28<00:49,  1.21it/s]
-Loading safetensors checkpoint shards:  64% Completed | 104/163 [01:29<00:47,  1.25it/s]
-Loading safetensors checkpoint shards:  64% Completed | 105/163 [01:30<00:46,  1.26it/s]
-Loading safetensors checkpoint shards:  65% Completed | 106/163 [01:31<00:45,  1.24it/s]
-Loading safetensors checkpoint shards:  66% Completed | 107/163 [01:31<00:44,  1.26it/s]
-Loading safetensors checkpoint shards:  66% Completed | 108/163 [01:32<00:44,  1.24it/s]
-Loading safetensors checkpoint shards:  67% Completed | 109/163 [01:33<00:43,  1.25it/s]
-Loading safetensors checkpoint shards:  67% Completed | 110/163 [01:34<00:42,  1.26it/s]
-Loading safetensors checkpoint shards:  68% Completed | 111/163 [01:34<00:39,  1.30it/s]
-Loading safetensors checkpoint shards:  69% Completed | 112/163 [01:35<00:39,  1.28it/s]
-Loading safetensors checkpoint shards:  69% Completed | 113/163 [01:36<00:40,  1.24it/s]
-Loading safetensors checkpoint shards:  70% Completed | 114/163 [01:37<00:39,  1.25it/s]
-Loading safetensors checkpoint shards:  71% Completed | 115/163 [01:38<00:38,  1.25it/s]
-Loading safetensors checkpoint shards:  71% Completed | 116/163 [01:39<00:38,  1.24it/s]
-Loading safetensors checkpoint shards:  72% Completed | 117/163 [01:40<00:46,  1.00s/it]
-Loading safetensors checkpoint shards:  72% Completed | 118/163 [01:41<00:41,  1.09it/s]
-Loading safetensors checkpoint shards:  73% Completed | 119/163 [01:42<00:39,  1.11it/s]
-Loading safetensors checkpoint shards:  74% Completed | 120/163 [01:42<00:36,  1.19it/s]
-Loading safetensors checkpoint shards:  74% Completed | 121/163 [01:43<00:28,  1.46it/s]
-Loading safetensors checkpoint shards:  75% Completed | 122/163 [01:43<00:29,  1.38it/s]
-Loading safetensors checkpoint shards:  75% Completed | 123/163 [01:44<00:29,  1.35it/s]
-Loading safetensors checkpoint shards:  76% Completed | 124/163 [01:45<00:29,  1.30it/s]
-Loading safetensors checkpoint shards:  77% Completed | 125/163 [01:46<00:29,  1.29it/s]
-Loading safetensors checkpoint shards:  77% Completed | 126/163 [01:47<00:30,  1.23it/s]
-Loading safetensors checkpoint shards:  78% Completed | 127/163 [01:48<00:29,  1.22it/s]
-Loading safetensors checkpoint shards:  79% Completed | 128/163 [01:48<00:27,  1.25it/s]
-Loading safetensors checkpoint shards:  79% Completed | 129/163 [01:49<00:28,  1.18it/s]
-Loading safetensors checkpoint shards:  80% Completed | 130/163 [01:50<00:27,  1.19it/s]
-Loading safetensors checkpoint shards:  80% Completed | 131/163 [01:51<00:27,  1.16it/s]
-Loading safetensors checkpoint shards:  81% Completed | 132/163 [01:52<00:25,  1.23it/s]
-Loading safetensors checkpoint shards:  82% Completed | 133/163 [01:53<00:24,  1.21it/s]
-Loading safetensors checkpoint shards:  82% Completed | 134/163 [01:53<00:24,  1.20it/s]
-Loading safetensors checkpoint shards:  83% Completed | 135/163 [01:54<00:22,  1.26it/s]
-Loading safetensors checkpoint shards:  83% Completed | 136/163 [01:55<00:22,  1.22it/s]
-Loading safetensors checkpoint shards:  84% Completed | 137/163 [01:56<00:21,  1.22it/s]
-Loading safetensors checkpoint shards:  85% Completed | 138/163 [01:57<00:19,  1.26it/s]
-Loading safetensors checkpoint shards:  85% Completed | 139/163 [01:57<00:19,  1.22it/s]
-Loading safetensors checkpoint shards:  86% Completed | 140/163 [01:58<00:19,  1.18it/s]
-Loading safetensors checkpoint shards:  87% Completed | 141/163 [01:59<00:17,  1.26it/s]
-Loading safetensors checkpoint shards:  87% Completed | 142/163 [02:00<00:17,  1.22it/s]
-Loading safetensors checkpoint shards:  88% Completed | 143/163 [02:01<00:16,  1.19it/s]
-Loading safetensors checkpoint shards:  88% Completed | 144/163 [02:02<00:16,  1.17it/s]
-Loading safetensors checkpoint shards:  89% Completed | 145/163 [02:03<00:15,  1.16it/s]
-Loading safetensors checkpoint shards:  90% Completed | 146/163 [02:03<00:14,  1.19it/s]
-Loading safetensors checkpoint shards:  90% Completed | 147/163 [02:04<00:13,  1.21it/s]
-Loading safetensors checkpoint shards:  91% Completed | 148/163 [02:05<00:12,  1.17it/s]
-Loading safetensors checkpoint shards:  91% Completed | 149/163 [02:06<00:12,  1.16it/s]
-Loading safetensors checkpoint shards:  92% Completed | 150/163 [02:07<00:10,  1.20it/s]
-Loading safetensors checkpoint shards:  93% Completed | 151/163 [02:08<00:09,  1.21it/s]
-Loading safetensors checkpoint shards:  93% Completed | 152/163 [02:08<00:08,  1.25it/s]
-Loading safetensors checkpoint shards:  94% Completed | 153/163 [02:09<00:08,  1.22it/s]
-Loading safetensors checkpoint shards:  94% Completed | 154/163 [02:10<00:07,  1.22it/s]
-Loading safetensors checkpoint shards:  95% Completed | 155/163 [02:11<00:06,  1.18it/s]
+
+Loading safetensors checkpoint shards:   0% Completed | 0/163 [00:00<?, ?it/s]
+
+Loading safetensors checkpoint shards:   1% Completed | 1/163 [00:00<02:06,  1.28it/s]
+
+Loading safetensors checkpoint shards:   1% Completed | 2/163 [00:01<02:12,  1.22it/s]
+
+Loading safetensors checkpoint shards:   2% Completed | 3/163 [00:02<02:10,  1.23it/s]
+
+Loading safetensors checkpoint shards:   2% Completed | 4/163 [00:03<02:13,  1.19it/s]
+
+Loading safetensors checkpoint shards:   3% Completed | 5/163 [00:04<02:12,  1.19it/s]
+
+Loading safetensors checkpoint shards:   4% Completed | 6/163 [00:05<02:14,  1.17it/s]
+
+Loading safetensors checkpoint shards:   4% Completed | 7/163 [00:05<02:09,  1.20it/s]
+
+Loading safetensors checkpoint shards:   5% Completed | 8/163 [00:06<01:40,  1.55it/s]
+
+Loading safetensors checkpoint shards:   6% Completed | 10/163 [00:06<00:55,  2.75it/s]
+
+Loading safetensors checkpoint shards:   7% Completed | 12/163 [00:06<00:54,  2.79it/s]
+
+Loading safetensors checkpoint shards:   8% Completed | 13/163 [00:08<01:26,  1.73it/s]
+
+Loading safetensors checkpoint shards:   9% Completed | 14/163 [00:09<01:38,  1.52it/s]
+
+Loading safetensors checkpoint shards:   9% Completed | 15/163 [00:09<01:43,  1.43it/s]
+
+Loading safetensors checkpoint shards:  10% Completed | 16/163 [00:10<01:48,  1.35it/s]
+
+Loading safetensors checkpoint shards:  10% Completed | 17/163 [00:11<01:51,  1.31it/s]
+
+Loading safetensors checkpoint shards:  11% Completed | 18/163 [00:12<01:58,  1.22it/s]
+
+Loading safetensors checkpoint shards:  12% Completed | 19/163 [00:13<02:01,  1.19it/s]
+
+Loading safetensors checkpoint shards:  12% Completed | 20/163 [00:14<02:02,  1.17it/s]
+
+Loading safetensors checkpoint shards:  13% Completed | 21/163 [00:15<02:03,  1.15it/s]
+
+Loading safetensors checkpoint shards:  13% Completed | 22/163 [00:16<02:01,  1.16it/s]
+
+Loading safetensors checkpoint shards:  14% Completed | 23/163 [00:17<02:05,  1.11it/s]
+
+Loading safetensors checkpoint shards:  15% Completed | 24/163 [00:18<02:06,  1.10it/s]
+
+Loading safetensors checkpoint shards:  15% Completed | 25/163 [00:18<02:06,  1.09it/s]
+
+Loading safetensors checkpoint shards:  16% Completed | 26/163 [00:19<02:04,  1.10it/s]
+
+Loading safetensors checkpoint shards:  17% Completed | 27/163 [00:20<02:04,  1.10it/s]
+
+Loading safetensors checkpoint shards:  17% Completed | 28/163 [00:21<02:02,  1.11it/s]
+
+Loading safetensors checkpoint shards:  18% Completed | 29/163 [00:22<02:01,  1.10it/s]
+
+Loading safetensors checkpoint shards:  18% Completed | 30/163 [00:23<02:01,  1.09it/s]
+
+Loading safetensors checkpoint shards:  19% Completed | 31/163 [00:24<02:00,  1.09it/s]
+
+Loading safetensors checkpoint shards:  20% Completed | 32/163 [00:25<01:57,  1.11it/s]
+
+Loading safetensors checkpoint shards:  20% Completed | 33/163 [00:26<01:56,  1.12it/s]
+
+Loading safetensors checkpoint shards:  21% Completed | 34/163 [00:27<01:56,  1.11it/s]
+
+Loading safetensors checkpoint shards:  21% Completed | 35/163 [00:28<01:59,  1.07it/s]
+
+Loading safetensors checkpoint shards:  22% Completed | 36/163 [00:28<01:55,  1.10it/s]
+
+Loading safetensors checkpoint shards:  23% Completed | 37/163 [00:29<01:54,  1.10it/s]
+
+Loading safetensors checkpoint shards:  23% Completed | 38/163 [00:30<01:54,  1.10it/s]
+
+Loading safetensors checkpoint shards:  24% Completed | 39/163 [00:31<01:52,  1.10it/s]
+
+Loading safetensors checkpoint shards:  25% Completed | 40/163 [00:32<01:52,  1.10it/s]
+
+Loading safetensors checkpoint shards:  25% Completed | 41/163 [00:33<01:50,  1.11it/s]
+
+Loading safetensors checkpoint shards:  26% Completed | 42/163 [00:34<01:51,  1.09it/s]
+
+Loading safetensors checkpoint shards:  26% Completed | 43/163 [00:35<01:51,  1.07it/s]
+
+Loading safetensors checkpoint shards:  27% Completed | 44/163 [00:36<01:53,  1.05it/s]
+
+Loading safetensors checkpoint shards:  28% Completed | 45/163 [00:37<01:49,  1.08it/s]
+
+Loading safetensors checkpoint shards:  28% Completed | 46/163 [00:38<01:48,  1.08it/s]
+
+Loading safetensors checkpoint shards:  29% Completed | 47/163 [00:39<01:49,  1.06it/s]
+
+Loading safetensors checkpoint shards:  29% Completed | 48/163 [00:40<01:48,  1.06it/s]
+
+Loading safetensors checkpoint shards:  30% Completed | 49/163 [00:41<01:47,  1.06it/s]
+
+Loading safetensors checkpoint shards:  31% Completed | 50/163 [00:41<01:44,  1.08it/s]
+
+Loading safetensors checkpoint shards:  31% Completed | 51/163 [00:42<01:42,  1.09it/s]
+
+Loading safetensors checkpoint shards:  32% Completed | 52/163 [00:43<01:42,  1.08it/s]
+
+Loading safetensors checkpoint shards:  33% Completed | 53/163 [00:44<01:38,  1.11it/s]
+
+Loading safetensors checkpoint shards:  33% Completed | 54/163 [00:45<01:38,  1.10it/s]
+
+Loading safetensors checkpoint shards:  34% Completed | 55/163 [00:46<01:36,  1.12it/s]
+
+Loading safetensors checkpoint shards:  34% Completed | 56/163 [00:46<01:21,  1.31it/s]
+
+Loading safetensors checkpoint shards:  35% Completed | 57/163 [00:47<01:25,  1.24it/s]
+
+Loading safetensors checkpoint shards:  36% Completed | 58/163 [00:48<01:27,  1.20it/s]
+
+Loading safetensors checkpoint shards:  36% Completed | 59/163 [00:49<01:29,  1.17it/s]
+
+Loading safetensors checkpoint shards:  37% Completed | 60/163 [00:50<01:27,  1.17it/s]
+
+Loading safetensors checkpoint shards:  37% Completed | 61/163 [00:51<01:29,  1.14it/s]
+
+Loading safetensors checkpoint shards:  38% Completed | 62/163 [00:52<01:30,  1.12it/s]
+
+Loading safetensors checkpoint shards:  39% Completed | 63/163 [00:53<01:31,  1.09it/s]
+
+Loading safetensors checkpoint shards:  39% Completed | 64/163 [00:54<01:29,  1.10it/s]
+
+Loading safetensors checkpoint shards:  40% Completed | 65/163 [00:55<01:32,  1.06it/s]
+
+Loading safetensors checkpoint shards:  40% Completed | 66/163 [00:55<01:27,  1.11it/s]
+
+Loading safetensors checkpoint shards:  41% Completed | 67/163 [00:56<01:27,  1.09it/s]
+
+Loading safetensors checkpoint shards:  42% Completed | 68/163 [00:57<01:26,  1.09it/s]
+
+Loading safetensors checkpoint shards:  42% Completed | 69/163 [00:58<01:28,  1.07it/s]
+
+Loading safetensors checkpoint shards:  43% Completed | 70/163 [01:00<01:42,  1.10s/it]
+
+Loading safetensors checkpoint shards:  44% Completed | 71/163 [01:01<01:36,  1.05s/it]
+
+Loading safetensors checkpoint shards:  44% Completed | 72/163 [01:02<01:32,  1.01s/it]
+
+Loading safetensors checkpoint shards:  45% Completed | 73/163 [01:03<01:28,  1.02it/s]
+
+Loading safetensors checkpoint shards:  45% Completed | 74/163 [01:04<01:26,  1.03it/s]
+
+Loading safetensors checkpoint shards:  46% Completed | 75/163 [01:04<01:22,  1.07it/s]
+
+Loading safetensors checkpoint shards:  47% Completed | 76/163 [01:05<01:20,  1.08it/s]
+
+Loading safetensors checkpoint shards:  47% Completed | 77/163 [01:06<01:22,  1.05it/s]
+
+Loading safetensors checkpoint shards:  48% Completed | 78/163 [01:07<01:22,  1.04it/s]
+
+Loading safetensors checkpoint shards:  48% Completed | 79/163 [01:08<01:20,  1.05it/s]
+
+Loading safetensors checkpoint shards:  49% Completed | 80/163 [01:09<01:17,  1.07it/s]
+
+Loading safetensors checkpoint shards:  50% Completed | 81/163 [01:10<01:03,  1.30it/s]
+
+Loading safetensors checkpoint shards:  50% Completed | 82/163 [01:10<01:05,  1.23it/s]
+
+Loading safetensors checkpoint shards:  51% Completed | 83/163 [01:11<01:08,  1.17it/s]
+
+Loading safetensors checkpoint shards:  52% Completed | 84/163 [01:12<01:08,  1.15it/s]
+
+Loading safetensors checkpoint shards:  52% Completed | 85/163 [01:13<01:09,  1.12it/s]
+
+Loading safetensors checkpoint shards:  53% Completed | 86/163 [01:14<01:10,  1.08it/s]
+
+Loading safetensors checkpoint shards:  53% Completed | 87/163 [01:15<01:09,  1.09it/s]
+
+Loading safetensors checkpoint shards:  54% Completed | 88/163 [01:16<01:07,  1.10it/s]
+
+Loading safetensors checkpoint shards:  55% Completed | 89/163 [01:17<01:07,  1.10it/s]
+
+Loading safetensors checkpoint shards:  55% Completed | 90/163 [01:18<01:08,  1.07it/s]
+
+Loading safetensors checkpoint shards:  56% Completed | 91/163 [01:19<01:09,  1.04it/s]
+
+Loading safetensors checkpoint shards:  56% Completed | 92/163 [01:20<01:04,  1.09it/s]
+
+Loading safetensors checkpoint shards:  57% Completed | 93/163 [01:21<01:00,  1.15it/s]
+
+Loading safetensors checkpoint shards:  58% Completed | 94/163 [01:21<00:59,  1.16it/s]
+
+Loading safetensors checkpoint shards:  58% Completed | 95/163 [01:22<00:47,  1.43it/s]
+
+Loading safetensors checkpoint shards:  59% Completed | 96/163 [01:22<00:48,  1.37it/s]
+
+Loading safetensors checkpoint shards:  60% Completed | 97/163 [01:23<00:50,  1.30it/s]
+
+Loading safetensors checkpoint shards:  60% Completed | 98/163 [01:24<00:51,  1.26it/s]
+
+Loading safetensors checkpoint shards:  61% Completed | 99/163 [01:25<00:49,  1.28it/s]
+
+Loading safetensors checkpoint shards:  61% Completed | 100/163 [01:26<00:48,  1.29it/s]
+
+Loading safetensors checkpoint shards:  62% Completed | 101/163 [01:27<00:48,  1.28it/s]
+
+Loading safetensors checkpoint shards:  63% Completed | 102/163 [01:27<00:49,  1.24it/s]
+
+Loading safetensors checkpoint shards:  63% Completed | 103/163 [01:28<00:49,  1.21it/s]
+
+Loading safetensors checkpoint shards:  64% Completed | 104/163 [01:29<00:47,  1.25it/s]
+
+Loading safetensors checkpoint shards:  64% Completed | 105/163 [01:30<00:46,  1.26it/s]
+
+Loading safetensors checkpoint shards:  65% Completed | 106/163 [01:31<00:45,  1.24it/s]
+
+Loading safetensors checkpoint shards:  66% Completed | 107/163 [01:31<00:44,  1.26it/s]
+
+Loading safetensors checkpoint shards:  66% Completed | 108/163 [01:32<00:44,  1.24it/s]
+
+Loading safetensors checkpoint shards:  67% Completed | 109/163 [01:33<00:43,  1.25it/s]
+
+Loading safetensors checkpoint shards:  67% Completed | 110/163 [01:34<00:42,  1.26it/s]
+
+Loading safetensors checkpoint shards:  68% Completed | 111/163 [01:34<00:39,  1.30it/s]
+
+Loading safetensors checkpoint shards:  69% Completed | 112/163 [01:35<00:39,  1.28it/s]
+
+Loading safetensors checkpoint shards:  69% Completed | 113/163 [01:36<00:40,  1.24it/s]
+
+Loading safetensors checkpoint shards:  70% Completed | 114/163 [01:37<00:39,  1.25it/s]
+
+Loading safetensors checkpoint shards:  71% Completed | 115/163 [01:38<00:38,  1.25it/s]
+
+Loading safetensors checkpoint shards:  71% Completed | 116/163 [01:39<00:38,  1.24it/s]
+
+Loading safetensors checkpoint shards:  72% Completed | 117/163 [01:40<00:46,  1.00s/it]
+
+Loading safetensors checkpoint shards:  72% Completed | 118/163 [01:41<00:41,  1.09it/s]
+
+Loading safetensors checkpoint shards:  73% Completed | 119/163 [01:42<00:39,  1.11it/s]
+
+Loading safetensors checkpoint shards:  74% Completed | 120/163 [01:42<00:36,  1.19it/s]
+
+Loading safetensors checkpoint shards:  74% Completed | 121/163 [01:43<00:28,  1.46it/s]
+
+Loading safetensors checkpoint shards:  75% Completed | 122/163 [01:43<00:29,  1.38it/s]
+
+Loading safetensors checkpoint shards:  75% Completed | 123/163 [01:44<00:29,  1.35it/s]
+
+Loading safetensors checkpoint shards:  76% Completed | 124/163 [01:45<00:29,  1.30it/s]
+
+Loading safetensors checkpoint shards:  77% Completed | 125/163 [01:46<00:29,  1.29it/s]
+
+Loading safetensors checkpoint shards:  77% Completed | 126/163 [01:47<00:30,  1.23it/s]
+
+Loading safetensors checkpoint shards:  78% Completed | 127/163 [01:48<00:29,  1.22it/s]
+
+Loading safetensors checkpoint shards:  79% Completed | 128/163 [01:48<00:27,  1.25it/s]
+
+Loading safetensors checkpoint shards:  79% Completed | 129/163 [01:49<00:28,  1.18it/s]
+
+Loading safetensors checkpoint shards:  80% Completed | 130/163 [01:50<00:27,  1.19it/s]
+
+Loading safetensors checkpoint shards:  80% Completed | 131/163 [01:51<00:27,  1.16it/s]
+
+Loading safetensors checkpoint shards:  81% Completed | 132/163 [01:52<00:25,  1.23it/s]
+
+Loading safetensors checkpoint shards:  82% Completed | 133/163 [01:53<00:24,  1.21it/s]
+
+Loading safetensors checkpoint shards:  82% Completed | 134/163 [01:53<00:24,  1.20it/s]
+
+Loading safetensors checkpoint shards:  83% Completed | 135/163 [01:54<00:22,  1.26it/s]
+
+Loading safetensors checkpoint shards:  83% Completed | 136/163 [01:55<00:22,  1.22it/s]
+
+Loading safetensors checkpoint shards:  84% Completed | 137/163 [01:56<00:21,  1.22it/s]
+
+Loading safetensors checkpoint shards:  85% Completed | 138/163 [01:57<00:19,  1.26it/s]
+
+Loading safetensors checkpoint shards:  85% Completed | 139/163 [01:57<00:19,  1.22it/s]
+
+Loading safetensors checkpoint shards:  86% Completed | 140/163 [01:58<00:19,  1.18it/s]
+
+Loading safetensors checkpoint shards:  87% Completed | 141/163 [01:59<00:17,  1.26it/s]
+
+Loading safetensors checkpoint shards:  87% Completed | 142/163 [02:00<00:17,  1.22it/s]
+
+Loading safetensors checkpoint shards:  88% Completed | 143/163 [02:01<00:16,  1.19it/s]
+
+Loading safetensors checkpoint shards:  88% Completed | 144/163 [02:02<00:16,  1.17it/s]
+
+Loading safetensors checkpoint shards:  89% Completed | 145/163 [02:03<00:15,  1.16it/s]
+
+Loading safetensors checkpoint shards:  90% Completed | 146/163 [02:03<00:14,  1.19it/s]
+
+Loading safetensors checkpoint shards:  90% Completed | 147/163 [02:04<00:13,  1.21it/s]
+
+Loading safetensors checkpoint shards:  91% Completed | 148/163 [02:05<00:12,  1.17it/s]
+
+Loading safetensors checkpoint shards:  91% Completed | 149/163 [02:06<00:12,  1.16it/s]
+
+Loading safetensors checkpoint shards:  92% Completed | 150/163 [02:07<00:10,  1.20it/s]
+
+Loading safetensors checkpoint shards:  93% Completed | 151/163 [02:08<00:09,  1.21it/s]
+
+Loading safetensors checkpoint shards:  93% Completed | 152/163 [02:08<00:08,  1.25it/s]
+
+Loading safetensors checkpoint shards:  94% Completed | 153/163 [02:09<00:08,  1.22it/s]
+
+Loading safetensors checkpoint shards:  94% Completed | 154/163 [02:10<00:07,  1.22it/s]
+
+Loading safetensors checkpoint shards:  95% Completed | 155/163 [02:11<00:06,  1.18it/s]
 [2025-12-19 12:55:28 DP4 TP4] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.53 GB, mem usage=92.35 GB.
 [2025-12-19 12:55:28 DP3 TP3] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.53 GB, mem usage=92.35 GB.
 [2025-12-19 12:55:29 DP1 TP1] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.53 GB, mem usage=92.35 GB.
-Loading safetensors checkpoint shards:  96% Completed | 156/163 [02:12<00:05,  1.20it/s]
+
+Loading safetensors checkpoint shards:  96% Completed | 156/163 [02:12<00:05,  1.20it/s]
 [2025-12-19 12:55:29 DP2 TP2] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.53 GB, mem usage=92.35 GB.
 [2025-12-19 12:55:29 DP7 TP7] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.77 GB, mem usage=92.35 GB.
 [2025-12-19 12:55:29 DP6 TP6] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.53 GB, mem usage=92.35 GB.
-Loading safetensors checkpoint shards:  97% Completed | 158/163 [02:13<00:03,  1.55it/s]
-Loading safetensors checkpoint shards:  98% Completed | 159/163 [02:13<00:02,  1.47it/s]
+
+Loading safetensors checkpoint shards:  97% Completed | 158/163 [02:13<00:03,  1.55it/s]
+
+Loading safetensors checkpoint shards:  98% Completed | 159/163 [02:13<00:02,  1.47it/s]
 [2025-12-19 12:55:31 DP5 TP5] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.53 GB, mem usage=92.35 GB.
-Loading safetensors checkpoint shards:  99% Completed | 161/163 [02:14<00:01,  1.96it/s]
-Loading safetensors checkpoint shards:  99% Completed | 162/163 [02:14<00:00,  2.12it/s]
-Loading safetensors checkpoint shards: 100% Completed | 163/163 [02:14<00:00,  2.53it/s]
-Loading safetensors checkpoint shards: 100% Completed | 163/163 [02:14<00:00,  1.21it/s]
+
+Loading safetensors checkpoint shards:  99% Completed | 161/163 [02:14<00:01,  1.96it/s]
+
+Loading safetensors checkpoint shards:  99% Completed | 162/163 [02:14<00:00,  2.12it/s]
+
+Loading safetensors checkpoint shards: 100% Completed | 163/163 [02:14<00:00,  2.53it/s]
+
+Loading safetensors checkpoint shards: 100% Completed | 163/163 [02:14<00:00,  1.21it/s]
 
 [2025-12-19 12:55:32 DP0 TP0] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=45.58 GB, mem usage=92.35 GB.
 [2025-12-19 12:55:32 DP0 TP0] Using KV cache dtype: torch.bfloat16
@@ -280,153 +443,281 @@ NSA_DUAL_STREAM=True NSA_FUSE_TOPK=True NSA_FLASHMLA_BACKEND_DECODE_COMPUTE_FP8=
 [2025-12-19 12:55:32 DP6 TP6] Capture cuda graph begin. This can take up to several minutes. avail mem=30.51 GB
 [2025-12-19 12:55:33 DP2 TP2] Capture cuda graph begin. This can take up to several minutes. avail mem=30.51 GB
 [2025-12-19 12:55:33 DP1 TP1] Capture cuda graph begin. This can take up to several minutes. avail mem=30.51 GB
-  0%|          | 0/52 [00:00<?, ?it/s]Capturing batches (bs=512 avail_mem=29.99 GB):   0%|          | 0/52 [00:00<?, ?it/s][2025-12-19 12:55:33 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+
+  0%|          | 0/52 [00:00<?, ?it/s]
+Capturing batches (bs=512 avail_mem=29.99 GB):   0%|          | 0/52 [00:00<?, ?it/s][2025-12-19 12:55:33 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
 [2025-12-19 12:55:33 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=2112, K=7168, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
 [2025-12-19 12:55:33 DP0 TP0] Required memory for warmup: 0.18792724609375GB, Available memory: 29.95111083984375GB
 
-DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
-DeepGEMM warmup:   2%|▏         | 385/16384 [00:00<00:04, 3793.91it/s][A
-DeepGEMM warmup:   6%|▌         | 960/16384 [00:00<00:03, 4935.86it/s][A
-DeepGEMM warmup:   9%|▉         | 1539/16384 [00:00<00:02, 5324.08it/s][A
-DeepGEMM warmup:  14%|█▍        | 2344/16384 [00:00<00:02, 6396.30it/s][A
-DeepGEMM warmup:  19%|█▉        | 3073/16384 [00:00<00:01, 6708.17it/s][A
-DeepGEMM warmup:  24%|██▍       | 3919/16384 [00:00<00:01, 7300.69it/s][A
-DeepGEMM warmup:  28%|██▊       | 4650/16384 [00:00<00:01, 6980.13it/s][A
-DeepGEMM warmup:  34%|███▎      | 5502/16384 [00:00<00:01, 7452.56it/s][A
-DeepGEMM warmup:  39%|███▊      | 6339/16384 [00:00<00:01, 7730.95it/s][A
-DeepGEMM warmup:  44%|████▍     | 7232/16384 [00:01<00:01, 8095.09it/s][A
-DeepGEMM warmup:  51%|█████▏    | 8411/16384 [00:01<00:00, 9212.75it/s][A
-DeepGEMM warmup:  60%|█████▉    | 9810/16384 [00:01<00:00, 10653.96it/s][A
-DeepGEMM warmup:  69%|██████▉   | 11272/16384 [00:01<00:00, 11846.84it/s][A
-DeepGEMM warmup:  78%|███████▊  | 12789/16384 [00:01<00:00, 12844.86it/s][A
-DeepGEMM warmup:  91%|█████████ | 14856/16384 [00:01<00:00, 15195.71it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:01<00:00, 10347.30it/s]
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+
+DeepGEMM warmup:   2%|▏         | 385/16384 [00:00<00:04, 3793.91it/s][A
+
+DeepGEMM warmup:   6%|▌         | 960/16384 [00:00<00:03, 4935.86it/s][A
+
+DeepGEMM warmup:   9%|▉         | 1539/16384 [00:00<00:02, 5324.08it/s][A
+
+DeepGEMM warmup:  14%|█▍        | 2344/16384 [00:00<00:02, 6396.30it/s][A
+
+DeepGEMM warmup:  19%|█▉        | 3073/16384 [00:00<00:01, 6708.17it/s][A
+
+DeepGEMM warmup:  24%|██▍       | 3919/16384 [00:00<00:01, 7300.69it/s][A
+
+DeepGEMM warmup:  28%|██▊       | 4650/16384 [00:00<00:01, 6980.13it/s][A
+
+DeepGEMM warmup:  34%|███▎      | 5502/16384 [00:00<00:01, 7452.56it/s][A
+
+DeepGEMM warmup:  39%|███▊      | 6339/16384 [00:00<00:01, 7730.95it/s][A
+
+DeepGEMM warmup:  44%|████▍     | 7232/16384 [00:01<00:01, 8095.09it/s][A
+
+DeepGEMM warmup:  51%|█████▏    | 8411/16384 [00:01<00:00, 9212.75it/s][A
+
+DeepGEMM warmup:  60%|█████▉    | 9810/16384 [00:01<00:00, 10653.96it/s][A
+
+DeepGEMM warmup:  69%|██████▉   | 11272/16384 [00:01<00:00, 11846.84it/s][A
+
+DeepGEMM warmup:  78%|███████▊  | 12789/16384 [00:01<00:00, 12844.86it/s][A
+
+DeepGEMM warmup:  91%|█████████ | 14856/16384 [00:01<00:00, 15195.71it/s][A
+DeepGEMM warmup: 100%|██████████| 16384/16384 [00:01<00:00, 10347.30it/s]
 [2025-12-19 12:55:35 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
 [2025-12-19 12:55:35 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=24576, K=1536, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
 [2025-12-19 12:55:35 DP0 TP0] Required memory for warmup: 0.80859375GB, Available memory: 29.92376708984375GB
 
-DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
-DeepGEMM warmup:   0%|          | 1/16384 [00:05<25:50:24,  5.68s/it][A
-DeepGEMM warmup:   0%|          | 65/16384 [00:11<39:21,  6.91it/s]  [A
-DeepGEMM warmup:   2%|▏         | 385/16384 [00:14<07:16, 36.69it/s][A
-DeepGEMM warmup:   3%|▎         | 513/16384 [00:17<07:06, 37.25it/s][A
-DeepGEMM warmup:   6%|▋         | 1025/16384 [00:21<03:37, 70.76it/s][A
-DeepGEMM warmup:   9%|▉         | 1537/16384 [00:25<02:42, 91.34it/s][A
-DeepGEMM warmup:  16%|█▌        | 2561/16384 [00:29<01:34, 146.46it/s][A
-DeepGEMM warmup:  22%|██▏       | 3634/16384 [00:29<00:47, 270.47it/s][A
-DeepGEMM warmup:  34%|███▎      | 5513/16384 [00:29<00:18, 575.34it/s][A
-DeepGEMM warmup:  39%|███▊      | 6343/16384 [00:33<00:24, 405.19it/s][A
-DeepGEMM warmup:  49%|████▉     | 8080/16384 [00:33<00:11, 699.70it/s][A
-DeepGEMM warmup:  63%|██████▎   | 10249/16384 [00:33<00:05, 1207.66it/s][A
-DeepGEMM warmup:  76%|███████▌  | 12444/16384 [00:33<00:02, 1900.77it/s][A
-DeepGEMM warmup:  89%|████████▉ | 14647/16384 [00:33<00:00, 2817.84it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:33<00:00, 482.70it/s] 
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+
+DeepGEMM warmup:   0%|          | 1/16384 [00:05<25:50:24,  5.68s/it][A
+
+DeepGEMM warmup:   0%|          | 65/16384 [00:11<39:21,  6.91it/s]  [A
+
+DeepGEMM warmup:   2%|▏         | 385/16384 [00:14<07:16, 36.69it/s][A
+
+DeepGEMM warmup:   3%|▎         | 513/16384 [00:17<07:06, 37.25it/s][A
+
+DeepGEMM warmup:   6%|▋         | 1025/16384 [00:21<03:37, 70.76it/s][A
+
+DeepGEMM warmup:   9%|▉         | 1537/16384 [00:25<02:42, 91.34it/s][A
+
+DeepGEMM warmup:  16%|█▌        | 2561/16384 [00:29<01:34, 146.46it/s][A
+
+DeepGEMM warmup:  22%|██▏       | 3634/16384 [00:29<00:47, 270.47it/s][A
+
+DeepGEMM warmup:  34%|███▎      | 5513/16384 [00:29<00:18, 575.34it/s][A
+
+DeepGEMM warmup:  39%|███▊      | 6343/16384 [00:33<00:24, 405.19it/s][A
+
+DeepGEMM warmup:  49%|████▉     | 8080/16384 [00:33<00:11, 699.70it/s][A
+
+DeepGEMM warmup:  63%|██████▎   | 10249/16384 [00:33<00:05, 1207.66it/s][A
+
+DeepGEMM warmup:  76%|███████▌  | 12444/16384 [00:33<00:02, 1900.77it/s][A
+
+DeepGEMM warmup:  89%|████████▉ | 14647/16384 [00:33<00:00, 2817.84it/s][A
+DeepGEMM warmup: 100%|██████████| 16384/16384 [00:33<00:00, 482.70it/s] 
 [2025-12-19 12:56:09 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
 [2025-12-19 12:56:09 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=8192, K=1536, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
 [2025-12-19 12:56:09 DP0 TP0] Required memory for warmup: 0.28515625GB, Available memory: 29.82806396484375GB
 
-DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
-DeepGEMM warmup:   3%|▎         | 573/16384 [00:00<00:02, 5723.86it/s][A
-DeepGEMM warmup:  11%|█         | 1759/16384 [00:00<00:01, 9329.65it/s][A
-DeepGEMM warmup:  18%|█▊        | 2955/16384 [00:00<00:01, 10529.51it/s][A
-DeepGEMM warmup:  27%|██▋       | 4369/16384 [00:00<00:01, 11953.23it/s][A
-DeepGEMM warmup:  37%|███▋      | 6141/16384 [00:00<00:00, 14032.08it/s][A
-DeepGEMM warmup:  51%|█████     | 8360/16384 [00:00<00:00, 16803.30it/s][A
-DeepGEMM warmup:  65%|██████▍   | 10572/16384 [00:00<00:00, 18540.27it/s][A
-DeepGEMM warmup:  78%|███████▊  | 12798/16384 [00:00<00:00, 19723.60it/s][A
-DeepGEMM warmup:  92%|█████████▏| 15016/16384 [00:00<00:00, 20490.63it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:00<00:00, 17032.97it/s]
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+
+DeepGEMM warmup:   3%|▎         | 573/16384 [00:00<00:02, 5723.86it/s][A
+
+DeepGEMM warmup:  11%|█         | 1759/16384 [00:00<00:01, 9329.65it/s][A
+
+DeepGEMM warmup:  18%|█▊        | 2955/16384 [00:00<00:01, 10529.51it/s][A
+
+DeepGEMM warmup:  27%|██▋       | 4369/16384 [00:00<00:01, 11953.23it/s][A
+
+DeepGEMM warmup:  37%|███▋      | 6141/16384 [00:00<00:00, 14032.08it/s][A
+
+DeepGEMM warmup:  51%|█████     | 8360/16384 [00:00<00:00, 16803.30it/s][A
+
+DeepGEMM warmup:  65%|██████▍   | 10572/16384 [00:00<00:00, 18540.27it/s][A
+
+DeepGEMM warmup:  78%|███████▊  | 12798/16384 [00:00<00:00, 19723.60it/s][A
+
+DeepGEMM warmup:  92%|█████████▏| 15016/16384 [00:00<00:00, 20490.63it/s][A
+DeepGEMM warmup: 100%|██████████| 16384/16384 [00:00<00:00, 17032.97it/s]
 [2025-12-19 12:56:10 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
 [2025-12-19 12:56:10 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=128, K=7168, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
 [2025-12-19 12:56:10 DP0 TP0] Required memory for warmup: 0.1141357421875GB, Available memory: 29.80853271484375GB
 
-DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
-DeepGEMM warmup:   3%|▎         | 449/16384 [00:00<00:03, 4202.22it/s][A
-DeepGEMM warmup:   5%|▌         | 870/16384 [00:00<00:03, 4079.27it/s][A
-DeepGEMM warmup:   8%|▊         | 1281/16384 [00:00<00:03, 4028.47it/s][A
-DeepGEMM warmup:  10%|█         | 1719/16384 [00:00<00:03, 4161.99it/s][A
-DeepGEMM warmup:  13%|█▎        | 2136/16384 [00:00<00:03, 4105.94it/s][A
-DeepGEMM warmup:  16%|█▌        | 2561/16384 [00:00<00:03, 4110.27it/s][A
-DeepGEMM warmup:  18%|█▊        | 3010/16384 [00:00<00:03, 4228.26it/s][A
-DeepGEMM warmup:  21%|██▏       | 3512/16384 [00:00<00:02, 4475.55it/s][A
-DeepGEMM warmup:  24%|██▍       | 3969/16384 [00:00<00:02, 4501.41it/s][A
-DeepGEMM warmup:  27%|██▋       | 4461/16384 [00:01<00:02, 4628.02it/s][A
-DeepGEMM warmup:  30%|███       | 4993/16384 [00:01<00:02, 4782.53it/s][A
-DeepGEMM warmup:  34%|███▍      | 5546/16384 [00:01<00:02, 5006.42it/s][A
-DeepGEMM warmup:  37%|███▋      | 6061/16384 [00:01<00:02, 5048.82it/s][A
-DeepGEMM warmup:  40%|████      | 6567/16384 [00:01<00:01, 4925.71it/s][A
-DeepGEMM warmup:  43%|████▎     | 7061/16384 [00:01<00:01, 4847.26it/s][A
-DeepGEMM warmup:  46%|████▌     | 7553/16384 [00:01<00:01, 4799.02it/s][A
-DeepGEMM warmup:  49%|████▉     | 8058/16384 [00:01<00:01, 4871.89it/s][A
-DeepGEMM warmup:  52%|█████▏    | 8546/16384 [00:01<00:01, 4796.63it/s][A
-DeepGEMM warmup:  56%|█████▋    | 9230/16384 [00:01<00:01, 5392.78it/s][A
-DeepGEMM warmup:  61%|██████    | 9972/16384 [00:02<00:01, 5990.18it/s][A
-DeepGEMM warmup:  65%|██████▍   | 10643/16384 [00:02<00:00, 6201.27it/s][A
-DeepGEMM warmup:  69%|██████▉   | 11299/16384 [00:02<00:00, 6307.65it/s][A
-DeepGEMM warmup:  73%|███████▎  | 11932/16384 [00:02<00:00, 6025.23it/s][A
-DeepGEMM warmup:  77%|███████▋  | 12539/16384 [00:02<00:00, 5966.54it/s][A
-DeepGEMM warmup:  80%|████████  | 13139/16384 [00:02<00:00, 5798.71it/s][A
-DeepGEMM warmup:  84%|████████▍ | 13722/16384 [00:02<00:00, 5698.33it/s][A
-DeepGEMM warmup:  87%|████████▋ | 14294/16384 [00:02<00:00, 5704.38it/s][A
-DeepGEMM warmup:  91%|█████████ | 14866/16384 [00:02<00:00, 5592.09it/s][A
-DeepGEMM warmup:  94%|█████████▍| 15430/16384 [00:02<00:00, 5604.74it/s][A
-DeepGEMM warmup:  98%|█████████▊| 15992/16384 [00:03<00:00, 5589.29it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:03<00:00, 5166.26it/s]
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+
+DeepGEMM warmup:   3%|▎         | 449/16384 [00:00<00:03, 4202.22it/s][A
+
+DeepGEMM warmup:   5%|▌         | 870/16384 [00:00<00:03, 4079.27it/s][A
+
+DeepGEMM warmup:   8%|▊         | 1281/16384 [00:00<00:03, 4028.47it/s][A
+
+DeepGEMM warmup:  10%|█         | 1719/16384 [00:00<00:03, 4161.99it/s][A
+
+DeepGEMM warmup:  13%|█▎        | 2136/16384 [00:00<00:03, 4105.94it/s][A
+
+DeepGEMM warmup:  16%|█▌        | 2561/16384 [00:00<00:03, 4110.27it/s][A
+
+DeepGEMM warmup:  18%|█▊        | 3010/16384 [00:00<00:03, 4228.26it/s][A
+
+DeepGEMM warmup:  21%|██▏       | 3512/16384 [00:00<00:02, 4475.55it/s][A
+
+DeepGEMM warmup:  24%|██▍       | 3969/16384 [00:00<00:02, 4501.41it/s][A
+
+DeepGEMM warmup:  27%|██▋       | 4461/16384 [00:01<00:02, 4628.02it/s][A
+
+DeepGEMM warmup:  30%|███       | 4993/16384 [00:01<00:02, 4782.53it/s][A
+
+DeepGEMM warmup:  34%|███▍      | 5546/16384 [00:01<00:02, 5006.42it/s][A
+
+DeepGEMM warmup:  37%|███▋      | 6061/16384 [00:01<00:02, 5048.82it/s][A
+
+DeepGEMM warmup:  40%|████      | 6567/16384 [00:01<00:01, 4925.71it/s][A
+
+DeepGEMM warmup:  43%|████▎     | 7061/16384 [00:01<00:01, 4847.26it/s][A
+
+DeepGEMM warmup:  46%|████▌     | 7553/16384 [00:01<00:01, 4799.02it/s][A
+
+DeepGEMM warmup:  49%|████▉     | 8058/16384 [00:01<00:01, 4871.89it/s][A
+
+DeepGEMM warmup:  52%|█████▏    | 8546/16384 [00:01<00:01, 4796.63it/s][A
+
+DeepGEMM warmup:  56%|█████▋    | 9230/16384 [00:01<00:01, 5392.78it/s][A
+
+DeepGEMM warmup:  61%|██████    | 9972/16384 [00:02<00:01, 5990.18it/s][A
+
+DeepGEMM warmup:  65%|██████▍   | 10643/16384 [00:02<00:00, 6201.27it/s][A
+
+DeepGEMM warmup:  69%|██████▉   | 11299/16384 [00:02<00:00, 6307.65it/s][A
+
+DeepGEMM warmup:  73%|███████▎  | 11932/16384 [00:02<00:00, 6025.23it/s][A
+
+DeepGEMM warmup:  77%|███████▋  | 12539/16384 [00:02<00:00, 5966.54it/s][A
+
+DeepGEMM warmup:  80%|████████  | 13139/16384 [00:02<00:00, 5798.71it/s][A
+
+DeepGEMM warmup:  84%|████████▍ | 13722/16384 [00:02<00:00, 5698.33it/s][A
+
+DeepGEMM warmup:  87%|████████▋ | 14294/16384 [00:02<00:00, 5704.38it/s][A
+
+DeepGEMM warmup:  91%|█████████ | 14866/16384 [00:02<00:00, 5592.09it/s][A
+
+DeepGEMM warmup:  94%|█████████▍| 15430/16384 [00:02<00:00, 5604.74it/s][A
+
+DeepGEMM warmup:  98%|█████████▊| 15992/16384 [00:03<00:00, 5589.29it/s][A
+DeepGEMM warmup: 100%|██████████| 16384/16384 [00:03<00:00, 5166.26it/s]
 [2025-12-19 12:56:14 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
 [2025-12-19 12:56:14 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=7168, K=16384, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
 [2025-12-19 12:56:14 DP0 TP0] Required memory for warmup: 0.578125GB, Available memory: 29.49212646484375GB
 
-DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
-DeepGEMM warmup:   0%|          | 1/16384 [00:04<21:09:48,  4.65s/it][A
-DeepGEMM warmup:   0%|          | 65/16384 [00:07<26:36, 10.22it/s]  [A
-DeepGEMM warmup:   1%|          | 129/16384 [00:10<18:39, 14.53it/s][A
-DeepGEMM warmup:   2%|▏         | 257/16384 [00:14<12:12, 22.03it/s][A
-DeepGEMM warmup:   3%|▎         | 513/16384 [00:17<06:17, 42.04it/s][A
-DeepGEMM warmup:   4%|▍         | 641/16384 [00:23<07:52, 33.29it/s][A
-DeepGEMM warmup:   6%|▋         | 1025/16384 [00:31<06:17, 40.71it/s][A
-DeepGEMM warmup:   7%|▋         | 1153/16384 [00:36<07:13, 35.11it/s][A
-DeepGEMM warmup:   9%|▉         | 1537/16384 [00:40<04:51, 50.99it/s][A
-DeepGEMM warmup:  13%|█▎        | 2049/16384 [00:44<03:17, 72.66it/s][A
-DeepGEMM warmup:  16%|█▌        | 2561/16384 [00:48<02:33, 90.04it/s][A
-DeepGEMM warmup:  19%|█▉        | 3073/16384 [00:51<02:09, 102.90it/s][A
-DeepGEMM warmup:  22%|██▏       | 3585/16384 [00:55<01:54, 112.06it/s][A
-DeepGEMM warmup:  23%|██▎       | 3841/16384 [00:59<02:07, 98.16it/s] [A
-DeepGEMM warmup:  30%|███       | 4946/16384 [00:59<00:53, 215.17it/s][A
-DeepGEMM warmup:  34%|███▍      | 5633/16384 [01:03<00:53, 200.25it/s][A
-DeepGEMM warmup:  41%|████      | 6716/16384 [01:03<00:28, 343.32it/s][A
-DeepGEMM warmup:  53%|█████▎    | 8692/16384 [01:03<00:10, 709.63it/s][A
-DeepGEMM warmup:  67%|██████▋   | 11005/16384 [01:03<00:04, 1298.00it/s][A
-DeepGEMM warmup:  81%|████████  | 13308/16384 [01:03<00:01, 2083.27it/s][A
-DeepGEMM warmup:  95%|█████████▌| 15614/16384 [01:04<00:00, 3112.95it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [01:04<00:00, 255.69it/s] 
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+
+DeepGEMM warmup:   0%|          | 1/16384 [00:04<21:09:48,  4.65s/it][A
+
+DeepGEMM warmup:   0%|          | 65/16384 [00:07<26:36, 10.22it/s]  [A
+
+DeepGEMM warmup:   1%|          | 129/16384 [00:10<18:39, 14.53it/s][A
+
+DeepGEMM warmup:   2%|▏         | 257/16384 [00:14<12:12, 22.03it/s][A
+
+DeepGEMM warmup:   3%|▎         | 513/16384 [00:17<06:17, 42.04it/s][A
+
+DeepGEMM warmup:   4%|▍         | 641/16384 [00:23<07:52, 33.29it/s][A
+
+DeepGEMM warmup:   6%|▋         | 1025/16384 [00:31<06:17, 40.71it/s][A
+
+DeepGEMM warmup:   7%|▋         | 1153/16384 [00:36<07:13, 35.11it/s][A
+
+DeepGEMM warmup:   9%|▉         | 1537/16384 [00:40<04:51, 50.99it/s][A
+
+DeepGEMM warmup:  13%|█▎        | 2049/16384 [00:44<03:17, 72.66it/s][A
+
+DeepGEMM warmup:  16%|█▌        | 2561/16384 [00:48<02:33, 90.04it/s][A
+
+DeepGEMM warmup:  19%|█▉        | 3073/16384 [00:51<02:09, 102.90it/s][A
+
+DeepGEMM warmup:  22%|██▏       | 3585/16384 [00:55<01:54, 112.06it/s][A
+
+DeepGEMM warmup:  23%|██▎       | 3841/16384 [00:59<02:07, 98.16it/s] [A
+
+DeepGEMM warmup:  30%|███       | 4946/16384 [00:59<00:53, 215.17it/s][A
+
+DeepGEMM warmup:  34%|███▍      | 5633/16384 [01:03<00:53, 200.25it/s][A
+
+DeepGEMM warmup:  41%|████      | 6716/16384 [01:03<00:28, 343.32it/s][A
+
+DeepGEMM warmup:  53%|█████▎    | 8692/16384 [01:03<00:10, 709.63it/s][A
+
+DeepGEMM warmup:  67%|██████▋   | 11005/16384 [01:03<00:04, 1298.00it/s][A
+
+DeepGEMM warmup:  81%|████████  | 13308/16384 [01:03<00:01, 2083.27it/s][A
+
+DeepGEMM warmup:  95%|█████████▌| 15614/16384 [01:04<00:00, 3112.95it/s][A
+DeepGEMM warmup: 100%|██████████| 16384/16384 [01:04<00:00, 255.69it/s] 
 [2025-12-19 12:57:18 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
 [2025-12-19 12:57:18 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=4608, K=7168, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
 [2025-12-19 12:57:18 DP0 TP0] Required memory for warmup: 0.28076171875GB, Available memory: 29.53704833984375GB
 
-DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
-DeepGEMM warmup:   3%|▎         | 513/16384 [00:00<00:03, 4876.71it/s][A
-DeepGEMM warmup:   7%|▋         | 1202/16384 [00:00<00:02, 6033.93it/s][A
-DeepGEMM warmup:  11%|█▏        | 1884/16384 [00:00<00:02, 6385.55it/s][A
-DeepGEMM warmup:  16%|█▌        | 2606/16384 [00:00<00:02, 6712.12it/s][A
-DeepGEMM warmup:  22%|██▏       | 3587/16384 [00:00<00:01, 7822.06it/s][A
-DeepGEMM warmup:  28%|██▊       | 4510/16384 [00:00<00:01, 8296.96it/s][A
-DeepGEMM warmup:  34%|███▍      | 5571/16384 [00:00<00:01, 9050.81it/s][A
-DeepGEMM warmup:  44%|████▍     | 7222/16384 [00:00<00:00, 11421.07it/s][A
-DeepGEMM warmup:  54%|█████▍    | 8908/16384 [00:00<00:00, 13118.82it/s][A
-DeepGEMM warmup:  68%|██████▊   | 11113/16384 [00:01<00:00, 15871.60it/s][A
-DeepGEMM warmup:  81%|████████▏ | 13336/16384 [00:01<00:00, 17815.57it/s][A
-DeepGEMM warmup:  95%|█████████▌| 15645/16384 [00:01<00:00, 19418.23it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:01<00:00, 13237.02it/s]
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+
+DeepGEMM warmup:   3%|▎         | 513/16384 [00:00<00:03, 4876.71it/s][A
+
+DeepGEMM warmup:   7%|▋         | 1202/16384 [00:00<00:02, 6033.93it/s][A
+
+DeepGEMM warmup:  11%|█▏        | 1884/16384 [00:00<00:02, 6385.55it/s][A
+
+DeepGEMM warmup:  16%|█▌        | 2606/16384 [00:00<00:02, 6712.12it/s][A
+
+DeepGEMM warmup:  22%|██▏       | 3587/16384 [00:00<00:01, 7822.06it/s][A
+
+DeepGEMM warmup:  28%|██▊       | 4510/16384 [00:00<00:01, 8296.96it/s][A
+
+DeepGEMM warmup:  34%|███▍      | 5571/16384 [00:00<00:01, 9050.81it/s][A
+
+DeepGEMM warmup:  44%|████▍     | 7222/16384 [00:00<00:00, 11421.07it/s][A
+
+DeepGEMM warmup:  54%|█████▍    | 8908/16384 [00:00<00:00, 13118.82it/s][A
+
+DeepGEMM warmup:  68%|██████▊   | 11113/16384 [00:01<00:00, 15871.60it/s][A
+
+DeepGEMM warmup:  81%|████████▏ | 13336/16384 [00:01<00:00, 17815.57it/s][A
+
+DeepGEMM warmup:  95%|█████████▌| 15645/16384 [00:01<00:00, 19418.23it/s][A
+DeepGEMM warmup: 100%|██████████| 16384/16384 [00:01<00:00, 13237.02it/s]
 [2025-12-19 12:57:19 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
 [2025-12-19 12:57:19 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=7168, K=2304, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
 [2025-12-19 12:57:19 DP0 TP0] Required memory for warmup: 0.269287109375GB, Available memory: 29.53509521484375GB
 
-DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
-DeepGEMM warmup:   3%|▎         | 534/16384 [00:00<00:02, 5337.92it/s][A
-DeepGEMM warmup:   7%|▋         | 1221/16384 [00:00<00:02, 6236.89it/s][A
-DeepGEMM warmup:  13%|█▎        | 2061/16384 [00:00<00:01, 7223.05it/s][A
-DeepGEMM warmup:  19%|█▉        | 3073/16384 [00:00<00:01, 8198.30it/s][A
-DeepGEMM warmup:  24%|██▍       | 3996/16384 [00:00<00:01, 8564.17it/s][A
-DeepGEMM warmup:  32%|███▏      | 5317/16384 [00:00<00:01, 10128.78it/s][A
-DeepGEMM warmup:  42%|████▏     | 6948/16384 [00:00<00:00, 12135.63it/s][A
-DeepGEMM warmup:  56%|█████▋    | 9221/16384 [00:00<00:00, 15492.42it/s][A
-DeepGEMM warmup:  70%|███████   | 11540/16384 [00:00<00:00, 17891.32it/s][A
-DeepGEMM warmup:  85%|████████▍ | 13866/16384 [00:01<00:00, 19543.09it/s][A
-DeepGEMM warmup:  99%|█████████▉| 16189/16384 [00:01<00:00, 20667.88it/s][ADeepGEMM warmup: 100%|██████████| 16384/16384 [00:01<00:00, 14706.20it/s]
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][A
+
+DeepGEMM warmup:   3%|▎         | 534/16384 [00:00<00:02, 5337.92it/s][A
+
+DeepGEMM warmup:   7%|▋         | 1221/16384 [00:00<00:02, 6236.89it/s][A
+
+DeepGEMM warmup:  13%|█▎        | 2061/16384 [00:00<00:01, 7223.05it/s][A
+
+DeepGEMM warmup:  19%|█▉        | 3073/16384 [00:00<00:01, 8198.30it/s][A
+
+DeepGEMM warmup:  24%|██▍       | 3996/16384 [00:00<00:01, 8564.17it/s][A
+
+DeepGEMM warmup:  32%|███▏      | 5317/16384 [00:00<00:01, 10128.78it/s][A
+
+DeepGEMM warmup:  42%|████▏     | 6948/16384 [00:00<00:00, 12135.63it/s][A
+
+DeepGEMM warmup:  56%|█████▋    | 9221/16384 [00:00<00:00, 15492.42it/s][A
+
+DeepGEMM warmup:  70%|███████   | 11540/16384 [00:00<00:00, 17891.32it/s][A
+
+DeepGEMM warmup:  85%|████████▍ | 13866/16384 [00:01<00:00, 19543.09it/s][A
+
+DeepGEMM warmup:  99%|█████████▉| 16189/16384 [00:01<00:00, 20667.88it/s][A
+DeepGEMM warmup: 100%|██████████| 16384/16384 [00:01<00:00, 14706.20it/s]
 [2025-12-19 12:57:20 DP7 TP7] Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Fallback to triton version 3.3.1 and use MoE kernel config from /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_3_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Performance might be sub-optimal!
 [2025-12-19 12:57:20 DP5 TP5] Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Fallback to triton version 3.3.1 and use MoE kernel config from /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_3_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Performance might be sub-optimal!
 [2025-12-19 12:57:20 DP3 TP3] Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Fallback to triton version 3.3.1 and use MoE kernel config from /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_3_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Performance might be sub-optimal!
@@ -443,7 +734,111 @@ NSA_DUAL_STREAM=True NSA_FUSE_TOPK=True NSA_FLASHMLA_BACKEND_DECODE_COMPUTE_FP8=
 [2025-12-19 12:57:20 DP1 TP1] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128]_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
 [2025-12-19 12:57:20 DP0 TP0] Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Fallback to triton version 3.3.1 and use MoE kernel config from /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_3_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128].json. Performance might be sub-optimal!
 [2025-12-19 12:57:20 DP0 TP0] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /root/miniconda3/envs/sglang/lib/python3.12/site-packages/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=257,N=256,device_name=NVIDIA_H200,dtype=fp8_w8a8,block_shape=[128, 128]_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
-Capturing batches (bs=512 avail_mem=29.99 GB):   2%|▏         | 1/52 [01:49<1:32:42, 109.07s/it]Capturing batches (bs=496 avail_mem=25.90 GB):   2%|▏         | 1/52 [01:49<1:32:42, 109.07s/it]Capturing batches (bs=496 avail_mem=25.90 GB):   4%|▍         | 2/52 [01:49<37:51, 45.43s/it]   Capturing batches (bs=480 avail_mem=25.84 GB):   4%|▍         | 2/52 [01:49<37:51, 45.43s/it]Capturing batches (bs=480 avail_mem=25.84 GB):   6%|▌         | 3/52 [01:50<20:29, 25.08s/it]Capturing batches (bs=464 avail_mem=25.78 GB):   6%|▌         | 3/52 [01:50<20:29, 25.08s/it]Capturing batches (bs=464 avail_mem=25.78 GB):   8%|▊         | 4/52 [01:51<12:23, 15.50s/it]Capturing batches (bs=448 avail_mem=25.70 GB):   8%|▊         | 4/52 [01:51<12:23, 15.50s/it]Capturing batches (bs=448 avail_mem=25.70 GB):  10%|▉         | 5/52 [01:54<08:28, 10.83s/it]Capturing batches (bs=432 avail_mem=25.64 GB):  10%|▉         | 5/52 [01:54<08:28, 10.83s/it]Capturing batches (bs=432 avail_mem=25.64 GB):  12%|█▏        | 6/52 [01:54<05:41,  7.42s/it]Capturing batches (bs=416 avail_mem=25.59 GB):  12%|█▏        | 6/52 [01:54<05:41,  7.42s/it]Capturing batches (bs=416 avail_mem=25.59 GB):  13%|█▎        | 7/52 [01:55<03:57,  5.29s/it]Capturing batches (bs=400 avail_mem=25.53 GB):  13%|█▎        | 7/52 [01:55<03:57,  5.29s/it]Capturing batches (bs=400 avail_mem=25.53 GB):  15%|█▌        | 8/52 [01:56<02:50,  3.88s/it]Capturing batches (bs=384 avail_mem=25.45 GB):  15%|█▌        | 8/52 [01:56<02:50,  3.88s/it]Capturing batches (bs=384 avail_mem=25.45 GB):  17%|█▋        | 9/52 [01:57<02:08,  2.99s/it]Capturing batches (bs=368 avail_mem=25.39 GB):  17%|█▋        | 9/52 [01:57<02:08,  2.99s/it]Capturing batches (bs=368 avail_mem=25.39 GB):  19%|█▉        | 10/52 [01:58<01:37,  2.33s/it]Capturing batches (bs=352 avail_mem=25.33 GB):  19%|█▉        | 10/52 [01:58<01:37,  2.33s/it]Capturing batches (bs=352 avail_mem=25.33 GB):  21%|██        | 11/52 [01:59<01:17,  1.90s/it]Capturing batches (bs=336 avail_mem=25.28 GB):  21%|██        | 11/52 [01:59<01:17,  1.90s/it]Capturing batches (bs=336 avail_mem=25.28 GB):  23%|██▎       | 12/52 [02:00<01:04,  1.60s/it]Capturing batches (bs=320 avail_mem=25.22 GB):  23%|██▎       | 12/52 [02:00<01:04,  1.60s/it]Capturing batches (bs=320 avail_mem=25.22 GB):  25%|██▌       | 13/52 [02:01<00:54,  1.40s/it]Capturing batches (bs=304 avail_mem=25.14 GB):  25%|██▌       | 13/52 [02:01<00:54,  1.40s/it]Capturing batches (bs=304 avail_mem=25.14 GB):  27%|██▋       | 14/52 [02:02<00:47,  1.25s/it]Capturing batches (bs=288 avail_mem=25.08 GB):  27%|██▋       | 14/52 [02:02<00:47,  1.25s/it]Capturing batches (bs=288 avail_mem=25.08 GB):  29%|██▉       | 15/52 [02:03<00:42,  1.14s/it]Capturing batches (bs=272 avail_mem=25.02 GB):  29%|██▉       | 15/52 [02:03<00:42,  1.14s/it]Capturing batches (bs=272 avail_mem=25.02 GB):  31%|███       | 16/52 [02:04<00:38,  1.07s/it]Capturing batches (bs=256 avail_mem=24.96 GB):  31%|███       | 16/52 [02:04<00:38,  1.07s/it]Capturing batches (bs=256 avail_mem=24.96 GB):  33%|███▎      | 17/52 [02:04<00:35,  1.02s/it]Capturing batches (bs=248 avail_mem=24.90 GB):  33%|███▎      | 17/52 [02:04<00:35,  1.02s/it]Capturing batches (bs=248 avail_mem=24.90 GB):  35%|███▍      | 18/52 [02:05<00:32,  1.04it/s]Capturing batches (bs=240 avail_mem=24.85 GB):  35%|███▍      | 18/52 [02:05<00:32,  1.04it/s]Capturing batches (bs=240 avail_mem=24.85 GB):  37%|███▋      | 19/52 [02:06<00:30,  1.08it/s]Capturing batches (bs=232 avail_mem=24.79 GB):  37%|███▋      | 19/52 [02:06<00:30,  1.08it/s]Capturing batches (bs=232 avail_mem=24.79 GB):  38%|███▊      | 20/52 [02:07<00:28,  1.12it/s]Capturing batches (bs=224 avail_mem=24.73 GB):  38%|███▊      | 20/52 [02:07<00:28,  1.12it/s]Capturing batches (bs=224 avail_mem=24.73 GB):  40%|████      | 21/52 [02:08<00:27,  1.13it/s]Capturing batches (bs=216 avail_mem=24.67 GB):  40%|████      | 21/52 [02:08<00:27,  1.13it/s]Capturing batches (bs=216 avail_mem=24.67 GB):  42%|████▏     | 22/52 [02:09<00:25,  1.16it/s]Capturing batches (bs=208 avail_mem=24.60 GB):  42%|████▏     | 22/52 [02:09<00:25,  1.16it/s]Capturing batches (bs=208 avail_mem=24.60 GB):  44%|████▍     | 23/52 [02:09<00:24,  1.17it/s]Capturing batches (bs=200 avail_mem=24.54 GB):  44%|████▍     | 23/52 [02:09<00:24,  1.17it/s]Capturing batches (bs=200 avail_mem=24.54 GB):  46%|████▌     | 24/52 [02:10<00:24,  1.16it/s]Capturing batches (bs=192 avail_mem=24.48 GB):  46%|████▌     | 24/52 [02:10<00:24,  1.16it/s]Capturing batches (bs=192 avail_mem=24.48 GB):  48%|████▊     | 25/52 [02:11<00:23,  1.14it/s]Capturing batches (bs=184 avail_mem=24.42 GB):  48%|████▊     | 25/52 [02:11<00:23,  1.14it/s]Capturing batches (bs=184 avail_mem=24.42 GB):  50%|█████     | 26/52 [02:12<00:22,  1.15it/s]Capturing batches (bs=176 avail_mem=24.36 GB):  50%|█████     | 26/52 [02:12<00:22,  1.15it/s]Capturing batches (bs=176 avail_mem=24.36 GB):  52%|█████▏    | 27/52 [02:13<00:21,  1.16it/s]Capturing batches (bs=168 avail_mem=24.30 GB):  52%|█████▏    | 27/52 [02:13<00:21,  1.16it/s]Capturing batches (bs=168 avail_mem=24.30 GB):  54%|█████▍    | 28/52 [02:14<00:21,  1.14it/s]Capturing batches (bs=160 avail_mem=24.25 GB):  54%|█████▍    | 28/52 [02:14<00:21,  1.14it/s]Capturing batches (bs=160 avail_mem=24.25 GB):  56%|█████▌    | 29/52 [02:15<00:20,  1.15it/s]Capturing batches (bs=152 avail_mem=24.19 GB):  56%|█████▌    | 29/52 [02:15<00:20,  1.15it/s]Capturing batches (bs=152 avail_mem=24.19 GB):  58%|█████▊    | 30/52 [02:16<00:19,  1.13it/s]Capturing batches (bs=144 avail_mem=24.14 GB):  58%|█████▊    | 30/52 [02:16<00:19,  1.13it/s]Capturing batches (bs=144 avail_mem=24.14 GB):  60%|█████▉    | 31/52 [02:17<00:18,  1.13it/s]Capturing batches (bs=136 avail_mem=24.09 GB):  60%|█████▉    | 31/52 [02:17<00:18,  1.13it/s]Capturing batches (bs=136 avail_mem=24.09 GB):  62%|██████▏   | 32/52 [02:17<00:17,  1.16it/s]Capturing batches (bs=128 avail_mem=24.04 GB):  62%|██████▏   | 32/52 [02:17<00:17,  1.16it/s]Capturing batches (bs=128 avail_mem=24.04 GB):  63%|██████▎   | 33/52 [02:18<00:16,  1.17it/s]Capturing batches (bs=120 avail_mem=23.99 GB):  63%|██████▎   | 33/52 [02:18<00:16,  1.17it/s]Capturing batches (bs=120 avail_mem=23.99 GB):  65%|██████▌   | 34/52 [02:19<00:15,  1.19it/s]Capturing batches (bs=112 avail_mem=23.94 GB):  65%|██████▌   | 34/52 [02:19<00:15,  1.19it/s]Capturing batches (bs=112 avail_mem=23.94 GB):  67%|██████▋   | 35/52 [02:20<00:14,  1.19it/s]Capturing batches (bs=104 avail_mem=23.88 GB):  67%|██████▋   | 35/52 [02:20<00:14,  1.19it/s]Capturing batches (bs=104 avail_mem=23.88 GB):  69%|██████▉   | 36/52 [02:21<00:13,  1.21it/s]Capturing batches (bs=96 avail_mem=23.83 GB):  69%|██████▉   | 36/52 [02:21<00:13,  1.21it/s] Capturing batches (bs=96 avail_mem=23.83 GB):  71%|███████   | 37/52 [02:21<00:12,  1.21it/s]Capturing batches (bs=88 avail_mem=23.78 GB):  71%|███████   | 37/52 [02:21<00:12,  1.21it/s]Capturing batches (bs=88 avail_mem=23.78 GB):  73%|███████▎  | 38/52 [02:22<00:11,  1.22it/s]Capturing batches (bs=80 avail_mem=23.73 GB):  73%|███████▎  | 38/52 [02:22<00:11,  1.22it/s]Capturing batches (bs=80 avail_mem=23.73 GB):  75%|███████▌  | 39/52 [02:23<00:10,  1.22it/s]Capturing batches (bs=72 avail_mem=23.68 GB):  75%|███████▌  | 39/52 [02:23<00:10,  1.22it/s]Capturing batches (bs=72 avail_mem=23.68 GB):  77%|███████▋  | 40/52 [02:24<00:09,  1.23it/s]Capturing batches (bs=64 avail_mem=23.62 GB):  77%|███████▋  | 40/52 [02:24<00:09,  1.23it/s]Capturing batches (bs=64 avail_mem=23.62 GB):  79%|███████▉  | 41/52 [02:25<00:09,  1.21it/s]Capturing batches (bs=56 avail_mem=23.57 GB):  79%|███████▉  | 41/52 [02:25<00:09,  1.21it/s]Capturing batches (bs=56 avail_mem=23.57 GB):  81%|████████  | 42/52 [02:26<00:08,  1.21it/s]Capturing batches (bs=48 avail_mem=23.52 GB):  81%|████████  | 42/52 [02:26<00:08,  1.21it/s]Capturing batches (bs=48 avail_mem=23.52 GB):  83%|████████▎ | 43/52 [02:26<00:07,  1.19it/s]Capturing batches (bs=40 avail_mem=23.46 GB):  83%|████████▎ | 43/52 [02:26<00:07,  1.19it/s]Capturing batches (bs=40 avail_mem=23.46 GB):  85%|████████▍ | 44/52 [02:27<00:06,  1.21it/s]Capturing batches (bs=32 avail_mem=23.41 GB):  85%|████████▍ | 44/52 [02:27<00:06,  1.21it/s]Capturing batches (bs=32 avail_mem=23.41 GB):  87%|████████▋ | 45/52 [02:28<00:05,  1.20it/s]Capturing batches (bs=24 avail_mem=23.36 GB):  87%|████████▋ | 45/52 [02:28<00:05,  1.20it/s]Capturing batches (bs=24 avail_mem=23.36 GB):  88%|████████▊ | 46/52 [02:29<00:05,  1.17it/s]Capturing batches (bs=16 avail_mem=23.31 GB):  88%|████████▊ | 46/52 [02:29<00:05,  1.17it/s]Capturing batches (bs=16 avail_mem=23.31 GB):  90%|█████████ | 47/52 [02:30<00:04,  1.15it/s]Capturing batches (bs=12 avail_mem=23.26 GB):  90%|█████████ | 47/52 [02:30<00:04,  1.15it/s]Capturing batches (bs=12 avail_mem=23.26 GB):  92%|█████████▏| 48/52 [02:31<00:03,  1.18it/s]Capturing batches (bs=8 avail_mem=23.21 GB):  92%|█████████▏| 48/52 [02:31<00:03,  1.18it/s] Capturing batches (bs=8 avail_mem=23.21 GB):  94%|█████████▍| 49/52 [02:32<00:02,  1.17it/s]Capturing batches (bs=4 avail_mem=23.16 GB):  94%|█████████▍| 49/52 [02:32<00:02,  1.17it/s]Capturing batches (bs=4 avail_mem=23.16 GB):  96%|█████████▌| 50/52 [02:32<00:01,  1.14it/s]Capturing batches (bs=2 avail_mem=23.11 GB):  96%|█████████▌| 50/52 [02:32<00:01,  1.14it/s]Capturing batches (bs=2 avail_mem=23.11 GB):  98%|█████████▊| 51/52 [02:33<00:00,  1.10it/s]Capturing batches (bs=1 avail_mem=23.05 GB):  98%|█████████▊| 51/52 [02:33<00:00,  1.10it/s]Capturing batches (bs=1 avail_mem=23.05 GB): 100%|██████████| 52/52 [02:34<00:00,  1.09it/s]Capturing batches (bs=1 avail_mem=23.05 GB): 100%|██████████| 52/52 [02:34<00:00,  2.98s/it]
+
+Capturing batches (bs=512 avail_mem=29.99 GB):   2%|▏         | 1/52 [01:49<1:32:42, 109.07s/it]
+Capturing batches (bs=496 avail_mem=25.90 GB):   2%|▏         | 1/52 [01:49<1:32:42, 109.07s/it]
+Capturing batches (bs=496 avail_mem=25.90 GB):   4%|▍         | 2/52 [01:49<37:51, 45.43s/it]   
+Capturing batches (bs=480 avail_mem=25.84 GB):   4%|▍         | 2/52 [01:49<37:51, 45.43s/it]
+Capturing batches (bs=480 avail_mem=25.84 GB):   6%|▌         | 3/52 [01:50<20:29, 25.08s/it]
+Capturing batches (bs=464 avail_mem=25.78 GB):   6%|▌         | 3/52 [01:50<20:29, 25.08s/it]
+Capturing batches (bs=464 avail_mem=25.78 GB):   8%|▊         | 4/52 [01:51<12:23, 15.50s/it]
+Capturing batches (bs=448 avail_mem=25.70 GB):   8%|▊         | 4/52 [01:51<12:23, 15.50s/it]
+Capturing batches (bs=448 avail_mem=25.70 GB):  10%|▉         | 5/52 [01:54<08:28, 10.83s/it]
+Capturing batches (bs=432 avail_mem=25.64 GB):  10%|▉         | 5/52 [01:54<08:28, 10.83s/it]
+Capturing batches (bs=432 avail_mem=25.64 GB):  12%|█▏        | 6/52 [01:54<05:41,  7.42s/it]
+Capturing batches (bs=416 avail_mem=25.59 GB):  12%|█▏        | 6/52 [01:54<05:41,  7.42s/it]
+Capturing batches (bs=416 avail_mem=25.59 GB):  13%|█▎        | 7/52 [01:55<03:57,  5.29s/it]
+Capturing batches (bs=400 avail_mem=25.53 GB):  13%|█▎        | 7/52 [01:55<03:57,  5.29s/it]
+Capturing batches (bs=400 avail_mem=25.53 GB):  15%|█▌        | 8/52 [01:56<02:50,  3.88s/it]
+Capturing batches (bs=384 avail_mem=25.45 GB):  15%|█▌        | 8/52 [01:56<02:50,  3.88s/it]
+Capturing batches (bs=384 avail_mem=25.45 GB):  17%|█▋        | 9/52 [01:57<02:08,  2.99s/it]
+Capturing batches (bs=368 avail_mem=25.39 GB):  17%|█▋        | 9/52 [01:57<02:08,  2.99s/it]
+Capturing batches (bs=368 avail_mem=25.39 GB):  19%|█▉        | 10/52 [01:58<01:37,  2.33s/it]
+Capturing batches (bs=352 avail_mem=25.33 GB):  19%|█▉        | 10/52 [01:58<01:37,  2.33s/it]
+Capturing batches (bs=352 avail_mem=25.33 GB):  21%|██        | 11/52 [01:59<01:17,  1.90s/it]
+Capturing batches (bs=336 avail_mem=25.28 GB):  21%|██        | 11/52 [01:59<01:17,  1.90s/it]
+Capturing batches (bs=336 avail_mem=25.28 GB):  23%|██▎       | 12/52 [02:00<01:04,  1.60s/it]
+Capturing batches (bs=320 avail_mem=25.22 GB):  23%|██▎       | 12/52 [02:00<01:04,  1.60s/it]
+Capturing batches (bs=320 avail_mem=25.22 GB):  25%|██▌       | 13/52 [02:01<00:54,  1.40s/it]
+Capturing batches (bs=304 avail_mem=25.14 GB):  25%|██▌       | 13/52 [02:01<00:54,  1.40s/it]
+Capturing batches (bs=304 avail_mem=25.14 GB):  27%|██▋       | 14/52 [02:02<00:47,  1.25s/it]
+Capturing batches (bs=288 avail_mem=25.08 GB):  27%|██▋       | 14/52 [02:02<00:47,  1.25s/it]
+Capturing batches (bs=288 avail_mem=25.08 GB):  29%|██▉       | 15/52 [02:03<00:42,  1.14s/it]
+Capturing batches (bs=272 avail_mem=25.02 GB):  29%|██▉       | 15/52 [02:03<00:42,  1.14s/it]
+Capturing batches (bs=272 avail_mem=25.02 GB):  31%|███       | 16/52 [02:04<00:38,  1.07s/it]
+Capturing batches (bs=256 avail_mem=24.96 GB):  31%|███       | 16/52 [02:04<00:38,  1.07s/it]
+Capturing batches (bs=256 avail_mem=24.96 GB):  33%|███▎      | 17/52 [02:04<00:35,  1.02s/it]
+Capturing batches (bs=248 avail_mem=24.90 GB):  33%|███▎      | 17/52 [02:04<00:35,  1.02s/it]
+Capturing batches (bs=248 avail_mem=24.90 GB):  35%|███▍      | 18/52 [02:05<00:32,  1.04it/s]
+Capturing batches (bs=240 avail_mem=24.85 GB):  35%|███▍      | 18/52 [02:05<00:32,  1.04it/s]
+Capturing batches (bs=240 avail_mem=24.85 GB):  37%|███▋      | 19/52 [02:06<00:30,  1.08it/s]
+Capturing batches (bs=232 avail_mem=24.79 GB):  37%|███▋      | 19/52 [02:06<00:30,  1.08it/s]
+Capturing batches (bs=232 avail_mem=24.79 GB):  38%|███▊      | 20/52 [02:07<00:28,  1.12it/s]
+Capturing batches (bs=224 avail_mem=24.73 GB):  38%|███▊      | 20/52 [02:07<00:28,  1.12it/s]
+Capturing batches (bs=224 avail_mem=24.73 GB):  40%|████      | 21/52 [02:08<00:27,  1.13it/s]
+Capturing batches (bs=216 avail_mem=24.67 GB):  40%|████      | 21/52 [02:08<00:27,  1.13it/s]
+Capturing batches (bs=216 avail_mem=24.67 GB):  42%|████▏     | 22/52 [02:09<00:25,  1.16it/s]
+Capturing batches (bs=208 avail_mem=24.60 GB):  42%|████▏     | 22/52 [02:09<00:25,  1.16it/s]
+Capturing batches (bs=208 avail_mem=24.60 GB):  44%|████▍     | 23/52 [02:09<00:24,  1.17it/s]
+Capturing batches (bs=200 avail_mem=24.54 GB):  44%|████▍     | 23/52 [02:09<00:24,  1.17it/s]
+Capturing batches (bs=200 avail_mem=24.54 GB):  46%|████▌     | 24/52 [02:10<00:24,  1.16it/s]
+Capturing batches (bs=192 avail_mem=24.48 GB):  46%|████▌     | 24/52 [02:10<00:24,  1.16it/s]
+Capturing batches (bs=192 avail_mem=24.48 GB):  48%|████▊     | 25/52 [02:11<00:23,  1.14it/s]
+Capturing batches (bs=184 avail_mem=24.42 GB):  48%|████▊     | 25/52 [02:11<00:23,  1.14it/s]
+Capturing batches (bs=184 avail_mem=24.42 GB):  50%|█████     | 26/52 [02:12<00:22,  1.15it/s]
+Capturing batches (bs=176 avail_mem=24.36 GB):  50%|█████     | 26/52 [02:12<00:22,  1.15it/s]
+Capturing batches (bs=176 avail_mem=24.36 GB):  52%|█████▏    | 27/52 [02:13<00:21,  1.16it/s]
+Capturing batches (bs=168 avail_mem=24.30 GB):  52%|█████▏    | 27/52 [02:13<00:21,  1.16it/s]
+Capturing batches (bs=168 avail_mem=24.30 GB):  54%|█████▍    | 28/52 [02:14<00:21,  1.14it/s]
+Capturing batches (bs=160 avail_mem=24.25 GB):  54%|█████▍    | 28/52 [02:14<00:21,  1.14it/s]
+Capturing batches (bs=160 avail_mem=24.25 GB):  56%|█████▌    | 29/52 [02:15<00:20,  1.15it/s]
+Capturing batches (bs=152 avail_mem=24.19 GB):  56%|█████▌    | 29/52 [02:15<00:20,  1.15it/s]
+Capturing batches (bs=152 avail_mem=24.19 GB):  58%|█████▊    | 30/52 [02:16<00:19,  1.13it/s]
+Capturing batches (bs=144 avail_mem=24.14 GB):  58%|█████▊    | 30/52 [02:16<00:19,  1.13it/s]
+Capturing batches (bs=144 avail_mem=24.14 GB):  60%|█████▉    | 31/52 [02:17<00:18,  1.13it/s]
+Capturing batches (bs=136 avail_mem=24.09 GB):  60%|█████▉    | 31/52 [02:17<00:18,  1.13it/s]
+Capturing batches (bs=136 avail_mem=24.09 GB):  62%|██████▏   | 32/52 [02:17<00:17,  1.16it/s]
+Capturing batches (bs=128 avail_mem=24.04 GB):  62%|██████▏   | 32/52 [02:17<00:17,  1.16it/s]
+Capturing batches (bs=128 avail_mem=24.04 GB):  63%|██████▎   | 33/52 [02:18<00:16,  1.17it/s]
+Capturing batches (bs=120 avail_mem=23.99 GB):  63%|██████▎   | 33/52 [02:18<00:16,  1.17it/s]
+Capturing batches (bs=120 avail_mem=23.99 GB):  65%|██████▌   | 34/52 [02:19<00:15,  1.19it/s]
+Capturing batches (bs=112 avail_mem=23.94 GB):  65%|██████▌   | 34/52 [02:19<00:15,  1.19it/s]
+Capturing batches (bs=112 avail_mem=23.94 GB):  67%|██████▋   | 35/52 [02:20<00:14,  1.19it/s]
+Capturing batches (bs=104 avail_mem=23.88 GB):  67%|██████▋   | 35/52 [02:20<00:14,  1.19it/s]
+Capturing batches (bs=104 avail_mem=23.88 GB):  69%|██████▉   | 36/52 [02:21<00:13,  1.21it/s]
+Capturing batches (bs=96 avail_mem=23.83 GB):  69%|██████▉   | 36/52 [02:21<00:13,  1.21it/s] 
+Capturing batches (bs=96 avail_mem=23.83 GB):  71%|███████   | 37/52 [02:21<00:12,  1.21it/s]
+Capturing batches (bs=88 avail_mem=23.78 GB):  71%|███████   | 37/52 [02:21<00:12,  1.21it/s]
+Capturing batches (bs=88 avail_mem=23.78 GB):  73%|███████▎  | 38/52 [02:22<00:11,  1.22it/s]
+Capturing batches (bs=80 avail_mem=23.73 GB):  73%|███████▎  | 38/52 [02:22<00:11,  1.22it/s]
+Capturing batches (bs=80 avail_mem=23.73 GB):  75%|███████▌  | 39/52 [02:23<00:10,  1.22it/s]
+Capturing batches (bs=72 avail_mem=23.68 GB):  75%|███████▌  | 39/52 [02:23<00:10,  1.22it/s]
+Capturing batches (bs=72 avail_mem=23.68 GB):  77%|███████▋  | 40/52 [02:24<00:09,  1.23it/s]
+Capturing batches (bs=64 avail_mem=23.62 GB):  77%|███████▋  | 40/52 [02:24<00:09,  1.23it/s]
+Capturing batches (bs=64 avail_mem=23.62 GB):  79%|███████▉  | 41/52 [02:25<00:09,  1.21it/s]
+Capturing batches (bs=56 avail_mem=23.57 GB):  79%|███████▉  | 41/52 [02:25<00:09,  1.21it/s]
+Capturing batches (bs=56 avail_mem=23.57 GB):  81%|████████  | 42/52 [02:26<00:08,  1.21it/s]
+Capturing batches (bs=48 avail_mem=23.52 GB):  81%|████████  | 42/52 [02:26<00:08,  1.21it/s]
+Capturing batches (bs=48 avail_mem=23.52 GB):  83%|████████▎ | 43/52 [02:26<00:07,  1.19it/s]
+Capturing batches (bs=40 avail_mem=23.46 GB):  83%|████████▎ | 43/52 [02:26<00:07,  1.19it/s]
+Capturing batches (bs=40 avail_mem=23.46 GB):  85%|████████▍ | 44/52 [02:27<00:06,  1.21it/s]
+Capturing batches (bs=32 avail_mem=23.41 GB):  85%|████████▍ | 44/52 [02:27<00:06,  1.21it/s]
+Capturing batches (bs=32 avail_mem=23.41 GB):  87%|████████▋ | 45/52 [02:28<00:05,  1.20it/s]
+Capturing batches (bs=24 avail_mem=23.36 GB):  87%|████████▋ | 45/52 [02:28<00:05,  1.20it/s]
+Capturing batches (bs=24 avail_mem=23.36 GB):  88%|████████▊ | 46/52 [02:29<00:05,  1.17it/s]
+Capturing batches (bs=16 avail_mem=23.31 GB):  88%|████████▊ | 46/52 [02:29<00:05,  1.17it/s]
+Capturing batches (bs=16 avail_mem=23.31 GB):  90%|█████████ | 47/52 [02:30<00:04,  1.15it/s]
+Capturing batches (bs=12 avail_mem=23.26 GB):  90%|█████████ | 47/52 [02:30<00:04,  1.15it/s]
+Capturing batches (bs=12 avail_mem=23.26 GB):  92%|█████████▏| 48/52 [02:31<00:03,  1.18it/s]
+Capturing batches (bs=8 avail_mem=23.21 GB):  92%|█████████▏| 48/52 [02:31<00:03,  1.18it/s] 
+Capturing batches (bs=8 avail_mem=23.21 GB):  94%|█████████▍| 49/52 [02:32<00:02,  1.17it/s]
+Capturing batches (bs=4 avail_mem=23.16 GB):  94%|█████████▍| 49/52 [02:32<00:02,  1.17it/s]
+Capturing batches (bs=4 avail_mem=23.16 GB):  96%|█████████▌| 50/52 [02:32<00:01,  1.14it/s]
+Capturing batches (bs=2 avail_mem=23.11 GB):  96%|█████████▌| 50/52 [02:32<00:01,  1.14it/s]
+Capturing batches (bs=2 avail_mem=23.11 GB):  98%|█████████▊| 51/52 [02:33<00:00,  1.10it/s]
+Capturing batches (bs=1 avail_mem=23.05 GB):  98%|█████████▊| 51/52 [02:33<00:00,  1.10it/s]
+Capturing batches (bs=1 avail_mem=23.05 GB): 100%|██████████| 52/52 [02:34<00:00,  1.09it/s]
+Capturing batches (bs=1 avail_mem=23.05 GB): 100%|██████████| 52/52 [02:34<00:00,  2.98s/it]
 [2025-12-19 12:58:08 DP0 TP0] Registering 13 cuda graph addresses
 [2025-12-19 12:58:08 DP5 TP5] Capture cuda graph end. Time elapsed: 155.63 s. mem usage=7.54 GB. avail mem=22.97 GB.
 [2025-12-19 12:58:08 DP7 TP7] Capture cuda graph end. Time elapsed: 155.71 s. mem usage=7.54 GB. avail mem=23.20 GB.
@@ -466,8 +861,23 @@ NSA_DUAL_STREAM=True NSA_FUSE_TOPK=True NSA_FLASHMLA_BACKEND_DECODE_COMPUTE_FP8=
 [2025-12-19 12:58:11 DP0 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
 [2025-12-19 12:58:11 DP0 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=32768, K=512, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
 [2025-12-19 12:58:11 DP0 TP0] Required memory for warmup: 1.0234375GB, Available memory: 23.00384521484375GB
-DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][2025-12-19 12:58:12] INFO:     127.0.0.1:58230 - "GET /v1/models HTTP/1.1" 200 OK
-DeepGEMM warmup:   0%|          | 1/16384 [00:02<11:00:37,  2.42s/it]DeepGEMM warmup:   0%|          | 65/16384 [00:04<17:36, 15.45it/s]  DeepGEMM warmup:   1%|          | 129/16384 [00:07<14:14, 19.01it/s]DeepGEMM warmup:   2%|▏         | 257/16384 [00:11<09:53, 27.19it/s]DeepGEMM warmup:   3%|▎         | 512/16384 [00:14<05:21, 49.39it/s]DeepGEMM warmup:  10%|█         | 1660/16384 [00:14<00:59, 248.43it/s]DeepGEMM warmup:  22%|██▏       | 3681/16384 [00:14<00:17, 732.93it/s]DeepGEMM warmup:  28%|██▊       | 4607/16384 [00:17<00:22, 526.71it/s]DeepGEMM warmup:  38%|███▊      | 6249/16384 [00:17<00:11, 910.62it/s]DeepGEMM warmup:  52%|█████▏    | 8548/16384 [00:17<00:04, 1647.09it/s]DeepGEMM warmup:  66%|██████▋   | 10883/16384 [00:17<00:02, 2634.18it/s]DeepGEMM warmup:  81%|████████  | 13199/16384 [00:17<00:00, 3886.48it/s]DeepGEMM warmup:  95%|█████████▍| 15510/16384 [00:17<00:00, 5427.53it/s]DeepGEMM warmup: 100%|██████████| 16384/16384 [00:17<00:00, 928.25it/s] 
+
+DeepGEMM warmup:   0%|          | 0/16384 [00:00<?, ?it/s][2025-12-19 12:58:12] INFO:     127.0.0.1:58230 - "GET /v1/models HTTP/1.1" 200 OK
+
+DeepGEMM warmup:   0%|          | 1/16384 [00:02<11:00:37,  2.42s/it]
+DeepGEMM warmup:   0%|          | 65/16384 [00:04<17:36, 15.45it/s]  
+DeepGEMM warmup:   1%|          | 129/16384 [00:07<14:14, 19.01it/s]
+DeepGEMM warmup:   2%|▏         | 257/16384 [00:11<09:53, 27.19it/s]
+DeepGEMM warmup:   3%|▎         | 512/16384 [00:14<05:21, 49.39it/s]
+DeepGEMM warmup:  10%|█         | 1660/16384 [00:14<00:59, 248.43it/s]
+DeepGEMM warmup:  22%|██▏       | 3681/16384 [00:14<00:17, 732.93it/s]
+DeepGEMM warmup:  28%|██▊       | 4607/16384 [00:17<00:22, 526.71it/s]
+DeepGEMM warmup:  38%|███▊      | 6249/16384 [00:17<00:11, 910.62it/s]
+DeepGEMM warmup:  52%|█████▏    | 8548/16384 [00:17<00:04, 1647.09it/s]
+DeepGEMM warmup:  66%|██████▋   | 10883/16384 [00:17<00:02, 2634.18it/s]
+DeepGEMM warmup:  81%|████████  | 13199/16384 [00:17<00:00, 3886.48it/s]
+DeepGEMM warmup:  95%|█████████▍| 15510/16384 [00:17<00:00, 5427.53it/s]
+DeepGEMM warmup: 100%|██████████| 16384/16384 [00:17<00:00, 928.25it/s] 
 [2025-12-19 12:58:29] INFO:     127.0.0.1:54306 - "POST /v1/chat/completions HTTP/1.1" 200 OK
 [2025-12-19 12:58:31 DP0 TP0] Prefill batch, #new-seq: 1, #new-token: 64, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, 
 [2025-12-19 12:58:31 DP5 TP5] Prefill batch, #new-seq: 1, #new-token: 64, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 

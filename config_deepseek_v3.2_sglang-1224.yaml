@@ -3,8 +3,8 @@ run_baseline: false
 baseline_args: ""
 health_check:
   init_delay: 180
-  timeout: 3200 # 30 minutes
-  interval: 10.0
+  timeout: 1800 # 30 minutes
+  interval: 5.0
 
 # Define benchmark cases
 test_cases:
@@ -59,24 +59,19 @@ test_cases:
 
 # Engine test configurations
 runs:
-  - name: "sglang-no-chat-template"
+  - name: "sglang-baseline"
     engine: "sglang"
     conda_env: "sglang"
-    args: "--tensor-parallel-size 8"
+    args: "--tensor-parallel-size 8 --chat-template ./tool_chat_template_deepseekv32.jinja"
     test_cases:
       - sharegpt
-  # after test: 根据结果调整下面的参数
+      - random_32k
+      - random_4k
+      - random_2k
+      - random_128
+      - random_2k_output
 
-# Low
-  # - name: "sglang-loader-extra-config"
-  #   engine: "sglang"
-  #   conda_env: "sglang"
-  #   args: >
-  #     --tensor-parallel-size 8
-  #     --model-loader-extra-config {"enable_multithread_load": true}
-  #   test_cases:
-  #     - sharegpt
-
+# Parallelism
   - name: "sglang-dp-attention"
     engine: "sglang"
     conda_env: "sglang"
@@ -90,7 +85,12 @@ runs:
     args: "--tensor-parallel-size 8 --enable-dp-attention --chat-template ./tool_chat_template_deepseekv32.jinja --dp 8"
     test_cases:
       - sharegpt
-  # after test: 可能根据结果排除所有包含dp的测试
+      - random_32k
+      - random_4k
+      - random_2k
+      - random_128
+      - random_128k
+      - random_2k_output
 
   - name: "sglang-official-recommended-tp-dp-ep"
     engine: "sglang"
@@ -99,7 +99,7 @@ runs:
     test_cases:
       - sharegpt
 
-  - name: "sglang-official-mpt-tp-dp-cp" # 考虑：添加 --cuda-graph-max-bs 32, 是否要加speculative decoding，根据上一个测试的结果来看
+  - name: "sglang-official-mpt-tp-dp-cp"
     engine: "sglang"
     conda_env: "sglang"
     args: >
@@ -111,7 +111,7 @@ runs:
     test_cases:
       - sharegpt
 
-  - name: "sglang-official-mpt-tp-dp-ep-cp" # 考虑：添加 --cuda-graph-max-bs 32, 是否要加speculative decoding，根据上一个测试的结果来看
+  - name: "sglang-official-mpt-tp-dp-ep-cp"
     engine: "sglang"
     conda_env: "sglang"
     args: >
@@ -124,8 +124,7 @@ runs:
     test_cases:
       - sharegpt
 
-  # before test: 检查是否要去掉dp
-  - name: "sglang-speculative-decoding-mtp-step3-env-max-req-256"
+- name: "sglang-speculative-decoding-mtp-step3-env-max-req-256"
     engine: "sglang"
     conda_env: "sglang"
     args: >
@@ -213,82 +212,123 @@ runs:
   #   test_cases:
   #     - sharegpt
 
-  - name: "vllm-tp"
-    engine: "vllm"
-    conda_env: "vllm"
-    args: >
-      --tensor-parallel-size 8
-      --tokenizer-mode deepseek_v32
-      --reasoning-parser deepseek_v3
-    test_cases:
-      - sharegpt
-      - random_32k
-      - random_4k
-      - random_2k
-      - random_128
-      - random_2k_output
-  
-  - name: "vllm-tp-dcp"
-    engine: "vllm"
-    conda_env: "vllm"
-    args: >
-      --tokenizer-mode deepseek_v32
-      --reasoning-parser deepseek_v3
-      -tp 8
-      -dcp 8
+
+# Speculative-decoding with eagle variants
+  - name: "sglang-speculative-decoding-mtp"
+    engine: "sglang"
+    conda_env: "sglang"
+    args: "--tensor-parallel-size 8 --speculative-algorithm EAGLE --speculative-num-steps 1 --speculative-eagle-topk 1 --speculative-num-draft-tokens 2"
     test_cases:
       - sharegpt
 
-  - name: "vllm-dp-ep"
-    engine: "vllm"
-    conda_env: "vllm"
-    args: >
-      --tensor-parallel-size 1
-      --tokenizer-mode deepseek_v32
-      --reasoning-parser deepseek_v3
-      -dp 8
-      --enable-expert-parallel
-      --max-num-seqs 128
-      --max-model-len 122880
+  - name: "sglang-speculative-decoding-mtp-step3"
+    engine: "sglang"
+    conda_env: "sglang"
+    args: "--tensor-parallel-size 8 --speculative-algorithm EAGLE --speculative-num-steps 3 --speculative-eagle-topk 1 --speculative-num-draft-tokens 4"
     test_cases:
       - sharegpt
-  
-  - name: "vllm-dp-ep-half-ctx"
-    engine: "vllm"
-    conda_env: "vllm"
-    args: >
-      --tensor-parallel-size 1
-      --tokenizer-mode deepseek_v32
-      --reasoning-parser deepseek_v3
-      -dp 8
-      --enable-expert-parallel
-      --max-model-len 81920
+
+  - name: "sglang-speculative-decoding-eagle3-steps1"
+    engine: "sglang"
+    conda_env: "sglang"
+    args: "--tensor-parallel-size 8 --chat-template ./tool_chat_template_deepseekv32.jinja --speculative-algorithm EAGLE3 --speculative-num-steps 1 --speculative-eagle-topk 1 --speculative-num-draft-tokens 2"
     test_cases:
       - sharegpt
-  
-  - name: "vllm-dp-ep-pplx"
-    engine: "vllm"
-    conda_env: "vllm"
-    args: >
-      --tensor-parallel-size 1
-      --tokenizer-mode deepseek_v32
-      --reasoning-parser deepseek_v3
-      -dp 8
-      --enable-expert-parallel
-      --max-num-seqs 128
-      --max-model-len 122880
-      --all2all-backend pplx
+
+  - name: "sglang-speculative-decoding-eagle3-steps3"
+    engine: "sglang"
+    conda_env: "sglang"
+    args: "--tensor-parallel-size 8 --speculative-algorithm EAGLE3 --speculative-num-steps 3 --speculative-eagle-topk 1 --speculative-num-draft-tokens 4"
     test_cases:
       - sharegpt
-  
-  # - name: "vllm-tp-short-ctx-bf16"
-  #   engine: "vllm"
-  #   conda_env: "vllm"
+
+# DeepGEMM
+  - name: "sglang-deepgemm-diable" # run before test: python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 -tp 8 --trust-remote-code
+    engine: "sglang"
+    conda_env: "sglang"
+    envs:
+      SGLANG_ENABLE_JIT_DEEPGEMM: "0"
+    args: "--tensor-parallel-size 8 --chat-template ./tool_chat_template_deepseekv32.jinja"
+    test_cases:
+      - sharegpt
+
+# Loader extra config
+# Skip
+  # - name: "sglang-loader-extra-config"
+  #   engine: "sglang"
+  #   conda_env: "sglang"
   #   args: >
-  #     --tokenizer-mode deepseek_v32
-  #     --reasoning-parser deepseek_v3
-  #     -tp 8
-  #     -dcp 8
-  #     --kv-cache-dtype bfloat16
+  #     --tensor-parallel-size 8
+  #     --model-loader-extra-config {"enable_multithread_load": true}
   #   test_cases:
-  #     - random_128
+  #     - sharegpt
+
+# # Utilization Rate
+# # Skip
+#   - name: "sglang-low-mem"
+#     engine: "sglang"
+#     conda_env: "sglang"
+#     args: "-tp 8 --mem-fraction-static 0.7"
+#     test_cases:
+#       - sharegpt
+
+#   - name: "sglang-high-mem"
+#     engine: "sglang"
+#     conda_env: "sglang"
+#     args: "-tp 8 --mem-fraction-static 0.95"
+#     test_cases:
+#       - sharegpt
+
+#   - name: "sglang-low-mem"
+#     engine: "sglang"
+#     conda_env: "sglang"
+#     args: "-tp 8 --mem-fraction-static 0.7"
+#     test_cases:
+#       - sharegpt
+
+# # Thinking
+# # Skip
+#   - name: "sglang-thinking"
+#     engine: "sglang"
+#     conda_env: "sglang"
+#     envs:
+#     args: "-tp 8"
+#     test_cases:
+#       - random_2k_thinking
+
+# Torch Compile
+# torch.compile accelerates small models on small batch sizes
+# Skip
+  # - name: "sglang-torch-compile"
+  #   engine: "sglang"
+  #   conda_env: "sglang"
+  #   envs:
+  #   args: "-tp 8 --enable-torch-compile"
+  #   test_cases:
+  #     - sharegpt
+
+# EP
+# Skip
+  # - name: "sglang-ep" # resource not enough on 8-GPU machine, need 64-GPUs
+  #   engine: "sglang"
+  #   conda_env: "sglang"
+  #   args: "-tp 8 --cuda-graph-max-bs 256 --ep-size 8"
+  #   test_cases:
+  #     - sharegpt
+
+# CUDA Graph, related to batch size and QPS, not tested this time
+# Skip
+  # - name: "sglang-cuda-graph" # qps 10-50
+  #   engine: "sglang"
+  #   conda_env: "sglang"
+  #   args: "-tp 8 --cuda-graph-max-bs 128"
+  #   test_cases:
+  #     - sharegpt
+  
+  # - name: "sglang-cuda-graph" # qps>50
+  #   engine: "sglang"
+  #   conda_env: "sglang"
+  #   args: "-tp 8 --cuda-graph-max-bs 256"
+  #   test_cases:
+  #     - sharegpt
+
