@@ -2,7 +2,7 @@ model: "deepseek-ai/DeepSeek-V3.2"
 run_baseline: false
 baseline_args: ""
 health_check:
-  init_delay: 180
+  init_delay: 60
   timeout: 1800 # 30 minutes
   interval: 5.0
 
@@ -127,7 +127,7 @@ runs:
     test_cases:
       - sharegpt
 
-  - name: "sglang-official-tp-dp-context-length-32k"
+  - name: "sglang-official-tp-dp-reason-tool-context-length-32k"
     engine: "sglang"
     conda_env: "sglang"
     envs:
@@ -137,6 +137,8 @@ runs:
       --enable-dp-attention
       --chat-template ./tool_chat_template_deepseekv32.jinja
       --dp 8
+      --reasoning-parser deepseek-v3 
+      --tool-call-parser deepseekv32
       --context-length=32768
     test_cases:
       - sharegpt
@@ -151,8 +153,27 @@ runs:
       --enable-dp-attention
       --chat-template ./tool_chat_template_deepseekv32.jinja
       --dp 8
+      --reasoning-parser deepseek-v3 
+      --tool-call-parser deepseekv32
       --context-length=32768
       --kv-cache-dtype fp8_e4m3
+    test_cases:
+      - sharegpt
+
+  - name: "sglang-official-tp-dp-context-length-32k-kv-cache-type-fp8" # default is fpfloat16
+    engine: "sglang"
+    conda_env: "sglang"
+    envs:
+      HF_HOME: /workspace/gpustack_cache
+    args: >
+      --tensor-parallel-size 8
+      --enable-dp-attention
+      --chat-template ./tool_chat_template_deepseekv32.jinja
+      --dp 8
+      --reasoning-parser deepseek-v3 
+      --tool-call-parser deepseekv32
+      --context-length=32768
+      --kv-cache-dtype fp8
     test_cases:
       - sharegpt
 
@@ -167,6 +188,8 @@ runs:
       --enable-dp-attention
       --chat-template ./tool_chat_template_deepseekv32.jinja
       --dp 8
+      --reasoning-parser deepseek-v3 
+      --tool-call-parser deepseekv32
       --context-length=32768
       --attention-backend nsa
       --nsa-prefill-backend flashmla_sparse
@@ -184,6 +207,8 @@ runs:
       --enable-dp-attention
       --chat-template ./tool_chat_template_deepseekv32.jinja
       --dp 8
+      --reasoning-parser deepseek-v3 
+      --tool-call-parser deepseekv32
       --context-length=32768
       --attention-backend nsa
       --nsa-prefill-backend fa3
